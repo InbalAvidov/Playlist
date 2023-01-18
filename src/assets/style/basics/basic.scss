@@ -6,7 +6,7 @@ html {
     font-family: montserrat;
     color: $white;
     line-height: 1.8;
-
+    
     @media (max-width: 1300px) {
         font-size: 13px;
     }
@@ -14,7 +14,10 @@ html {
 
 body {
     margin: 0;
+}
+.main-app{
     background-color: $bgc-main;
+    padding: 0 20px;
 }
 
 h1,
@@ -27,4 +30,5 @@ h6 {
     margin: 0;
     line-height: lh(40px, 29px);
     color: $white;
+    font-family: montserrat-bold;
 }
