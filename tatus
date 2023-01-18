@@ -1,0 +1,88 @@
+[33mcommit e260d4f88b24e8e7265f227b765e2fb84e6c39e3[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: hilashor <hilashor@gmail.com>
+Date:   Wed Jan 18 17:39:18 2023 +0200
+
+    Adding station-details
+
+[33mcommit 6df52860cb0ad74e9842b29b25ffb46af6e32296[m[33m ([m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m
+Merge: 2d26095 0fb9fed
+Author: hilashor <hilashor@gmail.com>
+Date:   Wed Jan 18 14:27:27 2023 +0200
+
+    merge
+
+[33mcommit 2d26095275b535c2d73df7d82a86508e9b2813c0[m
+Author: hilashor <hilashor@gmail.com>
+Date:   Wed Jan 18 14:10:02 2023 +0200
+
+    added logo imgs
+
+[33mcommit 0fb9fed2b0edc45f717a8311fcc535592b888e0e[m
+Author: Inbal Avidov <inbal.avidov@gmail.com>
+Date:   Wed Jan 18 12:54:10 2023 +0200
+
+    Added station service and home page
+
+[33mcommit d58df5c58c25ce8c655ea21e71580446c835765c[m
+Merge: 5cb5569 f5f9698
+Author: hilashor <hilashor@gmail.com>
+Date:   Wed Jan 18 12:34:07 2023 +0200
+
+    meging data
+
+[33mcommit 5cb55691f870b8195c3a7150f25e1a5563d9111a[m
+Author: hilashor <hilashor@gmail.com>
+Date:   Wed Jan 18 10:53:44 2023 +0200
+
+    Pulling basic structure
+
+[33mcommit f5f9698abe355d5f34c23413842d647d3efbd781[m
+Merge: e45e05d ffaa365
+Author: Inbal Avidov <inbal.avidov@gmail.com>
+Date:   Wed Jan 18 10:50:28 2023 +0200
+
+    marge conflicts
+
+[33mcommit e45e05d252ffa8b3ae472ab3151180ac5e811a7d[m
+Author: Inbal Avidov <inbal.avidov@gmail.com>
+Date:   Wed Jan 18 10:46:18 2023 +0200
+
+    Json
+
+[33mcommit ffaa3654e1b06e1ac7a1e7f00e98d6931bd6f922[m
+Merge: 41f8ece 6f27c9b
+Author: hilashor <hilashor@gmail.com>
+Date:   Wed Jan 18 09:33:22 2023 +0200
+
+    Merge branch 'main' of https://github.com/InbalAvidov/Playlist-frontend
+
+[33mcommit 41f8ece58c0937d50f1216cc5cab47ebd4e09885[m
+Author: hilashor <hilashor@gmail.com>
+Date:   Wed Jan 18 09:31:43 2023 +0200
+
+    first upload
+
+[33mcommit d10ee2b01d25dfbbe3f0d65503b1bc5f87d9afed[m
+Merge: 558736f 6f27c9b
+Author: Inbal Avidov <inbal.avidov@gmail.com>
+Date:   Tue Jan 17 20:25:51 2023 +0200
+
+    Merge branch 'main' of https://github.com/InbalAvidov/Playlist-frontend
+
+[33mcommit 558736f049873c243be12cf435331bd44192a2aa[m
+Author: Inbal Avidov <inbal.avidov@gmail.com>
+Date:   Tue Jan 17 20:23:13 2023 +0200
+
+    Loader
+
+[33mcommit 6f27c9b6a54676af12c9a6df18d36315772a9bba[m
+Author: HazanOmri <omrihazan1313@gmail.com>
+Date:   Tue Jan 17 20:22:16 2023 +0200
+
+    Starting
+
+[33mcommit 3fd57815fdf2f08b7ff715f7e2fbf47fe1b21e08[m
+Author: Inbal Avidov <inbal.avidov@gmail.com>
+Date:   Tue Jan 17 18:02:51 2023 +0200
+
+    Project's basis

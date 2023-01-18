@@ -20,6 +20,7 @@ export function StationDetails(){
 
       <div className="details-header flex">
           <img src={currStations.songs[0].imgUrl}></img>
+          
       </div>
     </section>
   )
