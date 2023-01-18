@@ -1,5 +1,5 @@
-import {stationService} from "../service/station.service"
-import { SET_STATIONS } from "./station.reducer"
+import { stationService } from "../service/station.service"
+import { SET_STATIONS, SET_CURR_STATION } from "./station.reducer"
 import { store } from "./store"
 
 export async function loadStations(filterBy) {
@@ -9,6 +9,16 @@ export async function loadStations(filterBy) {
 
     } catch (err) {
         console.log('Had issues loading stations', err)
+        throw err
+    }
+}
+
+export async function loadStationById(stationId) {
+    try {
+        const currStation = await stationService.get(stationId)
+        store.dispatch({ type: SET_CURR_STATION, currStation })
+    } catch (err) {
+        console.log('Had issues to get cuurent station', err)
         throw err
     }
 }

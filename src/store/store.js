@@ -1,4 +1,5 @@
-import { createStore, combineReducers } from 'redux'
+// import { createStore, combineReducers } from 'redux'
+import { combineReducers, legacy_createStore as createStore } from 'redux'
 import { userReducer } from './user.reducer'
 import { stationReducer } from './station.reducer'
 

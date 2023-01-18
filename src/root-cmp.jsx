@@ -8,6 +8,7 @@ import { store } from './store/store'
 import { Loader } from './cmps/loader'
 import { AppHeader } from './cmps/app-header'
 import { Home } from './pages/home'
+import { StationDetails } from './pages/station-details.jsx'
 // import { UserMsg } from './cmps/user-msg'
 // import { AppNav } from './cmps/app-nav'
 
@@ -20,6 +21,7 @@ export function App() {
                     <main>
                         <Routes>
                             <Route element={<Home />} path="/" />
+                            <Route element={<StationDetails />} path="/station/:id" />
                         </Routes>
                     </main>
                     {/* <Loader /> */}
