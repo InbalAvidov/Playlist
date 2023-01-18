@@ -14,7 +14,7 @@ export function AppHeader() {
             <nav>
                 <NavLink to="/"><FontAwesomeIcon icon={faHome}></FontAwesomeIcon><span>Home</span></NavLink>
                 <NavLink to="/search"><FontAwesomeIcon icon={faSearch}></FontAwesomeIcon><span>Search</span></NavLink>
-                <NavLink to="/library"><FontAwesomeIcon icon={faLinesLeaning}></FontAwesomeIcon><span>Your Library</span></NavLink>
+                <NavLink to="/library" className="library-nav"><FontAwesomeIcon icon={faLinesLeaning}></FontAwesomeIcon><span>Your Library</span></NavLink>
                 <NavLink to="/create playlist"><FontAwesomeIcon icon={faPlus}></FontAwesomeIcon><span>Create Playlist</span></NavLink>
                 <NavLink to="/liked songs"><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon><span>Liked Songs</span></NavLink>
             </nav>

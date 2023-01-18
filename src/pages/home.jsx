@@ -10,10 +10,25 @@ export function Home(){
     useEffect(()=>{
         loadStations()
     },[])
-    console.log('stations:',stations)
+    function getCurrentTime(){
+        const hour = new Date().getHours()
+        if (hour>5 && hour < 12) return 'Good morning'
+        else if(hour >= 12 && hour <19) return 'Good afternoon'
+        else if(hour >= 19 && hour <= 5) return 'Good night'
+    }
     return( <main className="main-home">
-        <h1>Good Morning</h1>
+        <h1>{getCurrentTime()}</h1>
         {stations && <div className="home-playlists">
+            {stations.map(station => <div className="playlist-preview" >
+                <img src={station.songs[0].imgUrl}/>
+                <p>{station.name}</p>
+            </div>
+                )}
+            {stations.map(station => <div className="playlist-preview">
+                <img src={station.songs[0].imgUrl}/>
+                <p>{station.name}</p>
+            </div>
+                )}
             {stations.map(station => <div className="playlist-preview">
                 
             <Link to={`/station/${station._id}`}><img src={station.songs[0].imgUrl}/></Link>
@@ -21,7 +36,7 @@ export function Home(){
             </div>
                 )}
             </div>}
-
+            <h1>Made For You</h1>
     </main>
     )
 }
