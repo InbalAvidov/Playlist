@@ -11,9 +11,9 @@ export function App() {
         <Provider store={store}>
             <Router>
                 <section className="main-layout app">
-                    <AppHeader />
-                    <AppNav />
-                    <UserMsg />
+                    {/* <AppHeader /> */}
+                    {/* <AppNav /> */}
+                    {/* <UserMsg /> */}
                 </section>
             </Router>
         </Provider>
