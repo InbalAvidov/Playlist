@@ -1,10 +1,12 @@
 import { combineReducers, legacy_createStore as createStore } from 'redux'
-import { userReducer } from './appReducer'
+import { userReducer } from './user.reducer'
+import { stationReducer } from './station.reducer'
 import { trackReducer } from './track.reducer'
 
 
 const rootReducer = combineReducers({
     userModule: userReducer,
+    stationModule: stationReducer,
     trackModule: trackReducer
 })
 

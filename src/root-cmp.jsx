@@ -7,6 +7,7 @@ import { store } from './store/store'
 // import { AppNav } from './cmps/app-nav'
 import { Loader } from './cmps/loader'
 import { AppHeader } from './cmps/app-header'
+import { Home } from './pages/home'
 import { Example } from './cmps/youtube-react'
 import { Search } from './cmps/search'
 import { MediaPlayer } from './cmps/media-player'
@@ -23,9 +24,14 @@ export function App() {
     return (
         <Provider store={store}>
             <Router>
-                <AppHeader />
                 <section className="main-layout app">
+                    <AppHeader />
                     <Search searchedTrack={track} />
+                    <main className='main-app'>
+                        <Routes>
+                            <Route element={<Home />} path="/" />
+                        </Routes>
+                    </main>
                     {/* <Loader /> */}
                     <MediaPlayer />
                 </section>
