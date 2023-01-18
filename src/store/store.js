@@ -1,8 +1,6 @@
 import { createStore, combineReducers } from 'redux'
 import { userReducer } from './appReducer'
 
-import { userReducer } from './user.reducer.js'
-
 
 const rootReducer = combineReducers({
     userModule: userReducer,
