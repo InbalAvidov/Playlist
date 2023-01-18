@@ -12,14 +12,14 @@ export function SoundTreck({ trackId }) {
     },
   }
   function _onReady(event) {
-    event.target.pauseVideo();
+    event.target.pauseVideo()
     loadTrack(event.target)
   }
 
   return <div>
     {/* {song && <button onClick={() => song.playVideo()}>PLAY</button>} */}
-    <YouTube videoId={trackId} opts={opts} onReady={_onReady} />;
-    {/* style={{ position:'absolute',top: '-9999px' }} */}
+    <YouTube videoId={trackId} opts={opts} onReady={_onReady} style={{ position: 'absolute', top: '-9999px' }} />
+
   </div>
 }
 
