@@ -14,7 +14,6 @@ export function Home(){
         else if(hour >= 12 && hour <19) return 'Good afternoon'
         else if(hour >= 19 && hour <= 5) return 'Good night'
     }
-    console.log('stations:',stations)
     return( <main className="main-home">
         <h1>{getCurrentTime()}</h1>
         {stations && <div className="home-playlists">

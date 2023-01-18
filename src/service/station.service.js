@@ -2,7 +2,7 @@ import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
 
 const STATION_KEY = 'stationDB'
-_createCars()
+_createStations()
 
 export const stationService = {
     query,
@@ -41,7 +41,7 @@ function save(station) {
     }
 }
 
-function _createCars() {
+function _createStations() {
     let stations = utilService.loadFromStorage(STATION_KEY)
     if (!stations || !stations.length) {
         stations = [
