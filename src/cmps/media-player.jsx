@@ -15,7 +15,7 @@ export function MediaPlayer() {
         // console.log(track)
         setIsPlaying(prevIsPlaying => !prevIsPlaying)
     }
-    return <div className="media-player" style={{position:'absolute', right:'0px'}}>
+    return <div className="media-player-btns">
         <p>I'm media player</p>
         {track && <button onClick={togglePlay} >Play</button>}
     </div>

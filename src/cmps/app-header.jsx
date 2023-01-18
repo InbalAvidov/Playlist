@@ -3,7 +3,6 @@ import logo from "../assets/img/logo.png"
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch ,faHome , faLinesLeaning , faPlus , faHeart } from '@fortawesome/free-solid-svg-icons'
-import { NavLink } from "react-router-dom"
 
 export function AppHeader() {
     return (

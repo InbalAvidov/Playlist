@@ -9,8 +9,7 @@ import { Loader } from './cmps/loader'
 import { AppHeader } from './cmps/app-header'
 import { Home } from './pages/home'
 import { Search } from './pages/search-page'
-import { Search } from './cmps/search'
-import { MediaPlayer } from './cmps/media-player'
+import { DemeSearch } from './cmps/deme-search'
 // import { UserMsg } from './cmps/user-msg'
 // import { AppNav } from './cmps/app-nav'
 
@@ -26,7 +25,7 @@ export function App() {
             <Router>
                 <section className="main-layout app">
                     <AppHeader />
-                    <Search searchedTrack={track} />
+                    <DemeSearch searchedTrack={track} />
                     <main className='main-app'>
                         <Routes>
                             <Route element={<Home />} path="/" />
@@ -35,7 +34,6 @@ export function App() {
                         </Routes>
                     </main>
                     {/* <Loader /> */}
-                    <MediaPlayer />
                 </section>
             </Router>
         </Provider>
