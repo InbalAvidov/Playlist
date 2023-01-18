@@ -3,6 +3,8 @@ import { Provider } from 'react-redux'
 
 import { store } from './store/store'
 import { AppHeader } from './cmps/app-header'
+import Player from './cmps/mp3-player'
+import { Example } from './cmps/youtube-react'
 // import { UserMsg } from './cmps/user-msg'
 // import { AppNav } from './cmps/app-nav'
 
@@ -12,6 +14,7 @@ export function App() {
             <Router>
                 <section className="main-layout app">
                     <AppHeader />
+                    <Example forceVideo={true}/>
                     {/* <AppNav /> */}
                     {/* <UserMsg /> */}
                 </section>
