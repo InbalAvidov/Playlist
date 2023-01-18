@@ -32,3 +32,16 @@ h6 {
     color: $white;
     font-family: montserrat-bold;
 }
+
+p{
+    margin: 0;
+}
+
+.back-btn{
+    background-color: $black;
+    border-radius: 50%;
+    padding: 3px 12px;
+    border: none;
+    color: $white;
+    font-size: 20px;
+}
