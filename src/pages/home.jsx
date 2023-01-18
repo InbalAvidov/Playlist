@@ -1,6 +1,8 @@
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
 import { loadStations } from "../store/station.actions"
+import { StationDetails } from "./station-details"
+import { Link } from 'react-router-dom'
 
 export function Home(){
     const stations = useSelector((storeState) => storeState.stationModule.stations)
@@ -28,7 +30,8 @@ export function Home(){
             </div>
                 )}
             {stations.map(station => <div className="playlist-preview">
-                <img src={station.songs[0].imgUrl}/>
+                
+            <Link to={`/station/${station._id}`}><img src={station.songs[0].imgUrl}/></Link>
                 <p>{station.name}</p>
             </div>
                 )}

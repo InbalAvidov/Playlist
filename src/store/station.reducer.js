@@ -1,13 +1,15 @@
-import {stationService} from '../service/station.service'
+import { stationService } from '../service/station.service'
 
 export const SET_STATIONS = 'SET_STATIONS'
 export const REMOVE_STATION = 'REMOVE_STATION'
 export const UNDO_REMOVE_STATION = 'UNDO_REMOVE_STATION'
 export const ADD_STATION = 'ADD_STATION'
 export const UPDATE_STATION = 'UPDATE_STATION'
+export const SET_CURR_STATION = 'SET_CURR_STATION'
 
 const initialState = {
     stations: [],
+    currStation: {}
 }
 
 export function stationReducer(state = initialState, action) {
@@ -30,6 +32,11 @@ export function stationReducer(state = initialState, action) {
         case UPDATE_STATION:
             stations = state.stations.map(station => station._id === action.station._id ? action.station : station)
             return { ...state, stations }
+
+        case SET_CURR_STATION:
+            const currStation = state.stations.find(station => station._id === action.currStation._id)
+            return { ...state, currStation }
+
         default:
             return state
     }
