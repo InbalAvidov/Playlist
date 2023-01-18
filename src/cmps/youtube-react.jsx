@@ -1,8 +1,8 @@
-import React from 'react';
 import YouTube from 'react-youtube';
+import { loadTrack } from '../store/track.action';
 
 
-export function Example() {
+export function SoundTreck({ trackId }) {
   const opts = {
     height: '390',
     width: '640',
@@ -11,10 +11,16 @@ export function Example() {
       autoplay: 0,
     },
   }
-  const _onReady = (event) => {
-    // access to player in all event handlers via event.target
+  function _onReady(event) {
     event.target.pauseVideo();
+    loadTrack(event.target)
   }
-  return <YouTube videoId="2g811Eo7K8U" opts={opts} onReady={_onReady} />;
 
+  return <div>
+    {/* {song && <button onClick={() => song.playVideo()}>PLAY</button>} */}
+    <YouTube videoId={trackId} opts={opts} onReady={_onReady} />;
+    {/* style={{ position:'absolute',top: '-9999px' }} */}
+  </div>
 }
+
+
