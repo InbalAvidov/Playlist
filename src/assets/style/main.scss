@@ -2,18 +2,18 @@
 @import "setup/variables";
 // @import "setup/functions";
 // @import "setup/mixins";
-// @import "setup/typography";
+@import "setup/typography";
 
 // // Basics
-// @import "basics/helpers";
-// @import "basics/layout";
+@import "basics/basic";
+@import "basics/layout";
 // @import "basics/base";
 // @import "basics/links";
 // @import "basics/forms";
 
 
 // Views
-// @import "pages/home-page";
+@import "pages/home-page";
 // @import "pages/search";
 // @import "pages/playlist";
 // @import "pages/my-library";
@@ -21,7 +21,7 @@
 // @import "pages/player-page";
 
 // Components
-// @import "cmps/app-header";
+@import "cmps/app-header";
 // @import "cmps/media-player";
 // @import "cmps/user-msg";
 @import "cmps/loader";
