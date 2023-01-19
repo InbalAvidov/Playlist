@@ -1,11 +1,11 @@
 import YouTube from 'react-youtube';
-import { loadplayer } from '../store/player.action';
+import { loadPlayer } from '../store/player.action';
 
 
 export function Soundplayer({ playerId }) {
   const opts = {
-    height: '0',
-    width: '0',
+    height: '00',
+    width: '00',
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 0,
@@ -13,7 +13,7 @@ export function Soundplayer({ playerId }) {
   }
   function _onReady(event) {
     event.target.pauseVideo()
-    loadplayer(event.target)
+    loadPlayer(event.target)
     // console.log('event.target',event.target)
     // console.log('event.target',event.target.getDuration())    
   }

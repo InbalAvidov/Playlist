@@ -15,15 +15,9 @@ import { CreateStation } from './pages/create-station'
 // import { UserMsg } from './cmps/user-msg'
 // import { AppNav } from './cmps/app-nav'
 
-import cover from './assets/img/see you again.png'
 
 export function App() {
-    const player = {
-        _id: 'RgKAFK5djSk',
-        title: 'See You Again',
-        cover,
-        artist: 'Wiz Khalifa'
-    }
+
     return (
         <Provider store={store}>
             <Router>
@@ -38,7 +32,7 @@ export function App() {
                             {/* <Route element={<Playlist />} path="/playlist/:stationId" /> */}
                         </Routes>
                     </main>
-                    <MediaPlayerBar selctedPlayer={player} />
+                    <MediaPlayerBar />
                     {/* <Loader /> */}
                 </section>
             </Router>

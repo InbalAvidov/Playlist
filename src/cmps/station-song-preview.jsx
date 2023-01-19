@@ -1,9 +1,15 @@
+import { setSongId } from "../store/player.action"
+
 export function SongPreview({ song, idx }) {
+
+    function onSetSong(songId){
+        setSongId(songId)
+    }
     return (
         <div key={idx} className="song-preview">
             <p className="song-number">{idx + 1}</p>
             <div className="song-img-title">
-            <div className="song-img" style={{
+            <div onClick={()=>onSetSong(song.id)} className="song-img" style={{
                 backgroundImage: `url("${song.imgUrl}")`,
                 backgroundRepeat: "no-repeat",
                 backgroundPosition: "center",
