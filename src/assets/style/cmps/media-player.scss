@@ -2,10 +2,10 @@
     display: grid;
     grid-template-columns: 15px 2fr 1fr 4fr 1fr 2fr 15px;
     background-color: $mpclr;
-    position: absolute;
+    position: sticky;
     right: 0px;
     bottom: 0px;
-    width: 100vw;
+    width: 98vw;
     height: 92px;
     border-top: solid 1px hsla(0, 0%, 50%, 0.169);
     align-items: center;
