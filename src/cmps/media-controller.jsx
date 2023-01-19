@@ -9,9 +9,9 @@ export function MediaConroller() {
     const player = useSelector(storeState => storeState.playerModule.player)
     const [isPlaying, setIsPlaying] = useState(false)
     const [currentTime, setCurrentTime] = useState('0:00')
-    const timerID = setInterval(() => {
-        setCurrentTime(utilService.secondsMinutesAndSeconds(player.getCurrentTime()))
-    }, 1000);
+    // const timerID = setInterval(() => {
+    //     setCurrentTime(utilService.secondsMinutesAndSeconds(player.getCurrentTime()))
+    // }, 1000);
     function togglePlay({ target }) {
         if (isPlaying) {
             player.pauseVideo()
@@ -23,6 +23,7 @@ export function MediaConroller() {
         // console.log(player)
         setIsPlaying(prevIsPlaying => !prevIsPlaying)
     }
+    console.log('player',player);
     return <div className="controller">
         <div className="conrtoller-btns">
             {!isPlaying && <FontAwesomeIcon icon={faPlayCircle} onClick={togglePlay} />}
