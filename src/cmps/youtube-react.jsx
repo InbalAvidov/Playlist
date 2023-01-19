@@ -1,11 +1,11 @@
 import YouTube from 'react-youtube';
-import { loadTrack } from '../store/track.action';
+import { loadplayer } from '../store/player.action';
 
 
-export function SoundTreck({ trackId }) {
+export function Soundplayer({ playerId }) {
   const opts = {
-    height: '390',
-    width: '640',
+    height: '0',
+    width: '0',
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 0,
@@ -13,12 +13,13 @@ export function SoundTreck({ trackId }) {
   }
   function _onReady(event) {
     event.target.pauseVideo()
-    loadTrack(event.target)
+    loadplayer(event.target)
+    // console.log('event.target',event.target)
+    // console.log('event.target',event.target.getDuration())    
   }
 
   return <div>
-    {/* {song && <button onClick={() => song.playVideo()}>PLAY</button>} */}
-    <YouTube videoId={trackId} opts={opts} onReady={_onReady} style={{ position: 'absolute', top: '-9999px' }} />
+    <YouTube videoId={playerId} opts={opts} onReady={_onReady} />
 
   </div>
 }

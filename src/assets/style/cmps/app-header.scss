@@ -1,5 +1,5 @@
 .main-header {
-    background-color: $black;
+    background-color: $clr1;
     height: 100vh;
     position: sticky;
 
@@ -42,11 +42,11 @@
             }
 
             :hover {
-                color: $white
+                color: $clr2
             }
 
             &.active {
-                color: $white;
+                color: $clr2;
             }
         }
     }

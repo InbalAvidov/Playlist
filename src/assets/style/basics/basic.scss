@@ -4,7 +4,7 @@
 
 html {
     font-family: montserrat;
-    color: $white;
+    color: $clr2;
     line-height: 1.8;
     
     @media (max-width: 1300px) {
@@ -29,7 +29,7 @@ h6 {
     font-weight: 500;
     margin: 0;
     line-height: lh(40px, 29px);
-    color: $white;
+    color: $clr2;
     font-family: montserrat-bold;
 }
 
@@ -38,10 +38,10 @@ p{
 }
 
 .back-btn{
-    background-color: $black;
+    background-color: $clr1;
     border-radius: 50%;
     padding: 3px 12px;
     border: none;
-    color: $white;
+    color: $clr2;
     font-size: 20px;
 }

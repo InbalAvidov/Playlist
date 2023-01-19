@@ -10,23 +10,24 @@ import { AppHeader } from './cmps/app-header'
 import { Home } from './pages/home'
 import { StationDetails } from './pages/station-details.jsx'
 import { Search } from './pages/search-page'
-import { DemeSearch } from './cmps/deme-search'
+import { MediaPlayerBar } from './cmps/media-player-bar'
 // import { UserMsg } from './cmps/user-msg'
 // import { AppNav } from './cmps/app-nav'
 
-
+import cover from './assets/img/see you again.png'
 
 export function App() {
-    const track = {
+    const player = {
         _id: 'RgKAFK5djSk',
-        title: 'See You Again'
+        title: 'See You Again',
+        cover,
+        artist: 'Wiz Khalifa'
     }
     return (
         <Provider store={store}>
             <Router>
                 <section className="main-layout app">
                     <AppHeader />
-                    <DemeSearch searchedTrack={track} />
                     <main className='main-app'>
                         <Routes>
                             <Route element={<Home />} path="/" />
@@ -35,6 +36,7 @@ export function App() {
                             {/* <Route element={<Playlist />} path="/playlist/:stationId" /> */}
                         </Routes>
                     </main>
+                    <MediaPlayerBar selctedPlayer={player} />
                     {/* <Loader /> */}
                 </section>
             </Router>
