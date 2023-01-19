@@ -58,7 +58,9 @@ function randomPastTime() {
     const WEEK = 1000 * 60 * 60 * 24 * 7
 
     const pastTime = getRandomIntInclusive(HOUR, WEEK)
-    return Date.now() - pastTime
+    const randomDate = new Date(Date.now() - pastTime)
+    const formatedDate = randomDate.getDate()+'/'+((randomDate.getMonth())+1)+'/'+randomDate.getFullYear()
+    return formatedDate
 }
 
 function saveToStorage(key, value) {
