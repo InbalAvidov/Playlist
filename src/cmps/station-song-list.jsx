@@ -1,9 +1,17 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 
+import { removeSong } from "../store/station.actions"
 import { SongPreview } from "./station-song-preview";
 
-export function PlaylistSongList({ songs }) {
+export function PlaylistSongList({station}) {
+
+    function deleteSong(songId) {
+        if (station.songs.length > 1) {
+            removeSong(station._id, songId)
+        }
+    }
+
     return (
         <section className="songs-list">
             <div className="song-preview songs-list-header">
@@ -12,8 +20,8 @@ export function PlaylistSongList({ songs }) {
                 <p className="song-date">Date Added</p>
                 <p className="song-duration"><FontAwesomeIcon icon={faClock}></FontAwesomeIcon></p>
             </div>
-            {songs.map((song, idx) =>
-                <SongPreview song={song} idx={idx} />)}
+            {station.songs.map((song, idx) =>
+                <SongPreview key={idx} song={song} idx={idx} onDeleteSong={deleteSong}/>)}
         </section>
     )
 }

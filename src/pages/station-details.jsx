@@ -17,11 +17,12 @@ export function StationDetails() {
   }, [])
 
   if (Object.keys(station).length === 0) return <Loader />
+
   return (
     <main className="station-details">
       <button className="back-btn" onClick={() => navigate(-1)}>❮</button>
       < StationHeader station={station} />
-      <PlaylistSongList songs={station.songs} />
+      <PlaylistSongList station={station} />
     </main>
   )
 

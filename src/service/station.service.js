@@ -6,7 +6,7 @@ const stationJson = [
   {
     "_id": "5cksxjas89xjsa8xjsa8jxs09",
     "name": "Funky",
-    "imgUrl" :"http://res.cloudinary.com/damrhms1q/image/upload/v1674073376/beach_pgibpw.jpg",
+    "imgUrl": "http://res.cloudinary.com/damrhms1q/image/upload/v1674073376/beach_pgibpw.jpg",
     "tags": [
       "Funk",
       "Happy"
@@ -64,7 +64,7 @@ const stationJson = [
     ]
   },
   {
-    "_id": "5cksxjas89xjsa8xjsa8jxs09",
+    "_id": "5cksxjas89xjsa8xjsa8jxs08",
     "name": "Funky",
     "tags": [
       "Funk",
@@ -150,7 +150,7 @@ const stationJson = [
     "msgs": []
   },
   {
-    "_id": "Quel9sFIyZJSlVNGI9UQoYTnj",
+    "_id": "Quel9sFIyZJSlVNGI9UQoYTnk",
     "name": "<3",
     "tags": [],
     "createdBy": {
@@ -243,7 +243,7 @@ const stationJson = [
     "msgs": []
   },
   {
-    "_id": "Xbsr5hs2XgMfxp4NBR7VEd6k1",
+    "_id": "Xbsr5hs2XgMfxp4NBR7VEd6k2",
     "name": "עומר אדם",
     "tags": [],
     "createdBy": {
@@ -375,7 +375,7 @@ const stationJson = [
     "msgs": []
   },
   {
-    "_id": "yCA7I2QWvuCIVAoQy4lSdXrFH",
+    "_id": "yCA7I2QWvuCIVAoQy4lSdXrFI",
     "name": "שישי",
     "tags": [],
     "createdBy": {
@@ -576,64 +576,71 @@ const stationJson = [
 _createStations()
 
 export const stationService = {
-    query,
-    get,
-    remove,
-    save,
-    getEmptyStation
+  query,
+  get,
+  remove,
+  save,
+  removeSong,
+  getEmptyStation
 }
 
 function query() {
-    return storageService.query(STATION_KEY)
-    // .then(stations => {
-    //     if (filterBy.txt) {
-    //         const regex = new RegExp(filterBy.txt, 'i')
-    //         stations = stations.filter(station => regex.test(station.vendor))
-    //     }
-    //     if (filterBy.minSpeed) {
-    //         stations = stations.filter(station => station.maxSpeed >= filterBy.minSpeed)
-    //     }
-    // return stations
+  return storageService.query(STATION_KEY)
+  // .then(stations => {
+  //     if (filterBy.txt) {
+  //         const regex = new RegExp(filterBy.txt, 'i')
+  //         stations = stations.filter(station => regex.test(station.vendor))
+  //     }
+  //     if (filterBy.minSpeed) {
+  //         stations = stations.filter(station => station.maxSpeed >= filterBy.minSpeed)
+  //     }
+  // return stations
 }
 
 function get(stationId) {
-    return storageService.get(STATION_KEY, stationId)
+  return storageService.get(STATION_KEY, stationId)
 
 }
 
 function remove(stationId) {
-    return storageService.remove(STATION_KEY, stationId)
+  return storageService.remove(STATION_KEY, stationId)
 }
 
 function save(station) {
-    if (station._id) {
-        return storageService.put(STATION_KEY, station)
-    } else {
-        return storageService.post(STATION_KEY, station)
-    }
+  if (station._id) {
+    return storageService.put(STATION_KEY, station)
+  } else {
+    return storageService.post(STATION_KEY, station)
+  }
 }
 
-function getEmptyStation(){
-    return  {
-        "_id": "",
-        "name": "",
-        "tags": [],
-        "createdBy": { //loggedinUser
-            "_id": "u101",
-            "fullname": "Puki Ben David",
-            "imgUrl": "https://robohash.org/set=set3"
-        },
-        "likedByUsers": [],
-        "songs": [],
-        "msgs": []
-    }
+function removeSong(stationId, songId) {
+  return get(stationId)
+    .then(station => (station.songs.filter(song => song._id === songId)))
+    .then(station => (save(station)))
+}
+
+function getEmptyStation() {
+  return {
+    "_id": "",
+    "name": "",
+    "tags": [],
+    "createdBy": { //loggedinUser
+      "_id": "u101",
+      "fullname": "Puki Ben David",
+      "imgUrl": "https://robohash.org/set=set3"
+    },
+    "likedByUsers": [],
+    "songs": [],
+    "msgs": []
+  }
 }
 
 function _createStations() {
-    let stations = utilService.loadFromStorage(STATION_KEY)
-    if (!stations || !stations.length) {
-        stations = stationJson
-        utilService.saveToStorage(STATION_KEY, stations)
-    }
+  let stations = utilService.loadFromStorage(STATION_KEY)
+  if (!stations || !stations.length) {
+    stations = stationJson
+    utilService.saveToStorage(STATION_KEY, stations)
+  }
 }
 
