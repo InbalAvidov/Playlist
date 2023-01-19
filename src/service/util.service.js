@@ -8,6 +8,16 @@ export const utilService = {
     loadFromStorage
 }
 
+
+function debounce(func, timeout = 700) {
+    let timer;
+    return (...args) => {
+        clearTimeout(timer);
+        timer = setTimeout(() => { func.apply(this, args); }, timeout);
+    }
+}
+
+
 function makeId(length = 6) {
     var txt = ''
     var possible = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789'
@@ -43,14 +53,6 @@ function randomPastTime() {
 
     const pastTime = getRandomIntInclusive(HOUR, WEEK)
     return Date.now() - pastTime
-}
-
-function debounce(func, timeout = 300){
-    let timer
-    return (...args) => {
-      clearTimeout(timer)
-      timer = setTimeout(() => { func.apply(this, args) }, timeout)
-    }
 }
 
 function saveToStorage(key, value) {

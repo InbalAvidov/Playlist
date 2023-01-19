@@ -1,7 +1,8 @@
 .main-header {
     background-color: $black;
     height: 100vh;
-    position: sticky;
+    position:sticky;
+    top: 0;
 
     .logo {
         display: flex;
@@ -30,10 +31,10 @@
             text-decoration: none;
             color: $fill;
             margin-left: 25px;
-            padding: 5px 0;
+            padding: 3px 0;
 
             &.library-nav {
-                margin-bottom: 25px;
+                margin-bottom: 20px;
             }
 
             span {
