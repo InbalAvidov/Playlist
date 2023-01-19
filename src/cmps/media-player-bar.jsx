@@ -2,6 +2,8 @@ import { MediaConroller } from "./media-controller"
 import { Soundplayer } from "./youtube-react"
 
 export function MediaPlayerBar({ selctedPlayer }) {
+    const player = useSelector(storeState => storeState.playerModule.player)
+
     return (<div className="media-player" >
         <Soundplayer playerId={selctedPlayer._id} />
         <div className="information">

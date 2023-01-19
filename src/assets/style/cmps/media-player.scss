@@ -37,6 +37,7 @@
         grid-column: 4;
         display: flex;
         flex-direction: column;
+        align-items: center;
     }
 
     .conrtoller-btns {
@@ -51,17 +52,18 @@
 
     .player-progress-container {
         display: grid;
-        grid-template-columns: 1rem 3fr 1rem;
+        grid-template-columns: 15px 5fr 15px;
+        justify-items: center;
         align-items: center;
         font-size: 0.8275em;
         margin-top: 8px;
-        width: 96%;
+        width: 92%;
         color: $bar-fill;
-        padding-left: 20px;
 
-        P{
+        P {
             text-align: center;
             justify-content: center;
+            width: 20px;
         }
     }
 
@@ -70,7 +72,8 @@
         margin-left: 15px;
         margin-right: 15px;
         text-align: center;
-        justify-content: center;
+        justify-self: center;
+        width: 94%;
         -webkit-appearance: none;
         background-color: $bar-fill;
         height: 3.5px;
