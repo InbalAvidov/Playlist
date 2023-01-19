@@ -1,0 +1,30 @@
+.liked-songs {
+  display: grid;
+  color: yellow;
+  
+  grid-template-columns: 1fr;
+  grid-template-rows:  1fr 3fr auto;
+  grid-row-gap: 20px;
+  grid-template-areas: 
+    "login"
+    "header"
+    "main";
+
+  .login-signout {
+    grid-area: login;
+  }
+  
+  .liked-header {
+    grid-area: header;
+
+    img{
+      
+    }
+  }
+  
+  .main-liked-songs {
+    grid-area: main;
+
+  }
+
+}

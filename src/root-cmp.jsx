@@ -8,6 +8,7 @@ import { store } from './store/store'
 import { Loader } from './cmps/loader'
 import { AppHeader } from './cmps/app-header'
 import { Home } from './pages/home'
+import { LikedSongs } from './pages/liked-songs'
 import { StationDetails } from './pages/station-details.jsx'
 import { SearchSongs } from './pages/search-page'
 import { MediaPlayerBar } from './cmps/media-player-bar'
@@ -35,6 +36,7 @@ export function App() {
                             <Route element={<StationDetails />} path="/station/:stationId" />
                             <Route element={<SearchSongs />} path="/search" />
                             <Route element={<CreateStation />} path="/create" />
+                            <Route element={<LikedSongs />} path="/liked" />
                             {/* <Route element={<Playlist />} path="/playlist/:stationId" /> */}
                         </Routes>
                     </main>
