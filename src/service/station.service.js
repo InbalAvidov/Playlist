@@ -28,7 +28,7 @@ const stationJson = [
     ],
     "songs": [
       {
-        "id": "s1001",
+        "id": "mUkfiLjooxs",
         "title": "Talk is cheap",
         "url": "https://www.youtube.com/embed?v=aQZDyyIyQMA&list=RDaQZDyyIyQMA&start_radio=1",
         "imgUrl": "https://i.ytimg.com/vi/4_iC0MyIykM/mqdefault.jpg",
@@ -87,7 +87,7 @@ const stationJson = [
     ],
     "songs": [
       {
-        "id": "s1001",
+        "id": "mUkfiLjooxs",
         "title": "Talk is cheap",
         "url": "https://www.youtube.com/embed?v=aQZDyyIyQMA&list=RDaQZDyyIyQMA&start_radio=1",
         "imgUrl": "https://i.ytimg.com/vi/4_iC0MyIykM/mqdefault.jpg",

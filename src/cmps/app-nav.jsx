@@ -1,12 +1,12 @@
-import { NavLink } from "react-router-dom"
+import { NavLink} from "react-router-dom"
 import logo from "../assets/img/logo.png"
 import React from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faSearch ,faHome , faLinesLeaning , faPlus , faHeart } from '@fortawesome/free-solid-svg-icons'
+import { faSearch, faHome, faLinesLeaning, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons'
 
-export function AppHeader() {
+export function AppNav() {
     return (
-        <main className="main-header">
+        <main className="app-nav">
             <div className="logo">
                 <img className="logo-img" src={logo} />
                 <h1>Playlist</h1>
