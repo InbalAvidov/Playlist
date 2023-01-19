@@ -1,6 +1,6 @@
 .songs-list {    
     .song-preview {
-        grid-template-columns: 40px 2fr 1fr 30px;
+        grid-template-columns: 40px 2fr 1fr 100px;
         width: 100%;
         display: grid;
         height: 60px;
@@ -10,6 +10,11 @@
             font-weight: 700;
             color: $fill;
             border-bottom: .5px solid rgb(44, 44, 44);
+            text-transform: uppercase;
+
+            >:last-child{
+                justify-self: center;
+            }
         }
 
         >*{
@@ -36,7 +41,8 @@
         }
         
         .song-duration {
-            justify-self:center;
+            display: flex;
+            justify-content: space-between;
             grid-column: 4;
         }
     }

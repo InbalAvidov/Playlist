@@ -4,9 +4,7 @@ import cover from '../assets/img/see you again.png'
 import { useSelector } from "react-redux"
 
 export function MediaPlayerBar() {
-    const songId = useSelector(storeState => storeState.playerModule.songId)
-    // const player = useSelector(storeState => storeState.playerModule.player)
-    console.log(songId);
+    // const songId = useSelector(storeState => storeState.playerModule.songId)
     const player = {
         _id: 'RgKAFK5djSk',
         title: 'See You Again',
@@ -19,8 +17,8 @@ export function MediaPlayerBar() {
         {player && <div className="information">
             <img src={player.cover} alt="no image" />
             <div className="details">
-                <h4>title</h4>
-                <h5>artist</h5>
+                <h4>{player.title}</h4>
+                <h5>{player.artist}</h5>
             </div>
         </div>}
         <MediaConroller />

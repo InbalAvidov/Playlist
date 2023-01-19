@@ -6,12 +6,12 @@ export function StationHeader({ station }) {
                     backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs[0].imgUrl}")`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
-                    backgroundSize: "auto",
+                    backgroundSize: "cover",
                     width: '200px', height: '200px'
                 }}>
             </div>
             <div className="info-container">
-            <p>playlist</p>
+            <p className="playlist">playlist</p>
             <h1>{station.name}</h1>
             <p>{station.createdBy.fullname}</p>
             </div>
