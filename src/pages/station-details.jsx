@@ -1,28 +1,28 @@
 import { useEffect } from "react"
 import { useSelector } from "react-redux"
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
+import { Loader } from "../cmps/loader"
+import { PlaylistSongList } from "../cmps/station-song-list"
+import { StationHeader } from "../cmps/station-header"
 
-import { loadStations, loadStationById } from "../store/station.actions"
+import { loadStationById } from "../store/station.actions"
 
-export function StationDetails(){
+export function StationDetails() {
+  const station = useSelector((storeState) => storeState.stationModule.currStation)
+  const { stationId } = useParams()
+  const navigate = useNavigate()
 
-  const currStations = useSelector((storeState) => storeState.stationModule.currStation)
-  console.log('currStations',currStations)
-  const params = useParams()
-  console.log(params.id)
+  useEffect(() => {
+    loadStationById(stationId)
+  }, [])
 
-  useEffect(()=>{
-    loadStationById(params.id)
-  },[])
-
+  if (Object.keys(station).length === 0) return <Loader />
   return (
-    <section className="station-details grid">
-
-      <div className="details-header flex">
-          <img src={currStations.songs[0].imgUrl}></img>
-          
-      </div>
-    </section>
+    <main className="station-details">
+      <button className="back-btn" onClick={() => navigate(-1)}>❮</button>
+      < StationHeader station={station} />
+      <PlaylistSongList songs={station.songs} />
+    </main>
   )
 
 }

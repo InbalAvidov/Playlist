@@ -1,0 +1,9 @@
+.songs-list {
+    display: grid;
+    grid-template-columns: 20px 1fr 1fr 30px;
+    grid-template-rows: repeat(3, 80px);
+
+    >* {
+        grid-row: span 1;
+    }
+}

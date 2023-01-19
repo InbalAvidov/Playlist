@@ -15,7 +15,7 @@
 // Views
 @import "pages/home-page";
 @import "pages/search";
-// @import "pages/playlist";
+@import "pages/station-details";
 // @import "pages/my-library";
 // @import "pages/like-songs";
 // @import "pages/player-page";
@@ -23,6 +23,9 @@
 // Components
 @import "cmps/app-header";
 @import "cmps/media-player";
+@import "cmps/station-header";
+@import "cmps/station-songs-list";
+@import "cmps/station-songs-preview";
 // @import "cmps/user-msg";
 @import "cmps/loader";
 
