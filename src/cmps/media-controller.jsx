@@ -20,14 +20,14 @@ export function MediaConroller() {
     function togglePlay({ target }) {
         if (isPlaying) {
             player.pauseVideo()
-            clearInterval(timerId)
         } else {
             player.playVideo()
+            clearInterval(timerId)
         }
         // console.log(player)
         setIsPlaying(prevIsPlaying => !prevIsPlaying)
     }
-    console.log('player', player);
+
     return <div className="controller">
         <div className="conrtoller-btns">
             {!isPlaying && <FontAwesomeIcon icon={faPlayCircle} onClick={togglePlay} />}
