@@ -1,0 +1,16 @@
+.station-header {
+    display: flex;
+    margin-left: $main-app-padding;
+    margin-top: 80px;
+
+    .info-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        margin-left: 15px;
+
+        h1{
+            font-size: 40px;
+        }
+    }
+}

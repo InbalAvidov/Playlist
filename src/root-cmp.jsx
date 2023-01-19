@@ -31,7 +31,7 @@ export function App() {
                     <main className='main-app'>
                         <Routes>
                             <Route element={<Home />} path="/" />
-                            <Route element={<StationDetails />} path="/station/:id" />
+                            <Route element={<StationDetails />} path="/station/:stationId" />
                             <Route element={<SearchSongs />} path="/search" />
                             <Route element={<CreateStation />} path="/create" />
                             {/* <Route element={<Playlist />} path="/playlist/:stationId" /> */}

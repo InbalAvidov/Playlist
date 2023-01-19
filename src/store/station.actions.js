@@ -16,6 +16,7 @@ export async function loadStations(filterBy) {
 export async function loadStationById(stationId) {
     try {
         const currStation = await stationService.get(stationId)
+        console.log('currStation:',currStation)
         store.dispatch({ type: SET_CURR_STATION, currStation })
     } catch (err) {
         console.log('Had issues to get cuurent station', err)

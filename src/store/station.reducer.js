@@ -34,8 +34,7 @@ export function stationReducer(state = initialState, action) {
             return { ...state, stations }
 
         case SET_CURR_STATION:
-            const currStation = state.stations.find(station => station._id === action.currStation._id)
-            return { ...state, currStation }
+            return { ...state, currStation: action.currStation }
 
         default:
             return state
