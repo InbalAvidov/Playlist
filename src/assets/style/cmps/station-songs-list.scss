@@ -1,11 +1,14 @@
 .songs-list {    
     .song-preview {
-        grid-template-columns: 80px 2fr 1fr 30px;
+        grid-template-columns: 40px 2fr 1fr 30px;
         width: 100%;
         display: grid;
         height: 60px;
 
         &.songs-list-header{
+            font-size: 14px;
+            font-weight: 700;
+            color: $fill;
             border-bottom: .5px solid rgb(44, 44, 44);
         }
 
@@ -28,10 +31,12 @@
         }
 
         .song-date {
-            grid-column: 3;
+           justify-self:center;
+           grid-column: 3;
         }
-
+        
         .song-duration {
+            justify-self:center;
             grid-column: 4;
         }
     }

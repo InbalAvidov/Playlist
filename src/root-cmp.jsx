@@ -6,14 +6,13 @@ import { store } from './store/store'
 // import { UserMsg } from './cmps/user-msg'
 // import { AppNav } from './cmps/app-nav'
 import { Loader } from './cmps/loader'
-import { AppHeader } from './cmps/app-header'
+import { AppNav } from './cmps/app-nav'
 import { Home } from './pages/home'
 import { StationDetails } from './pages/station-details.jsx'
 import { SearchSongs } from './pages/search-page'
 import { MediaPlayerBar } from './cmps/media-player-bar'
 import { CreateStation } from './pages/create-station'
 // import { UserMsg } from './cmps/user-msg'
-// import { AppNav } from './cmps/app-nav'
 
 
 export function App() {
@@ -22,7 +21,7 @@ export function App() {
         <Provider store={store}>
             <Router>
                 <section className="main-layout app">
-                    <AppHeader />
+                    <AppNav />
                     <main className='main-app'>
                         <Routes>
                             <Route element={<Home />} path="/" />
