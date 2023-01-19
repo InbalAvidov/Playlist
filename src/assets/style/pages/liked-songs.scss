@@ -1,9 +1,9 @@
 .liked-songs {
   display: grid;
-  color: yellow;
+  
   
   grid-template-columns: 1fr;
-  grid-template-rows:  1fr 3fr auto;
+  grid-template-rows:  6rem 12rem 24rem;
   grid-row-gap: 20px;
   grid-template-areas: 
     "login"
@@ -16,9 +16,12 @@
   
   .liked-header {
     grid-area: header;
+    padding: 1rem;
 
-    img{
-      
+    .img-wrapper{
+
+      width:200px;
+      border: 1px solid;
     }
   }
   

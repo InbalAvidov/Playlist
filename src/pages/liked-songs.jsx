@@ -1,4 +1,8 @@
 import { LoginSignup } from "../cmps/login-signup"
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faHeart } from '@fortawesome/free-solid-svg-icons'
+
+
 
 
 export function LikedSongs(){
@@ -6,13 +10,23 @@ export function LikedSongs(){
 
   return (
     <>
-    <section className="liked-song grid">
+    <section className="liked-songs">
         <section className="login-signup">
           <LoginSignup/>
         </section>
 
         <section className="liked-header">
-          <h2>Liked songs header</h2>
+          <div className="liked-header-details">
+            <p>PLAYLIST</p>
+            <h2>Liked Songs</h2>
+            <div className="loged-user-liked-songs">
+              <p>{}</p>
+            </div>
+
+          </div>
+          <div className="img-wrapper">
+            <FontAwesomeIcon icon={faHeart}></FontAwesomeIcon>
+          </div>
         </section>
 
         <section className="main-liked-songs">
