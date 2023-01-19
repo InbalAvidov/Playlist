@@ -15,7 +15,7 @@ export function SongPreview({ song, idx }) {
                 {song.channelTitle && <p>{song.channelTitle}</p>}
             </div>
             </div>
-            <div className="song-date-added">
+            <div className="song-date">
             <p>Date</p>
             </div>
             <p className="song-duration">03:00</p>

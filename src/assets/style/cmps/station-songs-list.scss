@@ -1,9 +1,38 @@
-.songs-list {
-    display: grid;
-    grid-template-columns: 20px 1fr 1fr 30px;
-    grid-template-rows: repeat(3, 80px);
+.songs-list {    
+    .song-preview {
+        grid-template-columns: 80px 2fr 1fr 30px;
+        width: 100%;
+        display: grid;
+        height: 60px;
 
-    >* {
-        grid-row: span 1;
+        &.songs-list-header{
+            border-bottom: .5px solid rgb(44, 44, 44);
+        }
+
+        >*{
+            align-self: center;
+            padding: 5px 0;
+        }
+
+        .song-number {
+            grid-column: 1;
+        }
+
+        .song-img-title {
+            display: flex;
+            grid-column: 2;
+
+            .song-title{
+                margin-left: 10px;
+            }
+        }
+
+        .song-date {
+            grid-column: 3;
+        }
+
+        .song-duration {
+            grid-column: 4;
+        }
     }
 }

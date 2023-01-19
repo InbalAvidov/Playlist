@@ -6,11 +6,11 @@ import { SongPreview } from "./station-song-preview";
 export function PlaylistSongList({ songs }) {
     return (
         <section className="songs-list">
-            <div className="song-preview">
-                <p className="song-number-header">#</p>
-                <p className="song-title-header">Title</p>
-                <p className="song-title-header">Date Added</p>
-                <p className="song-duration-header"><FontAwesomeIcon icon={faClock}></FontAwesomeIcon></p>
+            <div className="song-preview songs-list-header">
+                <p className="song-number">#</p>
+                <p className="song-img-title">Title</p>
+                <p className="song-date">Date Added</p>
+                <p className="song-duration"><FontAwesomeIcon icon={faClock}></FontAwesomeIcon></p>
             </div>
             {songs.map((song, idx) =>
                 <SongPreview song={song} idx={idx} />)}
