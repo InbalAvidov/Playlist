@@ -1,13 +1,13 @@
 import { combineReducers, legacy_createStore as createStore } from 'redux'
 import { userReducer } from './user.reducer'
 import { stationReducer } from './station.reducer'
-import { trackReducer } from './track.reducer'
+import { playerReducer } from './player.reducer'
 
 
 const rootReducer = combineReducers({
     userModule: userReducer,
     stationModule: stationReducer,
-    trackModule: trackReducer
+    playerModule: playerReducer
 })
 
 const middleware = (window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__) ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__() : undefined
