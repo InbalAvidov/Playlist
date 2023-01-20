@@ -1,5 +1,7 @@
 import { useSelector } from 'react-redux'
 import { NavLink, useNavigate } from 'react-router-dom'
+import { useSelector } from 'react-redux'
+import { NavLink, useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser, faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
@@ -7,9 +9,9 @@ import { logout } from '../store/user.action.js'
 import { useState } from 'react'
 
 export function AppHeader() {
+  const navigate = useNavigate()
   const user = useSelector((storeState => storeState.userModule.user))
   const [isMenuOpen, setIsMenuOpen] = useState(false)
-  const navigate = useNavigate()
 
   function onLogout() {
     navigate('/')

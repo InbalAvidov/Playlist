@@ -21,6 +21,12 @@ export function LoginSignup() {
         dispatch({ type: SET_USER, user })
     }
 
+<<<<<<< HEAD
+    const [credentials, setCredentials] = useState(userService.getEmptyCredentials())
+    // console.log(credentials)
+    const [isSignupState, setIsSignupState] = useState(false)
+=======
+>>>>>>> origin/main
 
     function handleCredentialsChange(ev) {
         const field = ev.target.name

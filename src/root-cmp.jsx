@@ -7,7 +7,7 @@ import { Home } from './pages/home'
 import { LikedSongs } from './pages/liked-songs'
 import { Station } from './pages/station.jsx'
 import { SearchSongs } from './pages/search-page'
-import { MediaPlayerBar } from './cmps/media-player-bar'
+import { PlayerBar } from './cmps/media-player-bar'
 import { CreateStation } from './pages/create-station'
 import { AppHeader } from './cmps/app-header'
 // import { CreateStation } from './pages/create-station'
@@ -34,7 +34,7 @@ export function App() {
                             {/* <Route element={<Playlist />} path="/playlist/:stationId" /> */}
                         </Routes>
                     </main>
-                    <MediaPlayerBar />
+                    <PlayerBar />
                     {/* <Loader /> */}
                 </section>
             </Router>
