@@ -23,16 +23,7 @@ export async function loadStationById(stationId) {
         throw err
     }
 }
-export async function removeSong(stationId, songId) {
-    try {
-        const station = await stationService.removeSong(stationId, songId)
-        store.dispatch({ type: REMOVE_SONG, songId })
-        return station
-    } catch (err) {
-        console.log('Had issues removing song', err)
-        throw err
-    }
-}
+
 
 // export async function saveToy(toy) {
 //     const type = (toy._id) ? UPDATE_TOY : ADD_TOY

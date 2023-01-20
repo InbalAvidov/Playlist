@@ -5,7 +5,6 @@ import { useState } from "react"
 import { Loader } from "../cmps/loader"
 import { SongList } from "../cmps/station-song-list"
 import { StationHeader } from "../cmps/station-header"
-import { removeSong } from "../store/station.actions"
 import { stationService } from "../service/station.service"
 import { uploadService } from "../service/upload.service"
 
@@ -40,7 +39,7 @@ export function Station({ saveStation }) {
 
   async function onDeleteSong(songId) {
     if (station.songs.length > 1) {
-      const updatedStation = await removeSong(station._id, songId)
+      const updatedStation = await stationService.removeSong(station._id, songId)
       setStation(updatedStation)
     }
   }
