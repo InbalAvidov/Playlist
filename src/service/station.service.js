@@ -623,12 +623,6 @@ function save(station) {
   }
 }
 
-<<<<<<< HEAD
-function removeSong(stationId, songId) {
-  return get(stationId)
-    .then(station => (station.songs.filter(song => song.id !== songId)))
-    .then(station => (save(station)))
-=======
 async function removeSong(stationId, songId) {
   try {
     const station = await get(stationId)
@@ -639,7 +633,6 @@ async function removeSong(stationId, songId) {
   } catch (err) {
     return err
   }
->>>>>>> origin/main
 }
 
 function getEmptyStation() {
