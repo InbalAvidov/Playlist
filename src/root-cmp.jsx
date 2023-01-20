@@ -11,6 +11,7 @@ import { MediaPlayerBar } from './cmps/media-player-bar'
 import { CreateStation } from './pages/create-station'
 import { AppHeader } from './cmps/app-header'
 // import { CreateStation } from './pages/create-station'
+import { LoginSignup } from './pages/login-signup';
 // import { UserMsg } from './cmps/user-msg'
 
 
@@ -18,7 +19,7 @@ export function App() {
 
     return (
         <Provider store={store}>
-            <Router>
+            <Router basename="/">
                 <section className="main-layout app">
                     <AppNav />
                     <AppHeader />
@@ -29,12 +30,15 @@ export function App() {
                             <Route element={<SearchSongs />} path="/search" />
                             <Route element={<CreateStation />} path="/createStation" />
                             <Route element={<LikedSongs />} path="/liked" />
+                            <Route element={<LoginSignup/>} path="/login-signup"/>
+                            {/* <Route element={<Playlist />} path="/playlist/:stationId" /> */}
                         </Routes>
                     </main>
                     <MediaPlayerBar />
                     {/* <Loader /> */}
                 </section>
             </Router>
+
         </Provider>
     )
 }

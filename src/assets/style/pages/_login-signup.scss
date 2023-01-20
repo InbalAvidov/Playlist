@@ -1,0 +1,71 @@
+.login-page{
+  flex-direction: column;
+  background-color: $clr2;
+
+  .logo{
+    align-items: center;
+    justify-content: center;
+    padding-top: 20px;
+    h1{
+      color: $clr1;
+      font-size:20px ;
+    }
+
+    .logo-img {
+      width: 55px;
+  }
+  }
+}
+
+// Define grid container
+.login-form{
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  height: 100vh;
+  align-items: center;
+  justify-items: center;
+  grid-row: 2 / 3;
+  margin-top: 50px;
+  // Center form within grid
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    
+  }
+
+  button {
+    width: 150px;
+    padding: 14px 20px;
+    background-color: $brand-color;
+    color: $clr2;
+    border: none;
+    cursor: pointer;
+    // font-family: "architects-daughter-regular";
+    border-radius: 1.2rem;
+  }
+
+  .custom-placeholder {
+    // font-family: "architects-daughter-regular";
+    // color:$clr-1;
+  }
+
+    a{
+      // color:$clr-1;
+      // color: darken($clr13,5%);
+    }
+
+}
+
+
+
+
+
+
+

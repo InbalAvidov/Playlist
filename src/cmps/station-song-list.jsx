@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 
+import { removeSong } from "../store/station.actions"
 import { SongPreview } from "./station-song-preview";
 import { SearchSongs } from '../pages/search-page';
 import { useState } from 'react';
@@ -11,6 +12,14 @@ export function SongList({ station, isCreateStation, handleChange }) {
     function onAddSong(song) {
         setStationSongs(prevSongs => [...prevSongs, song])
         handleChange('songs', [...stationSongs, song])
+    }
+
+export function PlaylistSongList({station}) {
+
+    function deleteSong(songId) {
+        if (station.songs.length > 1) {
+            removeSong(station._id, songId)
+        }
     }
 
     return (
