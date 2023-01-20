@@ -1,5 +1,6 @@
 import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
+import { userService } from './user.service.js'
 
 const STATION_KEY = 'stationDB'
 const stationJson = [
@@ -621,13 +622,10 @@ async function removeSong(stationId, songId) {
     station.songs = songs
     save(station)
     return station
-  } catch(err){
-    console.log('err:',err)
+  } catch (err) {
+    console.log('err:', err)
     return err
   }
-  // return get(stationId)
-  //   .then(station => (station.songs.filter(song => song.id !== songId)))
-  //   .then(station => (save(station)))
 }
 
 function getEmptyStation() {
@@ -635,11 +633,7 @@ function getEmptyStation() {
     "_id": "",
     "name": "",
     "tags": [],
-    "createdBy": { //loggedinUser
-      "_id": "u101",
-      "fullname": "Puki Ben David",
-      "imgUrl": "https://robohash.org/set=set3"
-    },
+    "createdBy": userService.getLoggedinUser(),
     "likedByUsers": [],
     "songs": [],
     "msgs": []

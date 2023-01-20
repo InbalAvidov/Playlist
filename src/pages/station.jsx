@@ -7,6 +7,7 @@ import { SongList } from "../cmps/station-song-list"
 import { StationHeader } from "../cmps/station-header"
 import { stationService } from "../service/station.service"
 import { uploadService } from "../service/upload.service"
+import { updateStation } from "../store/station.actions"
 
 export function Station({ saveStation }) {
   const [station, setStation] = useState(null)
@@ -48,8 +49,9 @@ export function Station({ saveStation }) {
     saveStation(station)
   }
 
-  function saveChanges() {
-    stationService.save(station)
+  async function saveChanges() {
+    await updateStation(station)
+    
   }
 
   if (!station) return <Loader />

@@ -1,5 +1,5 @@
 import { stationService } from "../service/station.service"
-import { SET_STATIONS, SET_CURR_STATION, REMOVE_SONG } from "./station.reducer"
+import { SET_STATIONS, ADD_STATION, UPDATE_STATION } from "./station.reducer"
 import { store } from "./store"
 
 export async function loadStations(filterBy) {
@@ -12,31 +12,22 @@ export async function loadStations(filterBy) {
     }
 }
 
-export async function loadStationById(stationId) {
+export async function saveStation(station) {
     try {
-        const currStation = await stationService.get(stationId)
-        console.log('currStation:', currStation)
-        store.dispatch({ type: SET_CURR_STATION, currStation })
-        return currStation
+        const newStation = await stationService.save(station)
+        store.dispatch({ type: ADD_STATION, station: newStation })
     } catch (err) {
         console.log('Had issues to get current station', err)
         throw err
     }
 }
 
-
-// export async function saveToy(toy) {
-//     const type = (toy._id) ? UPDATE_TOY : ADD_TOY
-//     try {
-//         const savedToy = await toyService.save(toy)
-//         store.dispatch({ type, toy: savedToy })
-
-//     } catch (err) {
-//         console.log('Had issues save toy', err)
-//         throw err
-//     }
-// }
-
-// export function setFilter(filter) {
-//     store.dispatch({ type: FILTER_TODOS, filter })
-// }
+export async function updateStation(station) {
+    try {
+        const updatedStation = await stationService.save(station)
+        store.dispatch({ type: UPDATE_STATION, station: updatedStation })
+    } catch (err) {
+        console.log('Had issues to get current station', err)
+        throw err
+    }
+}
