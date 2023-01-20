@@ -14,33 +14,31 @@ export function SongList({ station, isCreateStation, handleChange }) {
         handleChange('songs', [...stationSongs, song])
     }
 
-export function PlaylistSongList({station}) {
-
-    function deleteSong(songId) {
-        if (station.songs.length > 1) {
-            removeSong(station._id, songId)
-        }
-    }
-
-    return (
-        <main className='main-songs-list'>
-            <div className='songs-add'>
-                {!station.songs.length > 0 && <h2>Let's find something for your playlist</h2>}
-                <SearchSongs onAddSong={onAddSong} isCreateStation={isCreateStation} />
-            </div>
-            {station.songs.length > 0 &&
-                <section className="songs-list">
-                    <div className="song-preview songs-list-header">
-                        <p className="song-number">#</p>
-                        <p className="song-img-title">Title</p>
-                        <p className="song-date">Date Added</p>
-                        <p className="song-duration"><FontAwesomeIcon icon={faClock}></FontAwesomeIcon></p>
-                    </div>
-                    {station.songs.map((song, idx) =>
-                        <SongPreview song={song} idx={idx} />)
-                    }
-                </section>
+        function deleteSong(songId) {
+            if (station.songs.length > 1) {
+                removeSong(station._id, songId)
             }
-        </main>
-    )
-}
+        }
+
+        return (
+            <main className='main-songs-list'>
+                <div className='songs-add'>
+                    {!station.songs.length > 0 && <h2>Let's find something for your playlist</h2>}
+                    <SearchSongs onAddSong={onAddSong} isCreateStation={isCreateStation} />
+                </div>
+                {station.songs.length > 0 &&
+                    <section className="songs-list">
+                        <div className="song-preview songs-list-header">
+                            <p className="song-number">#</p>
+                            <p className="song-img-title">Title</p>
+                            <p className="song-date">Date Added</p>
+                            <p className="song-duration"><FontAwesomeIcon icon={faClock}></FontAwesomeIcon></p>
+                        </div>
+                        {station.songs.map((song, idx) =>
+                            <SongPreview song={song} idx={idx} />)
+                        }
+                    </section>
+                }
+            </main>
+        )
+    }
