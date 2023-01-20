@@ -1,0 +1,28 @@
+.app-header{
+  background-color: $clr1;
+  display: grid;
+
+  .header-details{
+    justify-content: space-between;
+    
+    a{
+      color:$clr2;
+      text-decoration: none;
+    }
+
+    img{
+      width:36px;
+    }
+  }
+  .header-details > :first-child{
+    justify-content: start;
+  }
+  svg {
+    fill: $clr2;
+    justify-self: center;
+    transform: translateX(-5px);
+    width: 22px;
+    height: 22px;
+  }
+
+}

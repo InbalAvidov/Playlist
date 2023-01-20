@@ -1,6 +1,7 @@
-import { LoginSignup } from "../cmps/login-signup"
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
+import { AppHeader } from "../cmps/app-header"
 
 
 
@@ -10,9 +11,9 @@ export function LikedSongs(){
 
   return (
     <>
+    <AppHeader/>
     <section className="liked-songs">
         <section className="login-signup">
-          <LoginSignup/>
         </section>
 
         <section className="liked-header">
