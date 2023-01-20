@@ -2,7 +2,6 @@ import { Link } from 'react-router-dom'
 import defaultPhoto from '../assets/img/default-photo.jpeg'
 
 export function RestSectionStations({ stations }) {
-    console.log('stations:', stations)
     return (
         <section
             className="rest-section-stations">

@@ -7,11 +7,13 @@
     justify-content: space-between;
 
     svg {
-      fill: $clr2;
-      justify-self: center;
-      transform: translateX(-5px);
-      width: 22px;
-      height: 22px;
+      &.arrow {
+        fill: $clr2;
+        justify-self: center;
+        transform: translateX(-5px);
+        width: 22px;
+        height: 22px;
+      }
     }
 
     .btns-login-singup {
@@ -43,7 +45,48 @@
     }
 
     .user-section {
-      font-size: 13px;
+      .user-menu-btn {
+        font-size: 15px;
+        display: flex;
+        border: none;
+        background-color: lighten($bgc-main, 10%);
+        color: $clr2;
+        padding: 10px 6px;
+        border-radius: 10em;
+
+        >* {
+          padding: 0 3px;
+        }
+
+        span{
+          font-size: 12px;
+        }
+      }
+
+      .user-menu {
+        background-color: #373737;
+        border-radius: 5px;
+        position: relative;
+        top: 5px;
+
+        &.close {
+          display: none;
+        }
+
+        p {
+          border-radius: 10px;
+          background-color: inherit;
+          color: $clr2;
+          width: 120px;
+          padding: 5px 0 5px 5px;
+          border: none;
+          font-size: 14px;
+
+          &:hover {
+            color: $brand-color;
+          }
+        }
+      }
     }
 
     // img{

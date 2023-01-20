@@ -28,6 +28,10 @@ export function stationReducer(state = initialState, action) {
         case UPDATE_STATION:
             stations = state.stations.map(station => station._id === action.station._id ? action.station : station)
             return { ...state, stations }
+        case REMOVE_STATION:
+            console.log('state.stations:',state.stations)
+            stations = state.stations.filter(station => station._id !== action.stationId )
+            return { ...state, stations }
 
         default:
             return state

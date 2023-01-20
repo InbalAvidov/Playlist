@@ -3,7 +3,6 @@ import { store } from '../store/store.js'
 import { SET_USER } from '../store/user.reducer.js'
 
 export async function login(credentials) {
-    console.log('login from user.action,credentials ', credentials)
     try {
         const user = await userService.login(credentials)
         console.log('user:', user)
@@ -18,9 +17,7 @@ export async function login(credentials) {
 export async function signup(credentials) {
     try {
         const user = await userService.signup(credentials)
-        console.log('user:', user)
         store.dispatch({ type: SET_USER, user: { ...user, username: credentials.username } })
-        console.log('user.action , dispatch SET_USER, user', user)
         return user
     } catch (err) {
         console.error('Cannot signup:', err)

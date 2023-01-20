@@ -13,7 +13,6 @@ export function MediaConroller() {
     if (isPlaying) {
         timerId = setInterval(() => {
             setCurrentTime(utilService.secondsMinutesAndSeconds(player.getCurrentTime()))
-            console.log(player.getCurrentTime())
         }, 1000);
     }
 
@@ -24,7 +23,6 @@ export function MediaConroller() {
             player.playVideo()
             clearInterval(timerId)
         }
-        // console.log(player)
         setIsPlaying(prevIsPlaying => !prevIsPlaying)
     }
 
