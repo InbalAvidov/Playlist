@@ -1,28 +1,53 @@
-.app-header{
-  background-color: $clr1;
+.app-header {
+  background-color: $bgc-main;
   display: grid;
+  padding: 15px $main-app-padding 0;
 
-  .header-details{
+  .header-details {
     justify-content: space-between;
-    
-    a{
-      color:$clr2;
-      text-decoration: none;
+
+    svg {
+      fill: $clr2;
+      justify-self: center;
+      transform: translateX(-5px);
+      width: 22px;
+      height: 22px;
     }
 
-    img{
-      width:36px;
-    }
-  }
-  .header-details > :first-child{
-    justify-content: start;
-  }
-  svg {
-    fill: $clr2;
-    justify-self: center;
-    transform: translateX(-5px);
-    width: 22px;
-    height: 22px;
-  }
+    .btns-login-singup {
+      display: flex;
+      align-items: flex-start;
 
+      a {
+        color: $clr2;
+        text-decoration: none;
+
+        &.login-signup {
+          margin: 0 10px;
+          padding: 12px 30px;
+          border-radius: 10em;
+          font-size: 14px;
+          font-family: montserrat-bold;
+
+          &.focus {
+            background-color: $clr2;
+            color: $clr1;
+
+            &:hover {
+              background-color: darken($clr2 , 10%);
+              transform: scale(1.05);
+            }
+          }
+        }
+      }
+    }
+
+    .user-section {
+      font-size: 13px;
+    }
+
+    // img{
+    //   width:36px;
+    // }
+  }
 }

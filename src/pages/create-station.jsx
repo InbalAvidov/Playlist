@@ -1,43 +1,19 @@
-import { useState } from "react";
-import { stationService } from "../service/station.service";
-import { uploadService } from "../service/upload.service";
-import { SearchSongs } from "./search-page";
+import { useNavigate } from "react-router-dom";
+import { saveStation } from "../store/station.actions";
+import { Station } from "./station";
 
-export function CreateStation(){
-    const [playlistName , setplaylistName] = useState('')
-    const station = stationService.getEmptyStation()
+export function CreateStation() {
+  const navigate = useNavigate()
 
-    function changePlaylistName({target}){
-        const {value} = target
-        setplaylistName(value)
+  async function onSaveStation(station) {
+    try {
+      await saveStation(station)
+      navigate('/')
+    } catch (err) {
+      alert('Cannot Save Station')
     }
-    function onAddSong(song){
-        station.songs.push(song)
-        console.log('station:',station)
-    }
-
-    function onSetplaylistName(){
-        station.name = playlistName
-        console.log('station:',station)
-    }
-
-    function onSavePlaylist(){
-        if(!station.name || station.songs.length === 0){
-            alert('You have to provide name and songs')
-            return
-        }
-        stationService.save(station)
-    }
-    async function onSelectImg(ev){
-        const imgUrl = await uploadService.uploadImg(ev)
-        station.imgUrl = imgUrl
-    }
-    return (<main className="main-create-station">
-        <input type="txt" placeholder="Playlist name" value={playlistName} onChange={changePlaylistName} />
-        <input type="file" onChange={onSelectImg}/>
-        <button onClick={onSetplaylistName}>Ok</button>
-        <SearchSongs isCreateStation={true} onAddSong={onAddSong} />
-        <button onClick={onSavePlaylist}>Save</button>
-    </main>
-    )
+  }
+  return (
+    <Station saveStation={onSaveStation} />
+  )
 }

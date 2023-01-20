@@ -1,10 +1,11 @@
 import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
+import { userService } from './user.service.js'
 
 const STATION_KEY = 'stationDB'
 const stationJson = [
   {
-    "_id": "5cksxjas89xjsa8xjsa8jxs09",
+    "_id": "5cksxjas89xjsa8xjsa8jxs10",
     "name": "Funky",
     "imgUrl": "http://res.cloudinary.com/damrhms1q/image/upload/v1674073376/beach_pgibpw.jpg",
     "tags": [
@@ -28,7 +29,7 @@ const stationJson = [
     ],
     "songs": [
       {
-        "id": "mUkfiLjooxs",
+        "id": "mUkfiLjooxk",
         "title": "Talk is cheap",
         "url": "https://www.youtube.com/embed?v=aQZDyyIyQMA&list=RDaQZDyyIyQMA&start_radio=1",
         "imgUrl": "https://i.ytimg.com/vi/4_iC0MyIykM/mqdefault.jpg",
@@ -123,7 +124,7 @@ const stationJson = [
     ]
   },
   {
-    "_id": "Quel9sFIyZJSlVNGI9UQoYTnj",
+    "_id": "Quel9sFIyZJSlVNGI9UQoYTnG",
     "name": "<3",
     "tags": [],
     "createdBy": {
@@ -177,7 +178,7 @@ const stationJson = [
     "msgs": []
   },
   {
-    "_id": "Xbsr5hs2XgMfxp4NBR7VEd6k1",
+    "_id": "Xbsr5hs2XgMfxp4NBR7VEd6k2",
     "name": "עומר אדם",
     "tags": [],
     "createdBy": {
@@ -309,7 +310,7 @@ const stationJson = [
     "msgs": []
   },
   {
-    "_id": "yCA7I2QWvuCIVAoQy4lSdXrFH",
+    "_id": "yCA7I2QWvuCIVAoQy4lSdXrFK",
     "name": "שישי",
     "tags": [],
     "createdBy": {
@@ -614,10 +615,24 @@ function save(station) {
   }
 }
 
+<<<<<<< HEAD
 function removeSong(stationId, songId) {
   return get(stationId)
     .then(station => (station.songs.filter(song => song.id !== songId)))
     .then(station => (save(station)))
+=======
+async function removeSong(stationId, songId) {
+  try {
+    const station = await get(stationId)
+    const songs = station.songs.filter(song => song.id !== songId)
+    station.songs = songs
+    save(station)
+    return station
+  } catch (err) {
+    console.log('err:', err)
+    return err
+  }
+>>>>>>> origin/main
 }
 
 function getEmptyStation() {
@@ -625,11 +640,7 @@ function getEmptyStation() {
     "_id": "",
     "name": "",
     "tags": [],
-    "createdBy": { //loggedinUser
-      "_id": "u101",
-      "fullname": "Puki Ben David",
-      "imgUrl": "https://robohash.org/set=set3"
-    },
+    "createdBy": userService.getLoggedinUser(),
     "likedByUsers": [],
     "songs": [],
     "msgs": []

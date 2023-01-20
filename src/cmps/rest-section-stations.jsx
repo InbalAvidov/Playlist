@@ -1,14 +1,16 @@
 import { Link } from 'react-router-dom'
+import defaultPhoto from '../assets/img/default-photo.jpeg'
 
-export function RestSectionPlaylists({ stations }) {
+export function RestSectionStations({ stations }) {
+    console.log('stations:', stations)
     return (
         <section
-            className="rest-section-playlists">
+            className="rest-section-stations">
             {stations.map(station => <Link to={`/station/${station._id}`} key={station._id}>
-                <div className="rest-section-playlist-preview" >
+                <div className="rest-section-station-preview" >
                     <div className="img-container" style=
                         {{
-                            backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs[0].imgUrl}")`,
+                            backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs.length > 0 ? station.songs[0].imgUrl : defaultPhoto}")`,
                             backgroundRepeat: "repeat",
                             backgroundPosition: "center",
                             backgroundSize: "auto",

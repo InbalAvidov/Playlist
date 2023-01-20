@@ -1,9 +1,5 @@
 .main-home {
-    margin-top: 80px;
-    margin-bottom: 20px;
-
-
-    .home-playlists {
+    .home-stations {
         a {
             text-decoration: none;
             color: white;
@@ -22,14 +18,14 @@
             margin-bottom: 10px;
         }
 
-        .first-section-playlists {
+        .first-section-stations {
             display: grid;
             grid-template-columns: repeat(3, minmax(240px, 1fr));
             width: 100%;
             gap: 10px;
 
 
-            .first-section-playlist-preview {
+            .first-section-station-preview {
                 grid-column: span 1;
                 display: flex;
                 align-items: center;
@@ -49,14 +45,14 @@
             }
         }
 
-        .rest-section-playlists {
+        .rest-section-stations {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             width: 100%;
             gap: 10px;
 
 
-            .rest-section-playlist-preview {
+            .rest-section-station-preview {
                 background-color: darken($song-bgc-home , 4%);
                 grid-column: span 1;
                 border-radius: 10px;
