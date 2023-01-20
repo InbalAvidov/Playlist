@@ -616,7 +616,7 @@ function save(station) {
 
 function removeSong(stationId, songId) {
   return get(stationId)
-    .then(station => (station.songs.filter(song => song._id === songId)))
+    .then(station => (station.songs.filter(song => song.id !== songId)))
     .then(station => (save(station)))
 }
 

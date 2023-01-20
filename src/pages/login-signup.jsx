@@ -21,7 +21,7 @@ export function LoginSignup(){
     }
 
     const [credentials, setCredentials] = useState(userService.getEmptyCredentials())
-    console.log(credentials)
+    // console.log(credentials)
     const [isSignupState, setIsSignupState] = useState(false)
 
     function handleCredentialsChange(ev) {
