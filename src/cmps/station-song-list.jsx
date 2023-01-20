@@ -7,6 +7,7 @@ import { useState } from 'react';
 
 export function SongList({ station, isCreateStation, handleChange, onDeleteSong }) {
     const [stationSongs, setStationSongs] = useState([])
+    
     function onAddSong(song) {
         setStationSongs(prevSongs => [...prevSongs, song])
         handleChange('songs', [...stationSongs, song])

@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import { useNavigate, useParams } from 'react-router-dom'
+import {  useParams } from 'react-router-dom'
 import { useState } from "react"
 
 import { Loader } from "../cmps/loader"
@@ -13,7 +13,6 @@ export function Station({ saveStation }) {
   const [station, setStation] = useState(null)
   const [isCreateStation, setIsCreateStation] = useState(false)
   const { stationId } = useParams()
-  const navigate = useNavigate()
 
   useEffect(() => {
     if (!stationId) {
@@ -27,7 +26,6 @@ export function Station({ saveStation }) {
     const currStation = await stationService.get(stationId)
     setStation(currStation)
   }
-
 
   async function onSelectImg(ev) {
     const imgUrl = await uploadService.uploadImg(ev)

@@ -1,5 +1,5 @@
-import { useSelector } from 'react-redux'
-import { NavLink } from 'react-router-dom'
+import { useSelector  } from 'react-redux'
+import { NavLink , useNavigate } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUser } from '@fortawesome/free-solid-svg-icons'
 
@@ -7,6 +7,7 @@ import { logout } from '../store/user.action.js'
 
 export function AppHeader() {
   const user = useSelector((storeState => storeState.userModule.user))
+  const navigate = useNavigate()
   console.log('Appheader cmp, user:', user)
 
   function onLogout() {
@@ -15,12 +16,11 @@ export function AppHeader() {
         user = (null)
       })
   }
-  console.log('user:', user)
   return (
     <section className="app-header">
       <div className="header-details flex">
         <nav className="flex">
-          <div className="btn-go-back">
+          <div className="btn-go-back" onClick={()=>navigate(-1)}>
             <svg role="img" height="24" width="24" aria-hidden="true" className="Svg-sc-ytk21e-0 kcBZLg IYDlXmBmmUKHveMzIPCF" viewBox="0 0 24 24"><path d="M15.957 2.793a1 1 0 010 1.414L8.164 12l7.793 7.793a1 1 0 11-1.414 1.414L5.336 12l9.207-9.207a1 1 0 011.414 0z"></path></svg>
           </div>
           <div className="btn-go-next">
