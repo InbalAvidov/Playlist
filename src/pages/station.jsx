@@ -1,10 +1,11 @@
 import { useEffect } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
+import { useState } from "react"
+
 import { Loader } from "../cmps/loader"
 import { SongList } from "../cmps/station-song-list"
 import { StationHeader } from "../cmps/station-header"
-
-import { useState } from "react"
+import { removeSong } from "../store/station.actions"
 import { stationService } from "../service/station.service"
 import { uploadService } from "../service/upload.service"
 
@@ -30,20 +31,27 @@ export function Station({ saveStation }) {
 
   async function onSelectImg(ev) {
     const imgUrl = await uploadService.uploadImg(ev)
-    console.log('imgUrl:',imgUrl)
+    console.log('imgUrl:', imgUrl)
     station.imgUrl = imgUrl
     return imgUrl
   }
-  
+
   function handleChange(field, val) {
     setStation(prevStation => ({ ...prevStation, [field]: val }))
   }
 
-  function onSaveStation(){
+  async function onDeleteSong(songId) {
+    if (station.songs.length > 1) {
+      const updatedStation = await removeSong(station._id, songId)
+      setStation(updatedStation)
+    }
+  }
+
+  function onSaveStation() {
     saveStation(station)
   }
 
-  function saveChanges(){
+  function saveChanges() {
     stationService.save(station)
   }
 
@@ -51,7 +59,7 @@ export function Station({ saveStation }) {
   else return (
     <main className="station-details">
       < StationHeader station={station} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} onSaveStation={onSaveStation} />
-      <SongList station={station} handleChange={handleChange} isCreateStation={isCreateStation} />
+      <SongList station={station} handleChange={handleChange} isCreateStation={isCreateStation} onDeleteSong={onDeleteSong} />
     </main>
   )
 

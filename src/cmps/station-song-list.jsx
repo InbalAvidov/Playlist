@@ -1,25 +1,17 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 
-import { removeSong } from "../store/station.actions"
 import { SongPreview } from "./station-song-preview";
 import { SearchSongs } from '../pages/search-page';
 import { useState } from 'react';
 
-export function SongList({ station, isCreateStation, handleChange }) {
+export function SongList({ station, isCreateStation, handleChange, onDeleteSong }) {
     const [stationSongs, setStationSongs] = useState([])
-
     function onAddSong(song) {
         setStationSongs(prevSongs => [...prevSongs, song])
         handleChange('songs', [...stationSongs, song])
     }
 
-    function deleteSong(songId) {
-        if (station.songs.length > 1) {
-            console.log('delete');
-            removeSong(station._id, songId)
-        }
-    }
 
     return (
         <main className='main-songs-list'>
@@ -36,7 +28,7 @@ export function SongList({ station, isCreateStation, handleChange }) {
                         <p className="song-duration"><FontAwesomeIcon icon={faClock}></FontAwesomeIcon></p>
                     </div>
                     {station.songs.map((song, idx) =>
-                        <SongPreview song={song} idx={idx} onDeleteSong={deleteSong}/>)
+                        <SongPreview song={song} idx={idx} onDeleteSong={onDeleteSong} />)
                     }
                 </section>
             }

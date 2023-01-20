@@ -617,12 +617,10 @@ function save(station) {
 async function removeSong(stationId, songId) {
   try {
     const station = await get(stationId)
-    console.log('station:', station)
     const songs = station.songs.filter(song => song.id !== songId)
-    console.log('songs:', songs)
     station.songs = songs
-    console.log('station:', station)
     save(station)
+    return station
   } catch(err){
     console.log('err:',err)
     return err

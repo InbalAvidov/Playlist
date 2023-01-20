@@ -25,8 +25,9 @@ export async function loadStationById(stationId) {
 }
 export async function removeSong(stationId, songId) {
     try {
-        await stationService.removeSong(stationId, songId)
+        const station = await stationService.removeSong(stationId, songId)
         store.dispatch({ type: REMOVE_SONG, songId })
+        return station
     } catch (err) {
         console.log('Had issues removing song', err)
         throw err
