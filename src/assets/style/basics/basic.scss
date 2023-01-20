@@ -22,9 +22,14 @@ body {
 }
 
 .main-app {
-    background-color: $bgc-main;
+    grid-column: 2;
+    grid-row: 2;
+    background: $bgc-main;
     padding: 0 20px;
+    padding-bottom: 100px;
+    min-height: 80vh;
 }
+
 
 h1,
 h2,
@@ -43,12 +48,7 @@ p {
     margin: 0;
 }
 
-.back-btn{
-    background-color: $clr1;
-    border-radius: 50%;
-    padding: 3px 10px;
-    border: none;
-    color: $clr2;
-    font-size: 20px;
-    margin-top: 10px;
+button{
+    font-family: montserrat, Arial;
+    cursor: pointer;
 }

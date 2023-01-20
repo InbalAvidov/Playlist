@@ -13,7 +13,8 @@ export const userService = {
     getById,
     remove,
     update,
-    changeScore
+    // changeScore,
+    getEmptyCredentials,
 }
 
 window.userService = userService
@@ -23,8 +24,6 @@ function getUsers() {
     return storageService.query('user')
     // return httpService.get(`user`)
 }
-
-
 
 async function getById(userId) {
     const user = await storageService.get('user', userId)
@@ -37,7 +36,7 @@ function remove(userId) {
     // return httpService.delete(`user/${userId}`)
 }
 
-async function update({_id, score}) {
+async function update({ _id, score }) {
     const user = await storageService.get('user', _id)
     user.score = score
     await storageService.put('user', user)
@@ -71,17 +70,17 @@ async function logout() {
     // return await httpService.post('auth/logout')
 }
 
-async function changeScore(by) {
-    const user = getLoggedinUser()
-    if (!user) throw new Error('Not loggedin')
-    user.score = user.score + by || by
-    await update(user)
-    return user.score
-}
+// async function changeScore(by) {
+//     const user = getLoggedinUser()
+//     if (!user) throw new Error('Not loggedin')
+//     user.score = user.score + by || by
+//     await update(user)
+//     return user.score
+// }
 
 
 function saveLocalUser(user) {
-    user = {_id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, score: user.score}
+    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, score: user.score }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
@@ -90,6 +89,14 @@ function getLoggedinUser() {
     return JSON.parse(sessionStorage.getItem(STORAGE_KEY_LOGGEDIN_USER))
 }
 
+function getEmptyCredentials() {
+    return {
+        fullname: '',
+        email: '',
+        username: '',
+        password: '',
+    }
+}
 
 // ;(async ()=>{
 //     await userService.signup({fullname: 'Puki Norma', username: 'puki', password:'123',score: 10000, isAdmin: false})

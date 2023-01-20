@@ -4,13 +4,14 @@ import { faHeart, faListDots } from '@fortawesome/free-solid-svg-icons'
 import { setSong } from "../store/player.action"
 import { utilService } from '../service/util.service'
 
-export function SongPreview({ song, idx }) {
+export function SongPreview({ song, idx, onDeleteSong }) {
 
     function onSetSong(songToStore) {
         setSong(songToStore)
     }
+
     return (
-        <div key={idx} className="song-preview">
+        <div className="song-preview">
             <p className="song-number">{idx + 1}</p>
             <div className="song-img-title">
                 <div onClick={() => onSetSong({ _id: song.id, imgUrl: song.imgUrl })} className="song-img"
@@ -32,7 +33,9 @@ export function SongPreview({ song, idx }) {
             <p className="song-duration">
                 <span><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></span>
                 3:12
-                <span><FontAwesomeIcon icon={faListDots}></FontAwesomeIcon></span>
+                <span onClick={() => onDeleteSong(song.id)}>
+                    <FontAwesomeIcon icon={faListDots}></FontAwesomeIcon>
+                </span>
             </p>
         </div>
     )
