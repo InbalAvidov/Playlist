@@ -9,7 +9,7 @@ const initialState = {
 
 
 export function userReducer(state = initialState, action) {
-    console.log('user-reducer, user', action.user)
+    // console.log('user-reducer, user', action.user)
     switch (action.type) {
         case SET_USER:
             return { ...state, user: action.user }

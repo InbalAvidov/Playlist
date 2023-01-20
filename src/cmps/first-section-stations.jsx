@@ -1,8 +1,11 @@
+import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import  defaultPhoto  from '../assets/img/default-photo.jpeg'
+import defaultPhoto from '../assets/img/default-photo.jpeg'
 
 
 export function FirstSectionStations({ stations }) {
+    const player = useSelector(storeState => storeState.playerModule.player)
+    console.log('Player at FirstSectionStations', player)
     return (
         <section className="first-section-stations">
             {stations.map(station => <Link to={`/station/${station._id}`}>

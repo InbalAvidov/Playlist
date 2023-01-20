@@ -20,7 +20,6 @@ export async function setSong(song) {
 }
 
 export async function togglePlay(isPlaying) {
-    console.log('isPlaying in action', isPlaying)
     try {
         store.dispatch({ type: TOGGLE_PLAY, isPlaying })
     } catch (err) {

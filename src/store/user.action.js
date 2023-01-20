@@ -3,7 +3,7 @@ import { store } from '../store/store.js'
 import { SET_USER } from '../store/user.reducer.js'
 
 export function login(credentials) {
-    console.log('login from user.action,credentials ', credentials)
+    // console.log('login from user.action,credentials ', credentials)
     return userService.login(credentials)
         .then(user => {
             store.dispatch({ type: SET_USER, user })
@@ -19,7 +19,7 @@ export function signup(credentials) {
     return userService.signup(credentials)
         .then(user => {
             store.dispatch({ type: SET_USER, user: { ...user, username: credentials.username } })
-            console.log('user.action , dispatch SET_USER, user', user)
+            // console.log('user.action , dispatch SET_USER, user', user)
             return user
         })
         .catch(err => {

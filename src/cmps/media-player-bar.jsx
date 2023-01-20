@@ -8,10 +8,6 @@ export function PlayerBar() {
     const song = useSelector(storeState => storeState.playerModule.song)
     song ? console.log('song from media player bar', song) : console.log('no song')
 
-    useEffect(()=>{
-        console.log('PLAYER WAS CHANGED')
-    },[player])
-
     return (<div className="media-player" >
         {song && <SoundPlayer playerId={song._id} />}
         {player && <div className="information">

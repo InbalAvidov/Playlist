@@ -2,18 +2,17 @@ import { useSelector } from 'react-redux'
 import { NavLink } from 'react-router-dom'
 
 
-import { logout} from '../store/user.action.js'
+import { logout } from '../store/user.action.js'
 
-export function AppHeader(){
+export function AppHeader() {
   const user = useSelector((storeState => storeState.userModule.user))
-  console.log('Appheader cmp, user:',user)
 
   function onLogout() {
     logout()
-        .then(() => {
-            user=(null)
-        })
-}
+      .then(() => {
+        user = (null)
+      })
+  }
 
   return (
     <section className="app-header">
@@ -32,8 +31,8 @@ export function AppHeader(){
         {!user && <NavLink className="login-signup" to="/login-signup"><div>Sign up</div></NavLink>}
 
         {user && <><button onClick={onLogout}>hi {user.fullname}/Logout</button>
-        <img src={user.imgUrl}></img></>} 
-        
+          <img src={user.imgUrl}></img></>}
+
       </div>
     </section>
   )

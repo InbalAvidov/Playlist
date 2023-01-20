@@ -12,7 +12,7 @@ export function PlayerController() {
     const [progress, setProgress] = useState(0)
     const timerId = useRef(null)
     useEffect(() => {
-        console.log('hello', player)
+        console.log('PLAYER IN PLAYER CONTROLLER:', player)
         timerId.current = setInterval(() => {
             if (isPlaying && player) {
                 setProgress(player.getCurrentTime())
@@ -23,7 +23,7 @@ export function PlayerController() {
     function onTogglePlay() {
         if (isPlaying) clearInterval(timerId.current)
         togglePlay(!isPlaying)
-        console.log('progress', progress)
+        // console.log('progress', progress)
     }
 
     function changeTime({ target }, val) {
@@ -39,7 +39,7 @@ export function PlayerController() {
 
     return <div className="controller">
         <div className="conrtoller-btns">
-            <FontAwesomeIcon icon={faBackwardStep} onClick={(ev) => changeTime(ev, -10)} />
+            <FontAwesomeIcon icon={faBackwardStep} onClick={(ev) => changeTime(ev, -10)} className='fa-sharp fa-solid fa-forward-step' />
             {!isPlaying && <FontAwesomeIcon icon={faPlayCircle} onClick={onTogglePlay} className='play-pause' />}
             {isPlaying && <FontAwesomeIcon icon={faPauseCircle} onClick={onTogglePlay} className='play-pause' />}
             <FontAwesomeIcon icon={faForwardStep} onClick={(ev) => changeTime(ev, 10)} />

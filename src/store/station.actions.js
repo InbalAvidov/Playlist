@@ -15,7 +15,7 @@ export async function loadStations(filterBy) {
 export async function loadStationById(stationId) {
     try {
         const currStation = await stationService.get(stationId)
-        console.log('currStation:', currStation)
+        // console.log('currStation:', currStation)
         store.dispatch({ type: SET_CURR_STATION, currStation })
         return currStation
     } catch (err) {
