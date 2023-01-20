@@ -1,12 +1,12 @@
 import { PlayerController } from "./player-controller"
 import { SoundPlayer } from "./sound-player"
 import { useSelector } from "react-redux"
-import { useEffect } from "react"
 
 export function PlayerBar() {
     const player = useSelector(storeState => storeState.playerModule.player)
     const song = useSelector(storeState => storeState.playerModule.song)
-    song ? console.log('song from media player bar', song) : console.log('no song')
+    console.log('song from player bar', song)
+    song ? console.log('song from player bar', song) : console.log('no song')
 
     return (<div className="media-player" >
         {song && <SoundPlayer playerId={song._id} />}

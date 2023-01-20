@@ -7,6 +7,7 @@ import { utilService } from '../service/util.service'
 export function SongPreview({ song, idx, onDeleteSong }) {
 
     function onSetSong(songToStore) {
+        console.log('SONG TO STORE', songToStore)
         setSong(songToStore)
     }
 

@@ -1,5 +1,6 @@
 import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
+import { userService } from './user.service.js'
 
 const STATION_KEY = 'stationDB'
 const stationJson = [
@@ -28,7 +29,7 @@ const stationJson = [
     ],
     "songs": [
       {
-        "id": "mUkfiLjooxs",
+        "id": "mUkfiLjooxk",
         "title": "Talk is cheap",
         "url": "https://www.youtube.com/embed?v=aQZDyyIyQMA&list=RDaQZDyyIyQMA&start_radio=1",
         "imgUrl": "https://i.ytimg.com/vi/4_iC0MyIykM/mqdefault.jpg",
@@ -614,10 +615,17 @@ function save(station) {
   }
 }
 
-function removeSong(stationId, songId) {
-  return get(stationId)
-    .then(station => (station.songs.filter(song => song._id === songId)))
-    .then(station => (save(station)))
+async function removeSong(stationId, songId) {
+  try {
+    const station = await get(stationId)
+    const songs = station.songs.filter(song => song.id !== songId)
+    station.songs = songs
+    save(station)
+    return station
+  } catch (err) {
+    console.log('err:', err)
+    return err
+  }
 }
 
 function getEmptyStation() {
@@ -625,11 +633,7 @@ function getEmptyStation() {
     "_id": "",
     "name": "",
     "tags": [],
-    "createdBy": { //loggedinUser
-      "_id": "u101",
-      "fullname": "Puki Ben David",
-      "imgUrl": "https://robohash.org/set=set3"
-    },
+    "createdBy": userService.getLoggedinUser(),
     "likedByUsers": [],
     "songs": [],
     "msgs": []

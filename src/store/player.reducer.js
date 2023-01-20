@@ -16,6 +16,7 @@ export function playerReducer(state = initialState, action) {
         case SET_PLAYER:
             return { ...state, player: action.player }
         case SET_SONG:
+            console.log('song was set')
             return { ...state, song: action.song, isPlaying: true }
         case TOGGLE_PLAY:
             // console.log('tring to set play/pause', action.isPlaying)

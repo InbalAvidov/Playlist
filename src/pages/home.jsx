@@ -7,7 +7,7 @@ import { RestSectionStations } from "../cmps/rest-section-stations"
 
 export function Home() {
     const stations = useSelector((storeState) => storeState.stationModule.stations)
-    const player = useSelector((storeState) => storeState.stationModule.player)
+    const player = useSelector(storeState => storeState.playerModule.player)
     console.log('PLAYER IM HOME CMP', player)
 
     useEffect(() => {

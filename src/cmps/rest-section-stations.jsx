@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import defaultPhoto from '../assets/img/default-photo.jpeg'
 
 export function RestSectionStations({ stations }) {
-    const player = useSelector((storeState) => storeState.stationModule.player)
+    const player = useSelector(storeState => storeState.playerModule.player)
     console.log('PLAYER IM RestSectionStations CMP', player)
     // console.log('stations:', stations)
     return (

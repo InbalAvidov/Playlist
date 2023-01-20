@@ -1,24 +1,29 @@
-.login-page{
+.login-page {
   flex-direction: column;
   background-color: $clr2;
 
-  .logo{
+  .logo {
     align-items: center;
     justify-content: center;
     padding-top: 20px;
-    h1{
+
+    h1 {
       color: $clr1;
-      font-size:20px ;
+      font-size: 20px;
     }
 
     .logo-img {
       width: 55px;
+    }
   }
+  h2{
+    color: $clr1;
+    text-align: center;
   }
 }
 
 // Define grid container
-.login-form{
+.login-form {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(5, 1fr);
@@ -32,12 +37,19 @@
   flex-direction: column;
   align-items: center;
 
-  input {
+  label{
     width: 300px;
-    padding: 12px 20px;
+    color: $clr1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  input {
+    width: 70%;
+    padding: 12px 5px;
     margin: 8px 0;
     box-sizing: border-box;
-    
   }
 
   button {
@@ -56,16 +68,9 @@
     // color:$clr-1;
   }
 
-    a{
-      // color:$clr-1;
-      // color: darken($clr13,5%);
-    }
+  a {
+    // color:$clr-1;
+    // color: darken($clr13,5%);
+  }
 
 }
-
-
-
-
-
-
-
