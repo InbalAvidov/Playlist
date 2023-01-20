@@ -4,7 +4,7 @@ import { storageService } from './async-storage.service.js'
 const STATION_KEY = 'stationDB'
 const stationJson = [
   {
-    "_id": "5cksxjas89xjsa8xjsa8jxs09",
+    "_id": "5cksxjas89xjsa8xjsa8jxs10",
     "name": "Funky",
     "imgUrl" :"http://res.cloudinary.com/damrhms1q/image/upload/v1674073376/beach_pgibpw.jpg",
     "tags": [
@@ -123,7 +123,7 @@ const stationJson = [
     ]
   },
   {
-    "_id": "Quel9sFIyZJSlVNGI9UQoYTnj",
+    "_id": "Quel9sFIyZJSlVNGI9UQoYTnG",
     "name": "<3",
     "tags": [],
     "createdBy": {
@@ -177,7 +177,7 @@ const stationJson = [
     "msgs": []
   },
   {
-    "_id": "Xbsr5hs2XgMfxp4NBR7VEd6k1",
+    "_id": "Xbsr5hs2XgMfxp4NBR7VEd6k2",
     "name": "עומר אדם",
     "tags": [],
     "createdBy": {
@@ -309,7 +309,7 @@ const stationJson = [
     "msgs": []
   },
   {
-    "_id": "yCA7I2QWvuCIVAoQy4lSdXrFH",
+    "_id": "yCA7I2QWvuCIVAoQy4lSdXrFK",
     "name": "שישי",
     "tags": [],
     "createdBy": {
@@ -618,6 +618,7 @@ function getEmptyStation(){
         "_id": "",
         "name": "",
         "tags": [],
+        "imgUrl" :"",
         "createdBy": { //loggedinUser
             "_id": "u101",
             "fullname": "Puki Ben David",

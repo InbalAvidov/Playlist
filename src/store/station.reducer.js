@@ -8,8 +8,8 @@ export const UPDATE_STATION = 'UPDATE_STATION'
 export const SET_CURR_STATION = 'SET_CURR_STATION'
 
 const initialState = {
-    stations: [],
-    currStation: {}
+    stations: null,
+    currStation: stationService.getEmptyStation()
 }
 
 export function stationReducer(state = initialState, action) {

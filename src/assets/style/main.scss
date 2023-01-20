@@ -15,13 +15,13 @@
 // Views
 @import "pages/home-page";
 @import "pages/search";
-@import "pages/station-details";
-// @import "pages/my-library";
+// @import "pages/user-library";
 @import "pages/liked-songs";
 // @import "pages/player-page";
 
 // Components
 @import "cmps/app-nav";
+@import "cmps/app-header";
 @import "cmps/media-player";
 @import "cmps/station-header";
 @import "cmps/station-songs-list";

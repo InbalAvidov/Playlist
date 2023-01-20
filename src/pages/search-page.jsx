@@ -1,16 +1,14 @@
 import { useRef } from "react";
 import { useState } from "react"
-import { useNavigate } from "react-router-dom";
 
 import { YoutubeService } from "../service/youtube.service";
 import { utilService } from "../service/util.service";
 
 
-export function SearchSongs({isCreateStation , onAddSong}) {
+export function SearchSongs({ isCreateStation, onAddSong }) {
     const [search, setSearch] = useState('')
     const [songsBySearch, setSongsBySearch] = useState([])
     const searchSongs = useRef(utilService.debounce(getSearchReasults, 700))
-    const navigate = useNavigate()
 
     function handleChange({ target }) {
         const { value } = target
@@ -26,14 +24,18 @@ export function SearchSongs({isCreateStation , onAddSong}) {
         const results = await YoutubeService.getYoutubeReasults(val)
         setSongsBySearch(results)
     }
-    console.log('songsBySearch:', songsBySearch)
+
+    function addSong(song) {
+        setSearch('')
+        setSongsBySearch([])
+        onAddSong(song)
+    }
     return (
         <main className="main-search">
-            <button className="back-btn" onClick={() => navigate(-1)}>❮</button>
-            <input className="main-input-search" type='txt' value={search} placeholder='What do you want to listen to?' onChange={handleChange} />
+            <input className={isCreateStation ? "add-songs-search" :"main-input-search"} type='txt' value={search} placeholder='What do you want to listen to?' onChange={handleChange} />
             {songsBySearch.length > 0 && <div className="search-results">
                 {songsBySearch.map(song => <div className="search-result" key={song.id}>
-                    { isCreateStation && <button onClick={()=>onAddSong(song)}>+</button>}
+                    {isCreateStation && <button onClick={() => addSong(song)}>+</button>}
                     <img src={song.imgUrl} />
                     <div className="song-details">
                         <h4>{song.title} </h4>
