@@ -3,7 +3,7 @@ import { SoundPlayer } from "./sound-player"
 import { useSelector } from "react-redux"
 import { useRef, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPhoneVolume, faVolumeHigh, faVolumeMute } from "@fortawesome/free-solid-svg-icons"
+import { faArrowsUpDownLeftRight, faPhoneVolume, faVolumeHigh, faVolumeMute } from "@fortawesome/free-solid-svg-icons"
 
 export function PlayerBar() {
     const player = useSelector(storeState => storeState.playerModule.player)
@@ -31,10 +31,15 @@ export function PlayerBar() {
         }
     }
 
+    function openFullscreen(ev) {
+        const elImg = document.querySelector('song-img')
+        elImg.msRequestFullscreen()
+    }
+
     return (<div className="media-player" >
         {song && <SoundPlayer playerId={song._id} />}
         {player && <div className="information">
-            <img src={song.imgUrl} alt="no image" />
+            <img src={song.imgUrl} alt="no image" className="song-img" />
             <div className="details">
                 <h4>{player.videoTitle}</h4>
                 <h5>{player.artist}</h5>
@@ -42,9 +47,8 @@ export function PlayerBar() {
         </div>}
         <PlayerController />
         <div className="actions-btns">
-            {volume ? <FontAwesomeIcon icon={faVolumeMute} onClick={onSetVolume} />
-                : <FontAwesomeIcon icon={faVolumeHigh} onClick={onSetVolume} />}
-            {/* <FontAwesomeIcon icon={faPhoneVolume}/> */}
+            {volume > 0 ? <FontAwesomeIcon icon={faVolumeHigh} onClick={onSetVolume} />
+                : <FontAwesomeIcon icon={faVolumeMute} onClick={onSetVolume} />}
             <input
                 type="range"
                 name="volume-range"
@@ -55,6 +59,7 @@ export function PlayerBar() {
                 onChange={onSetVolume}
                 style={{ background: `linear-gradient(to right, #ffffff 0%, #ffffff ${volume}%, #b3b3b3 ${volume}%, #b3b3b3 100%)` }}
             />
+            {/* <FontAwesomeIcon icon={faArrowsUpDownLeftRight} onClick={openFullscreen} /> */}
         </div>
     </div>
     )

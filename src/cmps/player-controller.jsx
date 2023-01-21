@@ -11,6 +11,7 @@ export function PlayerController() {
     const isPlaying = useSelector(storeState => storeState.playerModule.isPlaying)
     // const station = useSelector(storeState => storeState.stationModule.station)
     const [progress, setProgress] = useState(0)
+    const [progColor, setProgColor] = useState('#ffffff')
     const timerId = useRef(null)
 
     useEffect(() => {
@@ -43,12 +44,18 @@ export function PlayerController() {
         // console.log('station', station)
     }
 
+    function onToggleHover(ev){
+        console.log(ev)
+        if(ev.type==='mousemove')setProgColor('#1ed760')
+        else setProgColor('#ffffff')
+    }
+
     return <div className="controller">
         <div className="conrtoller-btns">
-            <FontAwesomeIcon icon={faBackwardStep} onClick={(ev) => onPrevNextSong()} className='fa-sharp fa-solid fa-forward-step' />
+            <FontAwesomeIcon icon={faBackwardStep} onClick={() => onPrevNextSong()} className='fa-sharp fa-solid fa-forward-step' />
             {!isPlaying && <FontAwesomeIcon icon={faPlayCircle} onClick={onTogglePlay} className='play-pause' />}
             {isPlaying && <FontAwesomeIcon icon={faPauseCircle} onClick={onTogglePlay} className='play-pause' />}
-            <FontAwesomeIcon icon={faForwardStep} onClick={(ev) => onPrevNextSong()} />
+            <FontAwesomeIcon icon={faForwardStep} onClick={() => onPrevNextSong()} />
         </div>
         <div className="player-progress-container">
             <p>{utilService.secondsToMinutesAndSeconds(player?.getCurrentTime())}</p>
@@ -61,7 +68,9 @@ export function PlayerController() {
                 value={Math.floor(player?.getCurrentTime()) || 0}
                 max={player?.getDuration()}
                 onChange={changeTime}
-                style={{ background: `linear-gradient(to right, #ffffff 0%, #ffffff ${getPBStyle()}%, #b3b3b3 ${getPBStyle()}%, #b3b3b3 100%)` }}
+                onMouseMove={onToggleHover}
+                onMouseLeave={onToggleHover}
+                style={{ background: `linear-gradient(to right, ${progColor} 0%, ${progColor} ${getPBStyle()}%, #b3b3b3 ${getPBStyle()}%, #b3b3b3 100%)` }}
             />
             <p>{utilService.secondsToMinutesAndSeconds(player?.getDuration())}</p>
         </div>

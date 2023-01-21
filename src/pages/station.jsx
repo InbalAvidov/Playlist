@@ -60,7 +60,7 @@ export function Station({ saveStation }) {
   if (!station) return <Loader />
   else return (
     <main className="station-details">
-      {/* <StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} onSaveStation={onSaveStation} /> */}
+      <StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} onSaveStation={onSaveStation} />
       <SongList station={station} handleChange={handleChange} onDeleteSong={onDeleteSong} />
     </main>
   )

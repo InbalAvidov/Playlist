@@ -131,11 +131,11 @@
             position: absolute;
             top: 40px;
             right: 10px;
-            
+
             &.close {
                 display: none;
             }
-            
+
             p {
                 border-radius: 10px;
                 background-color: inherit;
@@ -145,15 +145,11 @@
                 border: none;
                 font-size: 14px;
 
-                &:hover{
+                &:hover {
                     color: $brand-color;
                 }
             }
         }
-
-
-
-
     }
 
 }
