@@ -4,6 +4,7 @@ import { useNavigate } from 'react-router-dom'
 import { useParams } from 'react-router-dom'
 // import React, { useEffect } from 'react'
 import { useEffect } from 'react'
+import { NavLink } from 'react-router-dom'
 
 
 import { showErrorMsg, showSuccessMsg } from '../service/event-bus.service.js'
@@ -19,14 +20,12 @@ export function LoginSignup() {
     const [credentials, setCredentials] = useState(userService.getEmptyCredentials())
     const [isSignupState, setIsSignupState] = useState(false)
     const {signupState}= useParams()
-    // const {loginState}= useParams()
-    console.log('LOGIN-SIGNUP ,signupState: ', signupState)
-    console.log('LOGIN-SIGNUP isSignupState, ', isSignupState)
+    
 
     useEffect(() =>{
-            if(signupState === 'loginState') setIsSignupState(false)
-            else  if(signupState === 'signupState') setIsSignupState(true)
-        } , [signupState])
+        if(signupState === 'loginState') setIsSignupState(false)
+        else  if(signupState === 'signupState') setIsSignupState(true)
+    },[signupState])
 
 
 
@@ -84,14 +83,18 @@ export function LoginSignup() {
                         <img className="logo-img" src={logoLogin} />
                         <h1>Playlist</h1>
                     </div>
+                    
                     {isSignupState
                         ?
                         <h2>Sign up for free to start listening</h2>
                         :
-                        <h2>Login</h2>
-                    }
+                        <hr></hr>
+                    } 
                 </header>
-                <hr></hr>
+                <div className="back-btn">
+                    <NavLink to="/">Login as a guest</NavLink>
+                </div>
+                
                 <form className="login-form grid " onSubmit={onSubmit}>
                     <label>
                         User Name
@@ -145,12 +148,15 @@ export function LoginSignup() {
                         />
                     </label>
                     }
-
-                    <button>{isSignupState ? 'Signup' : 'Login'}</button>
-
+                    
+                    <button className="registration-btn">{isSignupState ? 'Signup' : 'Login'}</button>
+                    
+                    
                     <a href="#" onClick={onToggleSignupState}>
-                        {isSignupState ? 'Already a member? Login' : 'New user? Signup here'}
+                        {isSignupState ? 'Have an account? Login' : "Don't have an account? Sign up here"}
                     </a >
+
+                    
                 </form>
             </div >
         </section>
