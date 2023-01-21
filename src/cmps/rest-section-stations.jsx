@@ -12,16 +12,16 @@ export function RestSectionStations({ stations }) {
             className="rest-section-stations">
             {stations.map(station => <Link to={`/station/${station._id}`} key={station._id}>
                 <div className="rest-section-station-preview" >
-                    <div className="img-container"
-                        style={{
-                            backgroundImage: `url("${station.imgUrl ? station.imgUrl : (station.songs.length > 0 ? station.songs[0].imgUrl : defaultPhoto)}")`,
+                    <div className="img-container" style=
+                        {{
+                            backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs.length > 0 ? station.songs[0].imgUrl : defaultPhoto}")`,
                             backgroundRepeat: "repeat",
                             backgroundPosition: "center",
-                            backgroundSize: "auto",
-                            width: '200px', height: '200px', margin: 'auto'
+                            backgroundSize: "cover",
+                            width: '190px', height: '190px', margin: 'auto'
                         }}>
                     </div>
-                    <h2>{station.name}</h2>
+                    <h3>{station.name}</h3>
                     <p>{station.description?.slice(0, 15)}</p>
                 </div>
             </Link>)}

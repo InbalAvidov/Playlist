@@ -21,10 +21,12 @@ export function SongList({ station, handleChange, onDeleteSong }) {
                         <p className="song-number">#</p>
                         <p className="song-img-title">Title</p>
                         <p className="song-date">Date Added</p>
-                        <p className="song-duration"><FontAwesomeIcon icon={faClock} /></p>
+                        <p className="song-actions"></p>
+                        <p className="song-duration"><FontAwesomeIcon icon={faClock}></FontAwesomeIcon></p>
                     </div>
                     {station.songs.map((song, idx) =>
-                        <SongPreview key={idx} song={song} idx={idx} onDeleteSong={onDeleteSong} />)}
+                        <SongPreview key={idx} song={song} idx={idx} onDeleteSong={onDeleteSong} station={station} />)
+                    }
                 </section>
             }
             <div className='songs-add'>

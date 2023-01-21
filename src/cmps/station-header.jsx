@@ -14,6 +14,10 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
     const [stationName, setStationName] = useState("")
     const [stationDescription, setStationDescription] = useState("")
 
+    // useEffect(()=>{
+    //     if(user)
+    // },[])
+
     function onOpenEditor(ev) {
         ev.stopPropagation()
         setIsEdit(true)
@@ -95,10 +99,10 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
                 <p className="station">playlist</p>
                 <h1>{station.name ? station.name : "My Playlist"}</h1>
                 {station.description && <h3>{station.description}</h3>}
-                <p>{station.createdBy.fullname ? station.createdBy.fullname : user.fullname}</p>
+                <p>{station.createdBy ? station.createdBy.fullname : user.fullname}</p>
             </div>
             {!station._id && <button className="done-btn" onClick={onDone}>Done</button>}
-            {user && user._id === station.createdBy._id && station._id &&
+            {user && user._id === station.createdBy?._id && station._id &&
                 <div className="station-menu-container">
                     <button className="station-menu-btn" onClick={onToggleMenu}> •••</button>
                     <div className={isMenuOpen ? "station-menu" : "station-menu close"}>

@@ -13,7 +13,7 @@ export function FirstSectionStations({ stations }) {
                         {{
                             backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs ? station.songs[0].imgUrl : defaultPhoto}")`,
                             backgroundRepeat: "no-repeat",
-                            backgroundPosition: "center center",
+                            backgroundPosition: "center",
                             backgroundSize: "cover",
                             width: '80px', height: '80px'
                         }}>

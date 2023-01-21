@@ -1,13 +1,16 @@
 import { NavLink } from "react-router-dom"
+// import logo from "../assets/img/logo.png"
 import { useEffect, useState } from 'react'
 import { useSelector } from "react-redux"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faHome, faLinesLeaning, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 import { stationService } from "../service/station.service"
 import { loadStations } from "../store/station.actions"
 
-import logo from "../assets/img/logo.png"
+import logo from "../assets/img/logo-white.png"
+// import logo from "../assets/img/logo.png"
 
 export function AppNav() {
     const user = useSelector((storeState => storeState.userModule.user))
@@ -33,7 +36,6 @@ export function AppNav() {
         <main className="app-nav">
             <div className="logo">
                 <img className="logo-img" src={logo} />
-                <h1>Playlist</h1>
             </div>
             <nav>
                 <NavLink to="/"><FontAwesomeIcon icon={faHome} />

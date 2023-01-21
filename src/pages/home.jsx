@@ -11,7 +11,7 @@ export function Home() {
     console.log('PLAYER IM HOME CMP', player)
 
     useEffect(() => {
-        loadStations()
+        loadStations({page:'home'})
     }, [])
 
     function getCurrentTimeGreet() {
@@ -27,9 +27,13 @@ export function Home() {
             <h1>{getCurrentTimeGreet()}</h1>
             <FirstSectionStations stations={stations.slice(0, 6)} />
             <h2>Made For You</h2>
-            <RestSectionStations stations={stations.slice(6)} />
-            {/* <h2>Chill</h2>
-            <RestSectionStations stations={stations.splice(10, 1)} /> */}
+            <RestSectionStations stations={stations.slice(6 , 10)} />
+            <h2>Chill</h2>
+            <RestSectionStations stations={stations.slice(10, 14)} />
+            <h2>Recently played</h2>
+            <RestSectionStations stations={stations.slice(14, 18)} />
+            <h2>More of what you like</h2>
+            <RestSectionStations stations={stations.slice(18, 22)} />
         </div>
         }
     </main>
