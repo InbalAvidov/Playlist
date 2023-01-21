@@ -13,7 +13,6 @@ export function SongList({ station, handleChange, onDeleteSong }) {
         handleChange('songs', [...stationSongs, song])
     }
 
-
     return (
         <main className='main-songs-list'>
 

@@ -23,6 +23,7 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
         setIsEdit(true)
         setIsMenuOpen(false)
     }
+
     function onCloseEditor(ev) {
         ev.stopPropagation()
         setIsEdit(false)

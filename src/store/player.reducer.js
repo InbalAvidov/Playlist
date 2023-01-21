@@ -5,7 +5,7 @@ export const SET_SONG = 'SET_SONG'
 export const TOGGLE_PLAY = 'TOGGLE_PLAY'
 
 const initialState = {
-    player: {},
+    player: null,
     song: null,
     isPlaying: false
 }

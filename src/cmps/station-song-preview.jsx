@@ -1,16 +1,22 @@
+import { useParams } from 'react-router-dom'
+
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 import { setSong } from "../store/player.action"
 import { utilService } from '../service/util.service'
+import { loadCurrStation } from '../store/station.actions'
 import { useSelector } from 'react-redux'
 
 export function SongPreview({ song, idx, onDeleteSong, station }) {
     const user = useSelector((storeState => storeState.userModule.user))
+    const { stationId } = useParams()
 
     function onSetSong(songToStore) {
         console.log('SONG TO STORE', songToStore)
         setSong(songToStore)
+        console.log(stationId)
+        // loadCurrStation(stationId)
     }
 
     return (
