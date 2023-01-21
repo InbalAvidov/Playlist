@@ -12,7 +12,9 @@ async function getYoutubeReasults(val) {
         const ytVideos = res.data.items
         ytVideos.map(ytVideo => {
             // if (!ytVideo.snippet.channelTitle.includes('Official') && !ytVideo.snippet.channelTitle.includes('רשמי') && !ytVideo.snippet.title.includes('Official') ) return
+            let title = ytVideo.snippet.title
             if (ytVideo.snippet.title.includes('Trailer')) return
+            //TODO: ADD A SERVICE FUNCTION TO "CLEAN" RH TITLE 
             // console.log('ytVideo', ytVideo)
             const song = {
                 id: ytVideo.id.videoId,
