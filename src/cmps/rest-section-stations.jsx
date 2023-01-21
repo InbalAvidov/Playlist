@@ -21,7 +21,7 @@ export function RestSectionStations({ stations }) {
                         }}>
                     </div>
                     <h2>{station.name}</h2>
-                    <p>{station.discription?.slice(0, 15)}</p>
+                    <p>{station.description?.slice(0, 15)}</p>
                 </div>
             </Link>)}
         </section>

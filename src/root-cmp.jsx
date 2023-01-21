@@ -7,6 +7,7 @@ import { Home } from './pages/home'
 import { LikedSongs } from './pages/liked-songs'
 import { Station } from './pages/station.jsx'
 import { SearchSongs } from './pages/search-page'
+import { UserLibrary } from './pages/user-library'
 import { PlayerBar } from './cmps/media-player-bar'
 import { CreateStation } from './pages/create-station'
 import { AppHeader } from './cmps/app-header'
@@ -28,6 +29,7 @@ export function App() {
                             <Route element={<Home />} path="/" />
                             <Route element={<Station />} path="/station/:stationId" />
                             <Route element={<SearchSongs />} path="/search" />
+                            <Route element={<UserLibrary />} path="/library" />
                             <Route element={<CreateStation />} path="/createStation" />
                             <Route element={<LikedSongs />} path="/liked" />
                             {/* <Route element={<LoginSignup/>} path="/login-signup" /> */}
