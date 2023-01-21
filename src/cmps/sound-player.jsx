@@ -4,8 +4,8 @@ import { loadPlayer } from '../store/player.action';
 
 export function SoundPlayer({ playerId }) {
   const opts = {
-    height: '700',
-    width: '700',
+    height: '00',
+    width: '00',
     playerVars: {
       // https://developers.google.com/youtube/player_parameters
       autoplay: 1,

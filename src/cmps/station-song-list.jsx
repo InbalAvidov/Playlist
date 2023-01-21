@@ -13,7 +13,6 @@ export function SongList({ station, isCreateStation, handleChange, onDeleteSong 
         handleChange('songs', [...stationSongs, song])
     }
 
-
     return (
         <main className='main-songs-list'>
             <div className='songs-add'>

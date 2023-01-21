@@ -1,5 +1,5 @@
 import { stationService } from "../service/station.service"
-import { SET_STATIONS, ADD_STATION, UPDATE_STATION } from "./station.reducer"
+import { SET_STATIONS, UPDATE_CURRENT_STATION, ADD_STATION, UPDATE_STATION } from "./station.reducer"
 import { store } from "./store"
 
 export async function loadStations() {
@@ -8,6 +8,17 @@ export async function loadStations() {
         store.dispatch({ type: SET_STATIONS, stations })
     } catch (err) {
         console.log('Had issues loading stations', err)
+        throw err
+    }
+}
+
+export async function loadCurrStation(stationId) {
+    // console.log
+    try {
+        const currStation = await stationService.get(stationId)
+        store.dispatch({ type: UPDATE_CURRENT_STATION, currStation })
+    } catch (err) {
+        console.log('Had issues loading current station', err)
         throw err
     }
 }

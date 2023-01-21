@@ -9,8 +9,10 @@ import { togglePlay } from "../store/player.action";
 export function PlayerController() {
     const player = useSelector(storeState => storeState.playerModule.player)
     const isPlaying = useSelector(storeState => storeState.playerModule.isPlaying)
+    const station = useSelector(storeState => storeState.stationModule.station)
     const [progress, setProgress] = useState(0)
     const timerId = useRef(null)
+
     useEffect(() => {
         console.log('PLAYER IN PLAYER CONTROLLER:', player)
         timerId.current = setInterval(() => {
@@ -30,19 +32,23 @@ export function PlayerController() {
         if (!player) return
         if (val) return player.seekTo(player.getCurrentTime() + val)
         player.seekTo(target.value)
-        // setProgress(target.value)
+        setProgress(target.value)
     }
 
     function getPBStyle() {
         return player?.getCurrentTime() / player?.getDuration() * 100
     }
 
+    function onPrevNextSong() {
+        console.log('station', station)
+    }
+
     return <div className="controller">
         <div className="conrtoller-btns">
-            <FontAwesomeIcon icon={faBackwardStep} onClick={(ev) => changeTime(ev, -10)} className='fa-sharp fa-solid fa-forward-step' />
+            <FontAwesomeIcon icon={faBackwardStep} onClick={(ev) => onPrevNextSong()} className='fa-sharp fa-solid fa-forward-step' />
             {!isPlaying && <FontAwesomeIcon icon={faPlayCircle} onClick={onTogglePlay} className='play-pause' />}
             {isPlaying && <FontAwesomeIcon icon={faPauseCircle} onClick={onTogglePlay} className='play-pause' />}
-            <FontAwesomeIcon icon={faForwardStep} onClick={(ev) => changeTime(ev, 10)} />
+            <FontAwesomeIcon icon={faForwardStep} onClick={(ev) => onPrevNextSong()} />
         </div>
         <div className="player-progress-container">
             <p>{utilService.secondsToMinutesAndSeconds(player?.getCurrentTime())}</p>
