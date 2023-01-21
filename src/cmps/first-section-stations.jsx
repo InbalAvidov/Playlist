@@ -8,7 +8,7 @@ export function FirstSectionStations({ stations }) {
     console.log('Player at FirstSectionStations', player)
     return (
         <section className="first-section-stations">
-            {stations.map(station => <Link to={`/station/${station._id}`}>
+            {stations.map(station => <Link to={`/station/${station._id}`} key={station._id}>
                 <div className="first-section-station-preview" >
                     <div style=
                         {{
@@ -16,7 +16,7 @@ export function FirstSectionStations({ stations }) {
                             backgroundRepeat: "no-repeat",
                             backgroundPosition: "center center",
                             backgroundSize: "cover",
-                            width: '70px', height: '70px'
+                            width: '80px', height: '80px'
                         }}>
 
                     </div>

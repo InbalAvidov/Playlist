@@ -5,9 +5,9 @@ import { SongPreview } from "./station-song-preview";
 import { SearchSongs } from '../pages/search-page';
 import { useState } from 'react';
 
-export function SongList({ station, isCreateStation, handleChange, onDeleteSong }) {
+export function SongList({ station, handleChange, onDeleteSong }) {
     const [stationSongs, setStationSongs] = useState([])
-    
+
     function onAddSong(song) {
         setStationSongs(prevSongs => [...prevSongs, song])
         handleChange('songs', [...stationSongs, song])
@@ -15,10 +15,7 @@ export function SongList({ station, isCreateStation, handleChange, onDeleteSong 
 
     return (
         <main className='main-songs-list'>
-            <div className='songs-add'>
-                {!station.songs.length > 0 && <h2>Let's find something for your playlist</h2>}
-                <SearchSongs onAddSong={onAddSong} isCreateStation={isCreateStation} />
-            </div>
+
             {station.songs.length > 0 &&
                 <section className="songs-list">
                     <div className="song-preview songs-list-header">
@@ -32,6 +29,10 @@ export function SongList({ station, isCreateStation, handleChange, onDeleteSong 
                     }
                 </section>
             }
+            <div className='songs-add'>
+                {!station.songs.length > 0 && <h2>Let's find something for your playlist</h2>}
+                <SearchSongs onAddSong={onAddSong} isForStation={true} />
+            </div>
         </main>
     )
 }

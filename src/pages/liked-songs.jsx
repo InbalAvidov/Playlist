@@ -11,7 +11,7 @@ export function LikedSongs(){
 
   return (
     <>
-    <AppHeader/>
+    
     <section className="liked-songs">
         <section className="login-signup">
         </section>

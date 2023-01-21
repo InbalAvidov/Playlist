@@ -1,23 +1,30 @@
-.songs-list {    
+.songs-add {
+    h2 {
+        margin-bottom: 20px;
+    }
+}
+
+.songs-list {
+    margin-bottom: 20px;
     .song-preview {
         grid-template-columns: 40px 2fr 1fr 100px;
         width: 100%;
         display: grid;
         height: 60px;
 
-        &.songs-list-header{
+        &.songs-list-header {
             font-size: 14px;
             font-weight: 700;
             color: $fill;
             border-bottom: .5px solid rgb(44, 44, 44);
             text-transform: uppercase;
 
-            >:last-child{
+            >:last-child {
                 justify-self: center;
             }
         }
 
-        >*{
+        >* {
             align-self: center;
             padding: 5px 0;
         }
@@ -30,16 +37,16 @@
             display: flex;
             grid-column: 2;
 
-            .song-title{
+            .song-title {
                 margin-left: 10px;
             }
         }
 
         .song-date {
-           justify-self:center;
-           grid-column: 3;
+            justify-self: center;
+            grid-column: 3;
         }
-        
+
         .song-duration {
             display: flex;
             justify-content: space-between;

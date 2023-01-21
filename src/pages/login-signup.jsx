@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+// import React, { useEffect } from 'react'
+import { useEffect } from 'react'
 
 
 import { showErrorMsg, showSuccessMsg } from '../service/event-bus.service.js'
@@ -12,11 +15,29 @@ import logoLogin from "../assets/img/logoLogin.png"
 
 
 export function LoginSignup() {
+
     const [credentials, setCredentials] = useState(userService.getEmptyCredentials())
-    console.log(credentials)
     const [isSignupState, setIsSignupState] = useState(false)
+    const {signupState}= useParams()
+    // const {loginState}= useParams()
+    console.log('LOGIN-SIGNUP ,signupState: ', signupState)
+    console.log('LOGIN-SIGNUP isSignupState, ', isSignupState)
+
+    useEffect(() =>{
+            if(signupState === 'loginState') setIsSignupState(false)
+            else  if(signupState === 'signupState') setIsSignupState(true)
+        } , [signupState])
+
+
+
     const navigate = useNavigate()
     const dispatch = useDispatch()
+
+    function onToggleSignupState(ev) {
+        ev.preventDefault()
+        setIsSignupState(!isSignupState)
+    }
+
 
     function setUser(user) {
         dispatch({ type: SET_USER, user })
@@ -53,10 +74,7 @@ export function LoginSignup() {
         }
     }
 
-    function onToggleSignupState(ev) {
-        ev.preventDefault()
-        setIsSignupState(!isSignupState)
-    }
+   
     return (
         <section className="login-signup">
             <div className="login-page">
@@ -73,7 +91,7 @@ export function LoginSignup() {
                         <h2>Login</h2>
                     }
                 </header>
-
+                <hr></hr>
                 <form className="login-form grid " onSubmit={onSubmit}>
                     <label>
                         User Name

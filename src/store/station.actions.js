@@ -42,3 +42,13 @@ export async function updateStation(station) {
         throw err
     }
 }
+
+export async function removeStation(stationId){
+    try {
+        await stationService.remove(stationId)
+        store.dispatch({ type: REMOVE_STATION, stationId, })
+    } catch (err) {
+        console.log('Had issues to get current station', err)
+        throw err
+    }  
+}
