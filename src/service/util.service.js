@@ -6,7 +6,7 @@ export const utilService = {
     randomPastTime,
     saveToStorage,
     loadFromStorage,
-    secondsMinutesAndSeconds
+    secondsToMinutesAndSeconds
 }
 
 
@@ -46,7 +46,8 @@ function getRandomIntInclusive(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min //The maximum is inclusive and the minimum is inclusive 
 }
 
-function secondsMinutesAndSeconds(seconds) {
+function secondsToMinutesAndSeconds(seconds) {
+    if(!seconds) return '0:00'
     var minutes = Math.floor(seconds / 60);
     var seconds = ((seconds % 60)).toFixed(0);
     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;

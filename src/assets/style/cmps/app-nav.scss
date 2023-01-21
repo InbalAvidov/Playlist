@@ -1,8 +1,15 @@
 .app-nav {
     background-color: $clr1;
     height: 100vh;
-    position:sticky;
+    position: sticky;
     top: 0;
+
+    .hr-line {
+        width: 85%;
+        margin: auto;
+        margin-top: 10px;
+        border-bottom: 0.1px solid rgb(78, 74, 74);
+    }
 
     .logo {
         display: flex;
@@ -17,32 +24,39 @@
             margin-left: 10px;
             font-weight: 900;
             font-size: 22px;
-            color : $brand-color
+            color: $brand-color
         }
     }
 
     nav {
         display: flex;
         flex-direction: column;
-        font-size: 18px;
+        font-size: 16px;
         font-weight: 700;
-        
+        margin-top: 30px;
+
+
         a {
             text-decoration: none;
             color: $fill;
             margin-left: 25px;
-            padding: 3px 0;
+            padding: 5px 0;
 
             &.library-nav {
                 margin-bottom: 20px;
             }
 
             span {
+                font-family: montserrat-bold;
                 margin-left: 20px;
                 font-size: 13px;
+
+                &.user-station {
+                    margin-left: 0;
+                }
             }
 
-            :hover {
+            &:hover {
                 color: $clr2
             }
 
@@ -50,5 +64,20 @@
                 color: $clr2;
             }
         }
+
+        &.user-laylist-nav {
+            margin-top: 5px;
+
+            a {
+                padding: 3px 0;
+
+                span {
+                    font-family: montserrat;
+
+                }
+            }
+        }
     }
+
+
 }

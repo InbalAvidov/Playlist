@@ -17,7 +17,6 @@ import logoLogin from "../assets/img/logoLogin.png"
 export function LoginSignup() {
 
     const [credentials, setCredentials] = useState(userService.getEmptyCredentials())
-    console.log(credentials)
     const [isSignupState, setIsSignupState] = useState(false)
     const {signupState}= useParams()
     // const {loginState}= useParams()

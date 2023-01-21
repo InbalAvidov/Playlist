@@ -1,7 +1,7 @@
 .station-header {
     display: flex;
-    margin-left: $main-app-padding;
     cursor: pointer;
+    margin-bottom: 50px;
 
     .info-container {
         display: flex;
@@ -9,9 +9,12 @@
         justify-content: space-between;
         margin-left: 15px;
 
-        p.station {
-            text-transform: uppercase;
+        p {
+            font-size: 12px;
 
+            .station {
+                text-transform: uppercase;
+            }
         }
 
         h1 {
@@ -19,11 +22,8 @@
         }
     }
 
-
-
     .upload-img-container {
-        background: rgb(18, 18, 18);
-        background: linear-gradient(0deg, rgb(32, 32, 32) 0%, rgba(57, 57, 57, 1) 100%);
+        @include station-img-container
     }
 
     .done-btn {
@@ -34,14 +34,14 @@
         position: absolute;
         right: $main-app-padding;
 
-
         &:hover {
             background-color: $brand-color;
         }
     }
 
+
     .app-modal-editor {
-        position: absolute;
+        position: fixed;
         z-index: 1;
         top: 0;
         left: 0;
@@ -73,19 +73,7 @@
             justify-content: space-around;
 
             .input-img-container {
-                background: rgb(18, 18, 18);
-                background: linear-gradient(0deg, rgb(32, 32, 32) 0%, rgba(57, 57, 57, 1) 100%);
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: center;
-                width: 200px;
-                height: 200px;
-                font-size: 30px;
-
-                span {
-                    font-size: 20px;
-                }
+                @include station-img-container
             }
 
             .title-desc {
@@ -124,4 +112,48 @@
         }
 
     }
+
+    .station-menu-container {
+        position: absolute;
+        right: $main-app-padding;
+
+        .station-menu-btn {
+            font-size: 40px;
+            background-color: inherit;
+            border: none;
+            cursor: pointer;
+            color: $clr2;
+        }
+
+        .station-menu {
+            background-color: #373737;
+            border-radius: 5px;
+            position: absolute;
+            top: 40px;
+            right: 10px;
+            
+            &.close {
+                display: none;
+            }
+            
+            p {
+                border-radius: 10px;
+                background-color: inherit;
+                color: $clr2;
+                width: 120px;
+                padding: 5px 0 5px 5px;
+                border: none;
+                font-size: 14px;
+
+                &:hover{
+                    color: $brand-color;
+                }
+            }
+        }
+
+
+
+
+    }
+
 }

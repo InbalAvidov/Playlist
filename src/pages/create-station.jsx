@@ -7,6 +7,7 @@ export function CreateStation() {
 
   async function onSaveStation(station) {
     try {
+      console.log('station:',station)
       await saveStation(station)
       navigate('/')
     } catch (err) {

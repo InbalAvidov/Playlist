@@ -1,7 +1,7 @@
 import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
 import { userService } from './user.service.js'
-
+import { stations } from '../data/station'
 const STATION_KEY = 'stationDB'
 const stationJson = [
   {
@@ -178,7 +178,7 @@ const stationJson = [
     "msgs": []
   },
   {
-    "_id": "Xbsr5hs2XgMfxp4NBR7VEd6k2",
+    "_id": "Xbsr5hs2XgMfxp4NBR7VEd6k4",
     "name": "עומר אדם",
     "tags": [],
     "createdBy": {
@@ -585,17 +585,25 @@ export const stationService = {
   getEmptyStation
 }
 
-function query() {
-  return storageService.query(STATION_KEY)
-  // .then(stations => {
-  //     if (filterBy.txt) {
-  //         const regex = new RegExp(filterBy.txt, 'i')
-  //         stations = stations.filter(station => regex.test(station.vendor))
-  //     }
-  //     if (filterBy.minSpeed) {
-  //         stations = stations.filter(station => station.maxSpeed >= filterBy.minSpeed)
-  //     }
-  // return stations
+async function query(filterBy = getEmptyFilter()) {
+  try {
+    let stations = await storageService.query(STATION_KEY)
+    if (filterBy.userId) {
+      console.log('filterBy:', filterBy)
+      stations = stations.filter(station => {
+        console.log('station:', station.createdBy._id === filterBy.userId)
+        return station.createdBy._id === filterBy.userId
+      })
+      console.log('stations from query:', stations)
+    }
+    return stations
+  } catch (err) {
+    throw err
+  }
+}
+
+function getEmptyFilter() {
+  return { user: null }
 }
 
 function get(stationId) {
@@ -623,17 +631,21 @@ async function removeSong(stationId, songId) {
     save(station)
     return station
   } catch (err) {
-    console.log('err:', err)
     return err
   }
 }
 
 function getEmptyStation() {
+  const user = userService.getLoggedinUser()
   return {
     "_id": "",
     "name": "",
     "tags": [],
-    "createdBy": userService.getLoggedinUser(),
+    "createdBy": user ? user : {
+      "_id": utilService.makeId,
+      "fullname": "Geust",
+      "imgUrl": "https://robohash.org/set=set3"
+    },
     "likedByUsers": [],
     "songs": [],
     "msgs": []

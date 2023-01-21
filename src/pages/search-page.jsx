@@ -5,7 +5,7 @@ import { YoutubeService } from "../service/youtube.service";
 import { utilService } from "../service/util.service";
 
 
-export function SearchSongs({ isCreateStation, onAddSong }) {
+export function SearchSongs({ isCreateStation, onAddSong, isForStation }) {
     const [search, setSearch] = useState('')
     const [songsBySearch, setSongsBySearch] = useState([])
     const searchSongs = useRef(utilService.debounce(getSearchReasults, 700))
@@ -26,16 +26,17 @@ export function SearchSongs({ isCreateStation, onAddSong }) {
     }
 
     function addSong(song) {
-        setSearch('')
-        setSongsBySearch([])
         onAddSong(song)
     }
     return (
         <main className="main-search">
-            <input className={isCreateStation ? "add-songs-search" :"main-input-search"} type='txt' value={search} placeholder='What do you want to listen to?' onChange={handleChange} />
+            <input className={isForStation ? "add-songs-search" : "main-input-search"}
+                type='txt' value={search}
+                placeholder={isForStation ? 'Add more songs' : 'What do you want to listen to?'}
+                onChange={handleChange} />
             {songsBySearch.length > 0 && <div className="search-results">
                 {songsBySearch.map(song => <div className="search-result" key={song.id}>
-                    {isCreateStation && <button onClick={() => addSong(song)}>+</button>}
+                    {isForStation && <button className="add-song-btn" onClick={() => addSong(song)}>+</button>}
                     <img src={song.imgUrl} />
                     <div className="song-details">
                         <h4>{song.title} </h4>

@@ -1,27 +1,23 @@
-import { MediaConroller } from "./media-controller"
-import { Soundplayer } from "./youtube-react"
-import cover from '../assets/img/see you again.png'
+import { PlayerController } from "./player-controller"
+import { SoundPlayer } from "./sound-player"
 import { useSelector } from "react-redux"
 
-export function MediaPlayerBar() {
-    // const songId = useSelector(storeState => storeState.playerModule.songId)
-    const player = {
-        _id: 'RgKAFK5djSk',
-        title: 'See You Again',
-        cover,
-        artist: 'Wiz Khalifa'
-    }
+export function PlayerBar() {
+    const player = useSelector(storeState => storeState.playerModule.player)
+    const song = useSelector(storeState => storeState.playerModule.song)
+    console.log('song from player bar', song)
+    song ? console.log('song from player bar', song) : console.log('no song')
 
     return (<div className="media-player" >
-        <Soundplayer playerId={player._id} />
+        {song && <SoundPlayer playerId={song._id} />}
         {player && <div className="information">
-            <img src={player.cover} alt="no image" />
+            <img src={song.imgUrl} alt="no image" />
             <div className="details">
-                <h4>{player.title}</h4>
+                <h4>{player.videoTitle}</h4>
                 <h5>{player.artist}</h5>
             </div>
         </div>}
-        <MediaConroller />
+        <PlayerController />
     </div>
     )
 }
