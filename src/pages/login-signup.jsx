@@ -21,13 +21,11 @@ export function LoginSignup() {
     const [isSignupState, setIsSignupState] = useState(false)
     const {signupState}= useParams()
     
-    // console.log('LOGIN-SIGNUP ,signupState: ', signupState)
-    // console.log('LOGIN-SIGNUP isSignupState, ', isSignupState)
 
     useEffect(() =>{
-            if(signupState === 'loginState') setIsSignupState(false)
-            else  if(signupState === 'signupState') setIsSignupState(true)
-        } , [signupState])
+        if(signupState === 'loginState') setIsSignupState(false)
+        else  if(signupState === 'signupState') setIsSignupState(true)
+    },[signupState])
 
 
 

@@ -22,12 +22,13 @@
       width: 55px;
     }
   }
-
 }
+
 h2 {
   color: black;
   text-align: center;
 }
+
 .back-btn{
   
   text-align: center;
@@ -35,7 +36,11 @@ h2 {
 
   a{
     text-decoration: none;
-    color:$brand-color;
+    color:$clr1;
+    border:1px solid;
+    border-radius: 25px;
+    padding: 12px;
+    padding-inline: 90px;
   }
 }
 // Define grid container
