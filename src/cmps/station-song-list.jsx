@@ -25,7 +25,7 @@ export function SongList({ station, handleChange, onDeleteSong }) {
                         <p className="song-duration"><FontAwesomeIcon icon={faClock}></FontAwesomeIcon></p>
                     </div>
                     {station.songs.map((song, idx) =>
-                        <SongPreview song={song} idx={idx} onDeleteSong={onDeleteSong} />)
+                        <SongPreview key={idx} song={song} idx={idx} onDeleteSong={onDeleteSong} />)
                     }
                 </section>
             }

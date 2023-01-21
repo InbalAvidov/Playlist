@@ -19,11 +19,11 @@ const stationJson = [
     },
     "likedByUsers": [
       {
-        " _id": "5cksxjas89xjsa8xjsa8jld3",
+        "_id": "5cksxjas89xjsa8xjsa8jld3",
         "fullname": "Inbal Avidov"
       },
       {
-        " _id": "5cksxjas89xjsa8xjsa8jjj7",
+        "_id": "5cksxjas89xjsa8xjsa8jjj7",
         "fullname": "Omri Hazan"
       }
     ],
@@ -78,11 +78,11 @@ const stationJson = [
     },
     "likedByUsers": [
       {
-        " _id": "5cksxjas89xjsa8xjsa8jld3",
+        "_id": "5cksxjas89xjsa8xjsa8jld3",
         "fullname": "Inbal Avidov"
       },
       {
-        " _id": "5cksxjas89xjsa8xjsa8jjj7",
+        "_id": "5cksxjas89xjsa8xjsa8jjj7",
         "fullname": "Omri Hazan"
       }
     ],
@@ -97,7 +97,17 @@ const stationJson = [
           "fullname": "Puki Ben David",
           "imgUrl": "https://robohash.org/set=set3"
         },
-        "addedAt": 162521765262
+        "addedAt": 162521765262,
+        "likedByUsers": [
+          {
+            "_id": "5cksxjas89xjsa8xjsa8jld3",
+            "fullname": "Inbal Avidov"
+          },
+          {
+            "_id": "5cksxjas89xjsa8xjsa8jjj7",
+            "fullname": "Omri Hazan"
+          }
+        ],
       },
       {
         "id": "mUkfiLjooxs",
@@ -172,7 +182,13 @@ const stationJson = [
           "fullname": "Puki Ben David",
           "imgUrl": "https://robohash.org/set=set3"
         },
-        "addedAt": "2023-01-18T17:34:31.847Z"
+        "addedAt": "2023-01-18T17:34:31.847Z",
+        "likedByUsers": [
+          {
+            "_id": "5cksxjas89xjsa8xjsa8hhh7",
+            "fullname": "Hila Shor"
+          },
+        ],
       }
     ],
     "msgs": []
