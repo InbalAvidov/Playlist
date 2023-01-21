@@ -1,33 +1,43 @@
 .login-page {
   flex-direction: column;
   background-color: $clr2;
-  // position: absolute;
-  // z-index: 200;
-  // top: 0;
-  // left: 0;
-  // height: 100vh;
-  // width: 100vw;
+  position: absolute;
+  z-index: 200;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
 
   .logo {
     align-items: center;
     justify-content: center;
     padding-top: 20px;
+    padding-bottom: 20px;
 
     h1 {
       color: $clr1;
       font-size: 20px;
     }
-
     .logo-img {
       width: 55px;
     }
   }
-  h2{
-    color: $clr1;
-    text-align: center;
+
+}
+h2 {
+  color: black;
+  text-align: center;
+}
+.back-btn{
+  
+  text-align: center;
+  margin-block-start: 2rem;
+
+  a{
+    text-decoration: none;
+    color:$brand-color;
   }
 }
-
 // Define grid container
 .login-form {
   display: grid;
@@ -37,7 +47,7 @@
   align-items: center;
   justify-items: center;
   grid-row: 2 / 3;
-  margin-top: 50px;
+  margin-top: 30px;
   // Center form within grid
   display: flex;
   flex-direction: column;
@@ -49,6 +59,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    
   }
 
   input {
@@ -65,18 +76,14 @@
     color: $clr2;
     border: none;
     cursor: pointer;
-    // font-family: "architects-daughter-regular";
     border-radius: 1.2rem;
-  }
+    margin-top: 10px;
+    margin-bottom: 10px;
 
-  .custom-placeholder {
-    // font-family: "architects-daughter-regular";
-    // color:$clr-1;
   }
-
-  a {
-    // color:$clr-1;
-    // color: darken($clr13,5%);
+  .guest-btn{
+    width: 70PX;
+    margin-inline-start: 20PX;
   }
 
 }

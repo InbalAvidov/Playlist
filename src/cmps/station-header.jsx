@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faImage } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 import { useSelector } from "react-redux"
-import { confirmAlert } from 'react-confirm-alert';
+// import { confirmAlert } from 'react-confirm-alert';
 import Swal from 'sweetalert2'
 
 
