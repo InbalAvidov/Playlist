@@ -13,6 +13,7 @@ async function getYoutubeReasults(val) {
         ytVideos.map(ytVideo => {
             // if (!ytVideo.snippet.channelTitle.includes('Official') && !ytVideo.snippet.channelTitle.includes('רשמי') && !ytVideo.snippet.title.includes('Official') ) return
             if (ytVideo.snippet.title.includes('Trailer')) return
+            // console.log('ytVideo', ytVideo)
             const song = {
                 id: ytVideo.id.videoId,
                 title: ytVideo.snippet.title,

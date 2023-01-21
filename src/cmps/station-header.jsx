@@ -1,8 +1,8 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faImage } from "@fortawesome/free-solid-svg-icons"
 import { useState } from "react"
 import { useSelector } from "react-redux"
-// import { confirmAlert } from 'react-confirm-alert';
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { faImage } from "@fortawesome/free-solid-svg-icons"
+
 import Swal from 'sweetalert2'
 
 
@@ -72,6 +72,7 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
             }
         })
     }
+
     return (
         <section className="station-header" onClick={onOpenEditor}>
             {station.imgUrl || station.songs.length > 0 ?
@@ -86,7 +87,7 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
                 </div>
                 :
                 <div onClick={onOpenEditor} className="upload-img-container">
-                    <FontAwesomeIcon icon={faImage}></FontAwesomeIcon>
+                    <FontAwesomeIcon icon={faImage} />
                     <span>Upload Image</span>
                 </div>
             }
@@ -106,27 +107,37 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
                     </div>
                 </div>}
 
-            {isEdit &&
-                <div className="modal-editor">
-                    <h1>Edit details</h1>
-                    <div className="edit-container">
-                        <div className="input-img-container">
-                            <FontAwesomeIcon icon={faImage}></FontAwesomeIcon>
-                            <span>Upload Image</span>
-                            <input type="file" hidden />
-                        </div>
-                        <div className="title-desc">
-                            <input className="input-title" type="text" placeholder="playlist name" onChange={onChangeName} value={station.name ? station.name : stationName} name="name" />
-                            <textarea className="input-desc" placeholder="Add an optinal description" value={station.description ? station.description : stationDescription} onChange={onChangeDescription} name="description">
-                            </textarea>
-                            <button className="modal-done-btn" onClick={onCloseEditor}>Done</button>
-                        </div>
+            {isEdit && <div className="modal-editor">
+                <h1>Edit details</h1>
+                <div className="edit-container">
+                    <div className="input-img-container">
+                        <FontAwesomeIcon icon={faImage} />
+                        <span>Upload Image</span>
+                        <input type="file" hidden />
+                    </div>
+                    <div className="title-desc">
+                        <input
+                            type="text"
+                            name="name"
+                            className="input-title"
+                            placeholder="playlist name"
+                            value={station.name ? station.name : stationName}
+                            onChange={onChangeName}
+                        />
+                        <textarea
+                            name="description"
+                            className="input-desc"
+                            placeholder="Add an optinal description"
+                            value={station.description ? station.description : stationDescription}
+                            onChange={onChangeDescription}
+                        />
+                        <button className="modal-done-btn" onClick={onCloseEditor}>Done</button>
                     </div>
                 </div>
+            </div>
             }
             {isEdit &&
-                <main onClick={onCloseEditor} className="app-modal-editor">
-                </main>
+                <main onClick={onCloseEditor} className="app-modal-editor" />
             }
         </section>
     )

@@ -5,7 +5,7 @@ import { YoutubeService } from "../service/youtube.service";
 import { utilService } from "../service/util.service";
 
 
-export function SearchSongs({ isCreateStation, onAddSong, isForStation }) {
+export function SearchSongs({ onAddSong, isForStation }) {
     const [search, setSearch] = useState('')
     const [songsBySearch, setSongsBySearch] = useState([])
     const searchSongs = useRef(utilService.debounce(getSearchReasults, 700))
@@ -28,6 +28,7 @@ export function SearchSongs({ isCreateStation, onAddSong, isForStation }) {
     function addSong(song) {
         onAddSong(song)
     }
+
     return (
         <main className="main-search">
             <input className={isForStation ? "add-songs-search" : "main-input-search"}

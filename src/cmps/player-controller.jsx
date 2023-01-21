@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBackwardStep, faForwardStep, faPauseCircle, faPlayCircle } from '@fortawesome/free-solid-svg-icons'
+
 import { utilService } from "../service/util.service";
 import { togglePlay } from "../store/player.action";
 
@@ -26,7 +27,6 @@ export function PlayerController() {
     function onTogglePlay() {
         if (isPlaying) clearInterval(timerId.current)
         togglePlay(!isPlaying)
-        // console.log('progress', progress)
     }
 
     function changeTime({ target }, val) {
@@ -44,15 +44,16 @@ export function PlayerController() {
         // console.log('station', station)
     }
 
-    function onToggleHover(ev){
-        console.log(ev)
-        if(ev.type==='mousemove')setProgColor('#1ed760')
+    function onToggleHover(ev) {
+        if (!player) return
+        console.log('hovevvevrrinnngg')
+        if (ev.type === 'mousemove') setProgColor('#1ed760')
         else setProgColor('#ffffff')
     }
 
     return <div className="controller">
         <div className="conrtoller-btns">
-            <FontAwesomeIcon icon={faBackwardStep} onClick={() => onPrevNextSong()} className='fa-sharp fa-solid fa-forward-step' />
+            <FontAwesomeIcon icon={faBackwardStep} onClick={() => onPrevNextSong()} />
             {!isPlaying && <FontAwesomeIcon icon={faPlayCircle} onClick={onTogglePlay} className='play-pause' />}
             {isPlaying && <FontAwesomeIcon icon={faPauseCircle} onClick={onTogglePlay} className='play-pause' />}
             <FontAwesomeIcon icon={faForwardStep} onClick={() => onPrevNextSong()} />
@@ -74,6 +75,5 @@ export function PlayerController() {
             />
             <p>{utilService.secondsToMinutesAndSeconds(player?.getDuration())}</p>
         </div>
-
     </div>
 }

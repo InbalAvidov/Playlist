@@ -2,7 +2,6 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import defaultPhoto from '../assets/img/default-photo.jpeg'
 
-
 export function FirstSectionStations({ stations }) {
     const player = useSelector(storeState => storeState.playerModule.player)
     console.log('Player at FirstSectionStations', player)
@@ -18,7 +17,6 @@ export function FirstSectionStations({ stations }) {
                             backgroundSize: "cover",
                             width: '80px', height: '80px'
                         }}>
-
                     </div>
                     <p>{station.name}</p>
                 </div>
