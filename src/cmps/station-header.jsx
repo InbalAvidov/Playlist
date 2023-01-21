@@ -96,7 +96,7 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
                 <p>{station.createdBy.fullname ? station.createdBy.fullname : user.fullname}</p>
             </div>
             {!station._id && <button className="done-btn" onClick={onDone}>Done</button>}
-            {user._id === station.createdBy._id && station._id &&
+            {user && user._id === station.createdBy._id && station._id &&
                 <div className="station-menu-container">
                     <button className="station-menu-btn" onClick={onToggleMenu}> •••</button>
                     <div className={isMenuOpen ? "station-menu" : "station-menu close"}>

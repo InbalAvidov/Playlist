@@ -642,7 +642,7 @@ function getEmptyStation() {
     "name": "",
     "tags": [],
     "createdBy": user ? user : {
-      "_id": utilService.makeId,
+      "_id": utilService.makeId(),
       "fullname": "Geust",
       "imgUrl": "https://robohash.org/set=set3"
     },
