@@ -8,7 +8,7 @@ import { logout } from '../store/user.action.js'
 export function AppHeader() {
   const user = useSelector((storeState => storeState.userModule.user))
   const navigate = useNavigate()
-  console.log('Appheader cmp, user:', user)
+  // console.log('Appheader cmp, user:', user)
 
   function onLogout() {
     logout()
@@ -29,15 +29,16 @@ export function AppHeader() {
         </nav>
         {!user ?
           <div className='btns-login-singup'>
-            {!user && <NavLink className="login-signup" to="/login-signup"><div>Sign up</div></NavLink>}
-            {!user && <NavLink className="login-signup focus" to="/login-signup"><div>Log in</div></NavLink>}
+            {/* {!user && <NavLink className="login-signup" to="/login-signup"><div>Sign up</div></NavLink>} */}
+            {!user && <NavLink className="login-signup" to="/login-signup/signupState"><div>Sign up</div></NavLink>}
+            {!user && <NavLink className="login-signup focus" to="/login-signup/loginState"><div>Log in</div></NavLink>}
           </div>
           :
           <div onClick={onLogout} className="user-section">
             <FontAwesomeIcon icon={faUser}></FontAwesomeIcon>
             {user.fullname}
           </div>
-          /* <img src={user.imgUrl}></img></> */
+          
         }
       </div>
     </section>

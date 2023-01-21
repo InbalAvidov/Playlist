@@ -30,7 +30,9 @@ export function App() {
                             <Route element={<SearchSongs />} path="/search" />
                             <Route element={<CreateStation />} path="/createStation" />
                             <Route element={<LikedSongs />} path="/liked" />
-                            <Route element={<LoginSignup/>} path="/login-signup"/>
+                            {/* <Route element={<LoginSignup/>} path="/login-signup" /> */}
+                            <Route element={<LoginSignup/>} path="/login-signup/:signupState" />
+                            <Route element={<LoginSignup/>} path="/login-signup/:loginState" />
                             {/* <Route element={<Playlist />} path="/playlist/:stationId" /> */}
                         </Routes>
                     </main>
@@ -38,7 +40,7 @@ export function App() {
                     {/* <Loader /> */}
                 </section>
             </Router>
-
+            
         </Provider>
     )
 }
