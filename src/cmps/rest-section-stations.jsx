@@ -14,13 +14,13 @@ export function RestSectionStations({ stations }) {
                     <div className="img-container" style=
                         {{
                             backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs.length > 0 ? station.songs[0].imgUrl : defaultPhoto}")`,
-                            backgroundRepeat: "repeat",
+                            backgroundRepeat: "no-repeat",
                             backgroundPosition: "center",
-                            backgroundSize: "auto",
-                            width: '200px', height: '200px', margin: 'auto'
+                            backgroundSize: "cover",
+                            width: '190px', height: '190px', margin: 'auto'
                         }}>
                     </div>
-                    <h2>{station.name}</h2>
+                    <h3>{station.name}</h3>
                     <p>{station.description?.slice(0, 15)}</p>
                 </div>
             </Link>)}

@@ -1,10 +1,12 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart, faListDots } from '@fortawesome/free-solid-svg-icons'
+import { faHeart, faTrash } from '@fortawesome/free-solid-svg-icons'
 
 import { setSong } from "../store/player.action"
 import { utilService } from '../service/util.service'
+import { useSelector } from 'react-redux'
 
-export function SongPreview({ song, idx, onDeleteSong }) {
+export function SongPreview({ song, idx, onDeleteSong, station }) {
+    const user = useSelector((storeState => storeState.userModule.user))
 
     function onSetSong(songToStore) {
         console.log('SONG TO STORE', songToStore)
@@ -31,12 +33,16 @@ export function SongPreview({ song, idx, onDeleteSong }) {
             <div className="song-date">
                 <p>{utilService.randomPastTime()}</p>
             </div>
-            <p className="song-duration">
+            <p className='song-actions'>
                 <span><FontAwesomeIcon icon={faHeart}></FontAwesomeIcon></span>
+                {user && station.createdBy._id === user._id &&
+                    <span onClick={() => onDeleteSong(song.id)}>
+                        <FontAwesomeIcon icon={faTrash}></FontAwesomeIcon>
+                    </span>}
+
+            </p>
+            <p className="song-duration">
                 3:12
-                <span onClick={() => onDeleteSong(song.id)}>
-                    <FontAwesomeIcon icon={faListDots}></FontAwesomeIcon>
-                </span>
             </p>
         </div>
     )

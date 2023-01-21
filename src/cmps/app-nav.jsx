@@ -1,9 +1,10 @@
 import { NavLink } from "react-router-dom"
-import logo from "../assets/img/logo.png"
 import { useEffect, useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch, faHome, faLinesLeaning, faPlus, faHeart, faMusic } from '@fortawesome/free-solid-svg-icons'
 import { useSelector } from "react-redux"
+
+import logo from "../assets/img/logo-white.png"
 import { stationService } from "../service/station.service"
 import { loadStations } from "../store/station.actions"
 
@@ -31,7 +32,6 @@ export function AppNav() {
         <main className="app-nav">
             <div className="logo">
                 <img className="logo-img" src={logo} />
-                <h1>Playlist</h1>
             </div>
             <nav>
                 <NavLink to="/"><FontAwesomeIcon icon={faHome}></FontAwesomeIcon><span>Home</span></NavLink>
