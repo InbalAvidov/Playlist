@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import {  useNavigate, useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useState } from "react"
 
 import { Loader } from "../cmps/loader"
@@ -23,6 +23,7 @@ export function Station({ saveStation }) {
 
   async function loadStation() {
     const currStation = await stationService.get(stationId)
+    console.log(currStation)
     setStation(currStation)
   }
 
@@ -59,7 +60,7 @@ export function Station({ saveStation }) {
   if (!station) return <Loader />
   else return (
     <main className="station-details">
-      < StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} onSaveStation={onSaveStation} />
+      {/* <StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} onSaveStation={onSaveStation} /> */}
       <SongList station={station} handleChange={handleChange} onDeleteSong={onDeleteSong} />
     </main>
   )

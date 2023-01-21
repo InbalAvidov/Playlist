@@ -9,7 +9,7 @@ import { togglePlay } from "../store/player.action";
 export function PlayerController() {
     const player = useSelector(storeState => storeState.playerModule.player)
     const isPlaying = useSelector(storeState => storeState.playerModule.isPlaying)
-    const station = useSelector(storeState => storeState.stationModule.station)
+    // const station = useSelector(storeState => storeState.stationModule.station)
     const [progress, setProgress] = useState(0)
     const timerId = useRef(null)
 
@@ -40,7 +40,7 @@ export function PlayerController() {
     }
 
     function onPrevNextSong() {
-        console.log('station', station)
+        // console.log('station', station)
     }
 
     return <div className="controller">

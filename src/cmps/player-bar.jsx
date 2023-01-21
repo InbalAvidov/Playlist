@@ -1,22 +1,34 @@
 import { PlayerController } from "./player-controller"
 import { SoundPlayer } from "./sound-player"
 import { useSelector } from "react-redux"
-import { useState } from "react"
+import { useRef, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faPhoneVolume, faVolumeMute } from "@fortawesome/free-solid-svg-icons"
+import { faPhoneVolume, faVolumeHigh, faVolumeMute } from "@fortawesome/free-solid-svg-icons"
 
 export function PlayerBar() {
     const player = useSelector(storeState => storeState.playerModule.player)
     const song = useSelector(storeState => storeState.playerModule.song)
     const [volume, setVolume] = useState(80)
+    const lastVolumeRef = useRef(0)
     console.log('song from player bar', song)
     song ? console.log('song from player bar', song) : console.log('no song')
 
     function onSetVolume({ target }) {
-        if (!player) return
-        console.log(player?.getVolume())
-        player.setVolume(target.value)
-        setVolume(target.value)
+        if (target.type != 'range') {
+            if (volume === 0) {
+                console.log('RETURNING SOUND')
+                player.setVolume(lastVolumeRef.current)
+                setVolume(lastVolumeRef.current)
+            } else {
+                lastVolumeRef.current = volume
+                player.setVolume(0)
+                setVolume(0)
+            }
+        } else {
+            if (!player) return
+            player.setVolume(target.value)
+            setVolume(target.value)
+        }
     }
 
     return (<div className="media-player" >
@@ -30,8 +42,9 @@ export function PlayerBar() {
         </div>}
         <PlayerController />
         <div className="actions-btns">
-        <FontAwesomeIcon icon={faVolumeMute}/>
-        {/* <FontAwesomeIcon icon={faPhoneVolume}/> */}
+            {volume ? <FontAwesomeIcon icon={faVolumeMute} onClick={onSetVolume} />
+                : <FontAwesomeIcon icon={faVolumeHigh} onClick={onSetVolume} />}
+            {/* <FontAwesomeIcon icon={faPhoneVolume}/> */}
             <input
                 type="range"
                 name="volume-range"

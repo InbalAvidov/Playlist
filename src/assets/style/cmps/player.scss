@@ -45,7 +45,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 10px;
+        gap: 25px;
     }
 
     .conrtoller-btns>* {
@@ -86,7 +86,7 @@
         -webkit-appearance: none;
         background-color: $bar-fill;
         height: 3.5px;
-        border-radius: 20px;
+        border-radius: 2rem;
     }
 
     .player-progress:hover {
@@ -98,14 +98,17 @@
         grid-column: 6;
         margin-left: 15px;
         margin-right: 15px;
+        align-items: center;
+        justify-content: center;
+        gap: 5px;
     }
 
     .volume-range{
-        max-width: 50%;
+        max-width: 43%;
         -webkit-appearance: none;
         background-color: $bar-fill;
         height: 3.5px;
-        border-radius: 20px;
+        border-radius: 2rem;
     }
 
     input[type=range]::-webkit-slider-thumb {

@@ -1,5 +1,5 @@
 import { stationService } from "../service/station.service"
-import { SET_STATIONS, UPDATE_CURRENT_STATION, ADD_STATION, UPDATE_STATION } from "./station.reducer"
+import { SET_STATIONS, UPDATE_CURRENT_STATION, ADD_STATION, UPDATE_STATION, REMOVE_STATION } from "./station.reducer"
 import { store } from "./store"
 
 export async function loadStations() {
