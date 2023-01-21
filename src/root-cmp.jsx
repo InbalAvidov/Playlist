@@ -11,9 +11,8 @@ import { UserLibrary } from './pages/user-library'
 import { PlayerBar } from './cmps/player-bar'
 import { CreateStation } from './pages/create-station'
 import { AppHeader } from './cmps/app-header'
-// import { CreateStation } from './pages/create-station'
 import { LoginSignup } from './pages/login-signup';
-// import { UserMsg } from './cmps/user-msg'
+import { UserMsg } from './cmps/user-msg'
 
 
 export function App() {
@@ -39,6 +38,7 @@ export function App() {
                         </Routes>
                     </main>
                     <PlayerBar />
+                    <UserMsg />
                     {/* <Loader /> */}
                 </section>
             </Router>

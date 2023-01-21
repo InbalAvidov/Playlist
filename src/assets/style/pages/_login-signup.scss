@@ -1,5 +1,7 @@
 .login-page {
+  display: flex;
   flex-direction: column;
+  justify-content: center;
   background-color: $clr2;
   position: absolute;
   z-index: 200;
@@ -18,29 +20,30 @@
       color: $clr1;
       font-size: 20px;
     }
+
     .logo-img {
       width: 55px;
     }
   }
+
   h2 {
     color: black;
     text-align: center;
   }
 }
-.back-btn{
-  
-  text-align: center;
-  margin-block-start: 2rem;
 
-  a{
-    text-decoration: none;
-    color:$clr1;
-    border:1px solid;
-    border-radius: 25px;
-    padding: 12px;
-    padding-inline: 90px;
-  }
+.guest-btn {
+  margin: auto;
+  width: fit-content;
+  color: $clr1;
+  background-color: inherit;
+  border: 1px solid;
+  border-radius: 25px;
+  padding: 12px;
+  padding-inline: 90px;
 }
+
+
 // Define grid container
 .login-form {
   display: grid;
@@ -56,13 +59,13 @@
   flex-direction: column;
   align-items: center;
 
-  label{
+  label {
     width: 300px;
     color: $clr1;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    
+
   }
 
   input {
@@ -83,10 +86,6 @@
     margin-top: 10px;
     margin-bottom: 10px;
 
-  }
-  .guest-btn{
-    width: 70PX;
-    margin-inline-start: 20PX;
   }
 
 }

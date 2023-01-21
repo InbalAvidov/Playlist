@@ -85,7 +85,7 @@ async function logout() {
 
 
 function saveLocalUser(user) {
-    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl, score: user.score }
+    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
@@ -119,12 +119,20 @@ function _createUsers() {
                 email: 'omrihazan1313@gmail.com',
                 username: 'omri.hazan',
                 password: 'omri',
-            },{
+            },
+            {
                 _id:'5cksxjas89xjsa8xjsa8hhh7',
                 fullname: 'Hila Shor',
                 email: 'hilashor@gmail.com',
                 username: 'hila.shor',
                 password: 'hila',
+            },
+            {
+                _id:'5cksxjas89xjsa8xjsa8ggg7',
+                fullname: 'Guest',
+                email: 'guest@gmail.com',
+                username: 'guest',
+                password: 'guest',
             } 
         ]
         utilService.saveToStorage(USERS_KEY, users)

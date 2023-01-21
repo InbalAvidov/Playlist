@@ -1,0 +1,36 @@
+.rest-section-stations {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    width: 100%;
+    gap: 10px;
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    .rest-section-station-preview {
+        background-color: darken($song-bgc-home , 4%);
+        grid-column: span 1;
+        border-radius: 10px;
+        padding: 17px;
+        transition: .5s;
+
+        .img-container {
+            border-radius: 10px;
+        }
+
+        h3 {
+            font-size: 20px;
+            font-weight: bold;
+            color: $clr2;
+            text-align: left;
+            padding-top: 10px;
+            height: 80px;
+        }
+
+        &:hover {
+            background-color: lighten($song-bgc-home, 3%);
+        }
+    }
+}

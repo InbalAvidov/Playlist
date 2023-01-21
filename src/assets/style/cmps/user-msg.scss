@@ -1,0 +1,26 @@
+.user-msg {
+    background-color: $clr2;
+    color:$clr1;
+    padding: 1em;
+    position: absolute;
+    top: 1em;
+    left: 1em;
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.user-msg.success:hover {
+    background-color: $brand-color;
+    color: $clr2;
+}
+
+.user-msg.error:hover {
+    background-color: $clr1;
+    color: $clr2;
+}
+
+
+.user-msg button {
+    float: right;
+    margin: 1em;
+}
