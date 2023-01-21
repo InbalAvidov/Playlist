@@ -3,9 +3,9 @@ export const SHOW_MSG = 'show-msg'
 function createEventEmitter() {
     const listenersMap = {}
     return {
-        on(evName, listener){
-            listenersMap[evName] = (listenersMap[evName])? [...listenersMap[evName], listener] : [listener]
-            return ()=>{
+        on(evName, listener) {
+            listenersMap[evName] = (listenersMap[evName]) ? [...listenersMap[evName], listener] : [listener]
+            return () => {
                 listenersMap[evName] = listenersMap[evName].filter(func => func !== listener)
             }
         },
@@ -16,17 +16,17 @@ function createEventEmitter() {
     }
 }
 
-export const eventBus = createEventEmitter()
+export const eventBusService = createEventEmitter()
 
 export function showUserMsg(msg) {
-    eventBus.emit(SHOW_MSG, msg)
+    eventBusService.emit(SHOW_MSG, msg)
 }
 
 export function showSuccessMsg(txt) {
-    showUserMsg({txt, type: 'success'})
+    showUserMsg({ txt, type: 'success' })
 }
 export function showErrorMsg(txt) {
-    showUserMsg({txt, type: 'error'})
+    showUserMsg({ txt, type: 'error' })
 }
 
 window.showUserMsg = showUserMsg

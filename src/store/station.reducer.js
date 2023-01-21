@@ -21,6 +21,7 @@ export function stationReducer(state = initialState, action) {
             return { ...state, stations }
         case ADD_STATION:
             stations = [...state.stations, action.station]
+            console.log('stations:',stations)
             return { ...state, stations }
         case UPDATE_STATION:
             stations = state.stations.map(station => station._id === action.station._id ? action.station : station)

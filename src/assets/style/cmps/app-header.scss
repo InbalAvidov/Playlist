@@ -1,10 +1,16 @@
 .app-header {
   background-color: $bgc-main;
   display: grid;
-  padding: 15px $main-app-padding 0;
+  padding: 17px $main-app-padding 0;
 
   .header-details {
     justify-content: space-between;
+
+    nav{
+      margin-left: 10px;
+      width: 75px;
+      justify-content: space-between;
+    }
 
     svg {
       &.arrow {

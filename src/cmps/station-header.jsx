@@ -14,12 +14,9 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
     const [stationName, setStationName] = useState("")
     const [stationDescription, setStationDescription] = useState("")
 
-    // useEffect(()=>{
-    //     if(user)
-    // },[])
-
     function onOpenEditor(ev) {
         ev.stopPropagation()
+        if (station.tags.includes('home')) return
         setIsEdit(true)
         setIsMenuOpen(false)
     }
@@ -65,8 +62,8 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
             title: 'Are you sure?',
             text: "You won't be able to revert this!",
             showCancelButton: true,
-            background: '#222222',
-            color: '#ffffff',
+            background: '#ffffff',
+            color: '#000000',
             confirmButtonColor: '#1ed760',
             cancelButtonColor: '#000000',
             confirmButtonText: 'Yes, delete it!'
@@ -100,7 +97,6 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
                 {station.description && <h3>{station.description}</h3>}
                 <p>{station.createdBy ? station.createdBy.fullname : user.fullname}</p>
             </div>
-            {!station._id && <button className="done-btn" onClick={onDone}>Done</button>}
             {user && user._id === station.createdBy?._id && station._id &&
                 <div className="station-menu-container">
                     <button className="station-menu-btn" onClick={onToggleMenu}> •••</button>
@@ -132,6 +128,8 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
                 <main onClick={onCloseEditor} className="app-modal-editor">
                 </main>
             }
+            {!station._id && <button className="done-btn" onClick={onDone}>Done</button>}
+
         </section>
     )
 }

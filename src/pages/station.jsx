@@ -23,7 +23,6 @@ export function Station({ saveStation }) {
 
   async function loadStation() {
     const currStation = await stationService.get(stationId)
-    console.log('currStation:',currStation)
     setStation(currStation)
   }
 

@@ -2,17 +2,19 @@
     display: flex;
     cursor: pointer;
     margin-bottom: 50px;
+    width: 100%;
 
     .info-container {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         margin-left: 15px;
+        flex: 1;
 
         p {
             font-size: 12px;
 
-            .station {
+            &.station {
                 text-transform: uppercase;
             }
         }
@@ -32,7 +34,11 @@
         border-radius: 10em;
         font-size: 16px;
         position: absolute;
+        // align-self: flex-start;
         right: $main-app-padding;
+        // margin: 10px 10px 0 0 ;
+        bottom: 100px;
+
 
         &:hover {
             background-color: $brand-color;
