@@ -1,7 +1,9 @@
+import { useSelector } from 'react-redux';
 import YouTube from 'react-youtube';
 import { loadPlayer } from '../store/player.action';
 
-export function SoundPlayer({ playerId }) {
+export function SoundPlayer() {
+  const song = useSelector(storeState => storeState.playerModule.song)
   const opts = {
     height: '00',
     width: '00',
@@ -20,7 +22,7 @@ export function SoundPlayer({ playerId }) {
   }
 
   return <div>
-    <YouTube videoId={playerId} opts={opts} onReady={_onReady} />
+    <YouTube videoId={song._id} opts={opts} onReady={_onReady} />
   </div>
 }
 

@@ -363,35 +363,35 @@ const songs = [
     
   },
   {
-    "id": "yjJcnqZqciU", "title": "אמיר דדון - לבחור נכון", "channelTitle": "Amir Dadon - אמיר דדון", "imgUrl": "//i.ytimg.com/vi/yjJcnqZqciU/hqdefault.jpg", "url": "//www.youtube.com/embed?v=yjJcnqZqciU",
+    "id": "yjJcnqZqciU", "title": " - לבחור נכון", "channelTitle": "Amir Dadon - ", "imgUrl": "//i.ytimg.com/vi/yjJcnqZqciU/hqdefault.jpg", "url": "//www.youtube.com/embed?v=yjJcnqZqciU",
     
   },
   {
-    "id": "wwoCnwVG4Ko", "title": "אמיר דדון - כל יום כמו נס", "channelTitle": "Amir Dadon - אמיר דדון", "imgUrl": "//i.ytimg.com/vi/wwoCnwVG4Ko/hqdefault.jpg", "url": "//www.youtube.com/embed?v=wwoCnwVG4Ko",
+    "id": "wwoCnwVG4Ko", "title": " - כל יום כמו נס", "channelTitle": "Amir Dadon - ", "imgUrl": "//i.ytimg.com/vi/wwoCnwVG4Ko/hqdefault.jpg", "url": "//www.youtube.com/embed?v=wwoCnwVG4Ko",
     
   },
   {
-    "id": "sCJh9YcrL3k", "title": "אמיר דדון ושולי רנד - בין קודש לחול", "channelTitle": "Amir Dadon - אמיר דדון", "imgUrl": "//i.ytimg.com/vi/sCJh9YcrL3k/hqdefault.jpg", "url": "//www.youtube.com/embed?v=sCJh9YcrL3k",
+    "id": "sCJh9YcrL3k", "title": " ושולי רנד - בין קודש לחול", "channelTitle": "Amir Dadon - ", "imgUrl": "//i.ytimg.com/vi/sCJh9YcrL3k/hqdefault.jpg", "url": "//www.youtube.com/embed?v=sCJh9YcrL3k",
     
   },
   {
-    "id": "PHlXpUPl-7g", "title": "אמיר דדון - אבא", "channelTitle": "Amir Dadon - אמיר דדון", "imgUrl": "//i.ytimg.com/vi/PHlXpUPl-7g/hqdefault.jpg", "url": "//www.youtube.com/embed?v=PHlXpUPl-7g",
+    "id": "PHlXpUPl-7g", "title": " - אבא", "channelTitle": "Amir Dadon - ", "imgUrl": "//i.ytimg.com/vi/PHlXpUPl-7g/hqdefault.jpg", "url": "//www.youtube.com/embed?v=PHlXpUPl-7g",
     
   },
   {
-    "id": "jeU9Sbq0D0A", "title": "אמיר דדון - אור גדול  Amir Dadon - Or Gadol", "channelTitle": "Helicon Music - הליקון", "imgUrl": "//i.ytimg.com/vi/jeU9Sbq0D0A/hqdefault.jpg", "url": "//www.youtube.com/embed?v=jeU9Sbq0D0A",
+    "id": "jeU9Sbq0D0A", "title": " - אור גדול  Amir Dadon - Or Gadol", "channelTitle": "Helicon Music - הליקון", "imgUrl": "//i.ytimg.com/vi/jeU9Sbq0D0A/hqdefault.jpg", "url": "//www.youtube.com/embed?v=jeU9Sbq0D0A",
     
   },
   {
-    "id": "EAecWGT_lQ0", "title": "אמיר דדון - יש אין סוף", "channelTitle": "Amir Dadon - אמיר דדון", "imgUrl": "//i.ytimg.com/vi/EAecWGT_lQ0/hqdefault.jpg", "url": "//www.youtube.com/embed?v=EAecWGT_lQ0",
+    "id": "EAecWGT_lQ0", "title": " - יש אין סוף", "channelTitle": "Amir Dadon - ", "imgUrl": "//i.ytimg.com/vi/EAecWGT_lQ0/hqdefault.jpg", "url": "//www.youtube.com/embed?v=EAecWGT_lQ0",
     
   },
   {
-    "id": "45T15SXoxrM", "title": "אמיר דדון - הרוח הטובה", "channelTitle": "Amir Dadon - אמיר דדון", "imgUrl": "//i.ytimg.com/vi/45T15SXoxrM/hqdefault.jpg", "url": "//www.youtube.com/embed?v=45T15SXoxrM",
+    "id": "45T15SXoxrM", "title": " - הרוח הטובה", "channelTitle": "Amir Dadon - ", "imgUrl": "//i.ytimg.com/vi/45T15SXoxrM/hqdefault.jpg", "url": "//www.youtube.com/embed?v=45T15SXoxrM",
     
   },
   {
-    "id": "lainV5py0Rw", "title": "אמיר דדון - בואי נדבר בינינו", "channelTitle": "Amir Dadon - אמיר דדון", "imgUrl": "//i.ytimg.com/vi/lainV5py0Rw/hqdefault.jpg", "url": "//www.youtube.com/embed?v=lainV5py0Rw",
+    "id": "lainV5py0Rw", "title": " - בואי נדבר בינינו", "channelTitle": "Amir Dadon - ", "imgUrl": "//i.ytimg.com/vi/lainV5py0Rw/hqdefault.jpg", "url": "//www.youtube.com/embed?v=lainV5py0Rw",
     
   }
   ]

@@ -11,7 +11,7 @@ export function UserLibrary() {
   const user = useSelector((storeState => storeState.userModule.user))
 
   useEffect(() => {
-      loadStations()
+    loadStations()
   }, [])
 
   if (!user) {
