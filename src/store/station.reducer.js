@@ -1,4 +1,3 @@
-
 export const SET_STATIONS = 'SET_STATIONS'
 export const REMOVE_STATION = 'REMOVE_STATION'
 export const ADD_STATION = 'ADD_STATION'
@@ -33,6 +32,6 @@ export function stationReducer(state = initialState, action) {
         case UPDATE_CURRENT_STATION:
             return { ...state, currStation: action.currStation }
         default:
-            return {...state}
+            return state
     }
 } 

@@ -1,8 +1,8 @@
-import { NavLink } from "react-router-dom"
 import { useEffect, useState } from 'react'
 import { useSelector } from "react-redux"
-import { faSearch, faHome, faLinesLeaning, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons'
+import { NavLink } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faSearch, faHome, faLinesLeaning, faPlus, faHeart } from '@fortawesome/free-solid-svg-icons'
 
 import { stationService } from "../service/station.service"
 import { loadStations } from "../store/station.actions"
@@ -16,6 +16,8 @@ export function AppNav() {
 
     useEffect(() => {
         loadStations()
+        console.log('checkkkkk')
+    
     }, [])
 
     useEffect(() => {
@@ -34,9 +36,11 @@ export function AppNav() {
         <main className="app-nav">
             <div className="logo">
                 <img className="logo-img" src={logo} />
+                {/* Playlist */}
             </div>
             <nav>
-                <NavLink to="/"><FontAwesomeIcon icon={faHome} />
+                <NavLink to="/">
+                    <FontAwesomeIcon icon={faHome} />
                     <span>Home</span>
                 </NavLink>
                 <NavLink to="/search">

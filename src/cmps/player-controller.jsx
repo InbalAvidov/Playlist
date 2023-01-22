@@ -4,16 +4,17 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBackwardStep, faForwardStep, faPauseCircle, faPlayCircle } from '@fortawesome/free-solid-svg-icons'
 
 import { utilService } from "../service/util.service";
-import { togglePlay } from "../store/player.action";
+import { loadPlayer, setSong, togglePlay } from "../store/player.action";
 
 
 export function PlayerController() {
     const player = useSelector(storeState => storeState.playerModule.player)
     const isPlaying = useSelector(storeState => storeState.playerModule.isPlaying)
-    // const station = useSelector(storeState => storeState.stationModule.station)
+    const station = useSelector(storeState => storeState.stationModule.currStation)
     const [progress, setProgress] = useState(0)
     const [progColor, setProgColor] = useState('#ffffff')
     const timerId = useRef(null)
+    const backwardClick = useRef(0)
 
     useEffect(() => {
         console.log('PLAYER IN PLAYER CONTROLLER:', player)
@@ -40,23 +41,32 @@ export function PlayerController() {
         return player?.getCurrentTime() / player?.getDuration() * 100
     }
 
-    function onPrevNextSong() {
-        // console.log('station', station)
+    function onPrevNextSong(val) {
+        const currSongIdx = station.songs.findIndex(song => song.id === player.i.h.videoId)
+        if (val === -1) {
+            if (currSongIdx === 0 || (player.getCurrentTime() > 10)){
+                return player.seekTo(0)
+            }
+        }
+        const nextSong = {
+            _id: station.songs[currSongIdx + val].id,
+            imgUrl: station.songs[currSongIdx + val].imgUrl
+        }
+        setSong(nextSong)
     }
 
     function onToggleHover(ev) {
         if (!player) return
-        console.log('hovevvevrrinnngg')
         if (ev.type === 'mousemove') setProgColor('#1ed760')
         else setProgColor('#ffffff')
     }
 
     return <div className="controller">
         <div className="conrtoller-btns">
-            <FontAwesomeIcon icon={faBackwardStep} onClick={() => onPrevNextSong()} />
+            <FontAwesomeIcon icon={faBackwardStep} onClick={() => onPrevNextSong(-1)} />
             {!isPlaying && <FontAwesomeIcon icon={faPlayCircle} onClick={onTogglePlay} className='play-pause' />}
             {isPlaying && <FontAwesomeIcon icon={faPauseCircle} onClick={onTogglePlay} className='play-pause' />}
-            <FontAwesomeIcon icon={faForwardStep} onClick={() => onPrevNextSong()} />
+            <FontAwesomeIcon icon={faForwardStep} onClick={() => onPrevNextSong(1)} />
         </div>
         <div className="player-progress-container">
             <p>{utilService.secondsToMinutesAndSeconds(player?.getCurrentTime())}</p>

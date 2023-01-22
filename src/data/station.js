@@ -26,7 +26,7 @@ export const homeStations = [
     ],
     "songs": [{
       "id": "rYEDA3JcQqw",
-      "title": " Rolling in the Deep",
+      "title": "Rolling in the Deep",
       "channelTitle": "Adele",
       "url": "//www.youtube.com/embed?v=rYEDA3JcQqw",
       "imgUrl": "//i.ytimg.com/vi/rYEDA3JcQqw/hqdefault.jpg"

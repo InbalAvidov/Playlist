@@ -97,6 +97,13 @@
         cursor: pointer;
     }
 
+    .player-progress:hover::-webkit-slider-thumb {
+        border: none;
+        height: 12px;
+        width: 12px;
+        background: $clr2;
+    }
+
     .actions-btns {
         display: flex;
         grid-column: 6;
@@ -116,22 +123,20 @@
         margin-inline-end: 20px;
     }
 
-    input[type=range]::-webkit-slider-thumb {
-        -webkit-appearance: none;
-        transition: all .2s;
-        border: none;
-        height: 3px;
-        width: 3px;
-        border-radius: 50%;
-        // background: $clr2;
-        cursor: pointer;
-    }
-
-    .player-progress:hover::-webkit-slider-thumb {
-        -webkit-appearance: none;
+    .volume-range:hover::-webkit-slider-thumb {
         border: none;
         height: 12px;
         width: 12px;
         background: $clr2;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+        -webkit-appearance: none;
+        transition: all .1s;
+        border: none;
+        height: 3px;
+        width: 3px;
+        border-radius: 50%;
+        cursor: pointer;
     }
 }

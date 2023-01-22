@@ -8,7 +8,7 @@ import { LikedSongs } from './pages/liked-songs'
 import { Station } from './pages/station.jsx'
 import { SearchSongs } from './pages/search-page'
 import { UserLibrary } from './pages/user-library'
-import { PlayerBar } from './cmps/player-bar'
+import  PlayerBar  from './cmps/player-bar'
 import { CreateStation } from './pages/create-station'
 import { AppHeader } from './cmps/app-header'
 import { LoginSignup } from './pages/login-signup';
