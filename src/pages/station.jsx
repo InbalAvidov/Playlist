@@ -8,18 +8,26 @@ import { StationHeader } from "../cmps/station-header"
 import { stationService } from "../service/station.service"
 import { uploadService } from "../service/upload.service"
 import { removeStation, updateStation } from "../store/station.actions"
+import { saveStation } from "../store/station.actions";
 
-export function Station({ saveStation }) {
+
+export function Station() {
   const [station, setStation] = useState(null)
   const { stationId } = useParams()
   const navigate = useNavigate()
 
   useEffect(() => {
     if (!stationId) {
-      setStation(stationService.getEmptyStation())
+      saveEmptyStation()
+
     }
     else loadStation()
   }, [stationId])
+
+  async function saveEmptyStation() {
+    const newStation = await saveStation(stationService.getEmptyStation())
+    setStation(newStation)
+  }
 
   async function loadStation() {
     const currStation = await stationService.get(stationId)

@@ -31,7 +31,7 @@ export function AppNav() {
         console.log('userStations:', userStations)
         setUserStations(userStations)
     }
-
+    console.log('userStations:',userStations)
     return (
         <main className="app-nav">
             <div className="logo">
@@ -61,7 +61,7 @@ export function AppNav() {
                 </NavLink>
             </nav>
             {userStations && <div className="hr-line"></div>}
-            {userStations && <nav className="user-station-nav">
+            {userStations && <nav className="nav-menu user-station-nav">
                 {userStations.map(userStation =>
                     <NavLink key={userStation._id} to={`/station/${userStation._id}`}>
                         <span className="user-station">

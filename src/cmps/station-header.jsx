@@ -24,7 +24,7 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
     function onCloseEditor(ev) {
         ev.stopPropagation()
         setIsEdit(false)
-        if (station._id) saveChanges()
+        saveChanges()
     }
 
     function onChangeName({ target }) {
