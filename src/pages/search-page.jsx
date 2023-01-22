@@ -54,7 +54,7 @@ export function SearchSongs({ isCreateStation, onAddSong, isForStation }) {
             {songsBySearch ? <div className="search-results">
                 {songsBySearch.map(song => <div className="search-result" key={song.id}>
                     {isForStation && <button className="add-song-btn" onClick={() => addSong(song)}>+</button>}
-                    <img src={song.imgUrl} onClick={() => onSetSong({ _id: song.id, imgUrl: song.imgUrl, title:song.title , artist:song.channelTitle })} />
+                    <img src={song.imgUrl} onClick={() => onSetSong({ _id: song.id, imgUrl: song.imgUrl, title: song.title, artist: song.channelTitle })} />
                     <div className="song-details">
                         <h4>{song.title} </h4>
                         <p>{song.channelTitle}</p>

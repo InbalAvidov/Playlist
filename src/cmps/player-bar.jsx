@@ -5,7 +5,7 @@ import React, { useRef, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faVolumeHigh, faVolumeMute } from "@fortawesome/free-solid-svg-icons"
 import { useEffect } from "react"
-import { PlayerInfo } from "./player-info"
+
 
 function PlayerBar() {
     const player = useSelector(storeState => storeState.playerModule.player)
@@ -54,7 +54,10 @@ function PlayerBar() {
         {song && <SoundPlayer />}
         {player && Promise.all(player.videoTitle, player.playerInfo.videoData.author) && <div className="information">
             <img src={song.imgUrl} alt="no image" className="song-img" />
-            <PlayerInfo song={song}/>
+            <div className="details">
+                <h4>{song.title}</h4>
+                <h5>{song.artist}</h5>
+            </div>
         </div>}
         <PlayerController />
         <div className="actions-btns">
