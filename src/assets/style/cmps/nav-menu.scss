@@ -1,4 +1,4 @@
-.nav-menu{
+.nav-menu {
     display: flex;
     flex-direction: column;
     font-size: 16px;
@@ -7,32 +7,84 @@
 
     span {
         font-family: montserrat-bold;
-        margin-left: 20px;
         font-size: 13px;
-
         &.user-station {
             margin-left: 0;
         }
+    }
+    svg{
+        margin-right: 20px;
     }
 
     a {
         text-decoration: none;
         color: $fill;
         margin-left: 25px;
+        margin-right: 24px;
         padding: 2px 0;
+        padding-top: 20px;
         font-size: 20px;
+        fill: $fill;
+        display: flex;
+        align-items: center;
 
         &.library-nav {
             margin-bottom: 20px;
         }
 
-
         &:hover {
-            color: $clr2
+            color: $clr2;
+            fill: $clr2;
         }
 
         &.active {
+            fill: $clr2;
             color: $clr2;
+        }
+
+    }
+
+    .a-create {
+        align-items: center;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+        display: flex;
+        min-height: max-content;
+        opacity: .7;
+        -webkit-transition: opacity .2s linear;
+        transition: opacity .2s linear;
+        width: 100%;
+    }
+    
+    .create-station {
+        -webkit-box-align: center;
+        -webkit-box-pack: center;
+        display: flex;
+        height: 24px;
+        justify-content: center;
+        padding: 4px;
+        position: relative;
+        width: 24px;
+        margin-right: 16px;
+    }
+    
+    .create-station-box {
+        align-items: center;
+        background: #fff;
+        border-radius: 2px;
+        color: #000;
+        display: flex;
+        height: 100%;
+        justify-content: center;
+        align-self: center;
+        position: absolute;
+        width: 100%;
+
+        img{
+            width: 15px;
+            height: 15px;
         }
     }
 
