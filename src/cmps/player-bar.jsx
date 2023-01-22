@@ -1,17 +1,25 @@
 import { PlayerController } from "./player-controller"
 import { SoundPlayer } from "./sound-player"
 import { useSelector } from "react-redux"
-import { useRef, useState } from "react"
+import React, { useRef, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faArrowsUpDownLeftRight, faPhoneVolume, faVolumeHigh, faVolumeMute } from "@fortawesome/free-solid-svg-icons"
+import { faVolumeHigh, faVolumeMute } from "@fortawesome/free-solid-svg-icons"
+import { useEffect } from "react"
+import { PlayerInfo } from "./player-info"
 
-export function PlayerBar() {
+function PlayerBar() {
     const player = useSelector(storeState => storeState.playerModule.player)
+    const state = useSelector(storeState => storeState.playerModule.state)
     const song = useSelector(storeState => storeState.playerModule.song)
     const [volume, setVolume] = useState(80)
     const lastVolumeRef = useRef(0)
+    const [volumeColor, setVolumeColor] = useState('#ffffff')
     console.log('song from player bar', song)
     song ? console.log('song from player bar', song) : console.log('no song')
+
+    useEffect(() => {
+        console.log('state', state)
+    }, [song])
 
     function onSetVolume({ target }) {
         if (target.type != 'range') {
@@ -36,14 +44,17 @@ export function PlayerBar() {
         elImg.msRequestFullscreen()
     }
 
+    function onToggleHover(ev) {
+        if (!player) return
+        if (ev.type === 'mousemove') setVolumeColor('#1ed760')
+        else setVolumeColor('#ffffff')
+    }
+
     return (<div className="media-player" >
-        {song && <SoundPlayer playerId={song._id} />}
-        {player && <div className="information">
+        {song && <SoundPlayer />}
+        {player && Promise.all(player.videoTitle, player.playerInfo.videoData.author) && <div className="information">
             <img src={song.imgUrl} alt="no image" className="song-img" />
-            <div className="details">
-                <h4>{player.videoTitle}</h4>
-                <h5>{player.artist}</h5>
-            </div>
+            <PlayerInfo song={song}/>
         </div>}
         <PlayerController />
         <div className="actions-btns">
@@ -57,10 +68,13 @@ export function PlayerBar() {
                 value={volume}
                 max={100}
                 onChange={onSetVolume}
-                style={{ background: `linear-gradient(to right, #ffffff 0%, #ffffff ${volume}%, #b3b3b3 ${volume}%, #b3b3b3 100%)` }}
+                onMouseMove={onToggleHover}
+                onMouseLeave={onToggleHover}
+                style={{ background: `linear-gradient(to right, ${volumeColor} 0%, ${volumeColor} ${volume}%, #b3b3b3 ${volume}%, #b3b3b3 100%)` }}
             />
-            {/* <FontAwesomeIcon icon={faArrowsUpDownLeftRight} onClick={openFullscreen} /> */}
         </div>
     </div>
     )
 }
+
+export default React.memo(PlayerBar)

@@ -4,9 +4,8 @@ import { faHeart, faTrash, faListDots } from '@fortawesome/free-solid-svg-icons'
 
 
 import { setSong } from "../store/player.action"
-// import { loadCurrStation } from '../store/station.actions'
+import { loadCurrStation } from '../store/station.actions'
 import { utilService } from '../service/util.service'
-// import { loadCurrStation } from '../store/station.actions'
 import { useSelector } from 'react-redux'
 
 export function SongPreview({ song, idx, onDeleteSong, station }) {
@@ -17,7 +16,7 @@ export function SongPreview({ song, idx, onDeleteSong, station }) {
         console.log('SONG TO STORE', songToStore)
         setSong(songToStore)
         console.log(stationId)
-        // loadCurrStation(stationId)
+        loadCurrStation(stationId)
     }
 
     return (
@@ -25,7 +24,7 @@ export function SongPreview({ song, idx, onDeleteSong, station }) {
             <p className="song-number">{idx + 1}</p>
             <div className="song-img-title">
                 <div className="song-img"
-                    onClick={() => onSetSong({ _id: song.id, imgUrl: song.imgUrl })}
+                    onClick={() => onSetSong({ _id: song.id, imgUrl: song.imgUrl , title:song.title , artist:song.channelTitle })}
                     style={{
                         backgroundImage: `url("${song.imgUrl}")`,
                         backgroundRepeat: "no-repeat",
