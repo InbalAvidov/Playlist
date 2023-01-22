@@ -21,7 +21,6 @@ export function SearchSongs({ isCreateStation, onAddSong, isForStation }) {
         //later need to be changed to search
     }, [])
 
-
     function handleChange({ target }) {
         const { value } = target
         setSearch(value)

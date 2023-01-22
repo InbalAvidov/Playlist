@@ -4,7 +4,6 @@ import { loadStations } from "../store/station.actions"
 import { Loader } from "../cmps/loader"
 import { FirstSectionStations } from "../cmps/first-section-stations"
 import { RestSectionStations } from "../cmps/rest-section-stations"
-import { showSuccessMsg } from "../service/event-bus.service"
 
 export function Home() {
     const stations = useSelector((storeState) => storeState.stationModule.stations)

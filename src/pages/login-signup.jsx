@@ -7,7 +7,6 @@ import { userService } from '../service/user.service.js'
 import { signup, login } from '../store/user.action.js'
 import logoLogin from "../assets/img/logoLogin.png"
 import { utilService } from '../service/util.service.js'
-import { showErrorMsg, showSuccessMsg } from '../service/event-bus.service.js'
 
 
 
@@ -45,10 +44,9 @@ export function LoginSignup() {
                 username: 'guest',
                 imgUrl: "https://robohash.org/set=set3"
             })
-            showSuccessMsg(`Welcome ${credentials.username}`)
             navigate('/')
         } catch (err) {
-            showErrorMsg('OOps try again')
+           console.log('err:',err)
 
         }
     }
@@ -59,20 +57,18 @@ export function LoginSignup() {
         if (isSignupState) {
             signup({ ...credentials, fullname: credentials.fullname })
                 .then(() => {
-                    showSuccessMsg(`Welcome ${credentials.username}`)
                     navigate('/')
                 })
                 .catch(err => {
-                    showErrorMsg('OOps try again')
+                    console.log('err:',err)
                 });
-        } else {
-            login(credentials)
+            } else {
+                login(credentials)
                 .then(() => {
-                    showSuccessMsg(`Welcome ${credentials.username}`)
                     navigate('/')
                 })
                 .catch(err => {
-                    showErrorMsg('OOps try again')
+                    console.log('err:',err)
                 });
         }
     }
