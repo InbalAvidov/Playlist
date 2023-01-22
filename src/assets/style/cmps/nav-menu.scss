@@ -1,0 +1,52 @@
+.nav-menu{
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 15px;
+
+    span {
+        font-family: montserrat-bold;
+        margin-left: 20px;
+        font-size: 13px;
+
+        &.user-station {
+            margin-left: 0;
+        }
+    }
+
+    a {
+        text-decoration: none;
+        color: $fill;
+        margin-left: 25px;
+        padding: 2px 0;
+        font-size: 20px;
+
+        &.library-nav {
+            margin-bottom: 20px;
+        }
+
+
+        &:hover {
+            color: $clr2
+        }
+
+        &.active {
+            color: $clr2;
+        }
+    }
+
+}
+
+.user-station-nav {
+    margin-top: 5px;
+
+    a {
+        padding: 3px 0;
+
+        span {
+            font-family: montserrat;
+
+        }
+    }
+}
