@@ -1,21 +1,21 @@
 import { PlayerController } from "./player-controller"
 import { SoundPlayer } from "./sound-player"
 import { useSelector } from "react-redux"
-import React, { useRef, useState } from "react"
+import { useRef, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faVolumeHigh, faVolumeMute } from "@fortawesome/free-solid-svg-icons"
 import { useEffect } from "react"
 
 
-function PlayerBar() {
+export function PlayerBar() {
     const player = useSelector(storeState => storeState.playerModule.player)
     const state = useSelector(storeState => storeState.playerModule.state)
     const song = useSelector(storeState => storeState.playerModule.song)
     const [volume, setVolume] = useState(80)
     const lastVolumeRef = useRef(0)
     const [volumeColor, setVolumeColor] = useState('#ffffff')
-    console.log('song from player bar', song)
-    song ? console.log('song from player bar', song) : console.log('no song')
+    // console.log('song from player bar', song)
+    // song ? console.log('song from player bar', song) : console.log('no song')
 
     useEffect(() => {
         console.log('state', state)
@@ -79,5 +79,3 @@ function PlayerBar() {
     </div>
     )
 }
-
-export default React.memo(PlayerBar)
