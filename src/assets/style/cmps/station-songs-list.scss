@@ -8,13 +8,16 @@
     margin-bottom: 20px;
 
     .song-preview {
-        grid-template-columns: 40px 2fr 1fr 80px 80px;
+        grid-template-columns: 30px 1.5fr 1fr 80px 80px;
         width: 100%;
         display: grid;
-        height: 60px;
-
+        height: 57px;
+        padding: 5px 0;
+        
         &.songs-list-header {
-            font-size: 14px;
+            height: 50px;
+            margin-bottom: 16px;
+            font-size: 12px;
             font-weight: 700;
             color: $fill;
             border-bottom: .5px solid rgb(44, 44, 44);
@@ -27,7 +30,7 @@
 
         >* {
             align-self: center;
-            padding: 5px 0;
+            padding: 3px 0;
         }
 
         .song-number {

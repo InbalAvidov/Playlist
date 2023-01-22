@@ -38,7 +38,7 @@ export function SongPreview({ song, idx, onDeleteSong, station }) {
                                 backgroundRepeat: "no-repeat",
                                 backgroundPosition: "center",
                                 backgroundSize: "cover",
-                                width: '50px', height: '50px'
+                                width: '45px', height: '45px'
                             }}>
                         </div>
                         <div className="song-title">
