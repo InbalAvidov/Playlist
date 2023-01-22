@@ -17,7 +17,7 @@ export function AppNav() {
     useEffect(() => {
         loadStations()
         console.log('checkkkkk')
-    
+
     }, [])
 
     useEffect(() => {
@@ -28,7 +28,7 @@ export function AppNav() {
 
     async function getUserStations(user) {
         const userStations = await stationService.query({ userId: user._id })
-        console.log('userStations:',userStations)
+        console.log('userStations:', userStations)
         setUserStations(userStations)
     }
 
@@ -40,7 +40,8 @@ export function AppNav() {
             </div>
             <nav>
                 <NavLink to="/">
-                    <FontAwesomeIcon icon={faHome} />
+                    <svg role="img" height="24" width="24" aria-hidden="true" class="Svg-sc-ytk21e-0 uPxdw home-icon" viewBox="0 0 24 24" data-encore-id="icon"><path d="M12.5 3.247a1 1 0 00-1 0L4 7.577V20h4.5v-6a1 1 0 011-1h5a1 1 0 011 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 013 0l7.5 4.33a2 2 0 011 1.732V21a1 1 0 01-1 1h-6.5a1 1 0 01-1-1v-6h-3v6a1 1 0 01-1 1H3a1 1 0 01-1-1V7.577a2 2 0 011-1.732l7.5-4.33z"></path>
+                        <path d="M12.5 3.247a1 1 0 00-1 0L4 7.577V20h4.5v-6a1 1 0 011-1h5a1 1 0 011 1v6H20V7.577l-7.5-4.33zm-2-1.732a3 3 0 013 0l7.5 4.33a2 2 0 011 1.732V21a1 1 0 01-1 1h-6.5a1 1 0 01-1-1v-6h-3v6a1 1 0 01-1 1H3a1 1 0 01-1-1V7.577a2 2 0 011-1.732l7.5-4.33z"></path></svg>
                     <span>Home</span>
                 </NavLink>
                 <NavLink to="/search">
