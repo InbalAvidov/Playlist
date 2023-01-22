@@ -1,0 +1,54 @@
+.song-preview {
+    grid-template-columns: 30px 1.5fr 1fr 80px 80px;
+    width: 100%;
+    display: grid;
+    height: 57px;
+    padding: 5px 0;
+
+    &.songs-list-header {
+        height: 50px;
+        margin-bottom: 16px;
+        font-size: 12px;
+        font-weight: 700;
+        color: $fill;
+        border-bottom: .5px solid rgb(44, 44, 44);
+        text-transform: uppercase;
+
+        >:last-child {
+            padding-left: 3px;
+        }
+    }
+
+    >* {
+        align-self: center;
+        padding: 3px 0;
+    }
+
+    .song-number {
+        grid-column: 1;
+    }
+
+    .song-img-title {
+        display: flex;
+        grid-column: 2;
+
+        .song-title {
+            margin-left: 10px;
+        }
+    }
+
+    .song-date {
+        justify-self: center;
+        grid-column: 3;
+    }
+
+    .song-actions {
+        display: flex;
+        justify-content: space-around;
+        grid-column: 4;
+    }
+
+    .song-duration {
+        grid-column: 5;
+    }
+}

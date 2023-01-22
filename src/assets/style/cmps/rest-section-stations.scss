@@ -12,12 +12,12 @@
     .rest-section-station-preview {
         background-color: darken($song-bgc-home , 4%);
         grid-column: span 1;
-        border-radius: 10px;
+        border-radius: 1em;
         padding: 17px;
         transition: .5s;
 
         .img-container {
-            border-radius: 10px;
+            border-radius: .5em;
         }
 
         h3 {

@@ -17,7 +17,7 @@ export function AppNav() {
     useEffect(() => {
         loadStations()
         console.log('checkkkkk')
-    
+
     }, [])
 
     useEffect(() => {
@@ -28,7 +28,7 @@ export function AppNav() {
 
     async function getUserStations(user) {
         const userStations = await stationService.query({ userId: user._id })
-        console.log('userStations:',userStations)
+        console.log('userStations:', userStations)
         setUserStations(userStations)
     }
 
@@ -38,7 +38,7 @@ export function AppNav() {
                 <img className="logo-img" src={logo} />
                 {/* Playlist */}
             </div>
-            <nav>
+            <nav className='nav-menu'>
                 <NavLink to="/">
                     <FontAwesomeIcon icon={faHome} />
                     <span>Home</span>
@@ -61,7 +61,7 @@ export function AppNav() {
                 </NavLink>
             </nav>
             {userStations && <div className="hr-line"></div>}
-            {userStations && <nav className="user-laylist-nav">
+            {userStations && <nav className="user-station-nav">
                 {userStations.map(userStation =>
                     <NavLink key={userStation._id} to={`/station/${userStation._id}`}>
                         <span className="user-station">

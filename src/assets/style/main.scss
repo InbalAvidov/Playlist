@@ -1,6 +1,6 @@
 // Setup
 @import "setup/variables";
-// @import "setup/functions";
+@import "setup/functions";
 @import "setup/mixins.scss";
 @import "setup/typography";
 
@@ -25,15 +25,16 @@
 
 // Components
 @import "cmps/app-nav";
+@import "cmps/nav-menu.scss";
 @import "cmps/app-header";
 @import "cmps/player";
 @import "cmps/station-header";
 @import "cmps/station-songs-list";
 @import "cmps/station-songs-preview";
-@import "cmps/user-msg";
 @import "cmps/loader";
 @import "cmps/first-section-stations";
 @import "cmps/rest-section-stations";
+@import "cmps/search-result.scss";
 
 
 
