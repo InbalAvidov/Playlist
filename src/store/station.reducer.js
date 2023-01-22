@@ -4,6 +4,7 @@ export const REMOVE_STATION = 'REMOVE_STATION'
 export const ADD_STATION = 'ADD_STATION'
 export const UPDATE_STATION = 'UPDATE_STATION'
 export const UPDATE_CURRENT_STATION = 'UPDATE_CURRENT_STATION'
+export const LIKE_SONG = 'LIKE_SONG'
 
 const initialState = {
     stations: null,
@@ -21,18 +22,39 @@ export function stationReducer(state = initialState, action) {
             return { ...state, stations }
         case ADD_STATION:
             stations = [...state.stations, action.station]
-            console.log('stations:',stations)
+            console.log('stations:', stations)
             return { ...state, stations }
         case UPDATE_STATION:
             stations = state.stations.map(station => station._id === action.station._id ? action.station : station)
             return { ...state, stations }
         case REMOVE_STATION:
-            console.log('state.stations:',state.stations)
-            stations = state.stations.filter(station => station._id !== action.stationId )
+            console.log('state.stations:', state.stations)
+            stations = state.stations.filter(station => station._id !== action.stationId)
             return { ...state, stations }
         case UPDATE_CURRENT_STATION:
             return { ...state, currStation: action.currStation }
+        case LIKE_SONG:
+            const { stationId, songId, minimalUser } = action
+            stations = state.stations.map(station => {
+                if (station._id !== stationId) return station
+
+                station.songs = station.songs.map(song => {
+                    if (song.id !== songId) return song
+
+                    song.likedByUsers ||= []
+                    const likesIdx = song.likedByUsers.findIndex(user => user._id === minimalUser._id)
+                    if (likesIdx > -1) {
+                        song.likedByUsers.splice(likesIdx, 1)
+                    } else {
+                        song.likedByUsers.push(minimalUser)
+                    }
+                    return { ...song }
+                })
+                return { ...station }
+            })
+
+            return { ...state, stations }
         default:
-            return {...state}
+            return { ...state }
     }
 } 

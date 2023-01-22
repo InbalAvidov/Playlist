@@ -29,7 +29,21 @@ export const homeStations = [
       "title": "Adele - Rolling in the Deep (Official Music Video)",
       "channelTitle": "AdeleVEVO",
       "url": "//www.youtube.com/embed?v=rYEDA3JcQqw",
-      "imgUrl": "//i.ytimg.com/vi/rYEDA3JcQqw/hqdefault.jpg"
+      "imgUrl": "//i.ytimg.com/vi/rYEDA3JcQqw/hqdefault.jpg",
+      "likedByUsers": [
+        {
+          "_id": "5cksxjas89xjsa8xjsa8jld3",
+          "fullname": "Inbal Avidov"
+        },
+        {
+          "_id": "5cksxjas89xjsa8xjsa8jjj7",
+          "fullname": "Omri Hazan"
+        },
+        {
+          "_id": "5cksxjas89xjsa8xjsa8hhh7",
+          "fullname": "Hila Shor"
+        }
+      ]
     },
     {
       "id": "U3ASj1L6_sY",
@@ -108,6 +122,20 @@ export const homeStations = [
     ],
     "songs": [{
       "id": "tcYodQoapMg", "title": "Ariana Grande - positions (official video)", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/tcYodQoapMg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=tcYodQoapMg",
+      "likedByUsers": [
+        {
+          "_id": "5cksxjas89xjsa8xjsa8jld3",
+          "fullname": "Inbal Avidov"
+        },
+        {
+          "_id": "5cksxjas89xjsa8xjsa8jjj7",
+          "fullname": "Omri Hazan"
+        },
+        {
+          "_id": "5cksxjas89xjsa8xjsa8hhh7",
+          "fullname": "Hila Shor"
+        }
+      ]
     },
     {
       "id": "QYh6mYIJG2Y", "title": "Ariana Grande - 7 rings (Official Video)", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/QYh6mYIJG2Y/hqdefault.jpg", "url": "//www.youtube.com/embed?v=QYh6mYIJG2Y",
@@ -170,6 +198,20 @@ export const homeStations = [
     ],
     "songs": [{
       "id": "VBmMU_iwe6U", "title": "Beyoncé - Run the World (Girls) (Official Video)", "channelTitle": "BeyoncéVEVO", "imgUrl": "//i.ytimg.com/vi/VBmMU_iwe6U/hqdefault.jpg", "url": "//www.youtube.com/embed?v=VBmMU_iwe6U",
+      "likedByUsers": [
+        {
+          "_id": "5cksxjas89xjsa8xjsa8jld3",
+          "fullname": "Inbal Avidov"
+        },
+        {
+          "_id": "5cksxjas89xjsa8xjsa8jjj7",
+          "fullname": "Omri Hazan"
+        },
+        {
+          "_id": "5cksxjas89xjsa8xjsa8hhh7",
+          "fullname": "Hila Shor"
+        }
+      ]
 
     },
     {
@@ -198,8 +240,8 @@ export const homeStations = [
     "msgs": [],
     "createdBy":
     {
-      "_id": "spt100",
-      "fullname": 'Spotify',
+      "_id": "5cksxjas89xjsa8xjsa8hhh7",
+      "fullname": 'Hila Shor',
     }
   },
   {

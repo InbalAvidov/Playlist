@@ -29,43 +29,47 @@ export function UserLibrary() {
 
   return (
     <main className="main-library">
+
       <h1> Playlists </h1>
+      <div className="playlists">
 
-      <Link to="/liked">
-          <div className="library-liked-songs" >
-              <div className="img-container" style=
-                  {{
-                      backgroundImage: `url("${defaultPhoto}")`,
-                      backgroundRepeat: "repeat",
-                      backgroundPosition: "center",
-                      backgroundSize: "auto",
-                      width: '240px', height: '240px', margin: 'auto'
-                  }}>
-              </div>
-              <h2>Liked songs</h2>
-              <p>Listen to all the songs you liked</p>
-          </div>
-      </Link>
-
-      {
-        userStations.map((station, idx) => (
-          <Link to={`/station/${station._id}`} key={station._id}>
-                <div className="library-station-preview" >
-                    <div className="img-container" style=
-                        {{
-                            backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs.length > 0 ? station.songs[0].imgUrl : defaultPhoto}")`,
-                            backgroundRepeat: "repeat",
-                            backgroundPosition: "center",
-                            backgroundSize: "auto",
-                            width: '160px', height: '160px', margin: 'auto'
-                        }}>
-                    </div>
-                    <h2>{station.name}</h2>
-                    <p>{station.description?.slice(0, 15)}</p>
+        <Link className="liked-song-playlist" to="/liked">
+            <div className="library-liked-songs" >
+                <div className="img-liked-container flex">
+                  <p>Listen to all the songs you liked</p>
+                  <h2>Liked songs</h2>
                 </div>
-            </Link>
-        ))
-      }
+                
+            </div>
+        </Link>
+
+        <div className="user-playlists">
+          {
+            userStations.map((station, idx) => (
+              <Link
+                to={`/station/${station._id}`}
+                key={station._id}
+                className={idx}>
+                    <div className="library-station-preview" >
+                        <div className="img-container flex" style=
+                            {{
+                                backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs.length > 0 ? station.songs[0].imgUrl : defaultPhoto}")`,
+                                backgroundRepeat: "repeat",
+                                backgroundPosition: "center",
+                                backgroundSize: "auto",
+                                width: '160px', height: '160px', margin: 'auto'
+                            }}>
+                        </div>
+                        <h2>{station.name}</h2>
+                        <p>{station.description?.slice(0, 15)}</p>
+                    </div>
+                </Link>
+            ))
+          }
+        </div>
+
+      </div>
+
     </main>
   )
 }

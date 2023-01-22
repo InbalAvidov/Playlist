@@ -33,7 +33,8 @@ export function LikedSongs() {
     station.songs.filter(song => 
       (song.likedByUsers || []).find(minimalUser => minimalUser._id === user._id)))
 
-      console.log('LikedSongs likedSongs', likedSongs)
+  console.log('LikedSongs likedSongs', likedSongs)
+
   return (
     <main className="liked-songs">
       <h1>Liked Songs</h1>

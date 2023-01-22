@@ -1,15 +1,14 @@
+import { useSelector } from 'react-redux'
 import { useParams } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart, faTrash, faListDots } from '@fortawesome/free-solid-svg-icons'
 
-
 import { setSong } from "../store/player.action"
-// import { loadCurrStation } from '../store/station.actions'
+import { likeSong } from '../store/station.actions'
 import { utilService } from '../service/util.service'
-// import { loadCurrStation } from '../store/station.actions'
-import { useSelector } from 'react-redux'
 
-export function SongPreview({ song, idx, onDeleteSong, station }) {
+
+export function SongPreview({ song, idx, station, onDeleteSong }) {
     const user = useSelector((storeState => storeState.userModule.user))
     const { stationId } = useParams()
 
@@ -19,6 +18,17 @@ export function SongPreview({ song, idx, onDeleteSong, station }) {
         console.log(stationId)
         // loadCurrStation(stationId)
     }
+
+    function deleteSong() {
+        onDeleteSong && onDeleteSong(song.id)
+    }
+
+    function toggleLike() {
+        likeSong(station._id, song.id, {_id: user._id, fullname: user.fullname})
+    }
+
+    const isLiked = user && (song.likedByUsers || []).find(minimalUser => minimalUser._id === user._id)
+    console.log('SongPreview.isLiked', isLiked, song.likedByUsers)
 
     return (
         <div className="song-preview">
@@ -43,9 +53,12 @@ export function SongPreview({ song, idx, onDeleteSong, station }) {
                 <p>{utilService.randomPastTime()}</p>
             </div>
             <p className='song-actions'>
-                <span><FontAwesomeIcon icon={faHeart}/></span>
-                {user && station.createdBy._id === user._id &&
-                    <span onClick={() => onDeleteSong(song.id)}>
+                {user && <span onClick={toggleLike}>
+                    <FontAwesomeIcon icon={faHeart} color={isLiked ? 'green': 'white'}/></span>
+                }
+                
+                {user && station && station.createdBy._id === user._id &&
+                    <span onClick={deleteSong}>
                         <FontAwesomeIcon icon={faTrash}/>
                     </span>}
 

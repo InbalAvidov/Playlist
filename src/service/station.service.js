@@ -12,6 +12,7 @@ export const stationService = {
   remove,
   save,
   removeSong,
+  likeSong,
   getEmptyStation
 }
 
@@ -25,7 +26,7 @@ async function query(filterBy = getEmptyFilter()) {
         return station.createdBy._id === filterBy.userId
       })
     }
-    if(filterBy.page === 'home'){
+    if (filterBy.page === 'home') {
       stations = stations.filter(station => station.tags.includes('home'))
     }
     return stations
@@ -60,6 +61,26 @@ async function removeSong(stationId, songId) {
     const station = await get(stationId)
     const songs = station.songs.filter(song => song.id !== songId)
     station.songs = songs
+    save(station)
+    return station
+  } catch (err) {
+    return err
+  }
+}
+
+async function likeSong(stationId, songId, minimalUser) {
+  try {
+    const station = await get(stationId)
+    const song = station.songs.find(song => song.id === songId)
+    song.likedByUsers ||= []
+
+    const likesIdx = song.likedByUsers.findIndex(user => user._id === minimalUser._id)
+    if (likesIdx > -1) {
+      song.likedByUsers.splice(likesIdx, 1)
+    } else {
+      song.likedByUsers.push(minimalUser)
+    }
+
     save(station)
     return station
   } catch (err) {
