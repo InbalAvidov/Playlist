@@ -1,16 +1,28 @@
 import { useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
+import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 
 import { SongPreview } from "./station-song-preview";
 import { SearchSongs } from '../pages/search-page';
 
 export function SongList({ station, handleChange, onDeleteSong }) {
     const [stationSongs, setStationSongs] = useState([])
+    const [items, setItems] = useState(station.songs)
 
     function onAddSong(song) {
         setStationSongs(prevSongs => [...prevSongs, song])
         handleChange('songs', [...stationSongs, song])
+    }
+
+    function onDragEnd(result) {
+        if (!result.destination) {
+            return;
+        }
+        const newItems = [...items];
+        const [removed] = newItems.splice(result.source.index, 1);
+        newItems.splice(result.destination.index, 0, removed);
+        setItems(newItems)
     }
 
     return (
@@ -24,9 +36,22 @@ export function SongList({ station, handleChange, onDeleteSong }) {
                         <p className="song-actions"></p>
                         <p className="song-duration"><FontAwesomeIcon icon={faClock}></FontAwesomeIcon></p>
                     </div>
-                    {station.songs.map((song, idx) =>
-                        <SongPreview key={idx} song={song} idx={idx} onDeleteSong={onDeleteSong} station={station} />)
-                    }
+                    <DragDropContext onDragEnd={onDragEnd}>
+                        <Droppable droppableId="droppable">
+                            {(provided) => (
+                                <div
+                                    ref={provided.innerRef}
+                                    {...provided.droppableProps}
+                                >
+                                    {station.songs.map((song, idx) => (
+                                        <SongPreview key={song._id} song={song} idx={idx} onDeleteSong={onDeleteSong} station={station} />
+                                    ))}
+                                    {provided.placeholder}
+                                </div>
+                            )}
+                        </Droppable>
+                    </DragDropContext>
+
                 </section>
             }
             <div className='songs-add'>

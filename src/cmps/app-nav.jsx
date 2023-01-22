@@ -11,7 +11,7 @@ import logo from "../assets/img/logo-white.png"
 
 export function AppNav() {
     const user = useSelector((storeState => storeState.userModule.user))
-    const [userStations, setUserStations] = useState([])
+    const [userStations, setUserStations] = useState(null)
     const stations = useSelector((storeState) => storeState.stationModule.stations)
 
     useEffect(() => {
@@ -26,6 +26,7 @@ export function AppNav() {
 
     async function getUserStations(user) {
         const userStations = await stationService.query({ userId: user._id })
+        console.log('userStations:',userStations)
         setUserStations(userStations)
     }
 

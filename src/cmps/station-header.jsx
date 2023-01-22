@@ -83,7 +83,7 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "center",
                         backgroundSize: "cover",
-                        width: "200px", height: "200px"
+                        width: "230px", height: "230px"
                     }}>
                 </div>
                 :
@@ -96,7 +96,9 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
                 <p className="station">playlist</p>
                 <h1>{station.name ? station.name : "My Playlist"}</h1>
                 {station.description && <h3>{station.description}</h3>}
-                <p>{station.createdBy ? station.createdBy.fullname : user.fullname}</p>
+                <p><span>{station.createdBy ? station.createdBy.fullname : user.fullname} </span>
+                 • {station.songs.length + ' '} 
+                 songs</p>
             </div>
             {user && user._id === station.createdBy?._id && station._id &&
                 <div className="station-menu-container">

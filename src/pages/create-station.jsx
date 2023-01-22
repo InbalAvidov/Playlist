@@ -43,6 +43,7 @@ export function CreateStation() {
 
   async function onSaveStation(station) {
     try {
+      if(!station.name) station.name ='My playlist'
       await saveStation(station)
       navigate('/')
     } catch (err) {
