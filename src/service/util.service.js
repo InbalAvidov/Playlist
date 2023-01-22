@@ -60,9 +60,16 @@ function randomPastTime() {
 
     const pastTime = getRandomIntInclusive(HOUR, WEEK)
     const randomDate = new Date(Date.now() - pastTime)
-    const formatedDate = randomDate.getDate()+'/'+((randomDate.getMonth())+1)+'/'+randomDate.getFullYear()
+    const formatedDate =(getMonthShortName((randomDate.getMonth())+1))+' '+randomDate.getDate()+' , '+randomDate.getFullYear()
     return formatedDate
 }
+
+function getMonthShortName(monthNo) {
+    const date = new Date();
+    date.setMonth(monthNo - 1);
+  
+    return date.toLocaleString('en-US', { month: 'short' });
+  }
 
 function saveToStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value))

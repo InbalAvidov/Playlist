@@ -28,7 +28,7 @@ export function App() {
                             <Route element={<Station />} path="/station/:stationId" />
                             <Route element={<SearchSongs />} path="/search" />
                             <Route element={<UserLibrary />} path="/library" />
-                            <Route element={<CreateStation />} path="/createStation" />
+                            <Route element={<Station />} path="/createStation" />
                             <Route element={<LikedSongs />} path="/liked" />
                             {/* <Route element={<LoginSignup/>} path="/login-signup" /> */}
                             <Route element={<LoginSignup />} path="/login-signup/:signupState" />

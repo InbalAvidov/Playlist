@@ -92,7 +92,7 @@ function getEmptyStation() {
   const user = userService.getLoggedinUser()
   return {
     "_id": "",
-    "name": "",
+    "name": "My Playlist",
     "tags": [],
     "createdBy": user ? user : {
       "_id": utilService.makeId(),
@@ -101,7 +101,7 @@ function getEmptyStation() {
     },
     "likedByUsers": [],
     "songs": [],
-    "msgs": []
+    "msgs": [],
   }
 }
 

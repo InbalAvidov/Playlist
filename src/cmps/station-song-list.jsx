@@ -7,7 +7,7 @@ import { SongPreview } from "./station-song-preview";
 import { SearchSongs } from '../pages/search-page';
 
 export function SongList({ station, handleChange, onDeleteSong }) {
-    const [stationSongs, setStationSongs] = useState([])
+    const [stationSongs, setStationSongs] = useState(station.songs)
     const [items, setItems] = useState(station.songs)
 
     function onAddSong(song) {
