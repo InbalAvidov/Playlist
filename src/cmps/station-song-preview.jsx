@@ -8,6 +8,7 @@ import { setSong } from "../store/player.action"
 import { loadCurrStation } from '../store/station.actions'
 import { likeSong } from '../store/station.actions'
 import { utilService } from '../service/util.service'
+import { useEffect } from 'react'
 
 export function SongPreview({ song, idx, station, onDeleteSong }) {
     const user = useSelector((storeState => storeState.userModule.user))
@@ -25,11 +26,12 @@ export function SongPreview({ song, idx, station, onDeleteSong }) {
     }
 
     function toggleLike() {
+        console.log(station,song,user);
         likeSong(station._id, song.id, {_id: user._id, fullname: user.fullname})
     }
 
     const isLiked = user && (song.likedByUsers || []).find(minimalUser => minimalUser._id === user._id)
-    console.log('SongPreview.isLiked', isLiked, song.likedByUsers)
+    // console.log('SongPreview.isLiked', isLiked, song.likedByUsers)
 
     return (
         // <Draggable draggableId={song._id} index={idx} key={song._id}>

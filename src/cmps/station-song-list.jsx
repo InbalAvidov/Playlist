@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
@@ -9,7 +9,9 @@ import { SearchSongs } from '../pages/search-page';
 export function SongList({ station, handleChange, onDeleteSong }) {
     const [stationSongs, setStationSongs] = useState(station.songs)
     const [items, setItems] = useState(station.songs)
-
+    useEffect(()=>{
+        console.log(station,"177777777777777777777");
+    },[])
     function onAddSong(song) {
         setStationSongs(prevSongs => [...prevSongs, song])
         handleChange('songs', [...stationSongs, song])

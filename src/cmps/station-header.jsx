@@ -81,10 +81,6 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
                 <div className="img-container" onClick={onOpenEditor}
                     style={{
                         backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs[0].imgUrl}")`,
-                        // url
-                        // : 
-                        // "http://res.cloudinary.com/damrhms1q/image/upload/v1674456887/liked-songs_uco4xm.png"
-                      
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "center",
                         backgroundSize: "cover",

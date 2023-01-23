@@ -7,21 +7,37 @@ import { SongList } from "../cmps/station-song-list"
 import { StationHeader } from "../cmps/station-header"
 import { stationService } from "../service/station.service"
 import { uploadService } from "../service/upload.service"
-import { removeStation, updateStation } from "../store/station.actions"
+import { loadStations, removeStation, updateStation } from "../store/station.actions"
 import { saveStation } from "../store/station.actions";
+import { useSelector } from "react-redux"
 
 
 export function Station() {
   const [station, setStation] = useState(null)
+  // const stations = useSelector((storeState) => storeState.stationModule.stations)
+  // console.log(stations)
   const { stationId } = useParams()
   const navigate = useNavigate()
 
+  // useEffect(() => {
+  //   if (!stations || !stations.length) loadStations()
+
+  // }, [])
+
+  
+  // useEffect(() => {
+
+  //   console.log(station);
+  // }, [station])
+
   useEffect(() => {
+
     if (!stationId) {
       saveEmptyStation()
 
     }
     else loadStation()
+
   }, [stationId])
 
   async function saveEmptyStation() {
@@ -29,6 +45,16 @@ export function Station() {
     setStation(newStation)
   }
 
+  // async function loadStation() {
+  //   const currStation = stations.filter(station =>{
+  //     return station._id===stationId
+  //   })
+  //   console.log(currStation)
+  //   console.log(stationId)
+    
+  //   setStation(currStation)
+  // }
+  
   async function loadStation() {
     const currStation = await stationService.get(stationId)
     setStation(currStation)
