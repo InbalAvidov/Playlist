@@ -43,10 +43,10 @@ export function UserLibrary() {
             </div>
         </Link>
 
-        <div className="user-playlists">
+        {/* <div className="user-playlists"> */}
           {
             userStations.map((station, idx) => (
-              <Link
+              <Link 
                 to={`/station/${station._id}`}
                 key={station._id}
                 className={idx}>
@@ -54,10 +54,10 @@ export function UserLibrary() {
                         <div className="img-container flex" style=
                             {{
                                 backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs.length > 0 ? station.songs[0].imgUrl : defaultPhoto}")`,
-                                backgroundRepeat: "repeat",
-                                backgroundPosition: "center",
-                                backgroundSize: "auto",
-                                width: '160px', height: '160px', margin: 'auto'
+                                // backgroundRepeat: "repeat",
+                                // backgroundPosition: "center",
+                                // backgroundSize: "auto",
+                                // width: '160px', height: '160px', margin: 'auto'
                             }}>
                         </div>
                         <h2>{station.name}</h2>
@@ -66,7 +66,7 @@ export function UserLibrary() {
                 </Link>
             ))
           }
-        </div>
+        {/* </div> */}
 
       </div>
 
