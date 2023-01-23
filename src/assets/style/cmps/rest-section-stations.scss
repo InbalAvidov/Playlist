@@ -1,6 +1,6 @@
 .rest-section-stations {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4,1fr);
     width: 100%;
     gap: 10px;
 
@@ -12,9 +12,10 @@
     .rest-section-station-preview {
         background-color: darken($song-bgc-home , 4%);
         grid-column: span 1;
-        border-radius: 1em;
+        border-radius: 6px;
         padding: 17px;
         transition: .5s;
+        max-width: fit-content;
 
         .img-container {
             border-radius: .5em;
@@ -27,6 +28,7 @@
             text-align: left;
             padding-top: 10px;
             height: 80px;
+            margin-inline-start: 2px;
         }
 
         &:hover {

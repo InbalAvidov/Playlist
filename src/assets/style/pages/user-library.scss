@@ -12,7 +12,6 @@
     font-family:montserrat-bold, Arial;
     font-weight: 900;
     padding: 5px;
-
   }
 }
 
@@ -23,7 +22,7 @@
     grid-template-columns: repeat(auto-fill, 185px);
     grid-template-rows: repeat(auto-fill, 275px);
     width: 100%;
-    gap: 20px;
+    gap: 18px;
 
   .liked-song-playlist{
     grid-column: span 2;
@@ -45,7 +44,7 @@
   width: 387.8px; 
   height: 275px; 
   margin: 0;
-  border-radius:10px;
+  border-radius:5px;
 
   h2{
     padding: 10px;
@@ -63,13 +62,13 @@
 
   background-color: darken($song-bgc-home , 4%);
   // grid-column: span 1;
-  border-radius: 10px;
+  border-radius: 8px;
   padding: 15px;
   transition: .5s;
   height: 275px;
 
   .img-container {
-      border-radius: 10px;
+      border-radius: 8px;
       display:flex;
       justify-content: center;
       background-repeat: repeat;
@@ -87,7 +86,7 @@
       color: $clr2;
       text-align: left;
       padding-top: 10px;
-      // height: 80px;
+      margin-left: 4px;
   }
 
   &:hover {
