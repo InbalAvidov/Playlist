@@ -53,7 +53,7 @@ export function stationReducer(state = initialState, action) {
             })
             console.log(stations)
 
-            return { ...state, stations: { ...stations } }
+            return { ...state, stations: [...stations] }
         default:
             return state
     }

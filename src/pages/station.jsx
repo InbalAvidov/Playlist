@@ -14,31 +14,25 @@ import { useSelector } from "react-redux"
 
 export function Station() {
   const [station, setStation] = useState(null)
-  // const stations = useSelector((storeState) => storeState.stationModule.stations)
-  // console.log(stations)
+  const stations = useSelector((storeState) => storeState.stationModule.stations)
+  console.log('Station stations', stations);
   const { stationId } = useParams()
+  console.log('Station stationId', stationId);
   const navigate = useNavigate()
 
-  // useEffect(() => {
-  //   if (!stations || !stations.length) loadStations()
-
-  // }, [])
 
   
-  // useEffect(() => {
-
-  //   console.log(station);
-  // }, [station])
 
   useEffect(() => {
-
     if (!stationId) {
       saveEmptyStation()
-
     }
-    else loadStation()
-
   }, [stationId])
+
+  useEffect(() => {
+    loadStation()
+  }, [stations])
+
 
   async function saveEmptyStation() {
     const newStation = await saveStation(stationService.getEmptyStation())
@@ -56,7 +50,9 @@ export function Station() {
   // }
   
   async function loadStation() {
-    const currStation = await stationService.get(stationId)
+    if (!stations || stations.length === 0) return
+    
+    const currStation = stations.find(station=>station._id===stationId)
     setStation(currStation)
   }
 

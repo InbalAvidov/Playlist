@@ -8,6 +8,7 @@ import { setSong } from "../store/player.action";
 import { loadStations } from "../store/station.actions";
 import { RestSectionStations } from "../cmps/rest-section-stations";
 import { Loader } from "../cmps/loader";
+import { SearchSVG } from "../cmps/search-svg";
 
 
 export function SearchSongs({ isCreateStation, onAddSong, isForStation }) {
@@ -17,6 +18,7 @@ export function SearchSongs({ isCreateStation, onAddSong, isForStation }) {
     const searchSongs = useRef(utilService.debounce(getSearchReasults, 700))
 
     useEffect(() => {
+        if (isForStation) return
         loadStations({ page: 'home' })
         //later need to be changed to search
     }, [])
@@ -48,10 +50,16 @@ export function SearchSongs({ isCreateStation, onAddSong, isForStation }) {
     if (!stations) return <Loader />
     return (
         <main className="main-search">
+                <div className="search-container">
+                <SearchSVG />
+
             <input className={isForStation ? "add-songs-search" : "main-input-search"}
                 type='txt' value={search}
-                placeholder={isForStation ? 'Add more songs' : 'What do you want to listen to?'}
-                onChange={handleChange} />
+                placeholder={isForStation ? 'Search for songs' : 'What do you want to listen to?'}
+                onChange={handleChange} 
+                />
+                </div>
+
             {songsBySearch ? <div className="search-results">
                 {songsBySearch.map(song => <div className="search-result" key={song.id}>
                     {isForStation && <button className="add-song-btn" onClick={() => addSong(song)}>+</button>}

@@ -2,9 +2,10 @@
 
     input {
         outline: none;
-        width: 300px;
+        width: 365px;
         font-size: 16px;
         margin-bottom: 20px;
+        // opacity: 1;
 
         &.main-input-search {
             border-radius: 40px;
@@ -13,11 +14,27 @@
         }
 
         &.add-songs-search {
-            border-radius: .5em;
+            font-size: 14px;
+            font-weight: 400;
+            border-radius: 4px;
+            
             padding: 10px;
-            background-color: inherit;
-            border: 1px solid gray;
+            background-color: hsla(0,0%,100%,.1);
+            border: none;
+            // color:#b3b3b3;
             color: $clr2;
+        }
+    }
+
+    .search-container {
+        position: relative;
+
+        .search-svg{
+            padding: 0 2px;
+position: absolute;
+top: 25%;
+// left: 50%;
+transform: translateY(-25%);
         }
     }
 
@@ -28,3 +45,4 @@
 
     }
 }
+
