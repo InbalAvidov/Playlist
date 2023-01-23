@@ -27,7 +27,7 @@ body {
     background: $bgc-main;
     min-height: 80vh;
     padding: 0 $main-app-padding;
-    padding-bottom: 100px;
+    padding-bottom: em(200px);
 }
 
 h1,

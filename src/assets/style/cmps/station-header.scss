@@ -4,34 +4,6 @@
     margin-bottom: 100px;
     width: 100%;
 
-    .info-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        flex: 1;
-        padding: 20px 25px ;
-
-        p {
-            font-size: 14px;
-            font-weight: bolder;
-            
-            &.station {
-                font-size: 12px;
-                text-transform: uppercase;
-                font-family:montserrat-bold, Arial ;
-            }
-
-            span{
-                font-family:montserrat-bold, Arial ;
-                margin-left: 5px;
-            }
-        }
-
-        h1 {
-            font-size: 90px;
-        }
-    }
-
     .upload-img-container {
         @include station-img-container
     }
@@ -81,49 +53,7 @@
             padding: 10px 0 10px 20px;
         }
 
-        .edit-container {
-            display: flex;
-            padding: 0 10px;
-            justify-content: space-around;
 
-            .input-img-container {
-                @include station-img-container
-            }
-
-            .title-desc {
-                display: flex;
-                flex-direction: column;
-                justify-content: space-around;
-
-                input,
-                textarea {
-                    padding: 10px;
-                    background-color: lighten($bgc-main, 10%);
-                    border: none;
-                    border-radius: 4px;
-                    color: $clr2;
-                    font-family: montserrat, Arial;
-                }
-
-                .input-desc {
-                    padding-bottom: 60px;
-                }
-
-                .modal-done-btn {
-                    background-color: $clr2;
-                    padding: 7px 10px;
-                    border-radius: 10em;
-                    font-size: 14px;
-                    align-self: center;
-                    border: none;
-
-                    &:hover {
-                        background-color: $brand-color;
-                    }
-                }
-            }
-
-        }
 
     }
 
@@ -139,29 +69,102 @@
             color: $clr2;
         }
 
-        .station-menu {
-            background-color: #373737;
-            border-radius: 5px;
-            position: absolute;
-            top: 40px;
-            right: 10px;
+    }
 
-            &.close {
-                display: none;
-            }
+}
 
-            p {
-                border-radius: 10px;
-                background-color: inherit;
-                color: $clr2;
-                width: 120px;
-                padding: 5px 0 5px 5px;
-                border: none;
-                font-size: 14px;
+.info-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    padding: 20px 25px;
 
-                &:hover {
-                    color: $brand-color;
-                }
+    p {
+        font-size: 14px;
+        font-weight: bolder;
+
+        &.station {
+            font-size: 12px;
+            text-transform: uppercase;
+            font-family: montserrat-bold, Arial;
+        }
+
+        span {
+            font-family: montserrat-bold, Arial;
+            margin-left: 5px;
+        }
+    }
+
+    h1 {
+        font-size: 90px;
+    }
+}
+
+.station-menu {
+    background-color: #373737;
+    border-radius: 5px;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+
+    &.close {
+        display: none;
+    }
+
+    p {
+        border-radius: 10px;
+        background-color: inherit;
+        color: $clr2;
+        width: 120px;
+        padding: 5px 0 5px 5px;
+        border: none;
+        font-size: 14px;
+
+        &:hover {
+            color: $brand-color;
+        }
+    }
+}
+
+.edit-container {
+    display: flex;
+    padding: 0 10px;
+    justify-content: space-around;
+
+    .input-img-container {
+        @include station-img-container
+    }
+
+    .title-desc {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        input,
+        textarea {
+            padding: 10px;
+            background-color: lighten($bgc-main, 10%);
+            border: none;
+            border-radius: 4px;
+            color: $clr2;
+            font-family: montserrat, Arial;
+        }
+
+        .input-desc {
+            padding-bottom: 60px;
+        }
+
+        .modal-done-btn {
+            background-color: $clr2;
+            padding: 7px 10px;
+            border-radius: 10em;
+            font-size: 14px;
+            align-self: center;
+            border: none;
+
+            &:hover {
+                background-color: $brand-color;
             }
         }
     }

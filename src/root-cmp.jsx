@@ -8,7 +8,7 @@ import { LikedSongs } from './pages/liked-songs'
 import { Station } from './pages/station.jsx'
 import { SearchSongs } from './pages/search-page'
 import { UserLibrary } from './pages/user-library'
-import  PlayerBar  from './cmps/player-bar'
+import { PlayerBar } from './cmps/player-bar'
 import { CreateStation } from './pages/create-station'
 import { AppHeader } from './cmps/app-header'
 import { LoginSignup } from './pages/login-signup';
@@ -28,11 +28,11 @@ export function App() {
                             <Route element={<Station />} path="/station/:stationId" />
                             <Route element={<SearchSongs />} path="/search" />
                             <Route element={<UserLibrary />} path="/library" />
-                            <Route element={<CreateStation />} path="/createStation" />
+                            <Route element={<Station />} path="/createStation" />
                             <Route element={<LikedSongs />} path="/liked" />
                             {/* <Route element={<LoginSignup/>} path="/login-signup" /> */}
-                            <Route element={<LoginSignup/>} path="/login-signup/:signupState" />
-                            <Route element={<LoginSignup/>} path="/login-signup/:loginState" />
+                            <Route element={<LoginSignup />} path="/login-signup/:signupState" />
+                            <Route element={<LoginSignup />} path="/login-signup/:loginState" />
                             {/* <Route element={<Playlist />} path="/playlist/:stationId" /> */}
                         </Routes>
                     </main>
@@ -40,7 +40,7 @@ export function App() {
                     {/* <Loader /> */}
                 </section>
             </Router>
-            
+
         </Provider>
     )
 }

@@ -1,18 +1,19 @@
 .main-search {
 
     input {
-        border-radius: 40px;
         outline: none;
         width: 300px;
         font-size: 16px;
+        margin-bottom: 20px;
 
         &.main-input-search {
+            border-radius: 40px;
             border: none;
             padding: 15px;
-            margin-bottom:20px ;
         }
 
         &.add-songs-search {
+            border-radius: .5em;
             padding: 10px;
             background-color: inherit;
             border: 1px solid gray;
@@ -24,45 +25,6 @@
         display: flex;
         flex-direction: column;
 
-        .search-result {
-            display: flex;
-            margin: 10px 0;
 
-            .add-song-btn {
-                background-color: inherit;
-                border: none;
-                color: $clr2;
-                font-size: 30px;
-                padding: 0 25px 0 10px;
-
-                &:hover{
-                    color: $brand-color;
-                }
-            }
-
-            img {
-                width: 50px;
-                height: 50px;
-                // height: 50px;
-                object-fit: cover;
-            }
-
-            .song-details {
-                margin-left: 15px;
-                display: flex;
-                flex-direction: column;
-
-                h4 {
-                    font-size: 12px;
-                    flex: 1;
-
-                }
-
-                p {
-                    font-size: 12px;
-                }
-            }
-
-        }
     }
 }
