@@ -62,7 +62,7 @@ export function AppNav() {
                         <span>Create Playlist</span>
                 </NavLink>
                 <NavLink to="/liked">
-                    <FontAwesomeIcon icon={faHeart} />
+                    <div className="heart"><FontAwesomeIcon icon={faHeart} /></div>
                     <span>Liked Songs</span>
                 </NavLink>
             </nav>

@@ -39,11 +39,12 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
         handleChange(field, value)
     }
 
-    // async function onUploadImg(ev) {
-    //     const imgUrl = await onSelectImg(ev)
-    //     handleChange("imgUrl", imgUrl)
-    //     setImgUrl(imgUrl)
-    // }
+    async function onUploadImg(ev) {
+        const imgUrl = await onSelectImg(ev)
+        console.log('StationHeader.onUploadImg', imgUrl)
+        handleChange("imgUrl", imgUrl)
+        setImgUrl(imgUrl)
+    }
 
     function onDone(ev) {
         ev.stopPropagation()
@@ -80,6 +81,10 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
                 <div className="img-container" onClick={onOpenEditor}
                     style={{
                         backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs[0].imgUrl}")`,
+                        // url
+                        // : 
+                        // "http://res.cloudinary.com/damrhms1q/image/upload/v1674456887/liked-songs_uco4xm.png"
+                      
                         backgroundRepeat: "no-repeat",
                         backgroundPosition: "center",
                         backgroundSize: "cover",
@@ -115,7 +120,7 @@ export function StationHeader({ station, onSelectImg, handleChange, onSaveStatio
                     <div className="input-img-container">
                         <FontAwesomeIcon icon={faImage} />
                         <span>Upload Image</span>
-                        <input type="file" hidden />
+                        <input type="file" onChange={onUploadImg} />
                     </div>
                     <div className="title-desc">
                         <input

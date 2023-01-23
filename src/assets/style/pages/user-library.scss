@@ -1,5 +1,8 @@
 .main-library{
 
+  // .main-library>*{
+  //   margin-inline: 0;
+  // }
   h1{
     font-size: 2.155rem;
     // line-height: 3.15rem;
@@ -17,14 +20,14 @@
     display: grid;
     // grid-template-columns: repeat(auto-fit, 200px);
     // grid-template-rows: repeat(auto-fit, 250px);
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fill, 185px);
+    grid-template-rows: repeat(auto-fill, 275px);
     width: 100%;
-    gap: 10px;
+    gap: 20px;
 
   .liked-song-playlist{
     grid-column: span 2;
-    margin-inline: auto;
+    // margin-inline: 0;
   }
   
   a {
@@ -39,9 +42,9 @@
   justify-content: end;
   background-color: rgb(94,83,161);
   box-shadow:rgba(0, 0, 0, 0.5) 0px 4px 60px 0px;
-  width: 400px; 
-  height: 250px; 
-  // margin: auto;
+  width: 387.8px; 
+  height: 275px; 
+  margin: 0;
   border-radius:10px;
 
   h2{
@@ -59,24 +62,32 @@
 .library-station-preview{
 
   background-color: darken($song-bgc-home , 4%);
-  grid-column: span 1;
+  // grid-column: span 1;
   border-radius: 10px;
-  padding: 17px;
+  padding: 15px;
   transition: .5s;
+  height: 275px;
 
   .img-container {
       border-radius: 10px;
       display:flex;
       justify-content: center;
+      background-repeat: repeat;
+      background-position: center;
+      background-size: auto;
+      width: 150px;
+      height: 150px; 
+      margin: auto;
+      // box-shadow: ;
   }
 
-  h3 {
-      font-size: 20px;
-      font-weight: bold;
+  h2 {
+      font-size: 1.2rem;
+      font-weight: 400;
       color: $clr2;
       text-align: left;
       padding-top: 10px;
-      height: 80px;
+      // height: 80px;
   }
 
   &:hover {
