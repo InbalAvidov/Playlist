@@ -36,6 +36,7 @@ export function Station() {
 
   async function onSelectImg(ev) {
     const imgUrl = await uploadService.uploadImg(ev)
+    console.log('onSelectImg(ev), imgurl',imgUrl)
     station.imgUrl = imgUrl
     return imgUrl
   }
