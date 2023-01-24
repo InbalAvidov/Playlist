@@ -87,7 +87,6 @@ async function getMainColor(url) {
     const fac = new FastAverageColor()
     try {
         const color = await fac.getColorAsync(url)
-        // const clr = color.rgba
         return color.rgba
     } catch (err) {
         console.log(err)

@@ -1,15 +1,9 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import { faClock } from '@fortawesome/free-solid-svg-icons'
-import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 
-
-import { loadCurrStation, loadStations } from "../store/station.actions"
 import { Loader } from "../cmps/loader"
-import { SongPreview } from "../cmps/station-song-preview"
 import { SongList } from "../cmps/station-song-list"
 import { stationService } from "../service/station.service"
-import { Station } from "./station"
 import { StationHeader } from "../cmps/station-header"
 
 export function LikedSongs() {
@@ -35,8 +29,8 @@ export function LikedSongs() {
   if(!station) return <Loader />
   return (
     <main className="station-details">
-      <StationHeader station={station} isLikedSongs={true} />
-      <SongList station={station} isLikedSongs={true} />
+      <StationHeader station={station} isLikedSongsPage={true} />
+      <SongList station={station} isLikedSongsPage={true} />
     </main>
   )
 }

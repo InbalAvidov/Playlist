@@ -1,19 +1,15 @@
-import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faPlay } from '@fortawesome/free-solid-svg-icons'
 
-
-import defaultPhoto from '../assets/img/default-photo.jpeg'
+import defaultPhoto from '../assets/img/default-photo.png'
 import { setSong } from '../store/player.action'
 import { loadCurrStation } from '../store/station.actions'
 
 
 export function RestSectionStations({ stations }) {
-    const player = useSelector(storeState => storeState.playerModule.player)
 
     function onPlayStation(ev, station) {
-        ev.stopPropagation()
+        ev.preventDefault()
+
         const firstSong = station.songs[0]
         const songToStore =
         {

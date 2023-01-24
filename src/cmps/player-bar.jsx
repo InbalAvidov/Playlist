@@ -1,15 +1,14 @@
-import { PlayerController } from "./player-controller"
-import { SoundPlayer } from "./sound-player"
 import { useSelector } from "react-redux"
 import { useRef, useState } from "react"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faVolumeHigh, faVolumeMute } from "@fortawesome/free-solid-svg-icons"
-import { useEffect } from "react"
+
+import { PlayerController } from "./player-controller"
+import { SoundPlayer } from "./sound-player"
 
 
 export function PlayerBar() {
     const player = useSelector(storeState => storeState.playerModule.player)
-    const state = useSelector(storeState => storeState.playerModule.state)
     const song = useSelector(storeState => storeState.playerModule.song)
     const [volume, setVolume] = useState(80)
     const lastVolumeRef = useRef(0)

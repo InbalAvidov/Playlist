@@ -2,9 +2,11 @@ import { utilService } from './util.service.js'
 import { storageService } from './async-storage.service.js'
 import { userService } from './user.service.js'
 import { homeStations } from '../data/station'
+
 const STATION_KEY = 'stationDB'
 
 _createStations()
+let stationNum = 1
 
 export const stationService = {
   query,
@@ -12,22 +14,14 @@ export const stationService = {
   remove,
   save,
   removeSong,
-  getEmptyStation,
-  likeStation
+  getEmptyStation
 }
 
 async function query(filterBy = getEmptyFilter()) {
   try {
     let stations = await storageService.query(STATION_KEY)
     if (filterBy.userId) {
-      let userStations = []
-      stations.forEach(station => {
-        if (station.createdBy._id === filterBy.userId && station.name !== 'Liked Songs') userStations.push(station)
-        station.likedByUsers.forEach(user => {
-          if (user._id === filterBy.userId) userStations.push(station)
-        })
-      })
-      stations = userStations
+      stations = stations.filter(station => station.createdBy._id === filterBy.userId)
     }
     if (filterBy.page === 'home') {
       stations = stations.filter(station => station.tags.includes('home'))
@@ -71,66 +65,11 @@ async function removeSong(stationId, songId) {
   }
 }
 
-// async function likeSong(songId, minimalUser) {
-//   try {
-//     const stations = await query()
-//     stations.forEach(station => {
-//       const newStation = {...station}
-//       station.songs.forEach(song => {
-//         console.log('song.id !== songId:', song.id !== songId)
-//         if (song.id !== songId) return
-//         if (!song.likedByUsers) newStation.song.likedByUsers = [{ minimalUser }]
-//         else {
-//           const userIdx = song.likedByUsers.findIndex(user => user._id === minimalUser._id)
-//           if (userIdx === -1) newStation.song.likedByUsers.push(minimalUser)
-//           else newStation.song.likedByUsers.splice(userIdx, 1)
-//         }
-//       })
-//       // const newStation = 
-//       save(newStation)
-//       // console.log('newStation:',newStation)
-//     })
-//     // const song = station.songs.find(song => song.id === songId)
-//     // song.likedByUsers ||= []
-//     // const likesIdx = song.likedByUsers.findIndex(user => user._id === minimalUser._id)
-//     // if (likesIdx > -1) {
-//     //   song.likedByUsers.splice(likesIdx, 1)
-//     //   if (station.name === 'Liked Songs') {
-//     //     const songIdx = station.songs.findIndex(song => song.id === songId)
-//     //     station.songs.splice(songIdx , 1)
-//     //   }
-//     // } else {
-//     //   song.likedByUsers.push(minimalUser)
-//     // }
-//     // const UpdatedStations = await query()
-//     return '?'
-//   } catch (err) {
-//     return err
-//   }
-// }
-
-async function likeStation(stationId, minimalUser) {
-  try {
-    const station = await get(stationId)
-    const userIdx = station.likedByUsers.findIndex(user => user._id === minimalUser._id)
-    if (userIdx > -1) {
-      station.likedByUsers.splice(userIdx, 1)
-    } else {
-      station.likedByUsers.push(minimalUser)
-    }
-    await save(station)
-    return station
-  } catch (err) {
-    throw err
-  }
-
-}
-
 function getEmptyStation() {
   const user = userService.getLoggedinUser()
   return {
     "_id": "",
-    "name": "My Playlist",
+    "name": _getStationDefaultName(),
     "tags": [],
     "createdBy": user ? user : {
       _id: '5cksxjas89xjsa8xjsa8GGG7',
@@ -142,6 +81,11 @@ function getEmptyStation() {
     "songs": [],
     "msgs": [],
   }
+}
+function _getStationDefaultName() {
+  const stationName = `My Playlist #${stationNum}`
+  stationNum++
+  return stationName
 }
 
 function _createStations() {

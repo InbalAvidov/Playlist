@@ -1,5 +1,5 @@
 import { stationService } from "../service/station.service"
-import { SET_STATIONS, UPDATE_CURRENT_STATION, ADD_STATION, UPDATE_STATION, REMOVE_STATION, LIKE_SONG } from "./station.reducer"
+import { SET_STATIONS, UPDATE_CURRENT_STATION, ADD_STATION, UPDATE_STATION, REMOVE_STATION } from "./station.reducer"
 import { store } from "./store"
 
 export async function loadStations(filterBy) {
@@ -53,22 +53,3 @@ export async function removeStation(stationId) {
     }
 }
 
-// export async function likeSong(songId, minimalUser) {
-//     try {
-//        const stations = await stationService.likeSong(songId, minimalUser)
-//         store.dispatch({ type: SET_STATIONS, stations})
-//     } catch (err) {
-//         console.log('Had issues to toggle song like', err)
-//         throw err
-//     }
-// }
-
-export async function likeStation(stationId, minimalUser) {
-    try {
-       const station = await stationService.likeStation(stationId, minimalUser)
-        store.dispatch({ type: UPDATE_STATION, station})
-    } catch (err) {
-        console.log('Had issues to toggle station like', err)
-        throw err
-    }
-}

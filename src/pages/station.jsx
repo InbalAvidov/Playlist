@@ -5,14 +5,15 @@ import { useState } from "react"
 import { Loader } from "../cmps/loader"
 import { SongList } from "../cmps/station-song-list"
 import { StationHeader } from "../cmps/station-header"
+
 import { stationService } from "../service/station.service"
 import { uploadService } from "../service/upload.service"
 import { removeStation, updateStation } from "../store/station.actions"
 import { saveStation } from "../store/station.actions";
 import { utilService } from "../service/util.service"
 
-
 export function Station() {
+
   const [station, setStation] = useState(null)
   const [colorByImg, setColorByImg] = useState(null)
   const { stationId } = useParams()
@@ -24,10 +25,10 @@ export function Station() {
     }
     else loadStation()
   }, [stationId])
-
   
   async function saveEmptyStation() {
     const newStation = await saveStation(stationService.getEmptyStation())
+    console.log('newStation:',newStation)
     setStation(newStation)
   }
   
@@ -69,7 +70,7 @@ export function Station() {
 
   async function deleteStation(stationId) {
     await removeStation(stationId)
-    navigate('/')
+    navigate(-1)
   }
 
   if (!station) return <Loader />

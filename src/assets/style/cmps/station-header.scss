@@ -81,6 +81,7 @@
     justify-content: center;
     align-self: flex-start;
     margin: 45px 0 25px 0;
+    position: relative;
 
     >* {
         margin-right: 20px
@@ -111,9 +112,9 @@
 .station-menu {
     background-color: #373737;
     border-radius: 5px;
-    position: relative;
-    top: -50px;
-    right: 10px;
+    position: absolute;
+    top: -70px;
+    right: -80px;
 
     &.close {
         display: none;
@@ -124,7 +125,7 @@
         background-color: inherit;
         color: $clr2;
         width: 120px;
-        padding: 5px 0 5px 5px;
+        padding: 7px 0 7px 10px;
         border: none;
         font-size: 14px;
 
@@ -175,7 +176,6 @@
             }
         }
     }
-
 }
 .app-modal-editor {
     position: fixed;
@@ -204,11 +204,18 @@
         padding: 10px 0 10px 20px;
     }
 
-    input {
-        opacity: 0;
-        height: 100%;
-        width: 100%;
+    .input-img-container{
+        @include station-img-container;
+        position: relative;
+
+        .file{
+            opacity: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
     }
+
 
 
 }
