@@ -50,9 +50,11 @@ export function Station() {
   // }
   
   async function loadStation() {
-    if (!stations || stations.length === 0) return
+    // if (!stations || stations.length === 0) return
     
-    const currStation = stations.find(station=>station._id===stationId)
+    
+    // const currStation = stations.find(station=>station._id===stationId)
+    const currStation =await  stationService.get(stationId)
     setStation(currStation)
   }
 
