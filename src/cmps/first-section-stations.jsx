@@ -3,6 +3,8 @@ import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import defaultPhoto from '../assets/img/default-photo.jpeg'
 import { utilService } from '../service/util.service'
+import { setSong } from '../store/player.action'
+import { loadCurrStation } from '../store/station.actions'
 
 export function FirstSectionStations({ stations }) {
     const [colorByImg, setColorByImg] = useState('rgb(72, 32, 176)')
@@ -17,6 +19,21 @@ export function FirstSectionStations({ stations }) {
     }
 
     const player = useSelector(storeState => storeState.playerModule.player)
+
+    function onPlayStation(ev, station) {
+        ev.preventDefault()
+        const firstSong = station.songs[0]
+        const songToStore =
+        {
+            _id: firstSong.id,
+            imgUrl: firstSong.imgUrl,
+            title: firstSong.title,
+            artist: firstSong.channelTitle
+        }
+        setSong(songToStore)
+        loadCurrStation(station._id)
+    } 
+
     return (
         <div className='clr-container' style={{ background: `linear-gradient( ${colorByImg} 0%, #121212 100%)` }}>
             <h1>{utilService.getCurrentTimeGreet()}</h1>

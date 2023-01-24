@@ -80,7 +80,7 @@ export const homeStations = [
 
     },
     {
-      "id": "DwfPlzQ1x_g", "title": "Coast ft. Anderson .Paak", "channelTitle": "HaileeSteinfeld", "imgUrl": "//i.ytimg.com/vi/DwfPlzQ1x_g/hqdefault.jpg", "url": "//www.youtube.com/embed?v=DwfPlzQ1x_g",
+      "id": "DwfPlzQ1x_g", "title": "Coast", "channelTitle": "HaileeSteinfeld", "imgUrl": "//i.ytimg.com/vi/DwfPlzQ1x_g/hqdefault.jpg", "url": "//www.youtube.com/embed?v=DwfPlzQ1x_g",
     },
     {
       "id": "niG3YMU6jFk", "title": " Oh My God ", "channelTitle": "Adele", "imgUrl": "//i.ytimg.com/vi/niG3YMU6jFk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=niG3YMU6jFk",
@@ -136,7 +136,7 @@ export const homeStations = [
       "id": "QYh6mYIJG2Y", "title": "7 rings ", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/QYh6mYIJG2Y/hqdefault.jpg", "url": "//www.youtube.com/embed?v=QYh6mYIJG2Y",
     },
     {
-      "id": "SXiSVQZLje8", "title": "Side To Side ft. Nicki Minaj", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/SXiSVQZLje8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=SXiSVQZLje8",
+      "id": "SXiSVQZLje8", "title": "Side To Side", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/SXiSVQZLje8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=SXiSVQZLje8",
     },
     {
       "id": "h2jvHynuMjI", "title": "Stuck with U", "channelTitle": "JustinBieber", "imgUrl": "//i.ytimg.com/vi/h2jvHynuMjI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=h2jvHynuMjI",
@@ -210,7 +210,7 @@ export const homeStations = [
 
     },
     {
-      "id": "ViwtNLUqkMY", "title": " Crazy In Love ft. JAY Z", "channelTitle": "Beyoncé", "imgUrl": "//i.ytimg.com/vi/ViwtNLUqkMY/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ViwtNLUqkMY",
+      "id": "ViwtNLUqkMY", "title": " Crazy In Love ", "channelTitle": "Beyoncé", "imgUrl": "//i.ytimg.com/vi/ViwtNLUqkMY/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ViwtNLUqkMY",
 
     },
     {
@@ -268,13 +268,13 @@ export const homeStations = [
       "id": "CvBfHwUxHIk", "title": " Umbrella ", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/CvBfHwUxHIk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=CvBfHwUxHIk",
     },
     {
-      "id": "uelHwf8o7_U", "title": "Eminem  Love The Way You Lie ft. Rihanna", "channelTitle": "Eminem", "imgUrl": "//i.ytimg.com/vi/uelHwf8o7_U/hqdefault.jpg", "url": "//www.youtube.com/embed?v=uelHwf8o7_U"
+      "id": "uelHwf8o7_U", "title": "Love The Way You Lie", "channelTitle": "Eminem", "imgUrl": "//i.ytimg.com/vi/uelHwf8o7_U/hqdefault.jpg", "url": "//www.youtube.com/embed?v=uelHwf8o7_U"
     },
     {
-      "id": "ehcVomMexkY", "title": " Pour It Up (Explicit)", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/ehcVomMexkY/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ehcVomMexkY",
+      "id": "ehcVomMexkY", "title": " Pour It Up ", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/ehcVomMexkY/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ehcVomMexkY",
     },
     {
-      "id": "pa14VNsdSYM", "title": " Only Girl (In The World)", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/pa14VNsdSYM/hqdefault.jpg", "url": "//www.youtube.com/embed?v=pa14VNsdSYM",
+      "id": "pa14VNsdSYM", "title": " Only Girl", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/pa14VNsdSYM/hqdefault.jpg", "url": "//www.youtube.com/embed?v=pa14VNsdSYM",
     },
     {
       "id": "OqrcUvrbRY", "title": "Come Down ", "channelTitle": "Anderson Paak", "imgUrl": "//i.ytimg.com/vi/OqrcUvrbRY/hqdefault.jpg", "url": "//www.youtube.com/embed?v=OqrcUvrbRY",
@@ -338,7 +338,7 @@ export const homeStations = [
 
     },
     {
-      "id": "vvPeJLcK2Lk", "title": "Am I Wrong (feat. ScHoolboy Q)", "channelTitle": "Anderson Paak", "imgUrl": "//i.ytimg.com/vi/vvPeJLcK2Lk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=vvPeJLcK2Lk",
+      "id": "vvPeJLcK2Lk", "title": "Am I Wrong ", "channelTitle": "Anderson Paak", "imgUrl": "//i.ytimg.com/vi/vvPeJLcK2Lk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=vvPeJLcK2Lk",
 
     },
     {
@@ -346,7 +346,7 @@ export const homeStations = [
 
     },
     {
-      "id": "P0CMm9QccZg", "title": " King of Everything (Live | Vevo DSCVR)", "channelTitle": "VevoDSCVR", "imgUrl": "//i.ytimg.com/vi/P0CMm9QccZg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=P0CMm9QccZg",
+      "id": "P0CMm9QccZg", "title": " King of Everything", "channelTitle": "VevoDSCVR", "imgUrl": "//i.ytimg.com/vi/P0CMm9QccZg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=P0CMm9QccZg",
 
     },
     {
@@ -409,7 +409,7 @@ export const homeStations = [
 
     },
     {
-      "id": "J_8xCOSekog", "title": " My Favorite Part (feat. Ariana Grande)", "channelTitle": "Mac Miller", "imgUrl": "//i.ytimg.com/vi/J_8xCOSekog/hqdefault.jpg", "url": "//www.youtube.com/embed?v=J_8xCOSekog",
+      "id": "J_8xCOSekog", "title": " My Favorite Part", "channelTitle": "Mac Miller", "imgUrl": "//i.ytimg.com/vi/J_8xCOSekog/hqdefault.jpg", "url": "//www.youtube.com/embed?v=J_8xCOSekog",
     },
     {
       "id": "74TFS8r_SMI", "title": " Donald Trump", "channelTitle": "Mac Miller", "imgUrl": "//i.ytimg.com/vi/74TFS8r_SMI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=74TFS8r_SMI",
@@ -466,7 +466,7 @@ export const homeStations = [
 
     },
     {
-      "id": "RBRcX5DS5A", "title": " The Scientist (Official 4K Video)", "channelTitle": "Coldplay", "imgUrl": "//i.ytimg.com/vi/RBRcX5DS5A/hqdefault.jpg", "url": "//www.youtube.com/embed?v=RBRcX5DS5A",
+      "id": "RBRcX5DS5A", "title": " The Scientist", "channelTitle": "Coldplay", "imgUrl": "//i.ytimg.com/vi/RBRcX5DS5A/hqdefault.jpg", "url": "//www.youtube.com/embed?v=RBRcX5DS5A",
 
     },
     {
@@ -516,7 +516,7 @@ export const homeStations = [
 
     },
     {
-      "id": "saGYMhApaH8", "title": "Bad Bunny (ft. Chencho Corleone)  Me Porto Bonito  | Un Verano Sin Ti", "channelTitle": "Bad Bunny", "imgUrl": "//i.ytimg.com/vi/saGYMhApaH8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=saGYMhApaH8",
+      "id": "saGYMhApaH8", "title": "Me Porto Bonito | Un Verano Sin Ti", "channelTitle": "Bad Bunny", "imgUrl": "//i.ytimg.com/vi/saGYMhApaH8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=saGYMhApaH8",
 
     },
     {
@@ -581,7 +581,7 @@ export const homeStations = [
 
       },
       {
-        "id": "qALEkPoYHg", "title": " ויסמין מועלם  סהרה (חי בלייב פארק)", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/qALEkPoYHg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=qALEkPoYHg",
+        "id": "qALEkPoYHg", "title": " ויסמין מועלם  סהרה", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/qALEkPoYHg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=qALEkPoYHg",
       },
       {
         "id": "eDfcyn5jLII", "title": "  היי בייב", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/eDfcyn5jLII/hqdefault.jpg", "url": "//www.youtube.com/embed?v=eDfcyn5jLII",
@@ -639,47 +639,47 @@ export const homeStations = [
       }
     ],
     "songs": [{
-      "id": "ifpiFzu4c54", "title": "עומר אדם  אני  (Prod by. Moshe &amp; Ofek)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/ifpiFzu4c54/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ifpiFzu4c54",
+      "id": "ifpiFzu4c54", "title": " אני ", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/ifpiFzu4c54/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ifpiFzu4c54",
 
     },
     {
-      "id": "PburljbLfo", "title": "עומר אדם – תמיד שלך (Prod By. Tamar Yahalomy &amp; Yonatan Kalimi)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/PburljbLfo/hqdefault.jpg", "url": "//www.youtube.com/embed?v=PburljbLfo",
+      "id": "PburljbLfo", "title": "תמיד שלך ", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/PburljbLfo/hqdefault.jpg", "url": "//www.youtube.com/embed?v=PburljbLfo",
 
     },
     {
-      "id": "AwjhMPbeD0Y", "title": "עומר אדם  חצי דפוק (Prod. by Matan Dror)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/AwjhMPbeD0Y/hqdefault.jpg", "url": "//www.youtube.com/embed?v=AwjhMPbeD0Y",
+      "id": "AwjhMPbeD0Y", "title": "חצי דפוק ", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/AwjhMPbeD0Y/hqdefault.jpg", "url": "//www.youtube.com/embed?v=AwjhMPbeD0Y",
 
     },
     {
-      "id": "ckObp0fTNmU", "title": "עומר אדם  לבד על המיטה (Prod By Gil Vain &amp; Tal Castiel)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/ckObp0fTNmU/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ckObp0fTNmU",
+      "id": "ckObp0fTNmU", "title": "לבד על המיטה", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/ckObp0fTNmU/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ckObp0fTNmU",
 
     },
     {
-      "id": "vK_LTSeQYdI", "title": "עומר אדם  פילהרמונית של טירוף", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/vK_LTSeQYdI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=vK_LTSeQYdI",
+      "id": "vK_LTSeQYdI", "title": "פילהרמונית של טירוף", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/vK_LTSeQYdI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=vK_LTSeQYdI",
 
     },
     {
-      "id": "tlkKybWF11c", "title": "עומר אדם  חורף באוטו (   Prod. By Tamar Yahalomy &amp; Yonatan Kalimi)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/tlkKybWF11c/hqdefault.jpg", "url": "//www.youtube.com/embed?v=tlkKybWF11c",
+      "id": "tlkKybWF11c", "title": "חורף באוטו ", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/tlkKybWF11c/hqdefault.jpg", "url": "//www.youtube.com/embed?v=tlkKybWF11c",
 
     },
     {
-      "id": "2D5DnahF3JI", "title": "עומר אדם  בסוף הכל חולף", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/2D5DnahF3JI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=2D5DnahF3JI",
+      "id": "2D5DnahF3JI", "title": "בסוף הכל חולף", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/2D5DnahF3JI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=2D5DnahF3JI",
 
     },
     {
-      "id": "fXFLjct5agw", "title": "עומר אדם – קאקדילה (Prod. By Moshe &amp; Ofek)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/fXFLjct5agw/hqdefault.jpg", "url": "//www.youtube.com/embed?v=fXFLjct5agw",
+      "id": "fXFLjct5agw", "title": "קאקדילה", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/fXFLjct5agw/hqdefault.jpg", "url": "//www.youtube.com/embed?v=fXFLjct5agw",
 
     },
     {
-      "id": "w6vEE4NxlYw", "title": "עומר אדם  פרצופים (Prod. by Johnny Goldstein)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/w6vEE4NxlYw/hqdefault.jpg", "url": "//www.youtube.com/embed?v=w6vEE4NxlYw",
+      "id": "w6vEE4NxlYw", "title": "פרצופים", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/w6vEE4NxlYw/hqdefault.jpg", "url": "//www.youtube.com/embed?v=w6vEE4NxlYw",
 
     },
     {
-      "id": "mQiTfvht20I", "title": "עומר אדם  תפילה", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/mQiTfvht20I/hqdefault.jpg", "url": "//www.youtube.com/embed?v=mQiTfvht20I",
+      "id": "mQiTfvht20I", "title": "תפילה", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/mQiTfvht20I/hqdefault.jpg", "url": "//www.youtube.com/embed?v=mQiTfvht20I",
 
     },
     {
-      "id": "xmeCr9QPhkA", "title": "עומר אדם  פסקול חיי", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/xmeCr9QPhkA/hqdefault.jpg", "url": "//www.youtube.com/embed?v=xmeCr9QPhkA",
+      "id": "xmeCr9QPhkA", "title": "פסקול חיי", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/xmeCr9QPhkA/hqdefault.jpg", "url": "//www.youtube.com/embed?v=xmeCr9QPhkA",
 
     },],
     "msgs": [],
@@ -713,15 +713,15 @@ export const homeStations = [
       }
     ],
     "songs": [{
-      "id": "L6K90w9O7T0", "title": "עומר אדם  תגידו לה &amp; אהבה מטורפת", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/L6K90w9O7T0/hqdefault.jpg", "url": "//www.youtube.com/embed?v=L6K90w9O7T0",
+      "id": "L6K90w9O7T0", "title": "עומר אדם  תגידו לה &amp; אהבה מטורפת", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/L6K90w9O7T0/hqdefault.jpg", "url": "//www.youtube.com/embed?v=L6K90w9O7T0",
 
     },
     {
-      "id": "YeCs_OHnws", "title": "עומר אדם  איזבל", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/YeCs_OHnws/hqdefault.jpg", "url": "//www.youtube.com/embed?v=YeCs_OHnws",
+      "id": "YeCs_OHnws", "title": "עומר אדם  איזבל", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/YeCs_OHnws/hqdefault.jpg", "url": "//www.youtube.com/embed?v=YeCs_OHnws",
 
     },
     {
-      "id": "YZWd83Z9GlM", "title": "עומר אדם  שדות של תירוצים", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/YZWd83Z9GlM/hqdefault.jpg", "url": "//www.youtube.com/embed?v=YZWd83Z9GlM",
+      "id": "YZWd83Z9GlM", "title": "עומר אדם  שדות של תירוצים", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/YZWd83Z9GlM/hqdefault.jpg", "url": "//www.youtube.com/embed?v=YZWd83Z9GlM",
 
     },
     {
@@ -905,10 +905,10 @@ export const homeStations = [
       "id": "QYh6mYIJG2Y", "title": "7 rings ", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/QYh6mYIJG2Y/hqdefault.jpg", "url": "//www.youtube.com/embed?v=QYh6mYIJG2Y",
     },
     {
-      "id": "SXiSVQZLje8", "title": "Ariana Grande ft. Nicki Minaj  Side To Side  ft. Nicki Minaj", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/SXiSVQZLje8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=SXiSVQZLje8",
+      "id": "SXiSVQZLje8", "title": "Side To Side", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/SXiSVQZLje8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=SXiSVQZLje8",
     },
     {
-      "id": "h2jvHynuMjI", "title": "Ariana Grande, Justin Bieber  Stuck with U (Lyric Video)", "channelTitle": "JustinBieber", "imgUrl": "//i.ytimg.com/vi/h2jvHynuMjI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=h2jvHynuMjI",
+      "id": "h2jvHynuMjI", "title": "Stuck with U", "channelTitle": "JustinBieber", "imgUrl": "//i.ytimg.com/vi/h2jvHynuMjI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=h2jvHynuMjI",
     },
     {
       "id": "ffxKSjUwKdU", "title": "no tears left to cry ", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/ffxKSjUwKdU/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ffxKSjUwKdU",
@@ -965,7 +965,7 @@ export const homeStations = [
 
     },
     {
-      "id": "ViwtNLUqkMY", "title": " Crazy In Love ft. JAY Z", "channelTitle": "Beyoncé", "imgUrl": "//i.ytimg.com/vi/ViwtNLUqkMY/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ViwtNLUqkMY",
+      "id": "ViwtNLUqkMY", "title": " Crazy In Love", "channelTitle": "Beyoncé", "imgUrl": "//i.ytimg.com/vi/ViwtNLUqkMY/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ViwtNLUqkMY",
 
     },
     {
@@ -979,13 +979,13 @@ export const homeStations = [
       "id": "PeonBmeFR8o", "title": " Hold Up ", "channelTitle": "Beyoncé", "imgUrl": "//i.ytimg.com/vi/PeonBmeFR8o/hqdefault.jpg", "url": "//www.youtube.com/embed?v=PeonBmeFR8o",
     },
     {
-      "id": "Mx_OexsUI2M", "title": " Lift Me Up (From Black Panther: Wakanda Forever)", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/Mx_OexsUI2M/hqdefault.jpg", "url": "//www.youtube.com/embed?v=Mx_OexsUI2M"
+      "id": "Mx_OexsUI2M", "title": " Lift Me Up", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/Mx_OexsUI2M/hqdefault.jpg", "url": "//www.youtube.com/embed?v=Mx_OexsUI2M"
     },
     {
       "id": "lWA2pjMjpBs", "title": " Diamonds", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/lWA2pjMjpBs/hqdefault.jpg", "url": "//www.youtube.com/embed?v=lWA2pjMjpBs",
     },
     {
-      "id": "fyaI45849w", "title": "DJ Khaled  Wild Thoughts  ft. Rihanna, Bryson Tiller", "channelTitle": "DJKhaled", "imgUrl": "//i.ytimg.com/vi/fyaI45849w/hqdefault.jpg", "url": "//www.youtube.com/embed?v=fyaI45849w",
+      "id": "fyaI45849w", "title": "wild Thoughts", "channelTitle": "DJKhaled", "imgUrl": "//i.ytimg.com/vi/fyaI45849w/hqdefault.jpg", "url": "//www.youtube.com/embed?v=fyaI45849w",
     },],
     "msgs": [],
     "createdBy":
@@ -1021,13 +1021,13 @@ export const homeStations = [
       "id": "CvBfHwUxHIk", "title": " Umbrella ", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/CvBfHwUxHIk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=CvBfHwUxHIk",
     },
     {
-      "id": "uelHwf8o7_U", "title": "Eminem  Love The Way You Lie ft. Rihanna", "channelTitle": "Eminem", "imgUrl": "//i.ytimg.com/vi/uelHwf8o7_U/hqdefault.jpg", "url": "//www.youtube.com/embed?v=uelHwf8o7_U"
+      "id": "uelHwf8o7_U", "title": "Love The Way You Lie", "channelTitle": "Eminem", "imgUrl": "//i.ytimg.com/vi/uelHwf8o7_U/hqdefault.jpg", "url": "//www.youtube.com/embed?v=uelHwf8o7_U"
     },
     {
-      "id": "ehcVomMexkY", "title": " Pour It Up (Explicit)", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/ehcVomMexkY/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ehcVomMexkY",
+      "id": "ehcVomMexkY", "title": " Pour It Up", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/ehcVomMexkY/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ehcVomMexkY",
     },
     {
-      "id": "pa14VNsdSYM", "title": " Only Girl (In The World)", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/pa14VNsdSYM/hqdefault.jpg", "url": "//www.youtube.com/embed?v=pa14VNsdSYM",
+      "id": "pa14VNsdSYM", "title": " Only Girl", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/pa14VNsdSYM/hqdefault.jpg", "url": "//www.youtube.com/embed?v=pa14VNsdSYM",
     },
     {
       "id": "OqrcUvrbRY", "title": "Come Down ", "channelTitle": "Anderson Paak", "imgUrl": "//i.ytimg.com/vi/OqrcUvrbRY/hqdefault.jpg", "url": "//www.youtube.com/embed?v=OqrcUvrbRY",
@@ -1036,7 +1036,7 @@ export const homeStations = [
       "id": "7PmUtmfTmbg", "title": "Bubblin ", "channelTitle": "Anderson Paak", "imgUrl": "//i.ytimg.com/vi/7PmUtmfTmbg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=7PmUtmfTmbg",
     },
     {
-      "id": "DwfPlzQ1x_g", "title": "Hailee Steinfeld  Coast ft. Anderson .Paak", "channelTitle": "HaileeSteinfeld", "imgUrl": "//i.ytimg.com/vi/DwfPlzQ1x_g/hqdefault.jpg", "url": "//www.youtube.com/embed?v=DwfPlzQ1x_g",
+      "id": "DwfPlzQ1x_g", "title": "Coast ", "channelTitle": "HaileeSteinfeld", "imgUrl": "//i.ytimg.com/vi/DwfPlzQ1x_g/hqdefault.jpg", "url": "//www.youtube.com/embed?v=DwfPlzQ1x_g",
     },
     {
       "id": "LR3GQfryp9M", "title": " Dang! ", "channelTitle": "Mac Miller", "imgUrl": "//i.ytimg.com/vi/LR3GQfryp9M/hqdefault.jpg", "url": "//www.youtube.com/embed?v=LR3GQfryp9M",
@@ -1049,7 +1049,7 @@ export const homeStations = [
       "id": "LqM5Fa3iE90", "title": "Anderson .Paak feat. Rick Ross  CUT EM IN ", "channelTitle": "Anderson Paak", "imgUrl": "//i.ytimg.com/vi/LqM5Fa3iE90/hqdefault.jpg", "url": "//www.youtube.com/embed?v=LqM5Fa3iE90",
     },
     {
-      "id": "7Jj83FOlBF8", "title": "Make It Better (ft. Smokey Robinson) ", "channelTitle": "AndersonPaak", "imgUrl": "//i.ytimg.com/vi/7Jj83FOlBF8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=7Jj83FOlBF8",
+      "id": "7Jj83FOlBF8", "title": "Make It Better ", "channelTitle": "AndersonPaak", "imgUrl": "//i.ytimg.com/vi/7Jj83FOlBF8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=7Jj83FOlBF8",
 
     },],
     "msgs": [],
@@ -1091,7 +1091,7 @@ export const homeStations = [
 
     },
     {
-      "id": "vvPeJLcK2Lk", "title": "Am I Wrong (feat. ScHoolboy Q)", "channelTitle": "Anderson Paak", "imgUrl": "//i.ytimg.com/vi/vvPeJLcK2Lk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=vvPeJLcK2Lk",
+      "id": "vvPeJLcK2Lk", "title": "Am I Wrong ", "channelTitle": "Anderson Paak", "imgUrl": "//i.ytimg.com/vi/vvPeJLcK2Lk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=vvPeJLcK2Lk",
 
     },
     {
@@ -1099,7 +1099,7 @@ export const homeStations = [
 
     },
     {
-      "id": "P0CMm9QccZg", "title": " King of Everything (Live | Vevo DSCVR)", "channelTitle": "VevoDSCVR", "imgUrl": "//i.ytimg.com/vi/P0CMm9QccZg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=P0CMm9QccZg",
+      "id": "P0CMm9QccZg", "title": " King of Everything", "channelTitle": "VevoDSCVR", "imgUrl": "//i.ytimg.com/vi/P0CMm9QccZg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=P0CMm9QccZg",
 
     },
     {
@@ -1162,7 +1162,7 @@ export const homeStations = [
 
     },
     {
-      "id": "J_8xCOSekog", "title": " My Favorite Part (feat. Ariana Grande)", "channelTitle": "Mac Miller", "imgUrl": "//i.ytimg.com/vi/J_8xCOSekog/hqdefault.jpg", "url": "//www.youtube.com/embed?v=J_8xCOSekog",
+      "id": "J_8xCOSekog", "title": " My Favorite Part", "channelTitle": "Mac Miller", "imgUrl": "//i.ytimg.com/vi/J_8xCOSekog/hqdefault.jpg", "url": "//www.youtube.com/embed?v=J_8xCOSekog",
     },
     {
       "id": "74TFS8r_SMI", "title": " Donald Trump", "channelTitle": "Mac Miller", "imgUrl": "//i.ytimg.com/vi/74TFS8r_SMI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=74TFS8r_SMI",
@@ -1219,7 +1219,7 @@ export const homeStations = [
 
     },
     {
-      "id": "RBRcX5DS5A", "title": " The Scientist (Official 4K Video)", "channelTitle": "Coldplay", "imgUrl": "//i.ytimg.com/vi/RBRcX5DS5A/hqdefault.jpg", "url": "//www.youtube.com/embed?v=RBRcX5DS5A",
+      "id": "RBRcX5DS5A", "title": " The Scientist", "channelTitle": "Coldplay", "imgUrl": "//i.ytimg.com/vi/RBRcX5DS5A/hqdefault.jpg", "url": "//www.youtube.com/embed?v=RBRcX5DS5A",
 
     },
     {
@@ -1269,7 +1269,7 @@ export const homeStations = [
 
     },
     {
-      "id": "saGYMhApaH8", "title": "Bad Bunny (ft. Chencho Corleone)  Me Porto Bonito  | Un Verano Sin Ti", "channelTitle": "Bad Bunny", "imgUrl": "//i.ytimg.com/vi/saGYMhApaH8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=saGYMhApaH8",
+      "id": "saGYMhApaH8", "title": "Me Porto Bonito  | Un Verano Sin Ti", "channelTitle": "Bad Bunny", "imgUrl": "//i.ytimg.com/vi/saGYMhApaH8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=saGYMhApaH8",
 
     },
     {
@@ -1334,30 +1334,30 @@ export const homeStations = [
 
       },
       {
-        "id": "qALEkPoYHg", "title": " ויסמין מועלם  סהרה (חי בלייב פארק)", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/qALEkPoYHg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=qALEkPoYHg",
+        "id": "qALEkPoYHg", "title": " ויסמין מועלם  סהרה", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/qALEkPoYHg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=qALEkPoYHg",
       },
       {
-        "id": "eDfcyn5jLII", "title": "  היי בייב", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/eDfcyn5jLII/hqdefault.jpg", "url": "//www.youtube.com/embed?v=eDfcyn5jLII",
+        "id": "eDfcyn5jLII", "title": "היי בייב", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/eDfcyn5jLII/hqdefault.jpg", "url": "//www.youtube.com/embed?v=eDfcyn5jLII",
 
       },
       {
-        "id": "dGy04XN9Spw", "title": "כנפיים |  מארח את מרגול | Coke Studio #1", "channelTitle": "CocaColaIsrael", "imgUrl": "//i.ytimg.com/vi/dGy04XN9Spw/hqdefault.jpg", "url": "//www.youtube.com/embed?v=dGy04XN9Spw",
+        "id": "dGy04XN9Spw", "title": "כנפיים ", "channelTitle": "CocaColaIsrael", "imgUrl": "//i.ytimg.com/vi/dGy04XN9Spw/hqdefault.jpg", "url": "//www.youtube.com/embed?v=dGy04XN9Spw",
 
       },
       {
-        "id": "9AvlUb4ObB8", "title": "  י״א 2 // Tuna  Eleventh Grade", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/9AvlUb4ObB8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=9AvlUb4ObB8",
+        "id": "9AvlUb4ObB8", "title": "  י״א 2", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/9AvlUb4ObB8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=9AvlUb4ObB8",
 
       },
       {
-        "id": "3PJmEucx_o", "title": "  גם זה יעבור // This Too Shall Pass", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/3PJmEucx_o/hqdefault.jpg", "url": "//www.youtube.com/embed?v=3PJmEucx_o",
+        "id": "3PJmEucx_o", "title": "  גם זה יעבור ", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/3PJmEucx_o/hqdefault.jpg", "url": "//www.youtube.com/embed?v=3PJmEucx_o",
 
       },
       {
-        "id": "GIRbXNousaI", "title": "Tuna  30 Rock //   רוק 30", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/GIRbXNousaI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=GIRbXNousaI",
+        "id": "GIRbXNousaI", "title": " רוק 30", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/GIRbXNousaI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=GIRbXNousaI",
 
       },
       {
-        "id": "aFG7MR6ld1M", "title": "  סחרחורת // Tuna  Vertigo", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/aFG7MR6ld1M/hqdefault.jpg", "url": "//www.youtube.com/embed?v=aFG7MR6ld1M",
+        "id": "aFG7MR6ld1M", "title": "סחרחורת ", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/aFG7MR6ld1M/hqdefault.jpg", "url": "//www.youtube.com/embed?v=aFG7MR6ld1M",
 
       },
     ],
@@ -1392,47 +1392,47 @@ export const homeStations = [
       }
     ],
     "songs": [{
-      "id": "ifpiFzu4c54", "title": "עומר אדם  אני  (Prod by. Moshe &amp; Ofek)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/ifpiFzu4c54/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ifpiFzu4c54",
+      "id": "ifpiFzu4c54", "title": "אני", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/ifpiFzu4c54/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ifpiFzu4c54",
 
     },
     {
-      "id": "PburljbLfo", "title": "עומר אדם – תמיד שלך (Prod By. Tamar Yahalomy &amp; Yonatan Kalimi)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/PburljbLfo/hqdefault.jpg", "url": "//www.youtube.com/embed?v=PburljbLfo",
+      "id": "PburljbLfo", "title": "תמיד שלך", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/PburljbLfo/hqdefault.jpg", "url": "//www.youtube.com/embed?v=PburljbLfo",
 
     },
     {
-      "id": "AwjhMPbeD0Y", "title": "עומר אדם  חצי דפוק (Prod. by Matan Dror)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/AwjhMPbeD0Y/hqdefault.jpg", "url": "//www.youtube.com/embed?v=AwjhMPbeD0Y",
+      "id": "AwjhMPbeD0Y", "title": "חצי דפוק", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/AwjhMPbeD0Y/hqdefault.jpg", "url": "//www.youtube.com/embed?v=AwjhMPbeD0Y",
 
     },
     {
-      "id": "ckObp0fTNmU", "title": "עומר אדם  לבד על המיטה (Prod By Gil Vain &amp; Tal Castiel)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/ckObp0fTNmU/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ckObp0fTNmU",
+      "id": "ckObp0fTNmU", "title": "לבד על המיטה", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/ckObp0fTNmU/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ckObp0fTNmU",
 
     },
     {
-      "id": "vK_LTSeQYdI", "title": "עומר אדם  פילהרמונית של טירוף", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/vK_LTSeQYdI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=vK_LTSeQYdI",
+      "id": "vK_LTSeQYdI", "title": "פילהרמונית של טירוף", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/vK_LTSeQYdI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=vK_LTSeQYdI",
 
     },
     {
-      "id": "tlkKybWF11c", "title": "עומר אדם  חורף באוטו (   Prod. By Tamar Yahalomy &amp; Yonatan Kalimi)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/tlkKybWF11c/hqdefault.jpg", "url": "//www.youtube.com/embed?v=tlkKybWF11c",
+      "id": "tlkKybWF11c", "title": "חורף באוטו ", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/tlkKybWF11c/hqdefault.jpg", "url": "//www.youtube.com/embed?v=tlkKybWF11c",
 
     },
     {
-      "id": "2D5DnahF3JI", "title": "עומר אדם  בסוף הכל חולף", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/2D5DnahF3JI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=2D5DnahF3JI",
+      "id": "2D5DnahF3JI", "title": "בסוף הכל חולף", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/2D5DnahF3JI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=2D5DnahF3JI",
 
     },
     {
-      "id": "fXFLjct5agw", "title": "עומר אדם – קאקדילה (Prod. By Moshe &amp; Ofek)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/fXFLjct5agw/hqdefault.jpg", "url": "//www.youtube.com/embed?v=fXFLjct5agw",
+      "id": "fXFLjct5agw", "title": "קאקדילה", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/fXFLjct5agw/hqdefault.jpg", "url": "//www.youtube.com/embed?v=fXFLjct5agw",
 
     },
     {
-      "id": "w6vEE4NxlYw", "title": "עומר אדם  פרצופים (Prod. by Johnny Goldstein)", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/w6vEE4NxlYw/hqdefault.jpg", "url": "//www.youtube.com/embed?v=w6vEE4NxlYw",
+      "id": "w6vEE4NxlYw", "title": "פרצופים", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/w6vEE4NxlYw/hqdefault.jpg", "url": "//www.youtube.com/embed?v=w6vEE4NxlYw",
 
     },
     {
-      "id": "mQiTfvht20I", "title": "עומר אדם  תפילה", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/mQiTfvht20I/hqdefault.jpg", "url": "//www.youtube.com/embed?v=mQiTfvht20I",
+      "id": "mQiTfvht20I", "title": "תפילה", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/mQiTfvht20I/hqdefault.jpg", "url": "//www.youtube.com/embed?v=mQiTfvht20I",
 
     },
     {
-      "id": "xmeCr9QPhkA", "title": "עומר אדם  פסקול חיי", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/xmeCr9QPhkA/hqdefault.jpg", "url": "//www.youtube.com/embed?v=xmeCr9QPhkA",
+      "id": "xmeCr9QPhkA", "title": "פסקול חיי", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/xmeCr9QPhkA/hqdefault.jpg", "url": "//www.youtube.com/embed?v=xmeCr9QPhkA",
 
     },],
     "msgs": [],
@@ -1466,15 +1466,15 @@ export const homeStations = [
       }
     ],
     "songs": [{
-      "id": "L6K90w9O7T0", "title": "עומר אדם  תגידו לה &amp; אהבה מטורפת", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/L6K90w9O7T0/hqdefault.jpg", "url": "//www.youtube.com/embed?v=L6K90w9O7T0",
+      "id": "L6K90w9O7T0", "title": "עומר אדם  תגידו לה &amp; אהבה מטורפת", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/L6K90w9O7T0/hqdefault.jpg", "url": "//www.youtube.com/embed?v=L6K90w9O7T0",
 
     },
     {
-      "id": "YeCs_OHnws", "title": "עומר אדם  איזבל", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/YeCs_OHnws/hqdefault.jpg", "url": "//www.youtube.com/embed?v=YeCs_OHnws",
+      "id": "YeCs_OHnws", "title": "עומר אדם  איזבל", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/YeCs_OHnws/hqdefault.jpg", "url": "//www.youtube.com/embed?v=YeCs_OHnws",
 
     },
     {
-      "id": "YZWd83Z9GlM", "title": "עומר אדם  שדות של תירוצים", "channelTitle": "עומר אדםי", "imgUrl": "//i.ytimg.com/vi/YZWd83Z9GlM/hqdefault.jpg", "url": "//www.youtube.com/embed?v=YZWd83Z9GlM",
+      "id": "YZWd83Z9GlM", "title": "עומר אדם  שדות של תירוצים", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/YZWd83Z9GlM/hqdefault.jpg", "url": "//www.youtube.com/embed?v=YZWd83Z9GlM",
 
     },
     {
@@ -1762,7 +1762,7 @@ export const homeStations = [
 //       {
 //         "id": "ifpiFzu4c54",
 //         "title": "עומר אדם  אני  (Prod by. Moshe &amp; Ofek)",
-//         "channelTitle": "עומר אדםי",
+//         "channelTitle": "עומר אדם",
 //         "imgUrl": "https://i.ytimg.com/vi/ifpiFzu4c54/hqdefault.jpg",
 //         "url": "https://www.youtube.com/embed?v=ifpiFzu4c54",
 //         "addedBy": {
@@ -1775,7 +1775,7 @@ export const homeStations = [
 //       {
 //         "id": "PburljbLfo",
 //         "title": "עומר אדם – תמיד שלך (Prod By. Tamar Yahalomy &amp; Yonatan Kalimi)",
-//         "channelTitle": "עומר אדםי",
+//         "channelTitle": "עומר אדם",
 //         "imgUrl": "https://i.ytimg.com/vi/PburljbLfo/hqdefault.jpg",
 //         "url": "https://www.youtube.com/embed?v=PburljbLfo",
 //         "addedBy": {
@@ -1788,7 +1788,7 @@ export const homeStations = [
 //       {
 //         "id": "ckObp0fTNmU",
 //         "title": "עומר אדם  לבד על המיטה (Prod By Gil Vain &amp; Tal Castiel)",
-//         "channelTitle": "עומר אדםי",
+//         "channelTitle": "עומר אדם",
 //         "imgUrl": "https://i.ytimg.com/vi/ckObp0fTNmU/hqdefault.jpg",
 //         "url": "https://www.youtube.com/embed?v=ckObp0fTNmU",
 //         "addedBy": {
@@ -1801,7 +1801,7 @@ export const homeStations = [
 //       {
 //         "id": "vK_LTSeQYdI",
 //         "title": "עומר אדם  פילהרמונית של טירוף",
-//         "channelTitle": "עומר אדםי",
+//         "channelTitle": "עומר אדם",
 //         "imgUrl": "https://i.ytimg.com/vi/vK_LTSeQYdI/hqdefault.jpg",
 //         "url": "https://www.youtube.com/embed?v=vK_LTSeQYdI",
 //         "addedBy": {
@@ -1833,7 +1833,7 @@ export const homeStations = [
 //       {
 //         "id": "ifpiFzu4c54",
 //         "title": "עומר אדם  אני  (Prod by. Moshe &amp; Ofek)",
-//         "channelTitle": "עומר אדםי",
+//         "channelTitle": "עומר אדם",
 //         "imgUrl": "https://i.ytimg.com/vi/ifpiFzu4c54/hqdefault.jpg",
 //         "url": "https://www.youtube.com/embed?v=ifpiFzu4c54",
 //         "addedBy": {
@@ -1846,7 +1846,7 @@ export const homeStations = [
 //       {
 //         "id": "PburljbLfo",
 //         "title": "עומר אדם – תמיד שלך (Prod By. Tamar Yahalomy &amp; Yonatan Kalimi)",
-//         "channelTitle": "עומר אדםי",
+//         "channelTitle": "עומר אדם",
 //         "imgUrl": "https://i.ytimg.com/vi/PburljbLfo/hqdefault.jpg",
 //         "url": "https://www.youtube.com/embed?v=PburljbLfo",
 //         "addedBy": {
@@ -1859,7 +1859,7 @@ export const homeStations = [
 //       {
 //         "id": "ckObp0fTNmU",
 //         "title": "עומר אדם  לבד על המיטה (Prod By Gil Vain &amp; Tal Castiel)",
-//         "channelTitle": "עומר אדםי",
+//         "channelTitle": "עומר אדם",
 //         "imgUrl": "https://i.ytimg.com/vi/ckObp0fTNmU/hqdefault.jpg",
 //         "url": "https://www.youtube.com/embed?v=ckObp0fTNmU",
 //         "addedBy": {
@@ -1872,7 +1872,7 @@ export const homeStations = [
 //       {
 //         "id": "vK_LTSeQYdI",
 //         "title": "עומר אדם  פילהרמונית של טירוף",
-//         "channelTitle": "עומר אדםי",
+//         "channelTitle": "עומר אדם",
 //         "imgUrl": "https://i.ytimg.com/vi/vK_LTSeQYdI/hqdefault.jpg",
 //         "url": "https://www.youtube.com/embed?v=vK_LTSeQYdI",
 //         "addedBy": {

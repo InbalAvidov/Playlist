@@ -1,20 +1,45 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 import { Link } from 'react-router-dom'
 
 import { loadStations } from "../store/station.actions"
 import { Loader } from "../cmps/loader"
 import defaultPhoto from '../assets/img/default-photo.jpeg'
+import { stationService } from "../service/station.service"
 
 export function UserLibrary() {
   const stations = useSelector((storeState) => storeState.stationModule.stations)
   const user = useSelector((storeState => storeState.userModule.user))
+  const [userStations, setUserStations] = useState(null)
+
 
   useEffect(() => {
     loadStations()
   }, [])
 
-  if (!stations) return <Loader />
+  useEffect(() => {
+    if (user) {
+      getUserStations(user)
+    }
+  }, [user, stations])
+
+  async function getUserStations(user) {
+    const userStations = await stationService.query({ userId: user._id })
+    setUserStations(userStations)
+  }
+
+  if (!user) {
+    return (
+      <main className="main-library">
+        <h1> User Library </h1>
+        <h4>Please login first</h4>
+      </main>
+    )
+  }
+
+
+
+  if (!stations || !userStations) return <Loader />
   return (
     <main className='main-library clr-container'>
       <h1> Playlists </h1>
@@ -28,23 +53,30 @@ export function UserLibrary() {
           </div>
         </Link>
 
-        {stations.filter(station => station.createdBy._id === user._id)
-          .map((station, idx) => (
+        {
+          userStations.map((station, idx) => (
             <Link
               to={`/station/${station._id}`}
               key={station._id}
               className={idx}>
               <div className="library-station-preview" >
-                <div className="img-container flex"
-                  style={{
-                    backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs.length > 0 ? station.songs[0].imgUrl : defaultPhoto}")`
+                <div className="img-container flex" style=
+                  {{
+                    backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs.length > 0 ? station.songs[0].imgUrl : defaultPhoto}")`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    width: '160px', height: '160px', margin: 'auto'
                   }}>
                 </div>
                 <h2>{station.name}</h2>
                 <p>{station.description?.slice(0, 15)}</p>
               </div>
             </Link>
-          ))}
+          ))
+        }
+        {/* </div> */}
+
       </div>
     </main>
   )

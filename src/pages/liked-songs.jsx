@@ -1,22 +1,28 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
+import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 
-import { loadStations } from "../store/station.actions"
+
+import { loadCurrStation, loadStations } from "../store/station.actions"
 import { Loader } from "../cmps/loader"
 import { SongPreview } from "../cmps/station-song-preview"
+import { SongList } from "../cmps/station-song-list"
+import { stationService } from "../service/station.service"
+import { Station } from "./station"
+import { StationHeader } from "../cmps/station-header"
 
 export function LikedSongs() {
-  const stations = useSelector((storeState) => storeState.stationModule.stations)
   const user = useSelector((storeState => storeState.userModule.user))
-
-  console.log('LikedSongs user', user)
-  console.log('LikedSongs stations', stations)
+  const [station, setStation] = useState(null)
 
   useEffect(() => {
-      loadStations()
-  }, [])
+    const likedSongsStation = stationService.getEmptyStation()
+    likedSongsStation.name ='Liked Songs'
+    likedSongsStation.songs = user.likedSongs || []
+    likedSongsStation.imgUrl = "https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png"
+    setStation(likedSongsStation)
+  }, [user])
 
   if (!user) {
     return (
@@ -26,29 +32,11 @@ export function LikedSongs() {
       </main>
     )
   }
-
-  if (!stations) return <Loader />
-
-  const likedSongs = stations.flatMap(station => 
-    station.songs.filter(song => 
-      (song.likedByUsers || []).find(minimalUser => minimalUser._id === user._id)))
-
-  console.log('LikedSongs likedSongs', likedSongs)
-
+  if(!station) return <Loader />
   return (
-    <main className="liked-songs">
-      <h1>Liked Songs</h1>
-      <section className="songs-list">
-          <div className="song-preview songs-list-header">
-              <p className="song-number">#</p>
-              <p className="song-img-title">Title</p>
-              <p className="song-date">Date Added</p>
-              <p className="song-duration"><FontAwesomeIcon icon={faClock}></FontAwesomeIcon></p>
-          </div>
-          {likedSongs.map((song, idx) =>
-              <SongPreview key={idx} song={song} idx={idx} />)
-          }
-      </section>
+    <main className="station-details">
+      <StationHeader station={station} isLikedSongs={true} />
+      <SongList station={station} isLikedSongs={true} />
     </main>
   )
 }

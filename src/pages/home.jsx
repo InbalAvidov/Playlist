@@ -16,37 +16,6 @@ import { FastAverageColor } from "fast-average-color"
 export function Home() {
     const stations = useSelector((storeState) => storeState.stationModule.stations)
     const player = useSelector(storeState => storeState.playerModule.player)
-    // const [colorByImg, setColorByImg] = useState('#ffffff')
-    // const user = useSelector((storeState => storeState.userModule.user))
-    // const navigate = useNavigate()
-
-
-    // useEffect(() => {
-    //     if (!user) {
-    //         Swal.fire({
-    //             title: 'You need to Login to add a playlist',
-    //             text: "You can also continue as a guest for now",
-    //             showDenyButton: true,
-    //             showCancelButton: true,
-    //             confirmButtonText: 'Login',
-    //             denyButtonText: `Continue as guest`,
-    //             background: '#ffffff',
-    //             color: '#000000',
-    //             confirmButtonColor: '#1ed760',
-    //             denyButtonColor: '#1ed760',
-    //         }).then((result) => {
-    //             if (result.isConfirmed) {
-    //                 navigate('/login-signup/loginState')
-    //             } else if (result.isDenied) {
-    //                 login({
-    //                     _id: utilService.makeId(),
-    //                     username: 'guest',
-    //                     imgUrl: "https://robohash.org/set=set3"
-    //                 })
-    //             }
-    //         })
-    //     }
-    // }, [])
 
     useEffect(() => {
         loadStations({ page: 'home' })
