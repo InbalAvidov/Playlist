@@ -50,15 +50,16 @@ export function SearchSongs({ isCreateStation, onAddSong, isForStation }) {
     if (!stations) return <Loader />
     return (
         <main className="main-search">
-                <div className="search-container">
-                <SearchSVG />
-
-            <input className={isForStation ? "add-songs-search" : "main-input-search"}
-                type='txt' value={search}
-                placeholder={isForStation ? 'Search for songs' : 'What do you want to listen to?'}
-                onChange={handleChange} 
-                />
-                </div>
+            <div className="search-container">
+                <div className="svg-wrapper">
+                    <SearchSVG />
+                </div>  
+                <input className={`search-input ${isForStation ? "add-songs-search" : "main-input-search"}`}
+                    type='txt' value={search}
+                    placeholder={isForStation ? 'Search for songs' : 'What do you want to listen to?'}
+                    onChange={handleChange} 
+                    />
+            </div>
 
             {songsBySearch ? <div className="search-results">
                 {songsBySearch.map(song => <div className="search-result" key={song.id}>
