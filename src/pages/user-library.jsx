@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import { Link, useNavigate, useParams } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 import { loadStations } from "../store/station.actions"
 import { Loader } from "../cmps/loader"
@@ -41,18 +41,15 @@ export function UserLibrary() {
 
   if (!stations || !userStations) return <Loader />
   return (
-    <main className="main-library">
-
+    <main className='main-library clr-container'>
       <h1> Playlists </h1>
       <div className="playlists">
-
         <Link className="liked-song-playlist" to="/liked">
           <div className="library-liked-songs" >
             <div className="img-liked-container flex">
               <p>Listen to all the songs you liked</p>
               <h2>Liked songs</h2>
             </div>
-
           </div>
         </Link>
 
@@ -81,7 +78,6 @@ export function UserLibrary() {
         {/* </div> */}
 
       </div>
-
     </main>
   )
 }

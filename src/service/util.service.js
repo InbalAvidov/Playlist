@@ -1,3 +1,5 @@
+import { FastAverageColor } from "fast-average-color";
+
 export const utilService = {
     makeId,
     makeLorem,
@@ -6,9 +8,10 @@ export const utilService = {
     randomPastTime,
     saveToStorage,
     loadFromStorage,
-    secondsToMinutesAndSeconds
+    secondsToMinutesAndSeconds,
+    getCurrentTimeGreet,
+    getMainColor
 }
-
 
 function debounce(func, timeout = 700) {
     let timer;
@@ -17,7 +20,6 @@ function debounce(func, timeout = 700) {
         timer = setTimeout(() => { func.apply(this, args); }, timeout);
     }
 }
-
 
 function makeId(length = 6) {
     var txt = ''
@@ -47,7 +49,7 @@ function getRandomIntInclusive(min, max) {
 }
 
 function secondsToMinutesAndSeconds(seconds) {
-    if(!seconds) return '0:00'
+    if (!seconds) return '0:00'
     var minutes = Math.floor(seconds / 60);
     var seconds = ((seconds % 60)).toFixed(0);
     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
@@ -60,16 +62,16 @@ function randomPastTime() {
 
     const pastTime = getRandomIntInclusive(HOUR, WEEK)
     const randomDate = new Date(Date.now() - pastTime)
-    const formatedDate =(getMonthShortName((randomDate.getMonth())+1))+' '+randomDate.getDate()+' , '+randomDate.getFullYear()
+    const formatedDate = (getMonthShortName((randomDate.getMonth()) + 1)) + ' ' + randomDate.getDate() + ' , ' + randomDate.getFullYear()
     return formatedDate
 }
 
 function getMonthShortName(monthNo) {
     const date = new Date();
     date.setMonth(monthNo - 1);
-  
+
     return date.toLocaleString('en-US', { month: 'short' });
-  }
+}
 
 function saveToStorage(key, value) {
     localStorage.setItem(key, JSON.stringify(value))
@@ -78,4 +80,23 @@ function saveToStorage(key, value) {
 function loadFromStorage(key) {
     const data = localStorage.getItem(key)
     return (data) ? JSON.parse(data) : undefined
+}
+
+async function getMainColor(url) {
+    if (!url) return
+    const fac = new FastAverageColor()
+    try {
+        const color = await fac.getColorAsync(url)
+        // const clr = color.rgba
+        return color.rgba
+    } catch (err) {
+        console.log(err)
+    }
+}
+
+function getCurrentTimeGreet() {
+    const hour = new Date().getHours()
+    if (hour > 5 && hour < 12) return 'Good morning'
+    else if (hour >= 12 && hour < 19) return 'Good afternoon'
+    else if (hour >= 19 && hour <= 23) return 'Good evning'
 }

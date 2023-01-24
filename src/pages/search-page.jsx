@@ -48,7 +48,7 @@ export function SearchSongs({ isCreateStation, onAddSong, isForStation }) {
 
     if (!stations) return <Loader />
     return (
-        <main className="main-search">
+        <main className="main-search clr-container" >
             <div className="search-container">
                 <div className="svg-wrapper">
                     <SearchSVG />
