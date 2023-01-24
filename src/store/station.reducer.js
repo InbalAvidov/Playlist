@@ -12,7 +12,6 @@ const initialState = {
 
 export function stationReducer(state = initialState, action) {
     let stations
-    console.log('STATE', state)
     switch (action.type) {
         case SET_STATIONS:
             return { ...state, stations: action.stations }
@@ -21,13 +20,11 @@ export function stationReducer(state = initialState, action) {
             return { ...state, stations }
         case ADD_STATION:
             stations = [...state.stations, action.station]
-            console.log('stations:', stations)
             return { ...state, stations }
         case UPDATE_STATION:
             stations = state.stations.map(station => station._id === action.station._id ? action.station : station)
             return { ...state, stations }
         case REMOVE_STATION:
-            console.log('state.stations:', state.stations)
             stations = state.stations.filter(station => station._id !== action.stationId)
             return { ...state, stations }
         case UPDATE_CURRENT_STATION:
@@ -51,7 +48,6 @@ export function stationReducer(state = initialState, action) {
                 })
                 return { ...station }
             })
-            console.log(stations)
 
             return { ...state, stations: [...stations] }
         default:

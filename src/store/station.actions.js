@@ -13,7 +13,6 @@ export async function loadStations(filterBy) {
 }
 
 export async function loadCurrStation(stationId) {
-    console.log('ACTION LOADCURRSTATION CALLED')
     try {
         const currStation = await stationService.get(stationId)
         store.dispatch({ type: UPDATE_CURRENT_STATION, currStation })
@@ -47,19 +46,29 @@ export async function updateStation(station) {
 export async function removeStation(stationId) {
     try {
         await stationService.remove(stationId)
-        store.dispatch({ type: REMOVE_STATION, stationId, })
+        store.dispatch({ type: REMOVE_STATION, stationId})
     } catch (err) {
         console.log('Had issues to get current station', err)
         throw err
     }
 }
 
-export async function likeSong(stationId, songId, minimalUser) {
+// export async function likeSong(songId, minimalUser) {
+//     try {
+//        const stations = await stationService.likeSong(songId, minimalUser)
+//         store.dispatch({ type: SET_STATIONS, stations})
+//     } catch (err) {
+//         console.log('Had issues to toggle song like', err)
+//         throw err
+//     }
+// }
+
+export async function likeStation(stationId, minimalUser) {
     try {
-        await stationService.likeSong(stationId, songId, minimalUser)
-        store.dispatch({ type: LIKE_SONG, stationId, songId, minimalUser })
+       const station = await stationService.likeStation(stationId, minimalUser)
+        store.dispatch({ type: UPDATE_STATION, station})
     } catch (err) {
-        console.log('Had issues to toggle song like', err)
+        console.log('Had issues to toggle station like', err)
         throw err
     }
 }

@@ -1,5 +1,12 @@
 .main-layout {
     display: grid;
-    grid-template-columns: 241px 1fr;
-    grid-template-rows: 90px 1fr;
+    grid-template-columns: 247px 1fr;
+    grid-template-rows: 64px 1fr auto;
+    height: 100vh;
+}
+
+.clr-container {
+    padding: 0 $main-app-padding;
+    padding-top: 80px;
+    transition: background-color 1s ease-in-out;
 }

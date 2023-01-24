@@ -1,5 +1,6 @@
 import { storageService } from './async-storage.service'
 import { httpService } from './http.service'
+import { stationService } from './station.service'
 import { utilService } from './util.service'
 
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
@@ -19,6 +20,8 @@ export const userService = {
     update,
     // changeScore,
     getEmptyCredentials,
+    updateLikeSong,
+    updateLikeStation
 }
 
 window.userService = userService
@@ -40,21 +43,15 @@ function remove(userId) {
     // return httpService.delete(`user/${userId}`)
 }
 
-async function update({ _id, score }) {
-    const user = await storageService.get(USERS_KEY, _id)
-    user.score = score
-    await storageService.put(USERS_KEY, user)
-
-    // const user = await httpService.put(`user/${_id}`, {_id, score})
-    // Handle case in which admin updates other user's details
-    if (getLoggedinUser()._id === user._id) saveLocalUser(user)
-    return user
+async function update(user) {
+    const newUser = await storageService.put(USERS_KEY, user)
+    if (getLoggedinUser()._id === user._id) saveLocalUser(newUser)
+    return newUser
 }
 
 async function login(userCred) {
     const users = await storageService.query(USERS_KEY)
     const user = users.find(user => user.username === userCred.username)
-    console.log('user:',user)
     // const user = await httpService.post('auth/login', userCred)
     if (user) {
         // socketService.login(user._id)
@@ -63,6 +60,8 @@ async function login(userCred) {
 }
 async function signup(userCred) {
     userCred.score = 10000
+    userCred.likedSongs = []
+    userCred.likedStations = []
     if (!userCred.imgUrl) userCred.imgUrl = 'https://cdn.pixabay.com/photo/2020/07/01/12/58/icon-5359553_1280.png'
     const user = await storageService.post(USERS_KEY, userCred)
     // const user = await httpService.post('auth/signup', userCred)
@@ -85,7 +84,7 @@ async function logout() {
 
 
 function saveLocalUser(user) {
-    user = { _id: user._id, fullname: user.fullname, imgUrl: user.imgUrl }
+    user = { _id: user._id, fullname: user.fullname,username: user.username, imgUrl: user.imgUrl, likedSongs: user.likedSongs , likedStations : user.likedStations}
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
@@ -108,35 +107,65 @@ function _createUsers() {
     if (!users || !users.length) {
         users = [
             {
-                _id:'5cksxjas89xjsa8xjsa8jld3',
+                _id: '5cksxjas89xjsa8xjsa8jld3',
                 fullname: 'Inbal Avidov',
                 email: 'inbal.avidov@gmail.com',
                 username: 'inbal.avidov',
                 password: 'inbal',
-            },{
-                _id:'5cksxjas89xjsa8xjsa8jjj7',
+                likedSongs: [],
+                likedStations : []
+            }, {
+                _id: '5cksxjas89xjsa8xjsa8jjj7',
                 fullname: 'Omri Hazan',
                 email: 'omrihazan1313@gmail.com',
                 username: 'omri.hazan',
                 password: 'omri',
+                likedSongs: [],
+                likedStations : []
             },
             {
-                _id:'5cksxjas89xjsa8xjsa8hhh7',
+                _id: '5cksxjas89xjsa8xjsa8hhh7',
                 fullname: 'Hila Shor',
                 email: 'hilashor@gmail.com',
                 username: 'hila.shor',
                 password: 'hila',
+                likedSongs: [],
+                likedStations : []
             },
             {
-                _id:'5cksxjas89xjsa8xjsa8ggg7',
+                _id: '5cksxjas89xjsa8xjsa8GGG7',
                 fullname: 'Guest',
                 email: 'guest@gmail.com',
                 username: 'guest',
                 password: 'guest',
-            } 
+                likedSongs: [],
+                likedStations : []
+            }
         ]
         utilService.saveToStorage(USERS_KEY, users)
     }
+}
+
+async function updateLikeSong(song) {
+    const user = getLoggedinUser()
+    const isAdd = !user.likedSongs.find(({id}) =>id === song.id)
+    if (isAdd) user.likedSongs.push(song)
+    else user.likedSongs = user.likedSongs.filter(({ id }) => id !== song.id)
+    const updatedUser = await update(user)
+    return updatedUser
+}
+async function updateLikeStation(currStation) {
+    const user = getLoggedinUser()
+    const {_id , name} = currStation
+    const station = {
+        _id,
+        name
+    }
+    const isAdd = !user.likedStations.find(({_id}) => _id === station._id)
+    if (isAdd) user.likedStations.push(station)
+    else user.likedStations = user.likedStations.filter(({ _id }) => _id !== station._id)
+    const updatedUser = await update(user)
+    return updatedUser
 }
 // ;(async ()=>{
 //     await userService.signup({fullname: 'Puki Norma', username: 'puki', password:'123',score: 10000, isAdmin: false})

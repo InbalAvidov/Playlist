@@ -11,20 +11,28 @@
     border-top: solid 1px hsla(0, 0%, 50%, 0.169);
     align-items: center;
     justify-content: center;
+    grid-area: 3 / 1 / 4 / -1;
 
     .information {
         display: flex;
         width: 250px;
+
+        .details{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
     }
 
     h4 {
-        margin-top: 4px;
+        margin-bottom: 1px;
         color: $clr2;
         font-family: montserrat;
         text-overflow: ellipsis;
     }
 
     h5 {
+        margin-top: 1px;
         color: $bar-fill;
         font-family: montserrat;
         text-overflow: ellipsis;
@@ -57,10 +65,24 @@
         color: $bar-fill;
     }
 
-    .play-pause {
-        color: $clr2;
-        height: 31px;
+    .player-play-pause-circle{
+        background-color: $clr2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        border-radius: 500px;
+
+
+        .play-pause {
+            color: $clr2;
+            height: 31px;
+            position: relative;
+            
+        }
     }
+
 
     .player-progress-container {
         display: grid;

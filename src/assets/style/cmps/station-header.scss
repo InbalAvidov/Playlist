@@ -1,111 +1,118 @@
 .station-header {
     display: flex;
+    flex-direction: column;
     cursor: pointer;
-    margin-bottom: 100px;
     width: 100%;
 
-    .upload-img-container {
-        @include station-img-container
-    }
+    .station-details {
+        display: flex;
 
-    .done-btn {
-        background-color: $clr2;
-        padding: 10px 20px;
-        border-radius: 10em;
-        font-size: 16px;
-        position: absolute;
-        // align-self: flex-start;
-        right: $main-app-padding;
-        // margin: 10px 10px 0 0 ;
-        bottom: 100px;
-
-
-        &:hover {
-            background-color: $brand-color;
+        .upload-img-container {
+            @include station-img-container
         }
+
+        .done-btn {
+            background-color: $clr2;
+            padding: 10px 20px;
+            border-radius: 10em;
+            font-size: 16px;
+            position: absolute;
+            // align-self: flex-start;
+            right: $main-app-padding;
+            // margin: 10px 10px 0 0 ;
+            bottom: 100px;
+
+
+            &:hover {
+                background-color: $brand-color;
+            }
+        }
+
+        .station-menu-container {
+            position: absolute;
+            right: $main-app-padding;
+
+            .station-menu-btn {
+                font-size: 40px;
+                background-color: inherit;
+                border: none;
+                cursor: pointer;
+                color: $clr2;
+            }
+
+        }
+
     }
 
-
-    .app-modal-editor {
-        position: fixed;
-        z-index: 1;
-        top: 0;
-        left: 0;
-        width: 100vw;
-        height: 100vh;
-        background-color: $clr2;
-        opacity: 0.25;
-    }
-
-    .modal-editor {
-        width: 500px;
-        height: 300px;
-        position: absolute;
-        top: 100px;
-        left: 35%;
-        background-color: #282828;
-        z-index: 3000;
+    .info-container {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
+        flex: 1;
+        padding: 20px 25px;
+
+        p {
+            font-size: 14px;
+            font-weight: bolder;
+
+            &.station {
+                font-size: 12px;
+                text-transform: uppercase;
+                font-family: montserrat-bold, Arial;
+            }
+
+            span {
+                font-family: montserrat-bold, Arial;
+                margin-left: 5px;
+            }
+        }
 
         h1 {
-            font-size: 22px;
-            padding: 10px 0 10px 20px;
+            font-size: 90px;
         }
-
-
-
     }
 
-    .station-menu-container {
-        position: absolute;
-        right: $main-app-padding;
-
-        .station-menu-btn {
-            font-size: 40px;
-            background-color: inherit;
-            border: none;
-            cursor: pointer;
-            color: $clr2;
-        }
-
-    }
 
 }
 
-.info-container {
+.station-options {
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 1;
-    padding: 20px 25px;
+    align-items: center;
+    justify-content: center;
+    align-self: flex-start;
+    margin: 45px 0 25px 0;
 
-    p {
-        font-size: 14px;
-        font-weight: bolder;
+    >* {
+        margin-right: 20px
+    }
 
-        &.station {
-            font-size: 12px;
-            text-transform: uppercase;
-            font-family: montserrat-bold, Arial;
-        }
+    .green-play-pause-btn {
+        @include green-play-pause-btn;
+        opacity: 1;
+        position: relative;
+        min-block-size: 54px;
+        inline-size: 54px;
+        block-size: 54px;
 
-        span {
-            font-family: montserrat-bold, Arial;
-            margin-left: 5px;
+        &:hover {
+            scale: (1.05);
         }
     }
 
-    h1 {
-        font-size: 90px;
+    svg.play-pause:hover {
+        scale: (1.05);
+    }
+
+    svg:not(.play-pause):hover {
+        opacity: 1;
     }
 }
 
 .station-menu {
     background-color: #373737;
     border-radius: 5px;
-    position: absolute;
-    top: 40px;
+    position: relative;
+    top: -50px;
     right: 10px;
 
     &.close {
@@ -168,5 +175,40 @@
             }
         }
     }
+
+}
+.app-modal-editor {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: $clr2;
+    opacity: 0.25;
+}
+
+.modal-editor {
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    top: 100px;
+    left: 35%;
+    background-color: #282828;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        font-size: 22px;
+        padding: 10px 0 10px 20px;
+    }
+
+    input {
+        opacity: 0;
+        height: 100%;
+        width: 100%;
+    }
+
 
 }

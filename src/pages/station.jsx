@@ -7,62 +7,45 @@ import { SongList } from "../cmps/station-song-list"
 import { StationHeader } from "../cmps/station-header"
 import { stationService } from "../service/station.service"
 import { uploadService } from "../service/upload.service"
-import { loadStations, removeStation, updateStation } from "../store/station.actions"
+import { removeStation, updateStation } from "../store/station.actions"
 import { saveStation } from "../store/station.actions";
-import { useSelector } from "react-redux"
+import { utilService } from "../service/util.service"
 
 
 export function Station() {
   const [station, setStation] = useState(null)
-  const stations = useSelector((storeState) => storeState.stationModule.stations)
-  console.log('Station stations', stations);
+  const [colorByImg, setColorByImg] = useState(null)
   const { stationId } = useParams()
-  console.log('Station stationId', stationId);
   const navigate = useNavigate()
-
-
-  
 
   useEffect(() => {
     if (!stationId) {
       saveEmptyStation()
     }
+    else loadStation()
   }, [stationId])
 
-  useEffect(() => {
-    loadStation()
-  }, [stations])
-
-
+  
   async function saveEmptyStation() {
     const newStation = await saveStation(stationService.getEmptyStation())
     setStation(newStation)
   }
-
-  // async function loadStation() {
-  //   const currStation = stations.filter(station =>{
-  //     return station._id===stationId
-  //   })
-  //   console.log(currStation)
-  //   console.log(stationId)
-    
-  //   setStation(currStation)
-  // }
   
-  async function loadStation() {
-    // if (!stations || stations.length === 0) return
-    
-    
-    // const currStation = stations.find(station=>station._id===stationId)
-    const currStation =await  stationService.get(stationId)
+  async function loadStation() {  
+    const currStation = await stationService.get(stationId)
     setStation(currStation)
   }
 
   async function onSelectImg(ev) {
-    const imgUrl = await uploadService.uploadImg(ev)
-    console.log('onSelectImg(ev), imgurl',imgUrl)
-    station.imgUrl = imgUrl
-    return imgUrl
+    try {
+      const imgUrl = await uploadService.uploadImg(ev)
+      station.imgUrl = imgUrl
+      const color = await utilService.getMainColor(imgUrl)
+      setColorByImg(color)
+      return imgUrl
+    } catch (err) {
+      console.log('Cant set image', err)
+    }
   }
 
   function handleChange(field, val) {
@@ -92,7 +75,9 @@ export function Station() {
   if (!station) return <Loader />
   else return (
     <main className="station-details">
-      <StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} onSaveStation={onSaveStation} />
+      <div className='clr-container' style={{ background: `linear-gradient( ${colorByImg || '#121212'} 0%, #121212 100%)` }}>
+        <StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} onSaveStation={onSaveStation} />
+      </div>
       <SongList station={station} handleChange={handleChange} onDeleteSong={onDeleteSong} />
     </main>
   )
