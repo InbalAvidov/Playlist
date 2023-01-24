@@ -3,6 +3,7 @@
     width: 100%;
     display: grid;
     height: 57px;
+    border-radius: .4em;
 
     &.songs-list-header {
         height: 50px;
@@ -25,7 +26,11 @@
 
     .song-number {
         grid-column: 2;
-       
+
+    }
+
+    .song-play {
+        display: none;
     }
 
     .song-img-title {
@@ -35,6 +40,15 @@
         .song-title {
             margin-left: 10px;
         }
+        .song-name {
+            font-size: 14px;
+        }
+
+        .song-artist {
+            font-size: 12px;
+            opacity: .6;
+        }
+
     }
 
     .song-date {
@@ -50,5 +64,29 @@
 
     .song-duration {
         grid-column: 6;
+    }
+
+    &:hover:not(.songs-list-header) {
+        background-color: rgba(58, 58, 58, 0.664);
+
+        .song-number {
+            display: none;
+        }
+
+        .song-play {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            left: 12px;
+
+            path {
+                fill: $clr2;
+            }
+        }
+    }
+
+    .playing {
+        color: $brand-color;
     }
 }

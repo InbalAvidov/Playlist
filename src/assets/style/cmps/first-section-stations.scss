@@ -10,8 +10,9 @@
         display: flex;
         align-items: center;
         background-color: $song-bgc-home;
-        border-radius: 1em;
+        border-radius: .4em;
         transition: .5s;
+        position: relative;
         
         
         >* {
@@ -27,6 +28,16 @@
 
         &:hover {
             background-color: lighten($song-bgc-home, 10%);
+        }
+
+        &:hover .green-play-pause-btn {
+            opacity: 1;
+        }
+
+        .green-play-pause-btn {
+            @include green-play-pause-btn;
+            bottom: 15px;
+            right: 10px;
         }
     }
 }

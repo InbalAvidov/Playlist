@@ -14,11 +14,9 @@ export function SoundPlayer() {
   }
 
   function _onReady(event) {
-    console.log('GOT A NEW SONG')
-    console.log('SONG IS READY IN SOUND PLAYER:', event.target)
+    ('GOT A NEW SONG')
     loadPlayer(event.target)
     event.target.playVideo()
-    console.log('cant load player')
   }
 
   return <div>

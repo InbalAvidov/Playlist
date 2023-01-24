@@ -12,13 +12,25 @@
     .rest-section-station-preview {
         background-color: darken($song-bgc-home , 4%);
         grid-column: span 1;
-        border-radius: 1em;
+        border-radius: .5em;
         padding: 17px;
         transition: .5s;
 
+        &:hover .green-play-pause-btn {
+            opacity: 1;
+        }
+
         .img-container {
             border-radius: .5em;
+            position: relative;
         }
+
+        .green-play-pause-btn {
+            @include green-play-pause-btn;
+            bottom: 5px;
+            right: 5px;
+        }
+
 
         h3 {
             font-size: 16px;

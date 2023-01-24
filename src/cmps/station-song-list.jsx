@@ -5,8 +5,9 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 
 import { SongPreview } from "./station-song-preview";
 import { SearchSongs } from '../pages/search-page';
+import { updateStation } from '../store/station.actions';
 
-export function SongList({ station, handleChange, onDeleteSong }) {
+export function SongList({ station, handleChange, onDeleteSong , isLikedSongs }) {
     const [stationSongs, setStationSongs] = useState(station.songs)
     const [items, setItems] = useState(station.songs)
 
@@ -15,16 +16,18 @@ export function SongList({ station, handleChange, onDeleteSong }) {
         handleChange('songs', [...stationSongs, song])
     }
 
-    function onDragEnd(result) {
+    async function onDragEnd(result) {
         if (!result.destination) {
             return;
         }
         const newItems = [...items];
         const [removed] = newItems.splice(result.source.index, 1);
         newItems.splice(result.destination.index, 0, removed);
-        setItems(newItems)
+        station.songs = newItems
+        const updetedStation = await updateStation(station)
+        setItems(updetedStation.songs)
     }
-
+    console.log('station.songs:',station.songs)
     return (
         <main className='main-songs-list'>
             {station.songs.length > 0 &&
@@ -44,7 +47,7 @@ export function SongList({ station, handleChange, onDeleteSong }) {
                                     {...provided.droppableProps}
                                 >
                                     {station.songs.map((song, idx) => (
-                                        <SongPreview key={song._id} song={song} idx={idx} onDeleteSong={onDeleteSong} station={station} />
+                                        <SongPreview key={song.id} song={song} idx={idx} onDeleteSong={onDeleteSong} station={station} isLikedSongs={isLikedSongs} />
                                     ))}
                                     {provided.placeholder}
                                 </div>

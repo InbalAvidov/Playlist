@@ -19,7 +19,6 @@ export function Station() {
   useEffect(() => {
     if (!stationId) {
       saveEmptyStation()
-
     }
     else loadStation()
   }, [stationId])
@@ -36,7 +35,6 @@ export function Station() {
 
   async function onSelectImg(ev) {
     const imgUrl = await uploadService.uploadImg(ev)
-    console.log('onSelectImg(ev), imgurl',imgUrl)
     station.imgUrl = imgUrl
     return imgUrl
   }
@@ -52,10 +50,6 @@ export function Station() {
     }
   }
 
-  function onSaveStation() {
-    saveStation(station)
-  }
-
   async function saveChanges() {
     await updateStation(station)
   }
@@ -68,7 +62,7 @@ export function Station() {
   if (!station) return <Loader />
   else return (
     <main className="station-details">
-      <StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} onSaveStation={onSaveStation} />
+      <StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} />
       <SongList station={station} handleChange={handleChange} onDeleteSong={onDeleteSong} />
     </main>
   )

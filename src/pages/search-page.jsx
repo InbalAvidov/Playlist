@@ -33,7 +33,6 @@ export function SearchSongs({ isCreateStation, onAddSong, isForStation }) {
             return
         }
         const results = await YoutubeService.getYoutubeReasults(val)
-        console.log('results:',results)
         setSongsBySearch(results)
     }
 
