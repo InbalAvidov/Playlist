@@ -1,5 +1,5 @@
 .main-search {
-
+    background: $bgc-main;
     input {
         outline: none;
         width: 300px;
@@ -24,7 +24,5 @@
     .search-results {
         display: flex;
         flex-direction: column;
-
-
     }
 }

@@ -8,6 +8,4 @@ export const useSignupToggle = (isSignupState) => {
   }
 
   return { isSignupState, toggleIsSignup }
-
-
 }

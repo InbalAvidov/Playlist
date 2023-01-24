@@ -26,8 +26,8 @@ body {
     grid-row: 2;
     background: $bgc-main;
     min-height: 80vh;
-    padding: 0 $main-app-padding;
     padding-bottom: em(200px);
+
 }
 
 h1,
@@ -47,7 +47,7 @@ p {
     margin: 0;
 }
 
-button{
+button {
     font-family: montserrat, Arial;
     cursor: pointer;
 }

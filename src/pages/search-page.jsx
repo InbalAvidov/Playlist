@@ -47,7 +47,7 @@ export function SearchSongs({ isCreateStation, onAddSong, isForStation }) {
 
     if (!stations) return <Loader />
     return (
-        <main className="main-search">
+        <main className="main-search clr-container" >
             <input className={isForStation ? "add-songs-search" : "main-input-search"}
                 type='txt' value={search}
                 placeholder={isForStation ? 'Add more songs' : 'What do you want to listen to?'}

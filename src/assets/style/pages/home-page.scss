@@ -1,5 +1,9 @@
 .main-home {
     .home-stations {
+        >*:not(.clr-container) {
+            padding: 0 $main-app-padding;
+        }
+
         a {
             text-decoration: none;
             color: white;
@@ -8,14 +12,13 @@
         h1 {
             font-size: 28px;
             font-weight: 900;
-            margin-bottom: 20px;
-            margin-top: 10px;
+            margin-bottom: 22px;
+            margin-top: 36px;
         }
 
         h2 {
             font-size: 24px;
             margin: 30px 0;
-
         }
     }
 
