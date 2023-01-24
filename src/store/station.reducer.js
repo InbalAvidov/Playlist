@@ -4,10 +4,12 @@ export const ADD_STATION = 'ADD_STATION'
 export const UPDATE_STATION = 'UPDATE_STATION'
 export const UPDATE_CURRENT_STATION = 'UPDATE_CURRENT_STATION'
 export const LIKE_SONG = 'LIKE_SONG'
+export const SET_COLOR = 'SET_COLOR'
 
 const initialState = {
     stations: null,
-    currStation: null
+    currStation: null,
+    color: 'rgb(83, 83, 83)'
 }
 
 export function stationReducer(state = initialState, action) {
@@ -48,8 +50,8 @@ export function stationReducer(state = initialState, action) {
                 })
                 return { ...station }
             })
-
-            return { ...state, stations: [...stations] }
+        case SET_COLOR:
+            return { ...state, color: action.color }
         default:
             return state
     }

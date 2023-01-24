@@ -4,21 +4,20 @@ import { Link } from 'react-router-dom'
 import defaultPhoto from '../assets/img/default-photo.jpeg'
 import { utilService } from '../service/util.service'
 import { setSong } from '../store/player.action'
-import { loadCurrStation } from '../store/station.actions'
+import { loadCurrStation, setColor } from '../store/station.actions'
 
 export function FirstSectionStations({ stations }) {
-    const player = useSelector(storeState => storeState.playerModule.player)
-    const [colorByImg, setColorByImg] = useState('rgb(72, 32, 176)')
-    
+    // const player = useSelector(storeState => storeState.playerModule.player)
+    const color = useSelector(storeState => storeState.stationModule.color)
+
     async function onSetBGColor(url) {
         try {
             const color = await utilService.getMainColor(url)
-            setColorByImg(color)
+            setColor(color)
         } catch (err) {
             console.log('Cannot set color', err)
         }
     }
-
 
     function onPlayStation(ev, station) {
         ev.preventDefault()
@@ -35,7 +34,8 @@ export function FirstSectionStations({ stations }) {
     }
 
     return (
-        <div className='clr-container' style={{ backgroundImage: `linear-gradient( ${colorByImg} 0%, #121212 100%)` }}>
+        // <div className='clr-container' style={{ backgroundColor: `linear-gradient( ${colorByImg} 0%, #121212 100%)` }}>
+        <div className='clr-container' style={{ backgroundColor: `${color}` }}>
             <h1>{utilService.getCurrentTimeGreet()}</h1>
             <section className="first-section-stations">
                 {stations.map(station => <Link to={`/station/${station._id}`} key={station._id}>

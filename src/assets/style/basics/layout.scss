@@ -6,10 +6,11 @@
 }
 
 .clr-container {
-    background-color: rgba(0, 0, 0, 0.6);
     padding: 0 $main-app-padding;
-    padding-top: 80px;
-    transition: background-color 1s ease-in-out;
+    padding-top: 50px;
+    background-image: linear-gradient(rgba(0, 0, 0, .6) 0, $bgc-main 100%);
+}
 
-    background-image: linear-gradient(rgba(0, 0, 0, .6) 0, $bgc-main 100%, 'ffffff');
+* {
+    transition: background 1s ease;
 }

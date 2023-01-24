@@ -1,5 +1,5 @@
 import { stationService } from "../service/station.service"
-import { SET_STATIONS, UPDATE_CURRENT_STATION, ADD_STATION, UPDATE_STATION, REMOVE_STATION, LIKE_SONG } from "./station.reducer"
+import { SET_STATIONS, UPDATE_CURRENT_STATION, ADD_STATION, UPDATE_STATION, REMOVE_STATION, LIKE_SONG, SET_COLOR } from "./station.reducer"
 import { store } from "./store"
 
 export async function loadStations(filterBy) {
@@ -69,6 +69,15 @@ export async function likeStation(stationId, minimalUser) {
         store.dispatch({ type: UPDATE_STATION, station})
     } catch (err) {
         console.log('Had issues to toggle station like', err)
+        throw err
+    }
+}
+
+export async function setColor(color) {
+    try {
+        store.dispatch({ type: SET_COLOR, color})
+    } catch (err) {
+        console.log('Had issues to set color', err)
         throw err
     }
 }

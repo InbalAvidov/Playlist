@@ -2,6 +2,21 @@
   display: grid;
   padding-top: 10px;
   grid-area: 1 / 2 / 2 / -1;
+  position: relative;
+  z-index: 10;
+
+  .header-bg {
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    left: 0; 
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
 
   .header-details {
     justify-content: space-between;
