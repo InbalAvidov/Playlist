@@ -48,8 +48,9 @@ export function stationReducer(state = initialState, action) {
                 })
                 return { ...station }
             })
+            console.log(stations)
 
-            return { ...state, stations }
+            return { ...state, stations: [...stations] }
         default:
             return state
     }

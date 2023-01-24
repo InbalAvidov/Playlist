@@ -4,13 +4,12 @@
     width: 100%;
     gap: 20px;
 
-    
     .first-section-station-preview {
         grid-column: span 1;
         display: flex;
         align-items: center;
         background-color: $song-bgc-home;
-        border-radius: .4em;
+        border-radius: 4px;
         transition: .5s;
         position: relative;
         

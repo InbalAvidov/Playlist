@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 
@@ -18,14 +17,8 @@ export function LikedSongs() {
   const [station, setStation] = useState(null)
 
   useEffect(() => {
-  
-    const likedSongsStation = stationService.getEmptyStation()
-    likedSongsStation.name ='Liked Songs'
-    likedSongsStation.songs = user.likedSongs || []
-    likedSongsStation.imgUrl = "https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png"
-    setStation(likedSongsStation)
-  }, [user])
-
+      loadStations()
+  }, [])
 
   if (!user) {
     return (

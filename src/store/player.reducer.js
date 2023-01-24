@@ -21,6 +21,6 @@ export function playerReducer(state = initialState, action) {
             state.isPlaying ? state.player.pauseVideo() : state.player.playVideo()
             return { ...state, isPlaying: action.isPlaying }
         default:
-            return state 
+            return state
     }
 }
