@@ -21,6 +21,7 @@
             margin-left: 15px;
             font-size: 14px;
             font-weight: bold;
+            flex: 1;
         }
 
         &:hover {
@@ -33,6 +34,8 @@
 
         .green-play-pause-btn {
             @include green-play-pause-btn;
+            align-self: flex-end;
+            position: relative;
             bottom: 15px;
             right: 10px;
         }

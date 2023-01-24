@@ -29,52 +29,26 @@ export function Station() {
     if (!stationId) {
       saveEmptyStation()
     }
+    else loadStation()
   }, [stationId])
 
-  useEffect(() => {
-    loadStation()
-  }, [stations])
-
-
+  
   async function saveEmptyStation() {
     const newStation = await saveStation(stationService.getEmptyStation())
     setStation(newStation)
   }
-
-  // async function loadStation() {
-  //   const currStation = stations.filter(station =>{
-  //     return station._id===stationId
-  //   })
-  //   console.log(currStation)
-  //   console.log(stationId)
-    
-  //   setStation(currStation)
-  // }
   
-  async function loadStation() {
-    if (!stations || stations.length === 0) return
-    
-    const currStation = stations.find(station=>station._id===stationId)
-
-    try {
-      const currStation = await stationService.get(stationId)
-      const color = await utilService.getMainColor(currStation.imgUrl)
-      setColorByImg(color)
-      setStation(currStation)
-      console.log('cloooooorrrrrr', color)
-    } catch (err) {
-      console.log('Cant load station', err)
-    }
+  async function loadStation() {  
+    const currStation = await stationService.get(stationId)
+    setStation(currStation)
   }
 
   async function onSelectImg(ev) {
     try {
       const imgUrl = await uploadService.uploadImg(ev)
-      console.log('onSelectImg(ev), imgurl', imgUrl)
       station.imgUrl = imgUrl
       const color = await utilService.getMainColor(imgUrl)
       setColorByImg(color)
-      console.log('cloooooorrrrrr', color)
       return imgUrl
     } catch (err) {
       console.log('Cant set image', err)

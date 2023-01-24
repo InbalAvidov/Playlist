@@ -1,6 +1,6 @@
 .rest-section-stations {
     display: grid;
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
     width: 100%;
     gap: 10px;
 
@@ -17,6 +17,10 @@
         transition: .5s;
         max-width: fit-content;
 
+        &:hover .green-play-pause-btn {
+            opacity: 1;
+        }
+
         .img-container {
             border-radius: .5em;
             position: relative;
@@ -24,8 +28,9 @@
 
         .green-play-pause-btn {
             @include green-play-pause-btn;
-            bottom: 5px;
-            right: 5px;
+            position: relative;
+            top: 130px;
+            left: 130px;
         }
 
 

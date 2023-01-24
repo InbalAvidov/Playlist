@@ -16,14 +16,6 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [stationName, setStationName] = useState("")
     const [stationDescription, setStationDescription] = useState("")
-    const [isLiked, setIsLiked] = useState(false)
-
-    useEffect(() => {
-        if (!user || !station.likedByUsers) return
-        const userIdx = station.likedByUsers.findIndex(minimalUser => minimalUser._id === user._id)
-        const isStationLiked = userIdx > -1 ? true : false
-        setIsLiked(isStationLiked)
-    }, [])
 
     function onOpenEditor(ev) {
         ev.stopPropagation()
@@ -98,6 +90,7 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
         console.log('toggleLike');
         await updateLikeStation(station._id)
     }
+    console.log('station:',station)
     return (
         <section className="station-header" onClick={onOpenEditor}>
             <div className="station-details">
@@ -164,7 +157,7 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
                     <div className="input-img-container">
                         <FontAwesomeIcon icon={faImage} />
                         <span>Upload Image</span>
-                        <input type="file" onChange={onUploadImg} />
+                        <input type="file" onChange={onUploadImg}/>
                     </div>
                     <div className="title-desc">
                         <input
