@@ -13,7 +13,6 @@ export function FirstSectionStations({ stations }) {
     async function onSetBGColor(url) {
         try {
             const color = await utilService.getMainColor(url)
-            console.log(color)
             setColorByImg(color)
         } catch (err) {
             console.log('Cannot set color', err)

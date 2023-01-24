@@ -17,7 +17,6 @@ export const stationService = {
 }
 
 async function query(filterBy = getEmptyFilter()) {
-  console.log('filterBy:', filterBy)
   try {
     let stations = await storageService.query(STATION_KEY)
     if (filterBy.userId) {

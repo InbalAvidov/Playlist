@@ -7,23 +7,16 @@ import { SongList } from "../cmps/station-song-list"
 import { StationHeader } from "../cmps/station-header"
 import { stationService } from "../service/station.service"
 import { uploadService } from "../service/upload.service"
-import { loadStations, removeStation, updateStation } from "../store/station.actions"
+import { removeStation, updateStation } from "../store/station.actions"
 import { saveStation } from "../store/station.actions";
-import { useSelector } from "react-redux"
 import { utilService } from "../service/util.service"
 
 
 export function Station() {
   const [station, setStation] = useState(null)
   const [colorByImg, setColorByImg] = useState(null)
-  const stations = useSelector((storeState) => storeState.stationModule.stations)
-  console.log('Station stations', stations);
   const { stationId } = useParams()
-  console.log('Station stationId', stationId);
   const navigate = useNavigate()
-
-
-  
 
   useEffect(() => {
     if (!stationId) {

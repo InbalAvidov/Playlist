@@ -53,7 +53,6 @@ function _cleanTitle(title) {
     //     const idx = title.indexOf('-')
     //     return title.slice(idx+1)
     // }
-    console.log('title:',cleanTitle)
     return cleanTitle
     
 }

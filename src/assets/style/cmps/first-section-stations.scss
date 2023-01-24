@@ -3,7 +3,11 @@
     grid-template-columns: repeat(3, minmax(240px, 1fr));
     width: 100%;
     gap: 16px;
-    
+
+    h1{
+        margin-top: 0;
+    }
+
     .first-section-station-preview {
         grid-column: span 1;
         display: flex;

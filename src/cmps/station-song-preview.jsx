@@ -17,12 +17,7 @@ export function SongPreview({ song, idx, station, onDeleteSong, isSongLiked }) {
     const currSong = useSelector(storeState => storeState.playerModule.song)
     const { stationId } = useParams()
 
-    useEffect(()=>{
-        console.log('user:',user)
-    },[user])
-
     function onSetSong(songToStore) {
-        console.log('SONG TO STORE', songToStore)
         setSong(songToStore)
         loadCurrStation(stationId)
     }

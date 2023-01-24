@@ -1,28 +1,41 @@
 .main-search {
-    background: $bgc-main;
-    input {
-        outline: none;
-        width: 300px;
-        font-size: 16px;
-        margin-bottom: 20px;
 
-        &.main-input-search {
-            border-radius: 40px;
-            border: none;
-            padding: 15px;
+    .search-container {
+        position: relative;
+
+        .svg-wrapper{
+            margin-left: 10px;
         }
-
-        &.add-songs-search {
-            border-radius: .5em;
-            padding: 10px;
-            background-color: inherit;
-            border: 1px solid gray;
-            color: $clr2;
+        .search-svg{
+            position: absolute;
+            top: 25%;
+            transform: translateY(-25%);
+            stroke: #bfbfbf;
         }
     }
+    .search-input::placeholder {
+        color: #bfbfbf;
+    }
+    .search-input {
+        background-color: hsla(0,0%,100%,.1);
+        color: #bfbfbf;
+        outline: none;
+        border-radius: 4px;
+        border: none;
 
+        width: 365px;
+        
+        font-size: 16px;
+        font-weight: 400;
+
+        margin-bottom: 20px;
+        padding: 10px;
+        padding-left: 35px;
+    }
+    
     .search-results {
         display: flex;
         flex-direction: column;
     }
 }
+

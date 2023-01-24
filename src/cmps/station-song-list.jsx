@@ -10,9 +10,6 @@ import { updateStation } from '../store/station.actions';
 export function SongList({ station, handleChange, onDeleteSong , isLikedSongs }) {
     const [stationSongs, setStationSongs] = useState(station.songs)
     const [items, setItems] = useState(station.songs)
-    useEffect(()=>{
-        console.log(station,"177777777777777777777");
-    },[])
     function onAddSong(song) {
         setStationSongs(prevSongs => [...prevSongs, song])
         handleChange('songs', [...stationSongs, song])
@@ -29,7 +26,6 @@ export function SongList({ station, handleChange, onDeleteSong , isLikedSongs })
         const updetedStation = await updateStation(station)
         setItems(updetedStation.songs)
     }
-    console.log('station.songs:',station.songs)
     return (
         <main className='main-songs-list'>
             {station.songs.length > 0 &&

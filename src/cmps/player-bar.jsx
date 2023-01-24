@@ -15,10 +15,6 @@ export function PlayerBar() {
     const lastVolumeRef = useRef(0)
     const [volumeColor, setVolumeColor] = useState('#ffffff')
 
-    // useEffect(() => {
-    //     console.log('state', state)
-    // }, [song])
-
     function onSetVolume({ target }) {
         if (target.type != 'range') {
             if (volume === 0) {

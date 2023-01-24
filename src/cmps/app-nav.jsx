@@ -38,18 +38,14 @@ export function AppNav() {
 
     async function getUserStations(user) {
         let userStations = await stationService.query({ userId: user._id })
-        console.log('userStations:', userStations)
-        console.log('user.likedStations:', user.likedStations)
-        const fullStations = user.likedStations.map(stationId => stationService.get(stationId))
-        userStations = [...userStations, ...fullStations]
-        console.log('userStations:', userStations)
+        userStations = [...userStations, ...user.likedStations]
         setUserStations(userStations)
     }
+
     return (
         <main className="app-nav">
             <div className="logo">
                 <img className="logo-img" src={logo} />
-                {/* Playlist */}
             </div>
             <nav className='nav-menu'>
                 <NavLink to="/">

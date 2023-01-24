@@ -46,10 +46,9 @@ export async function updateLikeSong(song) {
         throw err
     }
 }
-export async function updateLikeStation(stationId) {
+export async function updateLikeStation(station) {
     try{
-        const updatedUser = await userService.updateLikeStation(stationId)
-        console.log('updatedUser:',updatedUser)
+        const updatedUser = await userService.updateLikeStation(station)
         store.dispatch({ type: SET_USER, user: updatedUser })
 
     }catch(err){
