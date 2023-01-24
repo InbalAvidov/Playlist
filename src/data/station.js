@@ -89,7 +89,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -165,7 +165,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -236,7 +236,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
       "_id": "5cksxjas89xjsa8xjsa8hhh7",
       "fullname": 'Hila Shor',
     }
@@ -303,7 +303,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -365,7 +365,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -423,7 +423,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -485,7 +485,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -545,7 +545,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -612,7 +612,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -686,7 +686,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -744,7 +744,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -790,7 +790,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -872,7 +872,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -934,7 +934,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -991,7 +991,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -1056,7 +1056,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -1118,7 +1118,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -1176,7 +1176,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -1238,7 +1238,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -1298,7 +1298,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -1365,7 +1365,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -1439,7 +1439,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -1497,7 +1497,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
   {
@@ -1543,7 +1543,7 @@ export const homeStations = [
     "createdBy":
     {
       "_id": "spt100",
-      "fullname": 'Playlist',
+      "username": 'Playlist',
     }
   },
 ]
@@ -1707,7 +1707,7 @@ export const homeStations = [
 // "createdBy" :
 // {
 //   "_id" : "spt100",
-//     "fullname": 'Playlist',
+//     "username": 'Playlist',
 // }
 //   },
 //   {
@@ -1745,7 +1745,7 @@ export const homeStations = [
 // "createdBy" :
 // {
 //   "_id" : "spt100",
-//     "fullname": 'Playlist',
+//     "username": 'Playlist',
 // }
 //   },
 //   {
@@ -1816,7 +1816,7 @@ export const homeStations = [
 // "createdBy" :
 // {
 //   "_id" : "spt100",
-//     "fullname": 'Playlist',
+//     "username": 'Playlist',
 // }
 //   },
 //   {
@@ -1887,7 +1887,7 @@ export const homeStations = [
 // "createdBy" :
 // {
 //   "_id" : "spt100",
-//     "fullname": 'Playlist',
+//     "username": 'Playlist',
 // }
 //   },
 //   {
@@ -1958,7 +1958,7 @@ export const homeStations = [
 // "createdBy" :
 // {
 //   "_id" : "spt100",
-//     "fullname": 'Playlist',
+//     "username": 'Playlist',
 // }
 //   },
 //   {
@@ -2029,7 +2029,7 @@ export const homeStations = [
 // "createdBy" :
 // {
 //   "_id" : "spt100",
-//     "fullname": 'Playlist',
+//     "username": 'Playlist',
 // }
 //   },
 //   {
@@ -2113,7 +2113,7 @@ export const homeStations = [
 // "createdBy" :
 // {
 //   "_id" : "spt100",
-//     "fullname": 'Playlist',
+//     "username": 'Playlist',
 // }
 //   },
 //   {
@@ -2171,7 +2171,7 @@ export const homeStations = [
 // "createdBy" :
 // {
 //   "_id" : "spt100",
-//     "fullname": 'Playlist',
+//     "username": 'Playlist',
 // }
 //   }
 // ]

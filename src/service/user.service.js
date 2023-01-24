@@ -154,11 +154,16 @@ async function updateLikeSong(song) {
     const updatedUser = await update(user)
     return updatedUser
 }
-async function updateLikeStation(stationId) {
+async function updateLikeStation(currStation) {
     const user = getLoggedinUser()
-    const isAdd = !user.likedStations.includes(stationId)
-    if (isAdd) user.likedStations.push(stationId)
-    else user.likedStations = user.likedStations.filter(({ id }) => id !== stationId)
+    const {_id , name} = currStation
+    const station = {
+        _id,
+        name
+    }
+    const isAdd = !user.likedStations.find(({_id}) => _id === station._id)
+    if (isAdd) user.likedStations.push(station)
+    else user.likedStations = user.likedStations.filter(({ _id }) => _id !== station._id)
     const updatedUser = await update(user)
     return updatedUser
 }
