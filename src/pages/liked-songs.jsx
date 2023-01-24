@@ -17,8 +17,12 @@ export function LikedSongs() {
   const [station, setStation] = useState(null)
 
   useEffect(() => {
-      loadStations()
-  }, [])
+    const likedSongsStation = stationService.getEmptyStation()
+    likedSongsStation.name ='Liked Songs'
+    likedSongsStation.songs = user.likedSongs || []
+    likedSongsStation.imgUrl = "https://t.scdn.co/images/3099b3803ad9496896c43f22fe9be8c4.png"
+    setStation(likedSongsStation)
+  }, [user])
 
   if (!user) {
     return (
