@@ -157,7 +157,7 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
                     <div className="input-img-container">
                         <FontAwesomeIcon icon={faImage} />
                         <span>Upload Image</span>
-                        <input type="file" onChange={onUploadImg} />
+                        <input type="file" onChange={onUploadImg}/>
                     </div>
                     <div className="title-desc">
                         <input

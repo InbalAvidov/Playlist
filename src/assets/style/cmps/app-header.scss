@@ -1,7 +1,7 @@
 .app-header {
   display: grid;
   padding-top: 10px;
-  grid-column: 2;
+  grid-area: 1 / 2 / 2 / -1;
 
   .header-details {
     justify-content: space-between;

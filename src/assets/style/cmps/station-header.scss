@@ -28,9 +28,6 @@
             }
         }
 
-
-
-
         .station-menu-container {
             position: absolute;
             right: $main-app-padding;
@@ -180,7 +177,6 @@
     }
 
 }
-
 .app-modal-editor {
     position: fixed;
     z-index: 1;
@@ -206,6 +202,12 @@
     h1 {
         font-size: 22px;
         padding: 10px 0 10px 20px;
+    }
+
+    input {
+        opacity: 0;
+        height: 100%;
+        width: 100%;
     }
 
 

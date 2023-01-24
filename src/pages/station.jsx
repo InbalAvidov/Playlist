@@ -39,18 +39,16 @@ export function Station() {
   }
   
   async function loadStation() {  
-    const currStation = stationService.get(stationId)
+    const currStation = await stationService.get(stationId)
     setStation(currStation)
   }
 
   async function onSelectImg(ev) {
     try {
       const imgUrl = await uploadService.uploadImg(ev)
-      console.log('onSelectImg(ev), imgurl', imgUrl)
       station.imgUrl = imgUrl
       const color = await utilService.getMainColor(imgUrl)
       setColorByImg(color)
-      console.log('cloooooorrrrrr', color)
       return imgUrl
     } catch (err) {
       console.log('Cant set image', err)
