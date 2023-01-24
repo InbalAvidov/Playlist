@@ -36,7 +36,7 @@ export function FirstSectionStations({ stations }) {
     }
 
     return (
-        <div className='clr-container' style={{ background: `linear-gradient( ${colorByImg} 0%, #121212 100%)` }}>
+        <div className='clr-container' style={{ backgroundImage: `linear-gradient( ${colorByImg} 0%, #121212 100%)` }}>
             <h1>{utilService.getCurrentTimeGreet()}</h1>
             <section className="first-section-stations">
                 {stations.map(station => <Link to={`/station/${station._id}`} key={station._id}>

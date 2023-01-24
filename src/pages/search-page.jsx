@@ -51,7 +51,7 @@ export function SearchSongs({ isCreateStation, onAddSong, isForStation }) {
         <main className="main-search clr-container" >
             <div className="search-container">
                 <div className="svg-wrapper">
-                    <SearchSVG />
+                    {/* <SearchSVG /> */}
                 </div>  
                 <input className={`search-input ${isForStation ? "add-songs-search" : "main-input-search"}`}
                     type='txt' value={search}
