@@ -2,7 +2,7 @@ import { useEffect, useState } from "react"
 import { useSelector } from "react-redux"
 
 import { Loader } from "../cmps/loader"
-import { SongList } from "../cmps/station-song-list"
+import { SongList } from "../cmps/song-list"
 import { stationService } from "../service/station.service"
 import { StationHeader } from "../cmps/station-header"
 

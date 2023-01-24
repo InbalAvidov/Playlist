@@ -3,7 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { useState } from "react"
 
 import { Loader } from "../cmps/loader"
-import { SongList } from "../cmps/station-song-list"
+import { SongList } from "../cmps/song-list"
 import { StationHeader } from "../cmps/station-header"
 
 import { stationService } from "../service/station.service"

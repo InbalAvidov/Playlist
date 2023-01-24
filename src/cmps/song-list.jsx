@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 
-import { SongPreview } from "./station-song-preview";
-import { SearchSongs } from '../pages/search-page';
+import { SongPreview } from "./song-preview";
+import { SearchSongs } from '../pages/search-songs';
 import { updateStation } from '../store/station.actions';
 
 export function SongList({ station, handleChange, onDeleteSong , isLikedSongsPage }) {
