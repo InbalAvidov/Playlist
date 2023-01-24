@@ -27,32 +27,17 @@ export function Station() {
     if (!stationId) {
       saveEmptyStation()
     }
+    else loadStation()
   }, [stationId])
 
-  useEffect(() => {
-    loadStation()
-  }, [stations])
-
-
+  
   async function saveEmptyStation() {
     const newStation = await saveStation(stationService.getEmptyStation())
     setStation(newStation)
   }
-
-  // async function loadStation() {
-  //   const currStation = stations.filter(station =>{
-  //     return station._id===stationId
-  //   })
-  //   console.log(currStation)
-  //   console.log(stationId)
-    
-  //   setStation(currStation)
-  // }
   
-  async function loadStation() {
-    if (!stations || stations.length === 0) return
-    
-    const currStation = stations.find(station=>station._id===stationId)
+  async function loadStation() {  
+    const currStation = stationService.get(stationId)
     setStation(currStation)
   }
 
