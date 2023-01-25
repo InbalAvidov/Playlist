@@ -1,17 +1,17 @@
-import { useEffect, useState } from "react"
+import { useRef, useState } from "react"
 import { useSelector } from "react-redux"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faImage } from "@fortawesome/free-solid-svg-icons"
 
 import Swal from 'sweetalert2'
 import { setSong } from "../store/player.action"
-import { likeStation, loadCurrStation } from "../store/station.actions"
+import { loadCurrStation } from "../store/station.actions"
 import { updateLikeStation } from '../store/user.action'
+import defaultPhoto from '../assets/img/default-photo.png'
 
-
-export function StationHeader({ station, onSelectImg, handleChange, saveChanges, deleteStation, isLikedSongs }) {
+export function StationHeader({ station, onSelectImg, handleChange, saveChanges, deleteStation, isLikedSongsPage }) {
     const user = useSelector((storeState => storeState.userModule.user))
-    const [imgUrl, setImgUrl] = useState(null)
+    const [imgUrl, setImgUrl] = useState(station.imgUrl || null)
     const [isEdit, setIsEdit] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [stationName, setStationName] = useState("")
@@ -19,7 +19,7 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
 
     function onOpenEditor(ev) {
         ev.stopPropagation()
-        if (station.tags.includes('home') || isLikedSongs) return
+        if (station.tags.includes('home') || isLikedSongsPage) return
         setIsEdit(true)
         setIsMenuOpen(false)
     }
@@ -72,8 +72,7 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
         })
     }
 
-    function onPlayStation(ev, station) {
-        ev.stopPropagation()
+    function onPlayStation(station) {
         const firstSong = station.songs[0]
         const songToStore =
         {
@@ -97,10 +96,6 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
                     <div className="img-container" onClick={onOpenEditor}
                         style={{
                             backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs[0].imgUrl}")`,
-                            // url
-                            // : 
-                            // "http://res.cloudinary.com/damrhms1q/image/upload/v1674456887/liked-songs_uco4xm.png"
-
                             backgroundRepeat: "no-repeat",
                             backgroundPosition: "center",
                             backgroundSize: "cover",
@@ -115,31 +110,27 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
                 }
                 <div className="info-container">
                     <p className="station">playlist</p>
-                    <h1>{station.name ? station.name : "My Playlist"}</h1>
+                    <h1>{station.name}</h1>
                     {station.description && <h3>{station.description}</h3>}
-                    <p><span>{station.createdBy ? station.createdBy.username : user.username} </span>
+                    <p>
+                        <span>{station.createdBy ? station.createdBy.username : user.username} </span>
                         • {station.songs.length + ' '}
                         songs</p>
                 </div>
-                {user && user._id === station.createdBy?._id && station._id &&
-                    <div className="station-menu-container">
-                        <button className="station-menu-btn" onClick={onToggleMenu}> •••</button>
-
-                    </div>}
             </div>
 
             <div className="station-options">
-                <button className='green-play-pause-btn' onClick={(event) => onPlayStation(event, station)}>
+                <button className='green-play-pause-btn' onClick={() => onPlayStation(station)}>
                     <svg role="img" height="28" width="28" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon" className="play-pause Svg-sc-ytk21e-0 uPxdw"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
                 </button>
                 {
-                    user.likedStations.find(({ _id }) => _id === station._id) && !isLikedSongs
+                    user.likedStations.find(({ _id }) => _id === station._id) && !isLikedSongsPage
                         ?
                         <svg onClick={toggleLike} fill="#1ed760" role="img" height="32" width="32" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon" className="Svg-sc-ytk21e-0 uPxdw"><path d="M8.667 1.912a6.257 6.257 0 00-7.462 7.677c.24.906.683 1.747 1.295 2.457l7.955 9.482a2.015 2.015 0 003.09 0l7.956-9.482a6.188 6.188 0 001.382-5.234l-.49.097.49-.099a6.303 6.303 0 00-5.162-4.98h-.002a6.24 6.24 0 00-5.295 1.65.623.623 0 01-.848 0 6.257 6.257 0 00-2.91-1.568z"></path></svg>
                         :
                         <svg onClick={toggleLike} fill="white" opacity={'0.5'} role="img" height="32" width="32" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon" className="Svg-sc-ytk21e-0 uPxdw"><path d="M5.21 1.57a6.757 6.757 0 016.708 1.545.124.124 0 00.165 0 6.741 6.741 0 015.715-1.78l.004.001a6.802 6.802 0 015.571 5.376v.003a6.689 6.689 0 01-1.49 5.655l-7.954 9.48a2.518 2.518 0 01-3.857 0L2.12 12.37A6.683 6.683 0 01.627 6.714 6.757 6.757 0 015.21 1.57zm3.12 1.803a4.757 4.757 0 00-5.74 3.725l-.001.002a4.684 4.684 0 001.049 3.969l.009.01 7.958 9.485a.518.518 0 00.79 0l7.968-9.495a4.688 4.688 0 001.049-3.965 4.803 4.803 0 00-3.931-3.794 4.74 4.74 0 00-4.023 1.256l-.008.008a2.123 2.123 0 01-2.9 0l-.007-.007a4.757 4.757 0 00-2.214-1.194z"></path></svg>
                 }
-                {!isLikedSongs &&
+                {!isLikedSongsPage &&
                     <div>
                         <svg fill="white" opacity={'0.5'} onClick={onToggleMenu} role="img" height="32" width="32" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon" className="Svg-sc-ytk21e-0 uPxdw"><path d="M4.5 13.5a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm15 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3zm-7.5 0a1.5 1.5 0 100-3 1.5 1.5 0 000 3z"></path></svg>
                         <div className={isMenuOpen ? "station-menu" : "station-menu close"}>
@@ -153,11 +144,24 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
             {isEdit && <div className="modal-editor">
                 <h1>Edit details</h1>
                 <div className="edit-container">
-                    <div className="input-img-container">
-                        <FontAwesomeIcon icon={faImage} />
-                        <span>Upload Image</span>
-                        <input type="file" onChange={onUploadImg} />
-                    </div>
+                    {imgUrl ?
+                        <div className="input-img-container"
+                            style={{
+                                backgroundImage: `url("${imgUrl}")`,
+                                backgroundRepeat: "no-repeat",
+                                backgroundPosition: "center",
+                                backgroundSize: "cover",
+                                width: "200px", height: "200px"
+                            }}>
+                            <input className="file" type="file" onChange={onUploadImg} />
+                        </div>
+                        :
+                        <div className="input-img-container">
+                            <FontAwesomeIcon icon={faImage} />
+                            <span>Upload Image</span>
+                            <input className="file" type="file" onChange={onUploadImg} />
+                        </div>
+                    }
                     <div className="title-desc">
                         <input
                             type="text"

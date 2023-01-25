@@ -3,7 +3,6 @@ import { userService } from '../service/user.service.js'
 export const SET_USER = 'SET_USER'
 
 const initialState = {
-    // user: null
     user: userService.getLoggedinUser()
 }
 

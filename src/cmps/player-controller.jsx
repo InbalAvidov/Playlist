@@ -1,10 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBackwardStep, faForwardStep, faPauseCircle, faPlayCircle } from '@fortawesome/free-solid-svg-icons'
+import { faBackwardStep, faForwardStep } from '@fortawesome/free-solid-svg-icons'
 
 import { utilService } from "../service/util.service";
-import { loadPlayer, setSong, togglePlay } from "../store/player.action";
+import { setSong, togglePlay } from "../store/player.action";
 
 
 export function PlayerController() {
@@ -14,7 +14,6 @@ export function PlayerController() {
     const [progress, setProgress] = useState(0)
     const [progColor, setProgColor] = useState('#ffffff')
     const timerId = useRef(null)
-    const backwardClick = useRef(0)
 
     useEffect(() => {
         timerId.current = setInterval(() => {
@@ -33,7 +32,7 @@ export function PlayerController() {
         if (!player) return
         if (val) return player.seekTo(player.getCurrentTime() + val)
         player.seekTo(target.value)
-        setProgress(target.value)
+        // setProgress(target.value)
     }
 
     function getPBStyle() {
@@ -50,8 +49,8 @@ export function PlayerController() {
         const nextSong = {
             _id: station.songs[currSongIdx + val].id,
             imgUrl: station.songs[currSongIdx + val].imgUrl,
-            title : station.songs[currSongIdx + val].title,
-            artist : station.songs[currSongIdx + val].channelTitle
+            title: station.songs[currSongIdx + val].title,
+            artist: station.songs[currSongIdx + val].channelTitle
         }
         setSong(nextSong)
     }
@@ -67,7 +66,7 @@ export function PlayerController() {
             <FontAwesomeIcon icon={faBackwardStep} onClick={() => onPrevNextSong(-1)} />
             {!isPlaying &&
                 <div className="player-play-pause-circle" onClick={onTogglePlay}>
-                    <svg  role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" className="play-pause Svg-sc-ytk21e-0 uPxdw"><path d="M3 1.713a.7.7 0 011.05-.607l10.89 6.288a.7.7 0 010 1.212L4.05 14.894A.7.7 0 013 14.288V1.713z"></path></svg>
+                    <svg role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" className="play-pause Svg-sc-ytk21e-0 uPxdw"><path d="M3 1.713a.7.7 0 011.05-.607l10.89 6.288a.7.7 0 010 1.212L4.05 14.894A.7.7 0 013 14.288V1.713z"></path></svg>
                 </div>}
             {isPlaying &&
                 <div className="player-play-pause-circle" onClick={onTogglePlay}>
@@ -83,8 +82,8 @@ export function PlayerController() {
                 name="player-progress"
                 id="player-progress"
                 className="player-progress"
-                // value={progress}
                 value={Math.floor(player?.getCurrentTime()) || 0}
+                //value ={progress}
                 max={player?.getDuration()}
                 onChange={changeTime}
                 onMouseMove={onToggleHover}

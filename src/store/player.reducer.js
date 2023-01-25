@@ -1,4 +1,3 @@
-import { togglePlay } from "./player.action"
 
 export const SET_PLAYER = 'SET_PLAYER'
 export const SET_SONG = 'SET_SONG'
@@ -17,7 +16,6 @@ export function playerReducer(state = initialState, action) {
         case SET_SONG:
             return { ...state, song: action.song, isPlaying: true }
         case TOGGLE_PLAY:
-            // console.log('tring to set play/pause', action.isPlaying)
             state.isPlaying ? state.player.pauseVideo() : state.player.playVideo()
             return { ...state, isPlaying: action.isPlaying }
         default:

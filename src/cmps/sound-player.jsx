@@ -14,7 +14,6 @@ export function SoundPlayer() {
   }
 
   function _onReady(event) {
-    ('GOT A NEW SONG')
     loadPlayer(event.target)
     event.target.playVideo()
   }

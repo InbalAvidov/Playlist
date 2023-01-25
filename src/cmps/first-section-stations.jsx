@@ -1,14 +1,13 @@
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
-import defaultPhoto from '../assets/img/default-photo.jpeg'
+
 import { utilService } from '../service/util.service'
 import { setSong } from '../store/player.action'
 import { loadCurrStation, setColor } from '../store/station.actions'
+import defaultPhoto from '../assets/img/default-photo.png'
 
 export function FirstSectionStations({ stations }) {
-    // const player = useSelector(storeState => storeState.playerModule.player)
-    const color = useSelector(storeState => storeState.stationModule.color)
+    const [colorByImg, setColorByImg] = useState('rgb(72, 32, 176)')
 
     async function onSetBGColor(url) {
         try {
@@ -21,6 +20,7 @@ export function FirstSectionStations({ stations }) {
 
     function onPlayStation(ev, station) {
         ev.preventDefault()
+
         const firstSong = station.songs[0]
         const songToStore =
         {
@@ -59,8 +59,7 @@ export function FirstSectionStations({ stations }) {
                         </button>
                     </div>
                 </Link>
-                )
-                }
+                )}
             </section >
         </div>
     )

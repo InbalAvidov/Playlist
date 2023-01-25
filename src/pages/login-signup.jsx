@@ -8,28 +8,22 @@ import { signup, login } from '../store/user.action.js'
 import logoLogin from "../assets/img/logoLogin.png"
 import { utilService } from '../service/util.service.js'
 
-
-
 export function LoginSignup() {
+
     const [credentials, setCredentials] = useState(userService.getEmptyCredentials())
     const [isSignupState, setIsSignupState] = useState(false)
     const { signupState } = useParams()
     const navigate = useNavigate()
-
 
     useEffect(() => {
         if (signupState === 'loginState') setIsSignupState(false)
         else if (signupState === 'signupState') setIsSignupState(true)
     }, [signupState])
 
-
-
-
     function onToggleSignupState(ev) {
         ev.preventDefault()
         setIsSignupState(!isSignupState)
     }
-
 
     function handleCredentialsChange(ev) {
         const field = ev.target.name
@@ -46,11 +40,9 @@ export function LoginSignup() {
             })
             navigate('/')
         } catch (err) {
-           console.log('err:',err)
-
+            console.log('err:', err)
         }
     }
-
 
     function onSubmit(ev) {
         ev.preventDefault();
@@ -60,15 +52,15 @@ export function LoginSignup() {
                     navigate('/')
                 })
                 .catch(err => {
-                    console.log('err:',err)
+                    console.log('err:', err)
                 });
-            } else {
-                login(credentials)
+        } else {
+            login(credentials)
                 .then(() => {
                     navigate('/')
                 })
                 .catch(err => {
-                    console.log('err:',err)
+                    console.log('err:', err)
                 });
         }
     }
@@ -77,13 +69,11 @@ export function LoginSignup() {
     return (
         <section className="login-signup">
             <div className="login-page">
-
                 <header className="login-header ">
                     <div className="logo flex">
                         <img className="logo-img" src={logoLogin} />
                         <h1>Playlist</h1>
                     </div>
-
                     {isSignupState
                         ?
                         <h2>Sign up for free to start listening</h2>
@@ -104,7 +94,6 @@ export function LoginSignup() {
                             placeholder="Username"
                             onChange={handleCredentialsChange}
                             required
-                        // autoFocus
                         />
                     </label>
                     <label>
@@ -117,7 +106,6 @@ export function LoginSignup() {
                             placeholder="Enter your email"
                             onChange={handleCredentialsChange}
                             required
-                        // autoFocus
                         />
                     </label>
                     <label>

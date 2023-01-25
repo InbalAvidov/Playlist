@@ -1,15 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faClock } from '@fortawesome/free-solid-svg-icons'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 
-import { SongPreview } from "./station-song-preview";
-import { SearchSongs } from '../pages/search-page';
+import { SongPreview } from "./song-preview";
+import { SearchSongs } from '../pages/search-songs';
 import { updateStation } from '../store/station.actions';
 
-export function SongList({ station, handleChange, onDeleteSong , isLikedSongs }) {
+export function SongList({ station, handleChange, onDeleteSong , isLikedSongsPage }) {
     const [stationSongs, setStationSongs] = useState(station.songs)
     const [items, setItems] = useState(station.songs)
+
     function onAddSong(song) {
         setStationSongs(prevSongs => [...prevSongs, song])
         handleChange('songs', [...stationSongs, song])
@@ -45,7 +46,7 @@ export function SongList({ station, handleChange, onDeleteSong , isLikedSongs })
                                     {...provided.droppableProps}
                                 >
                                     {station.songs.map((song, idx) => (
-                                        <SongPreview key={song.id} song={song} idx={idx} onDeleteSong={onDeleteSong} station={station} isLikedSongs={isLikedSongs} />
+                                        <SongPreview song={song} idx={idx} onDeleteSong={onDeleteSong} station={station} isLikedSongsPage={isLikedSongsPage} />
                                     ))}
                                     {provided.placeholder}
                                 </div>

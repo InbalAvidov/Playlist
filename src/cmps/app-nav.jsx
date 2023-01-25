@@ -5,16 +5,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 import { stationService } from "../service/station.service"
-import { loadCurrStation, loadStations } from "../store/station.actions"
-
-import logo from "../assets/img/logo-white.png"
-import plus from "../assets/img/plus.png"
+import { loadStations } from "../store/station.actions"
 import { login } from '../store/user.action'
+import logo from "../assets/img/logo-pic-white.png"
+import plus from "../assets/img/plus.png"
 
 export function AppNav() {
     const user = useSelector((storeState => storeState.userModule.user))
-    const [userStations, setUserStations] = useState(null)
     const stations = useSelector((storeState) => storeState.stationModule.stations)
+    const [userStations, setUserStations] = useState(null)
 
     useEffect(() => {
         loadStations()
@@ -46,6 +45,7 @@ export function AppNav() {
         <main className="app-nav">
             <div className="logo">
                 <img className="logo-img" src={logo} />
+                <h1>Playlist</h1>
             </div>
             <nav className='nav-menu'>
                 <NavLink to="/">
@@ -63,7 +63,6 @@ export function AppNav() {
                 <NavLink to="/createStation" className='a-create'>
                     <div className='create-station'>
                         <div className='create-station-box'>
-                            {/* <svg role="img" height="12" width="12"  aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" className="Svg-sc-ytk21e-0 uPxdw"><path d="M15.25 8a.75.75 0 01-.75.75H8.75v5.75a.75.75 0 01-1.5 0V8.75H1.5a.75.75 0 010-1.5h5.75V1.5a.75.75 0 011.5 0v5.75h5.75a.75.75 0 01.75.75z"></path></svg> */}
                             <img src={plus} />
                         </div>
                     </div>

@@ -4,14 +4,14 @@ import { Link } from 'react-router-dom'
 
 import { loadStations } from "../store/station.actions"
 import { Loader } from "../cmps/loader"
-import defaultPhoto from '../assets/img/default-photo.jpeg'
 import { stationService } from "../service/station.service"
+import defaultPhoto from '../assets/img/default-photo.png'
+
 
 export function UserLibrary() {
   const stations = useSelector((storeState) => storeState.stationModule.stations)
   const user = useSelector((storeState => storeState.userModule.user))
   const [userStations, setUserStations] = useState(null)
-
 
   useEffect(() => {
     loadStations()
@@ -24,7 +24,8 @@ export function UserLibrary() {
   }, [user, stations])
 
   async function getUserStations(user) {
-    const userStations = await stationService.query({ userId: user._id })
+    let userStations = await stationService.query({ userId: user._id })
+    userStations = [...userStations, ...user.likedStations]
     setUserStations(userStations)
   }
 
@@ -36,9 +37,6 @@ export function UserLibrary() {
       </main>
     )
   }
-
-
-
   if (!stations || !userStations) return <Loader />
   return (
     <main className='main-library clr-container'>
@@ -70,13 +68,11 @@ export function UserLibrary() {
                   }}>
                 </div>
                 <h2>{station.name}</h2>
-                <p>{station.description?.slice(0, 15)}</p>
+                <p>{station.description ? station.description.slice(0, 15) : `By ${user.username}`}</p>
               </div>
             </Link>
           ))
         }
-        {/* </div> */}
-
       </div>
     </main>
   )
