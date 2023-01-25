@@ -20,9 +20,7 @@ export function Station() {
   const navigate = useNavigate()
 
   useEffect(() => {
-    if (!stationId) {
-      saveEmptyStation()
-    }
+    if (!stationId) saveEmptyStation()
     else loadStation()
   }, [stationId])
 

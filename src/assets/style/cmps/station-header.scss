@@ -4,7 +4,7 @@
     cursor: pointer;
     width: 100%;
 
-    .liked-songs-station {
+    .liked-songs-station{
         margin: -84px -30px 0;
         padding: 84px 30px 24px;
         background: linear-gradient(transparent 0, rgba(0, 0, 0, .5) 100%)
@@ -198,7 +198,7 @@
         @include station-img-container;
         position: relative;
 
-        .file {
+        input {
             opacity: 0;
             position: absolute;
             height: 100%;
