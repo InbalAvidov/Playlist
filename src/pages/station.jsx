@@ -78,9 +78,9 @@ export function Station() {
   if (!station) return <Loader />
   else return (
     <main className="station-details">
-      <div className='clr-container' style={{ backgroundColor: `${color || '#121212'}` }}>
+      {/* <div className='clr-container' style={{ backgroundColor: `${color || '#121212'}` }}> */}
         <StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} onSaveStation={onSaveStation} />
-      </div>
+      {/* </div> */}
       <SongList station={station} handleChange={handleChange} onDeleteSong={onDeleteSong} />
     </main>
   )

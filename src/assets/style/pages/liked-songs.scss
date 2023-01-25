@@ -43,17 +43,17 @@
 }
 
 .liked-songs {
-  padding: 84px $main-app-padding;
-
-
   .liked-header {
     padding: 1rem;
 
     .img-wrapper {
-
       width: 200px;
       border: 1px solid;
     }
+  }
+
+  .clr-container{
+    background: linear-gradient(transparent 0, rgba(0, 0, 0, .5) 100%);
   }
 
   .main-liked-songs {
@@ -61,12 +61,12 @@
   }
 }
 
-.song-list{
+.song-list {
   position: relative;
 }
 
-.liked-song-clr-container {
-  background-image: linear-gradient(rgba(0, 0, 0, .6) 0, $bgc-main 100%);
-  width: 100%;
-  z-index: -1;
-}
+// .liked-song-clr-container {
+//   background-image: linear-gradient(rgba(0, 0, 0, .6) 0, $bgc-main 100%);
+//   width: 100%;
+//   z-index: -1;
+// }

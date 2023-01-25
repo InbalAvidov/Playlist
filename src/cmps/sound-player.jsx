@@ -13,13 +13,13 @@ export function SoundPlayer() {
     },
   }
 
-  function _onReady(event) {
+  function onReady(event) {
     loadPlayer(event.target)
     event.target.playVideo()
   }
 
   return <div>
-    <YouTube videoId={song._id} opts={opts} onReady={_onReady} />
+    <YouTube videoId={song._id} opts={opts} onReady={onReady} />
   </div>
 }
 

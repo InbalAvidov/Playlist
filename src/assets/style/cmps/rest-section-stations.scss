@@ -1,9 +1,10 @@
 .rest-section-stations {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+    grid-template-rows: none;
     width: 100%;
     gap: 10px;
-    padding-inline-start:$main-app-padding;
+    padding-inline-start: $main-app-padding;
 
     a {
         text-decoration: none;
@@ -49,4 +50,8 @@
             background-color: lighten($song-bgc-home, 3%);
         }
     }
+
+    // @media (max-width: 1020px) {
+    //     grid-template-columns: repeat(3, 1fr);
+    // }
 }

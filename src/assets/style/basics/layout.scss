@@ -1,20 +1,16 @@
 .main-layout {
     display: grid;
-    grid-template-columns: 247px 1fr;
+    grid-template-columns: 247px minmax(300px, 1fr);
     grid-template-rows: 64px 1fr auto;
     height: 100vh;
 }
 
 .clr-container {
     padding: 0 $main-app-padding;
-    padding-top: 50px;
-    background-image: linear-gradient(rgba(0, 0, 0, .6) 0, $bgc-main 100%);
+    padding-top: 84px;
+    background: linear-gradient(transparent 0, rgba(0, 0, 0, .5) 100%)
 }
 
 * {
     transition: background 1s ease;
-}
-
-.liked-songs{
-    padding: 64px $main-app-padding;
 }

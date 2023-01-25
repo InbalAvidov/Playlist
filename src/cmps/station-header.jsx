@@ -96,42 +96,42 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
     }
     return (
         <section className="station-header" onClick={onOpenEditor}>
-            <div
-                className={`station-details ${isLikedSongsPage ? 'liked-songs-station' : ''}`}
-                style={{ backgroundColor: `${isLikedSongsPage ? color : ''}` }}>
+            <div className='clr-container' style={{ backgroundColor: `${isLikedSongsPage ? 'rgb(80, 56, 160)' : color}` }}>
+                <div className={`station-details ${isLikedSongsPage ? 'liked-songs-station' : ''}`}>
+                    {station.imgUrl || station.songs.length > 0 ?
+                        <div className="img-container" onClick={onOpenEditor}
+                            style={{
+                                backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs[0].imgUrl}")`,
+                                backgroundRepeat: "no-repeat",
+                                backgroundPosition: "center",
+                                backgroundSize: "cover",
+                                width: "230px", height: "230px"
+                            }}>
+                        </div>
+                        :
+                        <div onClick={onOpenEditor} className="upload-img-container">
+                            <FontAwesomeIcon icon={faImage} />
+                            <span>Upload Image</span>
+                        </div>
+                    }
+                    <div className="info-container">
+                        <p className="station">playlist</p>
+                        <h1>{station.name ? station.name : "My Playlist"}</h1>
+                        {station.description && <h3>{station.description}</h3>}
+                        <p><span>{station.createdBy ? station.createdBy.username : user.username} </span>
+                            • {station.songs.length + ' '}
+                            songs</p>
+                    </div>
+                    {user && user._id === station.createdBy?._id && station._id &&
+                        <div className="station-menu-container">
+                            <button className="station-menu-btn" onClick={onToggleMenu}> •••</button>
 
-                {station.imgUrl || station.songs.length > 0 ?
-                    <div className="img-container" onClick={onOpenEditor}
-                        style={{
-                            backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs[0].imgUrl}")`,
-                            backgroundRepeat: "no-repeat",
-                            backgroundPosition: "center",
-                            backgroundSize: "cover",
-                            width: "230px", height: "230px"
-                        }}>
-                    </div>
-                    :
-                    <div onClick={onOpenEditor} className="upload-img-container">
-                        <FontAwesomeIcon icon={faImage} />
-                        <span>Upload Image</span>
-                    </div>
-                }
-                <div className="info-container">
-                    <p className="station">playlist</p>
-                    <h1>{station.name ? station.name : "My Playlist"}</h1>
-                    {station.description && <h3>{station.description}</h3>}
-                    <p><span>{station.createdBy ? station.createdBy.username : user.username} </span>
-                        • {station.songs.length + ' '}
-                        songs</p>
+                        </div>}
                 </div>
-                {user && user._id === station.createdBy?._id && station._id &&
-                    <div className="station-menu-container">
-                        <button className="station-menu-btn" onClick={onToggleMenu}> •••</button>
-
-                    </div>}
             </div>
 
-            <div className="station-options">
+            <div className="station-options" style={{ backgroundColor: `${isLikedSongsPage ? 'rgb(80, 56, 160)' : color}` }} >
+                <div className={`clr-container-gradient`}></div>
                 <button className='green-play-pause-btn' onClick={(event) => onPlayStation(event, station)}>
                     <svg role="img" height="28" width="28" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon" className="play-pause Svg-sc-ytk21e-0 uPxdw"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
                 </button>
