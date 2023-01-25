@@ -4,14 +4,10 @@
     cursor: pointer;
     width: 100%;
 
-    .liked-songs-station{
-        margin: -84px -30px 0;
-        padding: 84px 30px 24px;
-        background: linear-gradient(transparent 0, rgba(0, 0, 0, .5) 100%)
-    }
 
     .station-details {
         display: flex;
+        padding-bottom: 2rem;
 
         .upload-img-container {
             @include station-img-container
@@ -67,10 +63,11 @@
 .station-options {
     display: flex;
     align-items: center;
-    justify-content: center;
     align-self: flex-start;
-    margin: 45px 0 25px 0;
+    padding: 25px 0 25px $main-app-padding;
     position: relative;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, .6) 0, $bgc-main 100%);
 
     >* {
         margin-right: 20px

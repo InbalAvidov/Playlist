@@ -14,6 +14,7 @@ export function SoundPlayer({onEnd}) {
   }
 
   function onReady(event) {
+  function onReady(event) {
     loadPlayer(event.target)
     event.target.playVideo()
   }

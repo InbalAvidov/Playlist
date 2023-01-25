@@ -58,13 +58,12 @@ export function UserLibrary() {
               key={station._id}
               className={idx}>
               <div className="library-station-preview" >
-                <div className="img-container flex" style=
-                  {{
+                <div className="img-container flex"
+                  style={{
                     backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs.length > 0 ? station.songs[0].imgUrl : defaultPhoto}")`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
                     backgroundSize: "cover",
-                    width: '160px', height: '160px', margin: 'auto'
                   }}>
                 </div>
                 <h2>{station.name}</h2>
