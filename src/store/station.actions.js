@@ -63,11 +63,3 @@ export async function setColor(color) {
     }
 }
 
-export async function setColor(color) {
-    try {
-        store.dispatch({ type: SET_COLOR, color})
-    } catch (err) {
-        console.log('Had issues to set color', err)
-        throw err
-    }
-}

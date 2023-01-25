@@ -1,17 +1,20 @@
-import { useRef, useState } from "react"
+import { useState } from "react"
 import { useSelector } from "react-redux"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faImage } from "@fortawesome/free-solid-svg-icons"
 
 import Swal from 'sweetalert2'
 import { setSong } from "../store/player.action"
-import { loadCurrStation } from "../store/station.actions"
+import { loadCurrStation, setColor } from "../store/station.actions"
 import { updateLikeStation } from '../store/user.action'
-import defaultPhoto from '../assets/img/default-photo.png'
+import { useEffect } from "react"
+import { utilService } from "../service/util.service"
+
 
 export function StationHeader({ station, onSelectImg, handleChange, saveChanges, deleteStation, isLikedSongsPage }) {
     const user = useSelector((storeState => storeState.userModule.user))
-    const [imgUrl, setImgUrl] = useState(station.imgUrl || null)
+    const color = useSelector((storeState => storeState.stationModule.color))
+    const [imgUrl, setImgUrl] = useState(null)
     const [isEdit, setIsEdit] = useState(false)
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const [stationName, setStationName] = useState("")
@@ -44,6 +47,8 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
 
     async function onUploadImg(ev) {
         const imgUrl = await onSelectImg(ev)
+        const clr = await utilService.getMainColor(imgUrl)
+        setColor(clr)
         handleChange("imgUrl", imgUrl)
         setImgUrl(imgUrl)
     }
@@ -72,7 +77,8 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
         })
     }
 
-    function onPlayStation(station) {
+    function onPlayStation(ev, station) {
+        ev.stopPropagation()
         const firstSong = station.songs[0]
         const songToStore =
         {
@@ -90,7 +96,9 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
     }
     return (
         <section className="station-header" onClick={onOpenEditor}>
-            <div className="station-details">
+            <div
+                className={`station-details ${isLikedSongsPage ? 'liked-songs-station' : ''}`}
+                style={{ backgroundColor: `${isLikedSongsPage ? color : ''}` }}>
 
                 {station.imgUrl || station.songs.length > 0 ?
                     <div className="img-container" onClick={onOpenEditor}
@@ -110,17 +118,21 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
                 }
                 <div className="info-container">
                     <p className="station">playlist</p>
-                    <h1>{station.name}</h1>
+                    <h1>{station.name ? station.name : "My Playlist"}</h1>
                     {station.description && <h3>{station.description}</h3>}
-                    <p>
-                        <span>{station.createdBy ? station.createdBy.username : user.username} </span>
+                    <p><span>{station.createdBy ? station.createdBy.username : user.username} </span>
                         • {station.songs.length + ' '}
                         songs</p>
                 </div>
+                {user && user._id === station.createdBy?._id && station._id &&
+                    <div className="station-menu-container">
+                        <button className="station-menu-btn" onClick={onToggleMenu}> •••</button>
+
+                    </div>}
             </div>
 
             <div className="station-options">
-                <button className='green-play-pause-btn' onClick={() => onPlayStation(station)}>
+                <button className='green-play-pause-btn' onClick={(event) => onPlayStation(event, station)}>
                     <svg role="img" height="28" width="28" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon" className="play-pause Svg-sc-ytk21e-0 uPxdw"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>
                 </button>
                 {
@@ -144,24 +156,11 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
             {isEdit && <div className="modal-editor">
                 <h1>Edit details</h1>
                 <div className="edit-container">
-                    {imgUrl ?
-                        <div className="input-img-container"
-                            style={{
-                                backgroundImage: `url("${imgUrl}")`,
-                                backgroundRepeat: "no-repeat",
-                                backgroundPosition: "center",
-                                backgroundSize: "cover",
-                                width: "200px", height: "200px"
-                            }}>
-                            <input className="file" type="file" onChange={onUploadImg} />
-                        </div>
-                        :
-                        <div className="input-img-container">
-                            <FontAwesomeIcon icon={faImage} />
-                            <span>Upload Image</span>
-                            <input className="file" type="file" onChange={onUploadImg} />
-                        </div>
-                    }
+                    <div className="input-img-container">
+                        <FontAwesomeIcon icon={faImage} />
+                        <span>Upload Image</span>
+                        <input type="file" onChange={onUploadImg} />
+                    </div>
                     <div className="title-desc">
                         <input
                             type="text"

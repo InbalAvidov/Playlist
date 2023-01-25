@@ -9,6 +9,7 @@ import { loadStations } from "../store/station.actions";
 import { RestSectionStations } from "../cmps/rest-section-stations";
 import { Loader } from "../cmps/loader";
 
+
 export function SearchSongs({ onAddSong, isForStation }) {
     const stations = useSelector((storeState) => storeState.stationModule.stations)
     const [search, setSearch] = useState('')
@@ -47,10 +48,8 @@ export function SearchSongs({ onAddSong, isForStation }) {
 
     if (!stations) return <Loader />
     return (
-        <main className="main-search" >
+        <main className="main-search clr-container" >
             <div className="search-container">
-                <div className="svg-wrapper">
-                </div>
                 <input className={`search-input ${isForStation ? "add-songs-search" : "main-input-search"}`}
                     type='txt' value={search}
                     placeholder={isForStation ? 'Search for songs' : 'What do you want to listen to?'}
@@ -58,21 +57,20 @@ export function SearchSongs({ onAddSong, isForStation }) {
                 />
             </div>
 
-            {songsBySearch
-                ?
-                <div className="search-results">
-                    {songsBySearch.map(song => <div className="search-result" key={song.id}>
-                        {isForStation && <button className="add-song-btn" onClick={() => addSong(song)}>+</button>}
-                        <img src={song.imgUrl} onClick={() => onSetSong({ _id: song.id, imgUrl: song.imgUrl, title: song.title, artist: song.channelTitle })} />
-                        <div className="song-details">
-                            <h4>{song.title} </h4>
-                            <p>{song.channelTitle}</p>
-                        </div>
+            {songsBySearch ? <div className="search-results">
+                {songsBySearch.map(song => <div className="search-result" key={song.id}>
+                    {isForStation && <button className="add-song-btn" onClick={() => addSong(song)}>+</button>}
+                    <img src={song.imgUrl} onClick={() => onSetSong({ _id: song.id, imgUrl: song.imgUrl, title: song.title, artist: song.channelTitle })} />
+                    <div className="song-details">
+                        <h4>{song.title} </h4>
+                        <p>{song.channelTitle}</p>
                     </div>
-                    )}
                 </div>
+                )}
+            </div>
                 :
-                !isForStation && <RestSectionStations stations={stations} />
+                !isForStation &&
+                <RestSectionStations stations={stations} />
             }
         </main>
     )

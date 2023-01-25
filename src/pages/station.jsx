@@ -8,14 +8,14 @@ import { StationHeader } from "../cmps/station-header"
 
 import { stationService } from "../service/station.service"
 import { uploadService } from "../service/upload.service"
-import { removeStation, updateStation } from "../store/station.actions"
+import { removeStation, setColor, updateStation } from "../store/station.actions"
 import { saveStation } from "../store/station.actions";
 import { utilService } from "../service/util.service"
+import { useSelector } from "react-redux"
 
 export function Station() {
-
   const [station, setStation] = useState(null)
-  const [colorByImg, setColorByImg] = useState(null)
+  const color = useSelector(storeState => storeState.stationModule.color)
   const { stationId } = useParams()
   const navigate = useNavigate()
 
@@ -25,15 +25,17 @@ export function Station() {
     }
     else loadStation()
   }, [stationId])
-  
+
   async function saveEmptyStation() {
     const newStation = await saveStation(stationService.getEmptyStation())
-    console.log('newStation:',newStation)
+    console.log('newStation:', newStation)
     setStation(newStation)
   }
-  
-  async function loadStation() {  
+
+  async function loadStation() {
     const currStation = await stationService.get(stationId)
+    const clr = await utilService.getMainColor(currStation.imgUrl)
+    setColor(clr)
     setStation(currStation)
   }
 
@@ -42,7 +44,7 @@ export function Station() {
       const imgUrl = await uploadService.uploadImg(ev)
       station.imgUrl = imgUrl
       const color = await utilService.getMainColor(imgUrl)
-      setColorByImg(color)
+      setColor(color)
       return imgUrl
     } catch (err) {
       console.log('Cant set image', err)
@@ -76,7 +78,7 @@ export function Station() {
   if (!station) return <Loader />
   else return (
     <main className="station-details">
-      <div className='clr-container' style={{ background: `linear-gradient( ${colorByImg || '#121212'} 0%, #121212 100%)` }}>
+      <div className='clr-container' style={{ backgroundColor: `${color || '#121212'}` }}>
         <StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} onSaveStation={onSaveStation} />
       </div>
       <SongList station={station} handleChange={handleChange} onDeleteSong={onDeleteSong} />

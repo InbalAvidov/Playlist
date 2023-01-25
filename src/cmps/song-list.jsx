@@ -6,8 +6,10 @@ import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 import { SongPreview } from "./song-preview";
 import { SearchSongs } from '../pages/search-songs';
 import { updateStation } from '../store/station.actions';
+import { useSelector } from 'react-redux';
 
-export function SongList({ station, handleChange, onDeleteSong , isLikedSongsPage }) {
+export function SongList({ station, handleChange, onDeleteSong, isLikedSongsPage }) {
+    const color = useSelector(storeState => storeState.stationModule.color)
     const [stationSongs, setStationSongs] = useState(station.songs)
     const [items, setItems] = useState(station.songs)
 
@@ -31,12 +33,13 @@ export function SongList({ station, handleChange, onDeleteSong , isLikedSongsPag
         <main className='main-songs-list'>
             {station.songs.length > 0 &&
                 <section className="songs-list">
+                    <div className='liked-song-clr-container' style={{ backgroundColor: `${color}` }}></div>
                     <div className="song-preview songs-list-header">
                         <p className="song-number">#</p>
                         <p className="song-img-title">Title</p>
                         <p className="song-date">Date Added</p>
                         <p className="song-actions"></p>
-                        <p className="song-duration"><FontAwesomeIcon icon={faClock}></FontAwesomeIcon></p>
+                        <p className="song-duration"><FontAwesomeIcon icon={faClock} /></p>
                     </div>
                     <DragDropContext onDragEnd={onDragEnd}>
                         <Droppable droppableId="droppable">
@@ -57,9 +60,11 @@ export function SongList({ station, handleChange, onDeleteSong , isLikedSongsPag
                 </section>
             }
             <div className='songs-add'>
+                <div className='liked-song-clr-container' style={{ backgroundColor: `${color}` }}></div>
                 {!station.songs.length > 0 && <h2>Let's find something for your playlist</h2>}
                 <SearchSongs onAddSong={onAddSong} isForStation={true} />
             </div>
+
         </main>
     )
 }

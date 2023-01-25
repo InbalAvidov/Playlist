@@ -1,4 +1,6 @@
 .songs-add {
+    padding-inline-start: $main-app-padding;
+
     h2 {
         margin-bottom: 20px;
     }
@@ -7,4 +9,3 @@
 .songs-list {
     margin-bottom: 20px;
 }
-
