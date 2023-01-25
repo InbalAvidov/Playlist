@@ -11,23 +11,6 @@
             @include station-img-container
         }
 
-        .done-btn {
-            background-color: $clr2;
-            padding: 10px 20px;
-            border-radius: 10em;
-            font-size: 16px;
-            position: absolute;
-            // align-self: flex-start;
-            right: $main-app-padding;
-            // margin: 10px 10px 0 0 ;
-            bottom: 100px;
-
-
-            &:hover {
-                background-color: $brand-color;
-            }
-        }
-
         .station-menu-container {
             position: absolute;
             right: $main-app-padding;
@@ -68,7 +51,7 @@
         }
 
         h1 {
-            font-size: 90px;
+            font-size: 80px;
         }
     }
 

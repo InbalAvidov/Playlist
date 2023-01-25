@@ -7,7 +7,6 @@ import Swal from 'sweetalert2'
 import { setSong } from "../store/player.action"
 import { loadCurrStation } from "../store/station.actions"
 import { updateLikeStation } from '../store/user.action'
-import defaultPhoto from '../assets/img/default-photo.png'
 
 export function StationHeader({ station, onSelectImg, handleChange, saveChanges, deleteStation, isLikedSongsPage }) {
     const user = useSelector((storeState => storeState.userModule.user))
