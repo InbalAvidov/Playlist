@@ -2,9 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { useSelector } from "react-redux";
 
 import { utilService } from "../service/util.service";
-import { setSong, togglePlay } from "../store/player.action";
-import { SoundPlayer } from "./sound-player";
-
+import { togglePlay } from "../store/player.action";
 
 export function PlayerController({ isRepeat, onToggleRepeat , onPrevNextSong , onShuffle ,  isShuffled}) {
     const player = useSelector(storeState => storeState.playerModule.player)

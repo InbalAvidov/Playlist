@@ -8,6 +8,7 @@ import { setSong } from "../store/player.action";
 import { loadStations } from "../store/station.actions";
 import { RestSectionStations } from "../cmps/rest-section-stations";
 import { Loader } from "../cmps/loader";
+import { NavLink } from "react-router-dom";
 
 export function SearchSongs({ onAddSong, isForStation }) {
     const stations = useSelector((storeState) => storeState.stationModule.stations)
@@ -16,10 +17,8 @@ export function SearchSongs({ onAddSong, isForStation }) {
     const searchSongs = useRef(utilService.debounce(getSearchReasults, 700))
 
     useEffect(() => {
-        console.log('isForStation', isForStation)
         if (isForStation) return
-        loadStations({ page: 'home' })
-        //later need to be changed to search
+        loadStations({ page: 'search' })
     }, [])
 
     function handleChange({ target }) {
@@ -41,7 +40,14 @@ export function SearchSongs({ onAddSong, isForStation }) {
         onAddSong(song)
     }
 
-    function onSetSong(songToStore) {
+    function onSetSong(song) {
+        const songToStore =
+        {
+            id: song.id,
+            imgUrl: song.imgUrl,
+            title: song.title,
+            channelTitle: song.channelTitle
+        }
         setSong(songToStore)
     }
 
@@ -63,7 +69,7 @@ export function SearchSongs({ onAddSong, isForStation }) {
                 <div className="search-results">
                     {songsBySearch.map(song => <div className="search-result" key={song.id}>
                         {isForStation && <button className="add-song-btn" onClick={() => addSong(song)}>+</button>}
-                        <img src={song.imgUrl} onClick={() => onSetSong({ _id: song.id, imgUrl: song.imgUrl, title: song.title, artist: song.channelTitle })} />
+                        <img src={song.imgUrl} onClick={() => onSetSong(song)} />
                         <div className="song-details">
                             <h4>{song.title} </h4>
                             <p>{song.channelTitle}</p>
@@ -72,7 +78,15 @@ export function SearchSongs({ onAddSong, isForStation }) {
                     )}
                 </div>
                 :
-                !isForStation && <RestSectionStations stations={stations} />
+                !isForStation && <div className="genres">
+                    <h1>Browse all</h1>
+                    <div className="ganres-section">
+                        {stations.map(station => <NavLink to={`/station/${station._id}`}>
+                            <img key={station._id} src={station.imgUrl} />
+                        </NavLink>
+                        )}
+                    </div>
+                </div>
             }
         </main>
     )

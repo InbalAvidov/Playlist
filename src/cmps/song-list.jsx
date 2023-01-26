@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faClock } from '@fortawesome/free-solid-svg-icons'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 
 import { SongPreview } from "./song-preview";

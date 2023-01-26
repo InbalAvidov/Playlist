@@ -74,12 +74,14 @@ export function PlayerBar() {
             }
         }
         const song = songs[currSongIdx + val]
-        const nextSong = {
-            id: song.id,
-            imgUrl: song.imgUrl,
-            title: song.title,
-            artist: song.channelTitle,
-            addedAt: song.addedAt
+        const {id , imgUrl , title , channelTitle , addedAt} = song
+        const nextSong =
+        {
+            id,
+            imgUrl,
+            title,
+            channelTitle,
+            addedAt
         }
         setSong(nextSong)
     }
@@ -118,7 +120,7 @@ export function PlayerBar() {
             <img src={song.imgUrl} alt="no image" className="song-img" />
             <div className="details">
                 <h4>{song.title.slice(0, 30)}{song.title.length > 30 && '...'}</h4>
-                <h5>{song.artist.slice(0, 30)}{song.artist.length > 30 && '...'}</h5>
+                <h5>{song.channelTitle.slice(0, 30)}{song.channelTitle.length > 30 && '...'}</h5>
             </div>
             {user && <span onClick={toggleLike}>
                 {user.likedSongs.find(({ id }) => id === song.id) ?
@@ -135,7 +137,7 @@ export function PlayerBar() {
                 <svg fill={isQueue ? "#1ed760" : "white"} role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw"><path d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 013.5 1h9a2.5 2.5 0 010 5h-9A2.5 2.5 0 011 3.5zm2.5-1a1 1 0 000 2h9a1 1 0 100-2h-9z"></path></svg>
             </button>
             {volume > 0 ? <svg onClick={onSetVolume} fill="white" role="presentation" height="16" width="16" aria-hidden="true" aria-label="Volume high" id="volume-icon" viewBox="0 0 16 16" data-encore-id="icon" className="Svg-sc-ytk21e-0 uPxdw"><path d="M9.741.85a.75.75 0 01.375.65v13a.75.75 0 01-1.125.65l-6.925-4a3.642 3.642 0 01-1.33-4.967 3.639 3.639 0 011.33-1.332l6.925-4a.75.75 0 01.75 0zm-6.924 5.3a2.139 2.139 0 000 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 010 4.88z"></path><path d="M11.5 13.614a5.752 5.752 0 000-11.228v1.55a4.252 4.252 0 010 8.127v1.55z"></path></svg>
-                : <FontAwesomeIcon icon={faVolumeMute} onClick={onSetVolume} />}
+                :<svg onClick={onSetVolume} fill="white" role="presentation" height="16" width="16" aria-hidden="true" aria-label="Volume off" id="volume-icon" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw"><path d="M13.86 5.47a.75.75 0 00-1.061 0l-1.47 1.47-1.47-1.47A.75.75 0 008.8 6.53L10.269 8l-1.47 1.47a.75.75 0 101.06 1.06l1.47-1.47 1.47 1.47a.75.75 0 001.06-1.06L12.39 8l1.47-1.47a.75.75 0 000-1.06z"></path><path d="M10.116 1.5A.75.75 0 008.991.85l-6.925 4a3.642 3.642 0 00-1.33 4.967 3.639 3.639 0 001.33 1.332l6.925 4a.75.75 0 001.125-.649v-1.906a4.73 4.73 0 01-1.5-.694v1.3L2.817 9.852a2.141 2.141 0 01-.781-2.92c.187-.324.456-.594.78-.782l5.8-3.35v1.3c.45-.313.956-.55 1.5-.694V1.5z"></path></svg>}
             <input
                 type="range"
                 name="volume-range"

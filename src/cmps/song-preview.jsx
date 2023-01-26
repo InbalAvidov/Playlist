@@ -26,7 +26,7 @@ export function SongPreview({ song, idx, station, onDeleteSong, isLikedSongsPage
             id: song.id,
             imgUrl: song.imgUrl,
             title: song.title,
-            artist: song.channelTitle,
+            channelTitle: song.channelTitle,
             addedAt: song.addedAt
         }
         setSong(songToStore)
