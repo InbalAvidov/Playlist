@@ -4,6 +4,7 @@
     display: grid;
     height: 57px;
     border-radius: .4em;
+    transition: .2s background-color;
 
     &.songs-list-header {
         height: 50px;

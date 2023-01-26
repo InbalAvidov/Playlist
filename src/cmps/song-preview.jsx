@@ -65,7 +65,7 @@ export function SongPreview({ song, idx, station, onDeleteSong, isLikedSongsPage
                         </div>
                     </div>
                     <div className="song-date">
-                        <p>{utilService.randomPastTime()}</p>
+                        <p>{utilService.getFormattedDate(song.addedAt)}</p>
                     </div>
                     <p className='song-actions'>
                         {user && <span onClick={toggleLike}>

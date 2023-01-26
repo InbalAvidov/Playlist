@@ -5,13 +5,24 @@ export const utilService = {
     makeLorem,
     getRandomIntInclusive,
     debounce,
-    randomPastTime,
+    getFormattedDate,
     saveToStorage,
     loadFromStorage,
     secondsToMinutesAndSeconds,
     getCurrentTimeGreet,
-    getMainColor
+    getMainColor,
+    shuffle,
+    getRandomTimeStamp
 }
+
+function shuffle(arr) {
+    
+    let shuffledArr = arr.sort(function () {
+        return Math.random() - 0.5;
+    })
+    return shuffledArr
+}
+
 
 function debounce(func, timeout = 700) {
     let timer;
@@ -55,13 +66,20 @@ function secondsToMinutesAndSeconds(seconds) {
     return minutes + ":" + (seconds < 10 ? '0' : '') + seconds;
 }
 
-function randomPastTime() {
+function getRandomTimeStamp(){
     const HOUR = 1000 * 60 * 60
     const DAY = 1000 * 60 * 60 * 24
     const WEEK = 1000 * 60 * 60 * 24 * 7
-
     const pastTime = getRandomIntInclusive(HOUR, WEEK)
-    const randomDate = new Date(Date.now() - pastTime)
+    return Date.now() - pastTime
+}
+
+function getFormattedDate(timeStamp) {
+    // const HOUR = 1000 * 60 * 60
+    // const DAY = 1000 * 60 * 60 * 24
+    // const WEEK = 1000 * 60 * 60 * 24 * 7
+    // const pastTime = getRandomIntInclusive(HOUR, WEEK)
+    const randomDate = new Date(timeStamp)
     const formatedDate = (getMonthShortName((randomDate.getMonth()) + 1)) + ' ' + randomDate.getDate() + ' , ' + randomDate.getFullYear()
     return formatedDate
 }

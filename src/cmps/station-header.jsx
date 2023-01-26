@@ -82,7 +82,7 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
         const firstSong = station.songs[0]
         const songToStore =
         {
-            _id: firstSong.id,
+            id: firstSong.id,
             imgUrl: firstSong.imgUrl,
             title: firstSong.title,
             artist: firstSong.channelTitle

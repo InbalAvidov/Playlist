@@ -26,7 +26,7 @@ async function getYoutubeReasults(val) {
                     "fullname": "Puki Ben David",
                     "imgUrl": "https://robohash.org/set=set3"
                 },
-                addedAt: new Date()
+                addedAt: Date.now()
             }
             if (!song.title) return
             results.push(song)

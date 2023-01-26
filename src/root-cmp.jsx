@@ -11,6 +11,8 @@ import { UserLibrary } from './pages/user-library'
 import { PlayerBar } from './cmps/player-bar'
 import { AppHeader } from './cmps/app-header'
 import { LoginSignup } from './pages/login-signup';
+import { SongList } from './cmps/song-list'
+import { Queue } from './pages/queue'
 
 
 export function App() {
@@ -31,6 +33,7 @@ export function App() {
                             <Route element={<LikedSongs />} path="/liked" />
                             <Route element={<LoginSignup />} path="/login-signup/:signupState" />
                             <Route element={<LoginSignup />} path="/login-signup/:loginState" />
+                            <Route element={<Queue />} path="/queue" />
                         </Routes>
                     </main>
                     <PlayerBar />
