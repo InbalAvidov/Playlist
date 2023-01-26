@@ -1,23 +1,33 @@
 .rest-section-stations {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
+    grid-template-columns: repeat(auto-fit, 223px);
     grid-template-rows: none;
     width: 100%;
-    gap: 10px;
-    padding-inline-start: $main-app-padding;
+    gap: 24px;
+    // padding-inline-start: $main-app-padding;
 
     a {
         text-decoration: none;
         color: white;
+        // min-width: 100px;
+        // max-width: 223px;
+        // min-height: 256px;
+        // max-height: 314px;
+        height: 314px;
     }
 
     .rest-section-station-preview {
+        display: flex;
+        flex-direction: column;
         background-color: darken($song-bgc-home , 4%);
         grid-column: span 1;
         border-radius: 6px;
         padding: 17px;
         transition: .5s;
         max-width: fit-content;
+        height: 100%;
+        width: 100%;
+        // justify-items: flex-end;
 
         &:hover .green-play-pause-btn {
             opacity: 1;
@@ -30,20 +40,18 @@
 
         .green-play-pause-btn {
             @include green-play-pause-btn;
-            position: relative;
-            top: 130px;
-            left: 130px;
+            position: absolute;
+            bottom: 8px;
+            right: 8px;
         }
 
+        .description {
+            font-size: 14px;
+        }
 
         h3 {
             font-size: 16px;
-            font-weight: bold;
-            color: $clr2;
-            text-align: left;
             padding-top: 10px;
-            height: 80px;
-            margin-inline-start: 2px;
         }
 
         &:hover {
