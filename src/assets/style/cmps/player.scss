@@ -19,6 +19,10 @@
         // width: 250px;
         align-items: center;
 
+        >*{
+            font-family: montserrat, Arial;
+        }
+
 
         .details {
             display: flex;
@@ -35,14 +39,12 @@
     h4 {
         margin-bottom: 1px;
         color: $clr2;
-        font-family: montserrat;
         text-overflow: ellipsis;
     }
 
     h5 {
         margin-top: 1px;
         color: $bar-fill;
-        font-family: montserrat;
         text-overflow: ellipsis;
     }
 
@@ -167,6 +169,11 @@
         align-items: center;
         justify-content: flex-end;
         gap: 5px;
+
+        .queue{
+            margin-right: 10px;
+            margin-top: 5px;
+        }
     }
 
     .volume-range {

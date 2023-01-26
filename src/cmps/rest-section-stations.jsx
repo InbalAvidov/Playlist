@@ -13,10 +13,11 @@ export function RestSectionStations({ stations }) {
         const firstSong = station.songs[0]
         const songToStore =
         {
-            _id: firstSong.id,
+            id: firstSong.id,
             imgUrl: firstSong.imgUrl,
             title: firstSong.title,
-            artist: firstSong.channelTitle
+            artist: firstSong.channelTitle,
+            addedAt : firstSong.addedAt
         }
         setSong(songToStore)
         loadCurrStation(station._id)

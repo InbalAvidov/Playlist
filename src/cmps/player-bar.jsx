@@ -6,9 +6,9 @@ import { faVolumeHigh, faVolumeMute } from "@fortawesome/free-solid-svg-icons"
 import { PlayerController } from "./player-controller"
 import { SoundPlayer } from "./sound-player"
 import { updateLikeSong } from "../store/user.action"
-import { setSong, setSongs } from "../store/player.action"
+import { setQueue, setSong, setSongs } from "../store/player.action"
 import { utilService } from "../service/util.service"
-import { NavLink } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 
 export function PlayerBar() {
@@ -23,6 +23,8 @@ export function PlayerBar() {
     const lastVolumeRef = useRef(0)
     const [isRepeat, setIsRepeat] = useState(false)
     const OriginalSongsOrder = useRef(null)
+    const isQueue = useSelector(storeState => storeState.playerModule.queue)
+    const navigate = useNavigate()
 
     useEffect(() => {
         if (station) {
@@ -76,7 +78,8 @@ export function PlayerBar() {
             id: song.id,
             imgUrl: song.imgUrl,
             title: song.title,
-            artist: song.channelTitle
+            artist: song.channelTitle,
+            addedAt: song.addedAt
         }
         setSong(nextSong)
     }
@@ -85,8 +88,9 @@ export function PlayerBar() {
         if (!player || !songs) return
         setIsShuffled(!isShuffled)
         if (!isShuffled) {
-            const shuffledSongs = utilService.shuffle(songs)
-            setSongs([...shuffledSongs])
+            const songsToShuffle = songs.filter(({ id }) => id !== song.id)
+            const shuffledSongs = utilService.shuffle(songsToShuffle)
+            setSongs([song,...shuffledSongs])
         }
         else {
             setSongs([...OriginalSongsOrder.current])
@@ -100,8 +104,14 @@ export function PlayerBar() {
     function onToggleRepeat() {
         setIsRepeat(!isRepeat)
     }
-    // console.log('station.songs:',station.songs)
-    // console.log('songs:',songs)
+
+    function onQueue(){
+        setQueue(!isQueue)
+        console.log('isQueue:',isQueue)
+        if(!isQueue) navigate ('/queue')
+        else navigate (-1)
+    }
+   
     return (<div className="media-player" >
         {song && <SoundPlayer onEnd={onEnd} />}
         {player && <div className="information">
@@ -121,9 +131,9 @@ export function PlayerBar() {
         </div>}
         <PlayerController isRepeat={isRepeat} onToggleRepeat={onToggleRepeat} onPrevNextSong={onPrevNextSong} onShuffle={onShuffle} isShuffled={isShuffled} />
         <div className="actions-btns">
-            <NavLink to='/queue'>
-                <svg fill="white" role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw"><path d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 013.5 1h9a2.5 2.5 0 010 5h-9A2.5 2.5 0 011 3.5zm2.5-1a1 1 0 000 2h9a1 1 0 100-2h-9z"></path></svg>
-            </NavLink>
+            <button onClick={onQueue} className="queue">
+                <svg fill={isQueue ? "#1ed760" : "white"} role="img" height="16" width="16" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" class="Svg-sc-ytk21e-0 uPxdw"><path d="M15 15H1v-1.5h14V15zm0-4.5H1V9h14v1.5zm-14-7A2.5 2.5 0 013.5 1h9a2.5 2.5 0 010 5h-9A2.5 2.5 0 011 3.5zm2.5-1a1 1 0 000 2h9a1 1 0 100-2h-9z"></path></svg>
+            </button>
             {volume > 0 ? <svg onClick={onSetVolume} fill="white" role="presentation" height="16" width="16" aria-hidden="true" aria-label="Volume high" id="volume-icon" viewBox="0 0 16 16" data-encore-id="icon" className="Svg-sc-ytk21e-0 uPxdw"><path d="M9.741.85a.75.75 0 01.375.65v13a.75.75 0 01-1.125.65l-6.925-4a3.642 3.642 0 01-1.33-4.967 3.639 3.639 0 011.33-1.332l6.925-4a.75.75 0 01.75 0zm-6.924 5.3a2.139 2.139 0 000 3.7l5.8 3.35V2.8l-5.8 3.35zm8.683 4.29V5.56a2.75 2.75 0 010 4.88z"></path><path d="M11.5 13.614a5.752 5.752 0 000-11.228v1.55a4.252 4.252 0 010 8.127v1.55z"></path></svg>
                 : <FontAwesomeIcon icon={faVolumeMute} onClick={onSetVolume} />}
             <input
