@@ -1,8 +1,13 @@
 .main-layout {
     display: grid;
     grid-template-columns: 247px minmax(300px, 1fr);
-    grid-template-rows: 64px 1fr auto;
+    grid-template-rows: rem(64px) 1fr auto;
     height: 100vh;
+
+    @media (max-width:$mobile-size) {
+        grid-template-columns: none;
+        grid-template-rows: rem(64px) 1fr 66px;
+    }
 }
 
 .clr-container {

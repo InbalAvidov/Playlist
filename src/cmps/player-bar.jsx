@@ -102,7 +102,7 @@ export function PlayerBar() {
     }
     // console.log('station.songs:',station.songs)
     // console.log('songs:',songs)
-    return (<div className="media-player" >
+    return (<div className="player" >
         {song && <SoundPlayer onEnd={onEnd} />}
         {player && <div className="information">
             <img src={song.imgUrl} alt="no image" className="song-img" />

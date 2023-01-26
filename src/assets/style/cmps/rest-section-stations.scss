@@ -1,19 +1,15 @@
 .rest-section-stations {
     display: grid;
-    grid-template-columns: repeat(auto-fit, 223px);
-    grid-template-rows: none;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    grid-template-rows: repeat(auto-fit, 1fr);
     width: 100%;
     gap: 24px;
-    // padding-inline-start: $main-app-padding;
 
     a {
         text-decoration: none;
         color: white;
-        // min-width: 100px;
-        // max-width: 223px;
-        // min-height: 256px;
-        // max-height: 314px;
-        height: 314px;
+        height: 100%;
+        max-width: 224px;
     }
 
     .rest-section-station-preview {
@@ -22,20 +18,25 @@
         background-color: darken($song-bgc-home , 4%);
         grid-column: span 1;
         border-radius: 6px;
-        padding: 17px;
+        padding: 16px;
         transition: .5s;
         max-width: fit-content;
         height: 100%;
         width: 100%;
-        // justify-items: flex-end;
 
         &:hover .green-play-pause-btn {
             opacity: 1;
         }
 
         .img-container {
-            border-radius: .5em;
             position: relative;
+            max-height: 190px;
+            max-width: 190px;
+            margin-bottom: 8px;
+        }
+
+        img {
+            border-radius: 4px;
         }
 
         .green-play-pause-btn {
@@ -47,11 +48,20 @@
 
         .description {
             font-size: 14px;
+            min-height: 62px;
+        }
+
+        p {
+            opacity: 0.5;
+            min-height: em(45px);
         }
 
         h3 {
             font-size: 16px;
             padding-top: 10px;
+            padding-bottom: 4px;
+            max-height: 36px;
+            overflow: hidden;
         }
 
         &:hover {

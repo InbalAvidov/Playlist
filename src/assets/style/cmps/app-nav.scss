@@ -4,12 +4,22 @@
     flex-direction: column;
     grid-area: 1 / 1 / 3 / 2;
 
+    @media (max-width:$mobile-size) {
+        grid-area: 3 / 1 / 4 / -1;
+        flex-direction: row;
+        justify-content: center;
+    }
+
     .nav-pages {
         display: flex;
         flex-direction: column;
         list-style: none;
         padding: 0;
         margin-bottom: 26px;
+
+        @media (max-width:$mobile-size) {
+            flex-direction: row;
+        }
     }
 
     .hr-line {
@@ -17,6 +27,10 @@
         margin: auto;
         margin-top: 10px;
         border-bottom: 0.1px solid rgb(78, 74, 74);
+
+        @media (max-width:$mobile-size) {
+            display: none;
+        }
     }
 
     .logo {
@@ -33,20 +47,38 @@
             font-size: 28px;
             margin-left: 10px;
         }
+
+        @media (max-width:$mobile-size) {
+            display: none;
+        }
+    }
+
+    .nav-menu {
+        display: flex;
+        flex-direction: column;
+        font-size: 16px;
+        font-weight: 700;
     }
 
     .user-station-nav {
         flex: 1;
         overflow-y: auto;
+        margin-top: 5px;
 
+        a {
+            transition: none;
+            height: 2rem;
+            margin-top: 8px;
+        }
+
+        span {
+            font-family: montserrat;
+        }
+
+        @media (max-width:$mobile-size) {
+            display: none;
+        }
     }
-}
-
-.nav-menu {
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    font-weight: 700;
 
     .liked-songs-icon {
         align-items: center;
@@ -63,10 +95,6 @@
     span {
         font-family: montserrat-bold;
         font-size: 13px;
-
-        &.user-station {
-            margin-left: 0;
-        }
     }
 
     a {
@@ -117,19 +145,10 @@
             fill: $clr1;
         }
     }
-
 }
 
-.user-station-nav {
-    margin-top: 5px;
-
-    a {
-        transition: none;
-        height: 2rem;
-        margin-top: 8px;
-    }
-
-    span {
-        font-family: montserrat;
+@media (max-width:$mobile-size) {
+    .nav-user-actions {
+        display: none;
     }
 }

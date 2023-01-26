@@ -5,6 +5,10 @@
   position: relative;
   z-index: 10;
 
+  @media (max-width:$mobile-size) {
+    grid-area: 1 / 1 / 2 / -1;
+}
+
   .header-bg {
     left: 0;
     bottom: 0;
@@ -26,7 +30,6 @@
       z-index: 99;
       padding: 0 $main-app-padding ;
       justify-content: space-between;
-      align-items: center;
       margin-bottom: 7px;
     }
 
