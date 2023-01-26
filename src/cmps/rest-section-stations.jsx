@@ -11,12 +11,14 @@ export function RestSectionStations({ stations }) {
         ev.preventDefault()
 
         const firstSong = station.songs[0]
+        const {id , imgUrl , title , channelTitle , addedAt} = firstSong
         const songToStore =
         {
-            _id: firstSong.id,
-            imgUrl: firstSong.imgUrl,
-            title: firstSong.title,
-            artist: firstSong.channelTitle
+            id,
+            imgUrl,
+            title,
+            channelTitle,
+            addedAt
         }
         setSong(songToStore)
         loadCurrStation(station._id)

@@ -1,5 +1,5 @@
 .song-preview {
-    grid-template-columns: 20px 30px 1.5fr 1fr 80px 80px;
+    grid-template-columns: 20px 30px 1.5fr 1fr 60px 60px 60px;
     width: 100%;
     display: grid;
     height: 57px;
@@ -9,7 +9,7 @@
     &.songs-list-header {
         height: 50px;
         margin-bottom: 12px;
-        font-size: 12px;
+        font-size: 14px;
         font-weight: 700;
         color: $fill;
         border-bottom: .5px solid rgb(44, 44, 44);
@@ -39,8 +39,10 @@
         grid-column: 3;
 
         .song-title {
+            flex: 1;
             margin-left: 10px;
         }
+
         .song-name {
             font-size: 14px;
         }
@@ -57,14 +59,32 @@
         grid-column: 4;
     }
 
-    .song-actions {
+    .song-like {
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
         grid-column: 5;
+
+        .un-liked{
+            opacity: 0;
+        }
     }
 
     .song-duration {
+        display: flex;
+        justify-content: center;
         grid-column: 6;
+        align-self: center;
+
+        &.last{
+            grid-column: 7;
+        }
+    }
+
+    .song-delete {
+        display: flex;
+        justify-content: center;
+        grid-column: 7;
+        opacity: 0;
     }
 
     &:hover:not(.songs-list-header) {
@@ -85,9 +105,18 @@
                 fill: $clr2;
             }
         }
+
+        .song-delete,
+        .song-like {
+
+            .un-liked{
+                opacity: 1;
+            }
+        }
     }
 
     .playing {
         color: $brand-color;
     }
+
 }

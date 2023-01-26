@@ -95,31 +95,36 @@
     }
 }
 
-.station-menu {
-    background-color: #373737;
-    border-radius: 5px;
-    position: absolute;
-    top: -70px;
-    right: -80px;
+.station-menu-btn {
+    position: relative;
 
-    &.close {
-        display: none;
-    }
+    .station-menu {
+        background-color: #373737;
+        border-radius: 5px;
+        position: absolute;
+        top: -80px;
+        right: -100px;
 
-    p {
-        border-radius: 10px;
-        background-color: inherit;
-        color: $clr2;
-        width: 120px;
-        padding: 7px 0 7px 10px;
-        border: none;
-        font-size: 14px;
+        &.close {
+            display: none;
+        }
 
-        &:hover {
-            color: $brand-color;
+        p {
+            border-radius: 10px;
+            background-color: inherit;
+            color: $clr2;
+            width: 120px;
+            padding: 7px 0 7px 10px;
+            border: none;
+            font-size: 14px;
+
+            &:hover {
+                color: $brand-color;
+            }
         }
     }
 }
+
 
 .edit-container {
     display: flex;

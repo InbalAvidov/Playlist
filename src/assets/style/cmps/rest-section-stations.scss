@@ -15,7 +15,7 @@
     .rest-section-station-preview {
         display: flex;
         flex-direction: column;
-        background-color: darken($song-bgc-home , 4%);
+        background-color: $song-bgc-home;
         grid-column: span 1;
         border-radius: 6px;
         padding: 16px;

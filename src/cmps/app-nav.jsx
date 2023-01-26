@@ -1,14 +1,11 @@
 import { useEffect, useState } from 'react'
 import { useSelector } from "react-redux"
 import { NavLink } from "react-router-dom"
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faHeart } from '@fortawesome/free-solid-svg-icons'
 
 import { stationService } from "../service/station.service"
 import { loadStations } from "../store/station.actions"
 import { login } from '../store/user.action'
 import logo from "../assets/img/logo-pic-white.png"
-import plus from "../assets/img/plus.png"
 
 export function AppNav() {
     const user = useSelector((storeState => storeState.userModule.user))
