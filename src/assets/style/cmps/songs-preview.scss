@@ -39,6 +39,7 @@
         grid-column: 3;
 
         .song-title {
+            flex: 1;
             margin-left: 10px;
         }
 
@@ -73,6 +74,10 @@
         justify-content: center;
         grid-column: 6;
         align-self: center;
+
+        &.last{
+            grid-column: 7;
+        }
     }
 
     .song-delete {

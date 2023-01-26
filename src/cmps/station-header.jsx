@@ -7,7 +7,6 @@ import Swal from 'sweetalert2'
 import { setSong } from "../store/player.action"
 import { loadCurrStation, setColor } from "../store/station.actions"
 import { updateLikeStation } from '../store/user.action'
-import { useEffect } from "react"
 import { utilService } from "../service/util.service"
 
 
@@ -101,15 +100,24 @@ export function StationHeader({ station, onSelectImg, handleChange, saveChanges,
         <section className="station-header" onClick={onOpenEditor}>
             <div className='clr-container' style={{ backgroundColor: `${isLikedSongsPage ? 'rgb(80, 56, 160)' : color}` }}>
                 <div className={`station-details ${isLikedSongsPage ? 'liked-songs-station' : ''}`}>
-                    {station.imgUrl || station.songs.length > 0 ?
-                        <div className="img-container" onClick={onOpenEditor}
-                            style={{
-                                backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs[0].imgUrl}")`,
-                                backgroundRepeat: "no-repeat",
-                                backgroundPosition: "center",
-                                backgroundSize: "cover",
-                                width: "230px", height: "230px"
-                            }}>
+                    {station.imgUrl  ?
+                    <div className="img-container" onClick={onOpenEditor}
+                        style={{
+                            backgroundImage: `url("${station.imgUrl}")`,
+                            backgroundRepeat: "no-repeat",
+                            backgroundSize: "cover",
+                            width: "230px", height: "230px"
+                        }}>
+                    </div>
+                    :
+                    station.songs.length > 0
+                     ?
+                        <div class="song-img" style={{
+                            width: '230px',
+                            height: '230px',
+                            overflow: 'hidden',
+                        }}>
+                            <img src={station.imgUrl ? station.imgUrl : station.songs[0].imgUrl } style={{width : '390px' , height:'390px' , marginTop:'-80px' , marginLeft:'-100px'}} />
                         </div>
                         :
                         <div onClick={onOpenEditor} className="upload-img-container">

@@ -1,5 +1,8 @@
 .main-search {
-    padding: 0 $main-app-padding;
+
+    &.padding {
+        padding: 0 $main-app-padding;
+    }
 
     .search-container {
         display: flex;
@@ -12,64 +15,115 @@
         margin-bottom: 24px;
         border-radius: 24px;
 
-        .main-input-search {
+        .search-input {
             background-color: $clr2;
             color: $clr1;
+            outline: none;
+            border: none;
+            width: 315px;
+            font-size: 16px;
+            font-weight: 400;
+            padding: 10px 15px;
         }
 
-        .main-input-search::placeholder {
-            color: $fill;
+        .search-input::placeholder {
+            color: #bfbfbf;
         }
 
-        .svg-wrapper {
-            margin-left: 10px;
-        }
-
-        .search-svg {
+        .search-icon {
             position: absolute;
-            top: 25%;
-            transform: translateY(-25%);
-            stroke: #bfbfbf;
+            left: 10px;
+            top: 20%;
         }
-    }
 
-    .search-input::placeholder {
-        color: #bfbfbf;
-    }
-
-    .search-input {
-        background-color: hsla(0, 0%, 100%, .1);
-        color: #bfbfbf;
-        outline: none;
-        border: none;
-        width: 315px;
-        font-size: 16px;
-        font-weight: 400;
-        padding: 10px;
-    }
-
-    .search-results {
-        display: flex;
-        flex-direction: column;
+        .x-icon {
+            position: absolute;
+            right: 10px;
+            top: 20%;
+        }
     }
 }
 
-.genres{
+.search-results {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+
+    >* {
+        grid-column: span 1;
+    }
+}
+
+.top-result {
+    height: fit-content;
+
+    h1 {
+        margin-bottom: 20px;
+    }
+
+    .top-result-preview {
+        border-radius: .5em;
+        padding: 20px;
+        background-color: $song-bgc-home;
+
+        >* {
+            padding: 10px 0;
+        }
+
+        img {
+            width: 120px;
+            height: 120px;
+            border-radius: .5em;
+            object-position: center;
+            object-fit: cover;
+        }
+
+        h4 {
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 1em;
+            opacity: .7;
+        }
+    }
+}
+
+.more-results{
     h1{
+        margin-bottom: 20px;
+    }
+   
+    .results{
+        border-radius: .5em;
+        padding: 16px 5px;
+        background-color: $song-bgc-home;
+    }
+
+    
+}
+
+.search-results.station {
+    display: flex;
+    flex-direction: column;
+}
+
+.genres {
+    h1 {
         font-size: 20px;
         margin-bottom: 25px;
     }
 }
 
-.ganres-section{
+.ganres-section {
     display: grid;
-    grid-template-columns: repeat(4 , 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 25px;
 
-    >*{
+    >* {
         grid-column: span 1;
 
-        img{
+        img {
             border-radius: .5em;
         }
     }

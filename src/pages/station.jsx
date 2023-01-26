@@ -26,7 +26,6 @@ export function Station() {
 
   async function saveEmptyStation() {
     const newStation = await saveStation(stationService.getEmptyStation())
-    console.log('newStation:', newStation)
     setStation(newStation)
   }
 
@@ -49,8 +48,9 @@ export function Station() {
     }
   }
 
-  function handleChange(field, val) {
+  async function handleChange(field, val) {
     setStation(prevStation => ({ ...prevStation, [field]: val }))
+    if (field === 'songs') await updateStation({ ...station, [field]: val })
   }
 
   async function onDeleteSong(songId) {
@@ -74,12 +74,12 @@ export function Station() {
   }
 
   if (!station) return <Loader />
-  else return (
+  if (station) return (
     <main className="station-details">
       {/* <div className='clr-container' style={{ backgroundColor: `${color || '#121212'}` }}> */}
-        <StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} onSaveStation={onSaveStation} />
+      <StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} onSaveStation={onSaveStation} />
       {/* </div> */}
-      <SongList station={station} handleChange={handleChange} onDeleteSong={onDeleteSong} />
+      <SongList station={station} handleChange={handleChange} onDeleteSong={onDeleteSong} saveChanges={saveChanges} />
     </main>
   )
 

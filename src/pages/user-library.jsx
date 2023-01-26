@@ -50,29 +50,50 @@ export function UserLibrary() {
             </div>
           </div>
         </Link>
-
         {
           userStations.map((station, idx) => (
             <Link
               to={`/station/${station._id}`}
               key={station._id}
-              className={idx}>
-              <div className="library-station-preview" >
-                <div className="img-container flex"
+              className={idx}
+            >
+              {station.imgUrl 
+                ?
+                <div className="img-container"
                   style={{
-                    backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs.length > 0 ? station.songs[0].imgUrl : defaultPhoto}")`,
+                    backgroundImage: `url("${station.imgUrl}")`,
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "center",
                     backgroundSize: "cover",
+                    width: "230px", height: "230px"
                   }}>
                 </div>
-                <h2>{station.name}</h2>
-                <p>{station.description ? station.description.slice(0, 15) : `By ${user.username}`}</p>
-              </div>
+                :
+                station.songs.length > 0 ?
+                <div class="song-img" style={{
+                  width: '230px',
+                  height: '230px',
+                  overflow: 'hidden',
+                }}>
+                  <img src={station.songs[0].imgUrl} style={{ width: '390px', height: '390px', marginTop: '-80px', marginLeft: '-100px' }} />
+                </div>
+                :
+                <div className="img-container"
+                  style={{
+                    backgroundImage: `url("${defaultPhoto}")`,
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "center",
+                    backgroundSize: "cover",
+                    width: "230px", height: "230px"
+                  }}>
+                </div>
+              }
+              <h2>{station.name}</h2>
+              <p>{station.description ? station.description.slice(0, 15) : `By ${user.username}`}</p>
             </Link>
           ))
         }
       </div>
-    </main>
+    </main >
   )
 }

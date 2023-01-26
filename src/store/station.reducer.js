@@ -28,25 +28,6 @@ export function stationReducer(state = initialState, action) {
             return { ...state, stations }
         case UPDATE_CURRENT_STATION:
             return { ...state, currStation: action.currStation }
-        case LIKE_SONG:
-            const { stationId, songId, minimalUser } = action
-            stations = state.stations.map(station => {
-                if (station._id !== stationId) return station
-
-                station.songs = station.songs.map(song => {
-                    if (song.id !== songId) return song
-
-                    song.likedByUsers ||= []
-                    const likesIdx = song.likedByUsers.findIndex(user => user._id === minimalUser._id)
-                    if (likesIdx > -1) {
-                        song.likedByUsers.splice(likesIdx, 1)
-                    } else {
-                        song.likedByUsers.push(minimalUser)
-                    }
-                    return { ...song }
-                })
-                return { ...station }
-            })
         case SET_COLOR:
             return { ...state, color: action.color }
         default:
