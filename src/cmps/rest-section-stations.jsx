@@ -27,7 +27,7 @@ export function RestSectionStations({ stations }) {
         const channelTitles = station.songs.map(song => song.channelTitle);
         const uniqueTitles = [...new Set(channelTitles)];
         let combinedTitle = uniqueTitles.slice(0, 2).join(' • ');
-        if (combinedTitle.length > 27) combinedTitle = combinedTitle.slice(0, 27) + "..";
+        if (combinedTitle.length > 20) combinedTitle = combinedTitle.slice(0, 20) + "..";
         return combinedTitle;
     }
 
