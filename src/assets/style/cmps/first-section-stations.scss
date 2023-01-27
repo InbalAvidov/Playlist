@@ -4,22 +4,27 @@
     width: 100%;
     gap: 16px;
 
-    @media (max-width:$mobile-size) {
+    @media (max-width:930px) {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
 
-    h1{
+    h1 {
         margin-top: 0;
+    }
+
+    img {
+        width: 80px;
+        height: 80px;
     }
 
     .first-section-station-preview {
         grid-column: span 1;
         display: flex;
         align-items: center;
-        background-color: lighten($song-bgc-home ,7%);
+        background-color: lighten($song-bgc-home , 7%);
         border-radius: 4px;
         transition: .5s;
-        
+
         >* {
             border-bottom-left-radius: 4px;
             border-top-left-radius: 4px;
@@ -47,5 +52,18 @@
             bottom: 15px;
             right: 10px;
         }
+
+    }
+    @media (max-width: $main-mobile-padding) {
+        .first-section-station-preview p {
+            font-size: 10px;
+        }
+
+        img {
+            width: 50px;
+            height: 50px;
+        }
+
+
     }
 }

@@ -18,7 +18,7 @@ export function SoundPlayer({onEnd}) {
     event.target.playVideo()
   }
 
-  return <div>
+  return <div hidden>
     <YouTube videoId={song.id} opts={opts} onReady={onReady} onEnd={onEnd}/>
   </div>
 }

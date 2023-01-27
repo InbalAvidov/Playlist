@@ -17,6 +17,7 @@
         display: flex;
         // width: 250px;
         align-items: center;
+        grid-column: 2;
 
         >* {
             font-family: montserrat, Arial;
@@ -95,7 +96,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: em(32px);
+        width: 32px;
         height: 32px;
         border-radius: 500px;
 
@@ -197,17 +198,31 @@
     }
 
     @media (max-width:$mobile-size) {
+        grid-template-columns: $main-mobile-padding 1fr 1fr $main-mobile-padding;
         position: fixed;
-        display: flex;
+        justify-content: space-between;
         height: 66px;
         bottom: 66px;
+        padding: 0;
+        justify-content: flex-end;
 
         .player-progress-container {
             display: none;
         }
 
-        .popo {
-            visibility: visible;
+        .information span{
+            margin: 2px 4px 0 0;
+        }
+
+        h4 {
+            max-width: 65px;
+            max-height: 38px;
+            overflow: hidden;
+            font-size: 10px;
+        }
+
+        h5{
+            font-size: 9px;
         }
     }
 }

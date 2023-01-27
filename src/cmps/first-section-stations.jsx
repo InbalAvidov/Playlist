@@ -45,7 +45,7 @@ export function FirstSectionStations({ stations }) {
                         onMouseMove={() => onSetBGColor(station.imgUrl)}
                         onMouseLeave={() => onSetBGColor(stations[0].imgUrl)}
                     >
-                        <div
+                        {/* <div
                             style={{
                                 backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs ? station.songs[0].imgUrl : defaultPhoto}")`,
                                 backgroundRepeat: "no-repeat",
@@ -53,7 +53,8 @@ export function FirstSectionStations({ stations }) {
                                 backgroundSize: "cover",
                                 width: '80px', height: '80px'
                             }}>
-                        </div>
+                        </div> */}
+                        <img src= {station.imgUrl ? station.imgUrl : station.songs ? station.songs[0].imgUrl : defaultPhoto} alt="" />
                         <p>{station.name}</p>
                         <button className='green-play-pause-btn' onClick={(event) => onPlayStation(event, station)}>
                             <svg role="img" height="28" width="28" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon" className="play-pause Svg-sc-ytk21e-0 uPxdw"><path d="M7.05 3.606l13.49 7.788a.7.7 0 010 1.212L7.05 20.394A.7.7 0 016 19.788V4.212a.7.7 0 011.05-.606z"></path></svg>

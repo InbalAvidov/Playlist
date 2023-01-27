@@ -1,8 +1,15 @@
 .songs-add {
     padding-inline-start: $main-app-padding;
+
+    @media (max-width: $mobile-size) {
+        padding-inline-start: 0;
+    }
 }
 
 .songs-list {
-    // margin-bottom: 20px;
     padding-inline-start: $main-app-padding;
+
+    @media (max-width: $mobile-size) {
+        padding-inline-start: 0;
+    }
 }
