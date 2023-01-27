@@ -50,6 +50,7 @@ export function SongPreview({ song, idx, station, onDeleteSong, isLikedSongsPage
         <Draggable draggableId={isSearchPage ? song._id : song.id} index={idx} key={song.id}>
             {(provided) => (
                 <div className="song-preview"
+                    onClick={() => onSetSong(song)}
                     ref={provided.innerRef}
                     {...provided.draggableProps}
                     {...provided.dragHandleProps}
@@ -85,10 +86,9 @@ export function SongPreview({ song, idx, station, onDeleteSong, isLikedSongsPage
                     </span>
                     }
                     <p className={isSearchPage ? "song-duration last" : "song-duration"}>{duration}</p>
-                    {user && station && station.createdBy._id === user._id && isLikedSongsPage &&
-                        <span className="song-delete" onClick={deleteSong}>
-                            <FontAwesomeIcon icon={faTrash} />
-                        </span>}
+                    <span className="song-delete" onClick={deleteSong}>
+                        <FontAwesomeIcon icon={faTrash} />
+                    </span>
                 </div>
             )
             }

@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState } from "react"
+import { useSelector } from "react-redux"
 
 import { Loader } from "../cmps/loader"
 import { SongList } from "../cmps/song-list"
@@ -11,7 +12,8 @@ import { uploadService } from "../service/upload.service"
 import { removeStation, setColor, updateStation } from "../store/station.actions"
 import { saveStation } from "../store/station.actions";
 import { utilService } from "../service/util.service"
-import { useSelector } from "react-redux"
+import defaultPhoto from '../assets/img/default-photo.png'
+
 
 export function Station() {
   const [station, setStation] = useState(null)
@@ -26,6 +28,8 @@ export function Station() {
 
   async function saveEmptyStation() {
     const newStation = await saveStation(stationService.getEmptyStation())
+    const clr = await utilService.getMainColor(defaultPhoto)
+    setColor(clr)
     setStation(newStation)
   }
 
@@ -39,18 +43,15 @@ export function Station() {
   async function onSelectImg(ev) {
     try {
       const imgUrl = await uploadService.uploadImg(ev)
-      station.imgUrl = imgUrl
-      const color = await utilService.getMainColor(imgUrl)
-      setColor(color)
       return imgUrl
     } catch (err) {
       console.log('Cant set image', err)
     }
   }
 
-  async function handleChange(field, val) {
-    setStation(prevStation => ({ ...prevStation, [field]: val }))
-    if (field === 'songs') await updateStation({ ...station, [field]: val })
+  async function addSong(val) {
+    console.log('val:',val)
+    await updateStation({ ...station, 'songs': val })
   }
 
   async function onDeleteSong(songId) {
@@ -66,6 +67,8 @@ export function Station() {
 
   async function saveChanges() {
     await updateStation(station)
+    const color = await utilService.getMainColor(station.imgUrl)
+    setColor(color)
   }
 
   async function deleteStation(stationId) {
@@ -77,9 +80,9 @@ export function Station() {
   if (station) return (
     <main className="station-details">
       {/* <div className='clr-container' style={{ backgroundColor: `${color || '#121212'}` }}> */}
-      <StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} handleChange={handleChange} onSaveStation={onSaveStation} />
+      <StationHeader station={station} deleteStation={deleteStation} saveChanges={saveChanges} onSelectImg={onSelectImg} onSaveStation={onSaveStation} />
       {/* </div> */}
-      <SongList station={station} handleChange={handleChange} onDeleteSong={onDeleteSong} saveChanges={saveChanges} />
+      <SongList station={station} addSong={addSong} onDeleteSong={onDeleteSong} saveChanges={saveChanges} />
     </main>
   )
 

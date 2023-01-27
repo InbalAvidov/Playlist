@@ -10,6 +10,7 @@ import { setSong } from "../store/player.action";
 import { Loader } from "../cmps/loader";
 import { stationService } from "../service/station.service";
 import { SongPreview } from "../cmps/song-preview";
+import { SongList } from "../cmps/song-list";
 
 export function SearchSongs({ onAddSong, isForStation }) {
     const [stations, setStations] = useState(null)
@@ -82,7 +83,13 @@ export function SearchSongs({ onAddSong, isForStation }) {
                         <div className="search-results station">
                             {songsBySearch.map(song => <div className="search-result" key={song.id}>
                                 {isForStation && <button className="add-song-btn" onClick={() => addSong(song)}>+</button>}
-                                <img src={song.imgUrl} onClick={() => onSetSong(song)} />
+                                <div  onClick={() => onSetSong(song)} class="song-img" style={{
+                                    width: '45px',
+                                    height: '45px',
+                                    overflow: 'hidden',
+                                }}>
+                                    <img src={song.imgUrl} style={{ width: '100px', height: '65px', marginTop: '-10px', marginLeft: '-25px' }} />
+                                </div>
                                 <div className="song-details">
                                     <h4>{song.title} </h4>
                                     <p>{song.channelTitle}</p>
@@ -92,10 +99,17 @@ export function SearchSongs({ onAddSong, isForStation }) {
                         </div>
                         :
                         <div className="search-results">
+                            {/* <SongList station={songsBySearch} /> */}
                             <div className="top-result">
                                 <h1>Top result</h1>
                                 <div className="top-result-preview">
-                                    <img src={songsBySearch[0].imgUrl} />
+                                    <div class="song-img" style={{
+                                        width: '120px',
+                                        height: '120px',
+                                        overflow: 'hidden',
+                                    }}>
+                                        <img src={songsBySearch[0].imgUrl} style={{ width: '260px', height: '220px', marginTop: '-60px', marginLeft: '-100px' }} />
+                                    </div>
                                     <h4>{songsBySearch[0].title} </h4>
                                     <p>{songsBySearch[0].channelTitle}</p>
                                 </div>
@@ -110,7 +124,7 @@ export function SearchSongs({ onAddSong, isForStation }) {
                                                     ref={provided.innerRef}
                                                     {...provided.droppableProps}
                                                 >
-                                                    {songsBySearch.slice(0, 4).map((song, idx) => (
+                                                    {songsBySearch.slice(0, 10).map((song, idx) => (
                                                         <SongPreview song={song} idx={idx} isSearchPage={true} />
                                                     ))}
                                                     {provided.placeholder}
@@ -126,7 +140,7 @@ export function SearchSongs({ onAddSong, isForStation }) {
                     <div className="genres">
                         <h1>Browse all</h1>
                         <div className="ganres-section">
-                            {stations.map(station => <NavLink to={`/station/${station._id}`}>
+                            {stations.map(station => <NavLink to={`/genre/${station.name}`}>
                                 <img key={station._id} src={station.imgUrl} />
                             </NavLink>
                             )}

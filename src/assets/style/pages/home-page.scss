@@ -17,12 +17,32 @@
             font-size: 28px;
             font-weight: 900;
             margin-bottom: 22px;
-            // margin-top: 36px;
         }
 
         h2 {
             font-size: 24px;
             margin: 30px 0;
+        }
+    }
+
+}
+
+.title-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    p {
+        font-size: 12px;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        font-weight: 700;
+        opacity: .8;
+        margin-top: 10px;
+        cursor: pointer;
+
+        &:hover{
+            text-decoration: underline;
         }
     }
 

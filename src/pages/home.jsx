@@ -4,6 +4,7 @@ import { Loader } from "../cmps/loader"
 import { FirstSectionStations } from "../cmps/first-section-stations"
 import { RestSectionStations } from "../cmps/rest-section-stations"
 import { stationService } from "../service/station.service"
+import { NavLink } from "react-router-dom"
 
 export function Home() {
     const [stations, setStations] = useState(null)
@@ -24,13 +25,33 @@ export function Home() {
     return (<main className="main-home">
         {stations && <div className="home-stations">
             <FirstSectionStations stations={stations.slice(0, 6)} />
-            <h2>Made For You</h2>
+            <div className="title-section">
+                <h2>Made For You</h2>
+                <NavLink to='show/Made For you'>
+                <p>Show all</p>
+                </NavLink>
+            </div>
             <RestSectionStations stations={stations.slice(6, 10)} />
-            <h2>Chill</h2>
+            <div className="title-section">
+                <h2>Chill</h2>
+                <NavLink to='show/Chill'>
+                <p>Show all</p>
+                </NavLink>
+            </div>
             <RestSectionStations stations={stations.slice(10, 14)} />
-            <h2>Recently played</h2>
+            <div className="title-section">
+                <h2>Recently played</h2>
+                <NavLink to='show/Recently played'>
+                <p>Show all</p>
+                </NavLink>
+            </div>
             <RestSectionStations stations={stations.slice(14, 18)} />
-            <h2>More of what you like</h2>
+            <div className="title-section">
+                <h2>More of what you like</h2>
+                <NavLink to='show/More of what you like'>
+                <p>Show all</p>
+                </NavLink>
+            </div>
             <RestSectionStations stations={stations.slice(18, 22)} />
         </div>
         }

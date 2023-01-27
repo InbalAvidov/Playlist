@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { DragDropContext, Droppable } from 'react-beautiful-dnd'
 
 import { SongPreview } from "./song-preview";
@@ -6,14 +6,15 @@ import { SearchSongs } from '../pages/search-songs';
 import { updateStation } from '../store/station.actions';
 import { useSelector } from 'react-redux';
 
-export function SongList({ station, handleChange, onDeleteSong, isLikedSongsPage }) {
+export function SongList({ station, addSong, onDeleteSong, isLikedSongsPage }) {
     const color = useSelector(storeState => storeState.stationModule.color)
     const [stationSongs, setStationSongs] = useState(station.songs)
     const [items, setItems] = useState(station.songs)
 
+
     function onAddSong(song) {
         setStationSongs(prevSongs => [...prevSongs, song])
-        handleChange('songs', [...stationSongs, song])
+        addSong([...stationSongs, song])
     }
 
     async function onDragEnd(result) {
@@ -27,9 +28,11 @@ export function SongList({ station, handleChange, onDeleteSong, isLikedSongsPage
         const updetedStation = await updateStation(station)
         setItems(updetedStation.songs)
     }
+    console.log('stationSongs:',stationSongs)
+    console.log('station:',station)
     return (
         <main className='main-songs-list'>
-            {station.songs.length > 0 &&
+            {stationSongs.length > 0 &&
                 <section className="songs-list">
                     <div className='liked-song-clr-container' style={{ backgroundColor: `${color}` }}></div>
                     <div className="song-preview songs-list-header">
@@ -49,7 +52,7 @@ export function SongList({ station, handleChange, onDeleteSong, isLikedSongsPage
                                     ref={provided.innerRef}
                                     {...provided.droppableProps}
                                 >
-                                    {station.songs.map((song, idx) => (
+                                    {stationSongs.map((song, idx) => (
                                         <SongPreview song={song} idx={idx} onDeleteSong={onDeleteSong} station={station} isLikedSongsPage={isLikedSongsPage} />
                                     ))}
                                     {provided.placeholder}
@@ -62,7 +65,7 @@ export function SongList({ station, handleChange, onDeleteSong, isLikedSongsPage
             }
             <div className='songs-add'>
                 <div className='liked-song-clr-container' style={{ backgroundColor: `${color}` }}></div>
-                {!station.songs.length > 0 && <h2>Let's find something for your playlist</h2>}
+                {!stationSongs.length > 0 && <h2>Let's find something for your playlist</h2>}
                 <SearchSongs onAddSong={onAddSong} isForStation={true} />
             </div>
 

@@ -2,7 +2,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     width: 100%;
-    gap: 16px;
+    gap: 25px;
 
     @media (max-width:$mobile-size) {
         grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
@@ -46,6 +46,10 @@
             position: relative;
             bottom: 15px;
             right: 10px;
+
+            &.pause{
+                opacity: 1;
+            }
         }
     }
 }
