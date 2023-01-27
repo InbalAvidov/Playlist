@@ -20,7 +20,6 @@ async function getYoutubeReasults(val) {
                 title: _cleanTitle(ytVideo.snippet.title),
                 channelTitle: ytVideo.snippet.channelTitle,
                 imgUrl: ytVideo.snippet.thumbnails.high.url,
-                url: `https://www.youtube.com/embed?v=${ytVideo.id.videoId}`,
                 addedBy: {
                     "_id": "u101",
                     "fullname": "Puki Ben David",

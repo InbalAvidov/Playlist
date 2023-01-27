@@ -1,6 +1,6 @@
 import { userService } from '../service/user.service.js'
 import { store } from '../store/store.js'
-import { SET_USER } from '../store/user.reducer.js'
+import { SET_USER, SET_USERS } from '../store/user.reducer.js'
 
 export async function login(credentials) {
     try {
@@ -31,6 +31,16 @@ export async function logout() {
         store.dispatch({ type: SET_USER, user: null })
     }catch(err){
         console.error('Cannot logout:', err)
+        throw err
+    }
+}
+
+export async function loadUsers() {
+    try{
+        const users = await userService.getUsers()
+        store.dispatch({ type: SET_USERS, users })
+    }catch(err){
+        console.error('Cannot set users:', err)
         throw err
     }
 }

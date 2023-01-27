@@ -21,7 +21,7 @@ async function query(filterBy = getEmptyFilter()) {
   try {
     let stations = await storageService.query(STATION_KEY)
     if (filterBy.userId) {
-      stations = stations.filter(station => station.createdBy._id === filterBy.userId)
+      stations = stations.filter(station => station.createdBy._id === filterBy.userId || station.shareWith?.includes(filterBy.userId))
     }
     if (filterBy.page === 'home') {
       stations = stations.filter(station => station.tags.includes('home'))

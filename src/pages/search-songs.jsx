@@ -10,22 +10,33 @@ import { setSong } from "../store/player.action";
 import { Loader } from "../cmps/loader";
 import { stationService } from "../service/station.service";
 import { SongPreview } from "../cmps/song-preview";
-import { SongList } from "../cmps/song-list";
+import { loadStations } from "../store/station.actions";
+import { useSelector } from "react-redux";
 
 export function SearchSongs({ onAddSong, isForStation }) {
-    const [stations, setStations] = useState(null)
+    const stations = useSelector((storeState) => storeState.stationModule.stations)
+    const [searchStations, setSearchStations] = useState(null)
     const [search, setSearch] = useState('')
     const [songsBySearch, setSongsBySearch] = useState(null)
     const searchSongs = useRef(utilService.debounce(getSearchReasults, 700))
 
     useEffect(() => {
         if (isForStation) return
+        loadStations()
         loadSearchStations()
     }, [])
 
+    useEffect(() => {
+        if(!stations) return
+        loadSearchStations()
+    }, [stations])
+
+
     async function loadSearchStations() {
-        const searchStations = await stationService.query({ page: 'search' })
-        setStations(searchStations)
+        console.log('stations:',stations)
+        const searchStations = stations.filter(station => station.tags.includes('Search'))
+        console.log('searchStations:',searchStations)
+        setSearchStations(searchStations)
     }
 
     function handleChange({ target }) {
@@ -63,7 +74,7 @@ export function SearchSongs({ onAddSong, isForStation }) {
         setSong(songToStore)
     }
 
-    if (!stations && !isForStation) return <Loader />
+    if (!searchStations && !isForStation) return <Loader />
     return (
         <main className={`main-search ${isForStation ? "" : "padding"}`} >
             <div className={`search-container ${isForStation ? "station" : "main-page"}`}>
@@ -87,7 +98,7 @@ export function SearchSongs({ onAddSong, isForStation }) {
                                     height: '45px',
                                     overflow: 'hidden',
                                 }}>
-                                    <img src={song.imgUrl} style={{ width: '100px', height: '65px', marginTop: '-10px', marginLeft: '-25px' }}/>
+                                    <img src={song.imgUrl} style={{ width: '100px', height: '65px', marginTop: '-10px', marginLeft: '-25px' }} />
                                     <svg fill="white" role="img" height="10" width="10" aria-hidden="true" viewBox="0 0 16 16" data-encore-id="icon" className="play-pause Svg-sc-ytk21e-0 uPxdw"><path d="M2.7 1a.7.7 0 00-.7.7v12.6a.7.7 0 00.7.7h2.6a.7.7 0 00.7-.7V1.7a.7.7 0 00-.7-.7H2.7zm8 0a.7.7 0 00-.7.7v12.6a.7.7 0 00.7.7h2.6a.7.7 0 00.7-.7V1.7a.7.7 0 00-.7-.7h-2.6z"></path></svg>
                                 </div>
                                 <div className="song-details">
@@ -141,7 +152,7 @@ export function SearchSongs({ onAddSong, isForStation }) {
                     <div className="genres">
                         <h1>Browse all</h1>
                         <div className="ganres-section">
-                            {stations.map(station => <NavLink to={`/genre/${station.name}`}>
+                            {searchStations.map(station => <NavLink to={`/genre/${station.name}`}>
                                 <img key={station._id} src={station.imgUrl} />
                             </NavLink>
                             )}

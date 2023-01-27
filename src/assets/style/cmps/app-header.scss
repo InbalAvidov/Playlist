@@ -72,7 +72,7 @@
     align-items: flex-start;
     z-index: 1;
 
-    a {
+    a:not(.focus) {
       color: $clr2;
       text-decoration: none;
     }

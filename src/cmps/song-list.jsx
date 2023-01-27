@@ -60,11 +60,11 @@ export function SongList({ station, addSong, onDeleteSong, isLikedSongsPage }) {
                 </section>
             }
             <div className="hr-line"></div>
-            <div className='song-add'>
+            {station.name !== 'Liked Songs' && <div className='song-add'>
                 <div className='' style={{ backgroundColor: `${color}` }}></div>
                 <h2>Let's find something for your playlist</h2>
                 <SearchSongs onAddSong={onAddSong} isForStation={true} />
-            </div>
+            </div>}
 
         </main>
     )
