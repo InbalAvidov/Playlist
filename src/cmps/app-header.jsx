@@ -6,7 +6,7 @@ import { faCaretDown } from '@fortawesome/free-solid-svg-icons'
 
 import { logout } from '../store/user.action.js'
 
-export function AppHeader() {
+export function AppHeader({ opacity }) {
   const navigate = useNavigate()
   const user = useSelector((storeState => storeState.userModule.user))
   const color = useSelector((storeState => storeState.stationModule.color))
@@ -19,11 +19,14 @@ export function AppHeader() {
 
   function onToggleMenu() {
     setIsMenuOpen(!isMenuOpen)
+    const innerScroll = document.querySelector('main-app')
+    console.log(innerScroll)
+    // console.log(innerScroll.getBoundingClientRect().top)
   }
 
   return (
     <section className="app-header" >
-      <div className='header-bg' style={{ backgroundColor: `${color}` }}></div>
+      <div className='header-bg' style={{ backgroundColor: `${color}`, opacity: `${opacity}` }}></div>
       <div className="header-details flex">
         <nav className="flex">
           <div className='nav-btn'>

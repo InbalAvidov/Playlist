@@ -15,17 +15,25 @@ import { SongList } from './cmps/song-list'
 import { Queue } from './pages/queue'
 import { Genre } from './pages/genre'
 import { ShowAll } from './pages/show-all'
+import { useState } from 'react'
 
 
 export function App() {
+    const [opacity, setOpacity] = useState(0)
+
+    function onScroll({ target }) {
+        const opacity = (target.scrollTop-80) / 100
+        if (opacity > 1.1) return
+        setOpacity(opacity)
+    }
 
     return (
         <Provider store={store}>
             <Router basename="/">
                 <section className="main-layout app">
                     <AppNav />
-                    <AppHeader />
-                    <main className='main-app'>
+                    <AppHeader opacity={opacity} />
+                    <main className='main-app' onScroll={onScroll}>
                         <Routes>
                             <Route element={<Home />} path="/" />
                             <Route element={<Station />} path="/station/:stationId" />

@@ -98,9 +98,8 @@
     }
 
     @media (max-width: $mobile-size) {
-        padding: 10px 0 10px 0;
+        padding: 10px 0 9px 0;
         margin-left: -10px;
-
     }
 }
 
@@ -275,13 +274,18 @@
     
     .station-header .info-container {
         padding: 10px;
+        align-items: center;
 
         h1 {
-            display: none;
+            font-size: 20px;
         }
 
         .station {
             display: none;
+        }
+
+        span{
+            margin: 0;
         }
     }
 

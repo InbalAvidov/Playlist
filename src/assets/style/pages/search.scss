@@ -1,7 +1,9 @@
 .main-search {
-
     &.padding {
         padding: 0 $main-app-padding;
+        @media (max-width:$mobile-size) {
+            padding: 60px 30px;
+        }
     }
 }
 
@@ -34,7 +36,7 @@
         color: inherit;
         outline: none;
         border: none;
-        width: 315px;
+        width: 83%;
         padding: 10px 15px;
         font-weight: 400;
         font-size: 1.3em;
