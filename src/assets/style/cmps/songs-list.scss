@@ -1,8 +1,16 @@
-.songs-add {
-    padding-inline-start: $main-app-padding;
+.main-song-list {
+    .hr-line {
+        width: 95%;
+    }
 }
 
-.songs-list {
+.song-add {
+    padding-inline-start: $main-app-padding;
+    padding-top: $main-app-padding;
+    width: 100%;
+}
+
+.song-list {
     // margin-bottom: 20px;
     padding-inline-start: $main-app-padding;
 }

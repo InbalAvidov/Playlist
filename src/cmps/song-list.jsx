@@ -31,9 +31,9 @@ export function SongList({ station, addSong, onDeleteSong, isLikedSongsPage }) {
     console.log('stationSongs:',stationSongs)
     console.log('station:',station)
     return (
-        <main className='main-songs-list'>
+        <main className='main-song-list'>
             {stationSongs.length > 0 &&
-                <section className="songs-list">
+                <section className="song-list">
                     <div className='liked-song-clr-container' style={{ backgroundColor: `${color}` }}></div>
                     <div className="song-preview songs-list-header">
                         <p className="song-number">#</p>
@@ -63,9 +63,10 @@ export function SongList({ station, addSong, onDeleteSong, isLikedSongsPage }) {
 
                 </section>
             }
-            <div className='songs-add'>
-                <div className='liked-song-clr-container' style={{ backgroundColor: `${color}` }}></div>
-                {!stationSongs.length > 0 && <h2>Let's find something for your playlist</h2>}
+            <div className="hr-line"></div>
+            <div className='song-add'>
+                <div className='' style={{ backgroundColor: `${color}` }}></div>
+                <h2>Let's find something for your playlist</h2>
                 <SearchSongs onAddSong={onAddSong} isForStation={true} />
             </div>
 
