@@ -6,6 +6,7 @@ import { loadStations } from "../store/station.actions"
 import { Loader } from "../cmps/loader"
 import { stationService } from "../service/station.service"
 import defaultPhoto from '../assets/img/default-photo.png'
+import { RestSectionStations } from "../cmps/rest-section-stations"
 
 
 export function UserLibrary() {
@@ -50,7 +51,8 @@ export function UserLibrary() {
             </div>
           </div>
         </Link>
-        {
+        <RestSectionStations stations={userStations} />
+        {/* {
           userStations.map((station, idx) => (
             <Link
               to={`/station/${station._id}`}
@@ -71,8 +73,8 @@ export function UserLibrary() {
                 :
                 station.songs.length > 0 ?
                 <div class="song-img" style={{
-                  width: '230px',
-                  height: '230px',
+                  width: '180px',
+                  height: '180px',
                   overflow: 'hidden',
                 }}>
                   <img src={station.songs[0].imgUrl} style={{ width: '390px', height: '390px', marginTop: '-80px', marginLeft: '-100px' }} />
@@ -92,7 +94,7 @@ export function UserLibrary() {
               <p>{station.description ? station.description.slice(0, 15) : `By ${user.username}`}</p>
             </Link>
           ))
-        }
+        } */}
       </div>
     </main >
   )

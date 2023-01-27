@@ -126,10 +126,10 @@
         border-radius: .4em;
         transition: .2s background-color;
         height: 65px;
-        padding: 10px 0;
+        padding: 10px;
         width: 100%;
         display: grid;
-        grid-template-columns: 55px 1fr 60px 40px;
+        grid-template-columns: 45px 1fr 80px ;
 
         &:hover {
             background-color: rgba(58, 58, 58, 0.664);
@@ -202,7 +202,7 @@
 }
 
 @media (max-width: $mobile-size) {
-    .main-search .search-container {
+    .main-search .search-container:not(.station) {
         margin: 20px $main-mobile-padding;
     }
 }

@@ -268,35 +268,6 @@
     opacity: 0.25;
 }
 
-.modal-editor {
-    width: 500px;
-    height: 300px;
-    position: absolute;
-    top: 100px;
-    left: 35%;
-    background-color: #282828;
-    z-index: 3000;
-    display: flex;
-    flex-direction: column;
-
-    h1 {
-        font-size: 22px;
-        padding: 10px 0 10px 20px;
-    }
-
-    .input-img-container {
-        @include station-img-container;
-        position: relative;
-
-        input {
-            opacity: 0;
-            position: absolute;
-            height: 100%;
-            width: 100%;
-        }
-    }
-}
-
 @media (max-width: $mobile-size) {
     .station-header .station-details {
         align-items: center;
@@ -313,6 +284,30 @@
 
         .station {
             display: none;
+        }
+    }
+
+    .modal-editor{
+        width: 100vw;
+        top: 0;
+        left:0;
+
+        .edit-container{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            >*{
+                margin-bottom: 5vh;
+            }
+
+            .title-desc{
+                margin-left: 0;
+            }
+
+            .save-btn{
+               right: 40vw;
+            }
         }
     }
 }

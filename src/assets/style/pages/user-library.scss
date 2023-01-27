@@ -21,16 +21,16 @@
     height: 314px;
   }
 
-  .liked-song-playlist {
-    grid-area: 1/1/2/3;
-  }
-
-  a {
-    text-decoration: none;
-    color: white;
-  }
-
 }
+.liked-song-playlist {
+  grid-area: 1/1/2/3;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
 
 .img-liked-container {
   flex-direction: column;
@@ -52,44 +52,44 @@
   }
 }
 
-.library-station-preview {
+// .library-station-preview {
 
-  background-color: darken($song-bgc-home , 4%);
-  border-radius: 5px;
-  padding: 15px;
-  transition: .5s;
-  height: 100%;
+//   background-color: darken($song-bgc-home , 4%);
+//   border-radius: 5px;
+//   padding: 15px;
+//   transition: .5s;
+//   height: 100%;
 
-  .img-container {
-    border-radius: 8px;
-    display: flex;
-    justify-content: center;
-    background-repeat: repeat;
-    background-position: center;
-    background-size: auto;
-    width: 190px;
-    height: 190px;
-    margin: auto;
-    margin-bottom: 1rem;
-  }
+//   .img-container {
+//     border-radius: 8px;
+//     display: flex;
+//     justify-content: center;
+//     background-repeat: repeat;
+//     background-position: center;
+//     background-size: auto;
+//     width: 190px;
+//     height: 190px;
+//     margin: auto;
+//     margin-bottom: 1rem;
+//   }
 
-  h2 {
-    font-size: 1.2rem;
-    font-weight: 400;
-    color: $clr2;
-    text-align: left;
-    padding-top: 10px;
-    margin-left: 4px;
-    margin-bottom: 6px;
-  }
+//   h2 {
+//     font-size: 1.2rem;
+//     font-weight: 400;
+//     color: $clr2;
+//     text-align: left;
+//     padding-top: 10px;
+//     margin-left: 4px;
+//     margin-bottom: 6px;
+//   }
 
-  p {
-    margin-left: 4px;
-    opacity: 0.7;
-  }
+//   p {
+//     margin-left: 4px;
+//     opacity: 0.7;
+//   }
 
-  &:hover {
-    background-color: lighten($song-bgc-home, 2%);
-  }
+//   &:hover {
+//     background-color: lighten($song-bgc-home, 2%);
+//   }
 
-}
+// }

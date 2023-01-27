@@ -49,9 +49,9 @@ export function Station() {
     }
   }
 
-  async function addSong(val) {
-    console.log('val:',val)
-    await updateStation({ ...station, 'songs': val })
+  async function addSong(songs) {
+    const stationToUpdate = await updateStation({ ...station, 'songs': songs })
+    setStation(stationToUpdate)
   }
 
   async function onDeleteSong(songId) {

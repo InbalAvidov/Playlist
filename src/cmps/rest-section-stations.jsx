@@ -46,6 +46,7 @@ export function RestSectionStations({ stations }) {
         <section
             className="rest-section-stations">
             {stations.map(station => <Link to={`/station/${station._id}`} key={station._id}>
+                <CardStationPreview />
                 <div className="rest-section-station-preview" >
                     <div className="img-container" >
                         <img src={station.imgUrl ? station.imgUrl : station.songs.length > 0 ? station.songs[0].imgUrl : defaultPhoto} alt="" />
