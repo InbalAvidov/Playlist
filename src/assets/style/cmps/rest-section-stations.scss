@@ -19,12 +19,18 @@
         grid-column: span 1;
         border-radius: 6px;
         padding: 16px;
-        transition: .5s;
+        transition: 3s;
         max-width: fit-content;
         height: 100%;
         width: 100%;
 
+        .green-play-pause-btn{
+            opacity: 0;
+            transition: 3s opacity ease;
+        }
+        
         &:hover .green-play-pause-btn {
+            transform: translateY(0%);
             opacity: 1;
         }
 

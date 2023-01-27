@@ -101,38 +101,43 @@
         opacity: 0;
     }
 
-    &:hover:not(.songs-list-header) {
-        background-color: rgba(58, 58, 58, 0.664);
 
-        .song-number {
-            display: none;
-        }
-
-        .song-play {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            left: 12px;
-
-            path {
-                fill: $clr2;
-            }
-        }
-
-        .song-delete,
-        .song-like {
-
-            .un-liked {
-                opacity: 1;
-            }
-        }
-    }
 
     .playing {
         color: $brand-color;
     }
 
+}
+
+.song-preview:hover:not(.songs-list-header) {
+    background-color: rgba(58, 58, 58, 0.664);
+
+    .song-number {
+        display: none;
+    }
+
+    .song-play {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        left: 12px;
+
+        path {
+            fill: $clr2;
+        }
+    }
+
+    .song-delete,
+    .song-like {
+
+        .un-liked {
+            opacity: 1;
+        }
+    }
+    @media (max-width: $mobile-size) {
+        display: none;
+    }
 }
 
 @media (max-width: $mobile-size) {
