@@ -1,4 +1,9 @@
 .main-song-list {
+    padding-inline-start: $main-app-padding;
+
+    @media (max-width: $mobile-size) {
+        padding-inline-start: 0;
+    }
     .hr-line {
         width: 95%;
     }
@@ -8,9 +13,8 @@
     padding-inline-start: $main-app-padding;
     padding-top: $main-app-padding;
     width: 100%;
-}
 
-.song-list {
-    // margin-bottom: 20px;
-    padding-inline-start: $main-app-padding;
+    @media (max-width: $mobile-size) {
+        padding-inline-start: 0;
+    }
 }

@@ -33,7 +33,9 @@
             max-height: 190px;
             max-width: 190px;
             margin-bottom: 8px;
+            min-width: 110px;
         }
+
 
         img {
             border-radius: 4px;
@@ -73,7 +75,13 @@
         }
     }
 
-    // @media (max-width: 1020px) {
-    //     grid-template-columns: repeat(3, 1fr);
-    // }
+    @media (max-width: $mobile-size) {
+        grid-auto-flow: column;
+        overflow: scroll;
+
+    }
 }
+
+.rest-section-stations::-webkit-scrollbar {
+    display: none;
+  }

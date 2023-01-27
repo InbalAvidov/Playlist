@@ -2,12 +2,12 @@
     grid-template-columns: 20px 30px minmax(200px, 1.5fr) 1fr 80px 70px 80px;
     width: 100%;
     display: grid;
-    height: 57px;
+    min-height: 57px;
     border-radius: .4em;
     transition: .2s background-color;
 
     &.songs-list-header {
-        height: 50px;
+        min-height: 50px;
         margin-bottom: 12px;
         font-size: 14px;
         font-weight: 700;
@@ -62,6 +62,10 @@
     .song-date {
         justify-self: center;
         grid-column: 4;
+
+        @media (max-width: $mobile-size) {
+            display: none;
+        }
     }
 
     .song-like {
@@ -70,7 +74,12 @@
         grid-column: 5;
 
         .un-liked {
+        .un-liked {
             opacity: 0;
+        }
+
+        @media (max-width:$mobile-size) {
+            grid-column: 4;
         }
     }
 
@@ -79,6 +88,12 @@
         justify-content: flex-end;
         grid-column: 6;
         align-self: center;
+
+        @media (max-width:$mobile-size) {
+            grid-column: 5;
+        }
+
+
 
         &.last {
             grid-column: 7;
@@ -117,6 +132,7 @@
             opacity: 1;
 
             .un-liked {
+            .un-liked {
                 opacity: 1;
             }
         }
@@ -126,4 +142,48 @@
         color: $brand-color;
     }
 
+}
+
+@media (max-width: $mobile-size) {
+    .song-preview {
+        grid-template-columns: 10px 1.5fr 38px 38px 38px 10px;
+    }
+
+    .song-preview .song-img-title {
+        grid-column: 2;
+
+        .song-name {
+            font-size: 12px;
+            max-height: 23px;
+            overflow: hidden;
+            font-size: 12px;
+        }
+
+        .song-artist {
+            font-size: 10px;
+        }
+    }
+
+    .song-play {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        left: 12px;
+
+        path {
+            fill: $clr2;
+        }
+    }
+
+    .song-number {
+        display: none;
+    }
+
+
+    // .song-preview .song-number {
+    .song-preview .song-like .un-liked {
+        display: block;
+        opacity: 1;
+    }
 }

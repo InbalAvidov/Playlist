@@ -19,7 +19,7 @@ html {
 
 body {
     margin: 0;
-    overflow-y: hidden;
+    overflow: hidden;
 }
 
 .main-app {
@@ -38,6 +38,9 @@ body {
     width: 7px;
     padding-right: 3px;
     height: 10px;
+    @media (max-width:$mobile-size) {
+        display: none;
+    }
 }
 
 /* Track */
@@ -48,6 +51,7 @@ body {
 /* Handle */
 ::-webkit-scrollbar-thumb {
     background: #888;
+    border-radius: 10px;
 }
 
 /* Handle on hover */

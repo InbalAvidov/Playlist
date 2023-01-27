@@ -185,14 +185,24 @@
 
 .ganres-section {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 25px;
-
+    
+    @media (max-width: $mobile-size) {
+        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        gap: 10px;
+    }
     >* {
         grid-column: span 1;
 
         img {
             border-radius: .5em;
         }
+    }
+}
+
+@media (max-width: $mobile-size) {
+    .main-search .search-container {
+        margin: 20px $main-mobile-padding;
     }
 }

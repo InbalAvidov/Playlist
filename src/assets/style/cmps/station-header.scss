@@ -4,10 +4,11 @@
     cursor: pointer;
     width: 100%;
 
-
     .station-details {
         display: flex;
         padding-bottom: 2rem;
+        justify-content: center;
+
 
         .upload-img-container {
             @include station-img-container;
@@ -55,9 +56,9 @@
         h1 {
             font-size: 80px;
         }
+
+
     }
-
-
 }
 
 .station-options {
@@ -65,7 +66,7 @@
     align-items: center;
     padding: 25px 0 25px $main-app-padding;
     position: relative;
-    width: 100%;
+    width: 120%;
     background-image: linear-gradient(rgba(0, 0, 0, .6) 0, $bgc-main 100%);
 
     >* {
@@ -96,6 +97,12 @@
 
     svg:not(.play-pause):hover {
         opacity: 1;
+    }
+
+    @media (max-width: $mobile-size) {
+        padding: 10px 0 10px 0;
+        margin-left: -10px;
+
     }
 }
 
@@ -259,4 +266,53 @@
     height: 100vh;
     background-color: $clr2;
     opacity: 0.25;
+}
+
+.modal-editor {
+    width: 500px;
+    height: 300px;
+    position: absolute;
+    top: 100px;
+    left: 35%;
+    background-color: #282828;
+    z-index: 3000;
+    display: flex;
+    flex-direction: column;
+
+    h1 {
+        font-size: 22px;
+        padding: 10px 0 10px 20px;
+    }
+
+    .input-img-container {
+        @include station-img-container;
+        position: relative;
+
+        input {
+            opacity: 0;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: $mobile-size) {
+    .station-header .station-details {
+        align-items: center;
+        flex-direction: column;
+        padding: 0;
+    }
+    
+    .station-header .info-container {
+        padding: 10px;
+
+        h1 {
+            display: none;
+        }
+
+        .station {
+            display: none;
+        }
+    }
 }

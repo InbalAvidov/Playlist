@@ -52,7 +52,7 @@ export function FirstSectionStations({ stations }) {
                         onMouseMove={() => onSetBGColor(station.imgUrl)}
                         onMouseLeave={() => onSetBGColor(stations[0].imgUrl)}
                     >
-                        <div
+                        {/* <div
                             style={{
                                 backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs ? station.songs[0].imgUrl : defaultPhoto}")`,
                                 backgroundRepeat: "no-repeat",
@@ -60,7 +60,8 @@ export function FirstSectionStations({ stations }) {
                                 backgroundSize: "cover",
                                 width: '80px', height: '80px'
                             }}>
-                        </div>
+                        </div> */}
+                        <img src= {station.imgUrl ? station.imgUrl : station.songs ? station.songs[0].imgUrl : defaultPhoto} alt="" />
                         <p>{station.name}</p>
                         {station?._id === currStation?._id && isPlaying 
                             ?
