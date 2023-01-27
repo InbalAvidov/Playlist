@@ -26,16 +26,7 @@
         }
     }
 
-    .hr-line {
-        width: 85%;
-        margin: auto;
-        margin-top: 10px;
-        border-bottom: 0.1px solid rgb(78, 74, 74);
-
-        @media (max-width:$mobile-size) {
-            display: none;
-        }
-    }
+    
 
     .logo {
         display: flex;
@@ -160,6 +151,17 @@
 
 @media (max-width:$mobile-size) {
     .nav-user-actions {
+        display: none;
+    }
+}
+
+.hr-line {
+    width: 85%;
+    margin: auto;
+    margin-top: 10px;
+    border-bottom: 0.1px solid rgb(78, 74, 74);
+
+    @media (max-width:$mobile-size) {
         display: none;
     }
 }

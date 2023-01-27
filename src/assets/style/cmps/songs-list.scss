@@ -1,14 +1,26 @@
-.songs-add {
-    padding-inline-start: $main-app-padding;
+.main-song-list {
+    padding: 0 $main-app-padding;
 
     @media (max-width: $mobile-size) {
-        padding-inline-start: 0;
+        padding: 0;
+    }
+    .hr-line {
+        width: 100%;
     }
 }
 
-.songs-list {
-    padding-inline-start: $main-app-padding;
+.song-add {
+    padding-top: $main-app-padding;
+    width: 100%;
 
+    @media (max-width: $mobile-size) {
+        padding-inline-start: $main-mobile-padding;
+        padding-inline-end: $main-mobile-padding;
+    }
+}
+
+.song-list {
+   
     @media (max-width: $mobile-size) {
         padding-inline-start: 0;
     }

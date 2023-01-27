@@ -1,5 +1,5 @@
 .song-preview {
-    grid-template-columns: 20px 30px 1.5fr 1fr 60px 60px 60px;
+    grid-template-columns: 20px 30px minmax(200px, 1.5fr) 1fr 80px 70px 80px;
     width: 100%;
     display: grid;
     min-height: 57px;
@@ -11,13 +11,19 @@
         margin-bottom: 12px;
         font-size: 14px;
         font-weight: 700;
-        color: $fill;
+        color: $clr2;
+        opacity: .8;
         border-bottom: .5px solid rgb(44, 44, 44);
         text-transform: uppercase;
 
         >:last-child {
             padding-left: 3px;
         }
+    }
+
+    p:not(.song-name){
+        opacity: .8;
+
     }
 
     >* {
@@ -49,7 +55,6 @@
 
         .song-artist {
             font-size: 12px;
-            opacity: .6;
         }
 
     }
@@ -65,7 +70,7 @@
 
     .song-like {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         grid-column: 5;
 
         .un-liked {
@@ -79,7 +84,7 @@
 
     .song-duration {
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         grid-column: 6;
         align-self: center;
 
@@ -99,6 +104,7 @@
         justify-content: center;
         grid-column: 7;
         opacity: 0;
+
     }
 
 
@@ -128,8 +134,9 @@
         }
     }
 
-    .song-delete,
-    .song-like {
+        .song-delete,
+        .song-like {
+            opacity: 1;
 
         .un-liked {
             opacity: 1;

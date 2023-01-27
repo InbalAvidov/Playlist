@@ -8,7 +8,7 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
     ],
     "songs": [{
       "id": "rYEDA3JcQqw",
@@ -86,7 +86,10 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill",
+      "Recently played"
+      ,
     ],
     "songs": [{
       "id": "tcYodQoapMg", "title": "positions", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/tcYodQoapMg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=tcYodQoapMg",
@@ -134,7 +137,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      ,
     ],
     "songs": [{
       "id": "VBmMU_iwe6U", "title": " Run the World  ", "channelTitle": "Beyoncé", "imgUrl": "//i.ytimg.com/vi/VBmMU_iwe6U/hqdefault.jpg", "url": "//www.youtube.com/embed?v=VBmMU_iwe6U", "addedAt": utilService.getRandomTimeStamp()
@@ -174,7 +178,7 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
     ],
     "songs": [{
       "id": "CvBfHwUxHIk", "title": " Umbrella ", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/CvBfHwUxHIk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=CvBfHwUxHIk",
@@ -225,7 +229,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill",
+      "Recently played"
     ],
     "songs": [{
       "id": "6gXlC3rD8jI", "title": "JEWELZ ", "channelTitle": "Anderson Paak", "imgUrl": "//i.ytimg.com/vi/6gXlC3rD8jI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=6gXlC3rD8jI"
@@ -267,7 +273,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Recently played"
     ],
     "songs": [{
       "id": "QrR_gm6RqCo", "title": "NPR Music Tiny Desk Concert", "channelTitle": "NPR Music", "imgUrl": "//i.ytimg.com/vi/QrR_gm6RqCo/hqdefault.jpg", "url": "//www.youtube.com/embed?v=QrR_gm6RqCo",
@@ -307,7 +314,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Made For you"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "VPRjCeoBqrI", "title": " A Sky Full Of Stars ", "channelTitle": "Coldplay", "imgUrl": "//i.ytimg.com/vi/VPRjCeoBqrI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=VPRjCeoBqrI"
@@ -345,7 +353,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Made For you",
+      "More of what you like"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "Cr8K88UcO0s", "title": "Tití Me Preguntó  | Un Verano Sin Ti", "channelTitle": "Bad Bunny", "imgUrl": "//i.ytimg.com/vi/Cr8K88UcO0s/hqdefault.jpg", "url": "//www.youtube.com/embed?v=Cr8K88UcO0s"
@@ -393,7 +403,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Made For you"
+
     ],
     "songs": [
       {
@@ -446,7 +458,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill",
+      "Made For you"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "ifpiFzu4c54", "title": " אני ", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/ifpiFzu4c54/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ifpiFzu4c54"
@@ -517,7 +531,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "L6K90w9O7T0", "title": "עומר אדם  תגידו לה &amp; אהבה מטורפת", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/L6K90w9O7T0/hqdefault.jpg", "url": "//www.youtube.com/embed?v=L6K90w9O7T0"
@@ -559,7 +574,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "jeU9Sbq0D0A", "title": "  אור גדול  Amir Dadon  Or Gadol", "channelTitle": "Helicon Music  הליקון", "imgUrl": "//i.ytimg.com/vi/jeU9Sbq0D0A/hqdefault.jpg", "url": "//www.youtube.com/embed?v=jeU9Sbq0D0A"
@@ -595,7 +611,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill"
     ],
     "songs": [{
       "id": "rYEDA3JcQqw",
@@ -664,7 +681,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill"
     ],
     "songs": [{
       "id": "tcYodQoapMg", "title": "positions", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/tcYodQoapMg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=tcYodQoapMg",
@@ -716,7 +734,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill",
+      "Recently played"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "VBmMU_iwe6U", "title": " Run the World  ", "channelTitle": "Beyoncé", "imgUrl": "//i.ytimg.com/vi/VBmMU_iwe6U/hqdefault.jpg", "url": "//www.youtube.com/embed?v=VBmMU_iwe6U"
@@ -759,7 +779,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "More of what you like",
+      "Recently played"
     ],
     "songs": [{
       "id": "CvBfHwUxHIk", "title": " Umbrella ", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/CvBfHwUxHIk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=CvBfHwUxHIk",
@@ -812,7 +834,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Made For you",
+      "Recently played"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "6gXlC3rD8jI", "title": "JEWELZ ", "channelTitle": "Anderson Paak", "imgUrl": "//i.ytimg.com/vi/6gXlC3rD8jI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=6gXlC3rD8jI"
@@ -868,7 +892,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Recently played"
     ],
     "songs": [{
       "id": "QrR_gm6RqCo", "title": "Mac Miller: NPR Music Tiny Desk Concert", "channelTitle": "NPR Music", "imgUrl": "//i.ytimg.com/vi/QrR_gm6RqCo/hqdefault.jpg", "url": "//www.youtube.com/embed?v=QrR_gm6RqCo",
@@ -916,7 +941,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Made For you",
+      "More of what you like"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "VPRjCeoBqrI", "title": " A Sky Full Of Stars ", "channelTitle": "Coldplay", "imgUrl": "//i.ytimg.com/vi/VPRjCeoBqrI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=VPRjCeoBqrI"
@@ -967,7 +994,10 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill",
+      "Recently played",
+      "More of what you like"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "Cr8K88UcO0s", "title": "Tití Me Preguntó  | Un Verano Sin Ti", "channelTitle": "Bad Bunny", "imgUrl": "//i.ytimg.com/vi/Cr8K88UcO0s/hqdefault.jpg", "url": "//www.youtube.com/embed?v=Cr8K88UcO0s"
@@ -1021,7 +1051,10 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Made For you",
+      "Recently played",
+      "More of what you like"
     ],
     "songs": [
       {
@@ -1074,7 +1107,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "More of what you like"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "ifpiFzu4c54", "title": "אני", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/ifpiFzu4c54/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ifpiFzu4c54"
@@ -1145,7 +1179,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Recently played",
+      "More of what you like"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "L6K90w9O7T0", "title": "עומר אדם  תגידו לה &amp; אהבה מטורפת", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/L6K90w9O7T0/hqdefault.jpg", "url": "//www.youtube.com/embed?v=L6K90w9O7T0"
@@ -1347,6 +1383,184 @@ export const homeStations = [
       "Search",
       "Funk",
       "Happy"
+    ],
+    "songs": [],
+    "msgs": [],
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Miley Cyrus",
+    "description": "Artist",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809164/miley_nelcj0.jpg",
+    "tags": [
+      "Pop",
+      "artist",
+    ],
+    "songs": [],
+    "msgs": [],
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Ariana Grande",
+    "description": "artist",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809164/ariana_ndk1cd.jpg",
+    "tags": [
+      "Pop",
+      "artist"
+    ],
+    "songs": [],
+    "msgs": [],
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Katy Perry",
+    "description": "artist",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809164/katy_b4kvfa.jpg",
+    "tags": [
+      "Pop",
+      "artist",
+    ],
+    "songs": [],
+    "msgs": [],
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Bruno Mars",
+    "description": "artist",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809164/bruno_odwpil.jpg",
+    "tags": [
+      "Pop",
+      "artist",
+      "Chill",
+      "More of what you like",
+      "Recently played"
+    ],
+    "songs": [],
+    "msgs": [],
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Sam Smith",
+    "description": "artist",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809164/sam_zpeyoi.jpg",
+    "tags": [
+      "Pop",
+      "artist",
+      "More of what you like"
+    ],
+    "songs": [],
+    "msgs": [],
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Justin Bieber",
+    "description": "artist",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809163/justin_gmmn9y.jpg",
+    "tags": [
+      "Pop",
+      "artist"
+    ],
+    "songs": [],
+    "msgs": [],
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Harry's House",
+    "description": "Harry Styles",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809163/Harrys-House_iqpbg6.webp",
+    "tags": [
+      "Pop",
+      "new releases",
+      "Made For you",
+      "Chill",
+      "More of what you like"
+    ],
+    "songs": [],
+    "msgs": [],
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": " האחיות כרקוקלי ",
+    "description": "מוזיקה ישראלית עכשווית",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674811971/caracuc_otrt4w.jpg",
+    "tags": [
+      "Pop",
+      "new releases"
+    ],
+    "songs": [],
+    "msgs": [],
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Flowers",
+    "description": "Single",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809163/flowers_sh8ylp.png",
+    "tags": [
+      "Pop",
+      "new releases",
+      "More of what you like"
+    ],
+    "songs": [],
+    "msgs": [],
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "פנתרה",
+    "description": "החדש של נועה קירל",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809653/noa_kyd3rq.jpg",
+    "tags": [
+      "Pop",
+      "new releases"
     ],
     "songs": [],
     "msgs": [],

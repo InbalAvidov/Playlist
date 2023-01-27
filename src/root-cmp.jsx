@@ -13,6 +13,8 @@ import { AppHeader } from './cmps/app-header'
 import { LoginSignup } from './pages/login-signup';
 import { SongList } from './cmps/song-list'
 import { Queue } from './pages/queue'
+import { Genre } from './pages/genre'
+import { ShowAll } from './pages/show-all'
 
 
 export function App() {
@@ -34,6 +36,8 @@ export function App() {
                             <Route element={<LoginSignup />} path="/login-signup/:signupState" />
                             <Route element={<LoginSignup />} path="/login-signup/:loginState" />
                             <Route element={<Queue />} path="/queue" />
+                            <Route element={<Genre />} path="/genre/:genreName" />
+                            <Route element={<ShowAll />} path="/show/:category" />
                         </Routes>
                     </main>
                     <PlayerBar />

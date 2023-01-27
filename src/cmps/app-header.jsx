@@ -36,9 +36,10 @@ export function AppHeader() {
           </div>
           {!user ?
             <div className='btns-login-singup'>
-              {!user && <NavLink className="login-signup" to="/login-signup/signupState"><div>Sign up</div></NavLink>}
-              {!user && <NavLink className="login-signup focus" to="/login-signup/loginState"><div>Log in</div></NavLink>}
+              <NavLink className="login-signup" to="/login-signup/signupState"><div>Sign up</div></NavLink>
+              <NavLink className="login-signup focus" to="/login-signup/loginState"><div>Log in</div></NavLink>
             </div>
+
             :
             <div onClick={onToggleMenu} className="user-section">
               <button className='user-menu-btn'>

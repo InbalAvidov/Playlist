@@ -17,7 +17,6 @@
             font-size: 28px;
             font-weight: 900;
             margin-bottom: 22px;
-            // margin-top: 36px;
         }
 
         h2 {
@@ -32,3 +31,19 @@
     }
 }
 
+.title-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p{
+        font-size: .9em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        opacity: .7;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
+}
