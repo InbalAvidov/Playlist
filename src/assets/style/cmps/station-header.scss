@@ -4,8 +4,10 @@
     cursor: pointer;
     width: 100%;
 
+
     .station-details {
         display: flex;
+        padding-bottom: 2rem;
 
         .upload-img-container {
             @include station-img-container
@@ -61,10 +63,11 @@
 .station-options {
     display: flex;
     align-items: center;
-    justify-content: center;
     align-self: flex-start;
-    margin: 45px 0 25px 0;
+    padding: 25px 0 25px $main-app-padding;
     position: relative;
+    width: 100%;
+    background-image: linear-gradient(rgba(0, 0, 0, .6) 0, $bgc-main 100%);
 
     >* {
         margin-right: 20px
@@ -92,31 +95,36 @@
     }
 }
 
-.station-menu {
-    background-color: #373737;
-    border-radius: 5px;
-    position: absolute;
-    top: -70px;
-    right: -80px;
+.station-menu-btn {
+    position: relative;
 
-    &.close {
-        display: none;
-    }
+    .station-menu {
+        background-color: #373737;
+        border-radius: 5px;
+        position: absolute;
+        top: -80px;
+        right: -100px;
 
-    p {
-        border-radius: 10px;
-        background-color: inherit;
-        color: $clr2;
-        width: 120px;
-        padding: 7px 0 7px 10px;
-        border: none;
-        font-size: 14px;
+        &.close {
+            display: none;
+        }
 
-        &:hover {
-            color: $brand-color;
+        p {
+            border-radius: 10px;
+            background-color: inherit;
+            color: $clr2;
+            width: 120px;
+            padding: 7px 0 7px 10px;
+            border: none;
+            font-size: 14px;
+
+            &:hover {
+                color: $brand-color;
+            }
         }
     }
 }
+
 
 .edit-container {
     display: flex;
@@ -160,6 +168,7 @@
         }
     }
 }
+
 .app-modal-editor {
     position: fixed;
     z-index: 1;
@@ -187,11 +196,11 @@
         padding: 10px 0 10px 20px;
     }
 
-    .input-img-container{
+    .input-img-container {
         @include station-img-container;
         position: relative;
 
-        .file{
+        input {
             opacity: 0;
             position: absolute;
             height: 100%;

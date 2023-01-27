@@ -1,10 +1,8 @@
 .songs-add {
-    h2 {
-        margin-bottom: 20px;
-    }
+    padding-inline-start: $main-app-padding;
 }
 
 .songs-list {
-    margin-bottom: 20px;
+    // margin-bottom: 20px;
+    padding-inline-start: $main-app-padding;
 }
-

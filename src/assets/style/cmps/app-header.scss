@@ -2,6 +2,25 @@
   display: grid;
   padding-top: 10px;
   grid-area: 1 / 2 / 2 / -1;
+  position: relative;
+  z-index: 10;
+
+  @media (max-width:$mobile-size) {
+    grid-area: 1 / 1 / 2 / -1;
+  }
+
+  .header-bg {
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    z-index: -1;
+  }
 
   .header-details {
     justify-content: space-between;
@@ -11,7 +30,6 @@
       z-index: 99;
       padding: 0 $main-app-padding ;
       justify-content: space-between;
-      align-items: center;
       margin-bottom: 7px;
     }
 
@@ -76,6 +94,8 @@
 }
 
 .user-section {
+  position: relative;
+
   .user-menu-btn {
     font-size: 16px;
     display: flex;
@@ -112,7 +132,7 @@
 .user-menu {
   background-color: $nav-btn-clr;
   border-radius: 5px;
-  position: relative;
+  position: absolute;
   top: 5px;
 
   &.close {
@@ -128,7 +148,8 @@
     border: none;
     font-size: 14px;
     position: absolute;
-    margin-left: 16px;
+    margin-top: em(24px);
+    left: em(-18px);
 
     &:hover {
       color: $brand-color;

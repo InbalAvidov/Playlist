@@ -3,39 +3,40 @@ import { Link } from 'react-router-dom'
 
 import { utilService } from '../service/util.service'
 import { setSong } from '../store/player.action'
-import { loadCurrStation } from '../store/station.actions'
+import { loadCurrStation, setColor } from '../store/station.actions'
 import defaultPhoto from '../assets/img/default-photo.png'
+import { useSelector } from 'react-redux'
 
 export function FirstSectionStations({ stations }) {
-    const [colorByImg, setColorByImg] = useState('rgb(72, 32, 176)')
-
+    const color = useSelector(storeState => storeState.stationModule.color)
+    
     async function onSetBGColor(url) {
         try {
             const color = await utilService.getMainColor(url)
-            setColorByImg(color)
+            setColor(color)
         } catch (err) {
             console.log('Cannot set color', err)
         }
     }
 
-
     function onPlayStation(ev, station) {
         ev.preventDefault()
-
         const firstSong = station.songs[0]
+        const {id , imgUrl , title , channelTitle , addedAt} = firstSong
         const songToStore =
         {
-            _id: firstSong.id,
-            imgUrl: firstSong.imgUrl,
-            title: firstSong.title,
-            artist: firstSong.channelTitle
+            id,
+            imgUrl,
+            title,
+            channelTitle,
+            addedAt
         }
         setSong(songToStore)
         loadCurrStation(station._id)
     }
 
     return (
-        <div className='clr-container' style={{ backgroundImage: `linear-gradient( ${colorByImg} 0%, #121212 100%)` }}>
+        <div className='clr-container' style={{ backgroundColor: `${color}` }}>
             <h1>{utilService.getCurrentTimeGreet()}</h1>
             <section className="first-section-stations">
                 {stations.map(station => <Link to={`/station/${station._id}`} key={station._id}>
@@ -44,8 +45,8 @@ export function FirstSectionStations({ stations }) {
                         onMouseMove={() => onSetBGColor(station.imgUrl)}
                         onMouseLeave={() => onSetBGColor(stations[0].imgUrl)}
                     >
-                        <div style=
-                            {{
+                        <div
+                            style={{
                                 backgroundImage: `url("${station.imgUrl ? station.imgUrl : station.songs ? station.songs[0].imgUrl : defaultPhoto}")`,
                                 backgroundRepeat: "no-repeat",
                                 backgroundPosition: "center",

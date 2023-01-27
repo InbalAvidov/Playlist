@@ -1,17 +1,24 @@
-import { useEffect } from "react"
-import { useSelector } from "react-redux"
+import { useEffect, useState } from "react"
 
-import { loadStations } from "../store/station.actions"
 import { Loader } from "../cmps/loader"
 import { FirstSectionStations } from "../cmps/first-section-stations"
 import { RestSectionStations } from "../cmps/rest-section-stations"
+import { stationService } from "../service/station.service"
 
 export function Home() {
-    const stations = useSelector((storeState) => storeState.stationModule.stations)
+    const [stations, setStations] = useState(null)
+
+    // const stations = useSelector((storeState) => storeState.stationModule.stations)
 
     useEffect(() => {
-        loadStations({ page: 'home' })
+        loadHomeStations()
     }, [])
+
+    async function loadHomeStations() {
+        const searchStations = await stationService.query({ page: 'home' })
+        setStations(searchStations)
+    }
+
 
     if (!stations) return <Loader />
     return (<main className="main-home">

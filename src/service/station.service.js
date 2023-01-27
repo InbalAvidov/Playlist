@@ -26,6 +26,9 @@ async function query(filterBy = getEmptyFilter()) {
     if (filterBy.page === 'home') {
       stations = stations.filter(station => station.tags.includes('home'))
     }
+    if (filterBy.page === 'search') {
+      stations = stations.filter(station => station.tags.includes('Search'))
+    }
     return stations
   } catch (err) {
     throw err

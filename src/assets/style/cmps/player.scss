@@ -1,6 +1,6 @@
-.media-player {
+.player {
     display: grid;
-    grid-template-columns: 15px 2fr 1fr 4fr 1fr 2fr 15px;
+    grid-template-columns: 15px 1fr 1.32fr 1fr 15px;
     background-color: $mpclr;
     position: fixed;
     right: 0px;
@@ -15,26 +15,37 @@
 
     .information {
         display: flex;
-        width: 250px;
+        // width: 250px;
+        align-items: center;
 
-        .details{
+        >* {
+            font-family: montserrat, Arial;
+        }
+
+
+        .details {
             display: flex;
             flex-direction: column;
             justify-content: center;
+            margin-inline-start: 15px;
+
+        }
+
+        span {
+            margin-left: 20px;
+            margin-top: 2px;
         }
     }
 
     h4 {
         margin-bottom: 1px;
         color: $clr2;
-        font-family: montserrat;
         text-overflow: ellipsis;
     }
 
     h5 {
         margin-top: 1px;
         color: $bar-fill;
-        font-family: montserrat;
         text-overflow: ellipsis;
     }
 
@@ -43,11 +54,10 @@
         align-self: center;
         width: 57px;
         height: 57px;
-        margin-inline-end: 15px;
     }
 
     .controller {
-        grid-column: 4;
+        grid-column: 3;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -58,28 +68,42 @@
         align-items: center;
         justify-content: center;
         gap: 25px;
+
+    }
+
+    button {
+        background-color: inherit;
+        border: none;
+        display: flex;
+        flex-direction: column;
+        position: relative;
     }
 
     .conrtoller-btns>* {
         height: 20px;
         color: $bar-fill;
+        padding: 0;
+        padding-top: 1px;
+
+        svg:hover:not(.play-pause) path {
+            fill: $clr2;
+        }
     }
 
-    .player-play-pause-circle{
+    .player-play-pause-circle {
         background-color: $clr2;
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 32px;
+        width: em(32px);
         height: 32px;
         border-radius: 500px;
-
 
         .play-pause {
             color: $clr2;
             height: 31px;
             position: relative;
-            
+
         }
     }
 
@@ -100,12 +124,13 @@
             text-align: center;
             justify-content: center;
             width: 20px;
+            font-size: .95em;
         }
     }
 
     .player-progress {
-        margin-left: 15px;
-        margin-right: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
         text-align: center;
         justify-self: center;
         width: 94%;
@@ -128,21 +153,30 @@
 
     .actions-btns {
         display: flex;
-        grid-column: 6;
+        grid-column: 4;
         margin-left: 15px;
-        margin-right: 15px;
+        margin-right: 8px;
         align-items: center;
         justify-content: flex-end;
         gap: 5px;
+
+        .queue {
+            margin-right: 10px;
+            margin-top: 5px;
+        }
+
+        @media (max-width:$mobile-size) {
+            display: none;
+        }
     }
 
     .volume-range {
-        max-width: 43%;
+        max-width: 26%;
         -webkit-appearance: none;
         background-color: $bar-fill;
         height: 3.5px;
         border-radius: 2rem;
-        margin-inline-end: 20px;
+        margin-inline-end: 32px;
     }
 
     .volume-range:hover::-webkit-slider-thumb {
@@ -160,5 +194,20 @@
         width: 3px;
         border-radius: 50%;
         cursor: pointer;
+    }
+
+    @media (max-width:$mobile-size) {
+        position: fixed;
+        display: flex;
+        height: 66px;
+        bottom: 66px;
+
+        .player-progress-container {
+            display: none;
+        }
+
+        .popo {
+            visibility: visible;
+        }
     }
 }

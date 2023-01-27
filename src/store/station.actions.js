@@ -1,5 +1,5 @@
 import { stationService } from "../service/station.service"
-import { SET_STATIONS, UPDATE_CURRENT_STATION, ADD_STATION, UPDATE_STATION, REMOVE_STATION } from "./station.reducer"
+import { SET_STATIONS, UPDATE_CURRENT_STATION, ADD_STATION, UPDATE_STATION, REMOVE_STATION, SET_COLOR } from "./station.reducer"
 import { store } from "./store"
 
 export async function loadStations(filterBy) {
@@ -36,6 +36,7 @@ export async function saveStation(station) {
 export async function updateStation(station) {
     try {
         const updatedStation = await stationService.save(station)
+        console.log('updatedStation:',updatedStation)
         store.dispatch({ type: UPDATE_STATION, station: updatedStation })
     } catch (err) {
         console.log('Had issues to get current station', err)
@@ -49,6 +50,16 @@ export async function removeStation(stationId) {
         store.dispatch({ type: REMOVE_STATION, stationId})
     } catch (err) {
         console.log('Had issues to get current station', err)
+        throw err
+    }
+}
+
+
+export async function setColor(color) {
+    try {
+        store.dispatch({ type: SET_COLOR, color})
+    } catch (err) {
+        console.log('Had issues to set color', err)
         throw err
     }
 }

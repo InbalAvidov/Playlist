@@ -1,15 +1,21 @@
 .main-layout {
     display: grid;
-    grid-template-columns: 247px 1fr;
-    grid-template-rows: 64px 1fr auto;
+    grid-template-columns: 247px minmax(300px, 1fr);
+    grid-template-rows: rem(64px) 1fr auto;
     height: 100vh;
+
+    @media (max-width:$mobile-size) {
+        grid-template-columns: none;
+        grid-template-rows: rem(64px) 1fr 66px;
+    }
 }
 
 .clr-container {
-    background-color: rgba(0, 0, 0, 0.6);
     padding: 0 $main-app-padding;
-    padding-top: 80px;
-    transition: background-color 1s ease-in-out;
+    padding-top: 84px;
+    background: linear-gradient(transparent 0, rgba(0, 0, 0, .5) 100%)
+}
 
-    background-image: linear-gradient(rgba(0, 0, 0, .6) 0, $bgc-main 100%, 'ffffff');
+* {
+    transition: background 1s ease;
 }
