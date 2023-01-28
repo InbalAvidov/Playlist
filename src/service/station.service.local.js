@@ -1,8 +1,11 @@
-import { httpService } from './http.service.js'
+import { utilService } from './util.service.js'
+import { storageService } from './async-storage.service.js'
 import { userService } from './user.service.js'
+import { homeStations } from '../data/station'
 
-const STATION_URL = 'station/'
+const STATION_KEY = 'stationDB'
 
+_createStations()
 let stationNum = 1
 
 export const stationService = {
@@ -15,26 +18,40 @@ export const stationService = {
 }
 
 async function query(filterBy = getEmptyFilter()) {
-  return httpService.get(STATION_URL, filterBy)
+  try {
+    let stations = await storageService.query(STATION_KEY)
+    if (filterBy.userId) {
+      stations = stations.filter(station => station.createdBy._id === filterBy.userId)
+    }
+    if (filterBy.page === 'home') {
+      stations = stations.filter(station => station.tags.includes('home'))
+    }
+    if (filterBy.page === 'search') {
+      stations = stations.filter(station => station.tags.includes('Search'))
+    }
+    return stations
+  } catch (err) {
+    throw err
+  }
 }
 
 function getEmptyFilter() {
   return { user: null, likedBy: userService.getLoggedinUser()?._id }
 }
 
-async function get(stationId) {
-  return httpService.get(STATION_URL + stationId)
+function get(stationId) {
+  return storageService.get(STATION_KEY, stationId)
 }
 
-async function remove(stationId) {
-  return httpService.delete(STATION_URL + stationId)
+function remove(stationId) {
+  return storageService.remove(STATION_KEY, stationId)
 }
 
-async function save(station) {
+function save(station) {
   if (station._id) {
-    return httpService.put(STATION_URL + station._id, station)
+    return storageService.put(STATION_KEY, station)
   } else {
-    return httpService.post(STATION_URL, station)
+    return storageService.post(STATION_KEY, station)
   }
 }
 
@@ -73,3 +90,12 @@ function _getStationDefaultName() {
   stationNum++
   return stationName
 }
+
+function _createStations() {
+  let stations = utilService.loadFromStorage(STATION_KEY)
+  if (!stations || !stations.length) {
+    stations = homeStations
+    utilService.saveToStorage(STATION_KEY, stations)
+  }
+}
+

@@ -15,14 +15,7 @@ export function AppNav() {
     useEffect(() => {
         loadStations()
         if (!user) {
-            login({
-                _id: '5cksxjas89xjsa8xjsa8GGG7',
-                username: 'guest',
-                imgUrl: "https://robohash.org/set=set3",
-                fullname: 'Guest',
-                likedSongs: [],
-                likedStations: []
-            })
+            login({username: 'guest', password: 'guest'})
         }
     }, [])
 

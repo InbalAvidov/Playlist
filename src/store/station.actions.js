@@ -24,6 +24,7 @@ export async function loadCurrStation(stationId) {
 
 export async function saveStation(station) {
     try {
+        console.log('saveStation', station)
         const newStation = await stationService.save(station)
         store.dispatch({ type: ADD_STATION, station: newStation })
         return newStation
@@ -35,8 +36,9 @@ export async function saveStation(station) {
 
 export async function updateStation(station) {
     try {
+        // console.log('updateStation, station', station)
         const updatedStation = await stationService.save(station)
-        console.log('updatedStation:',updatedStation)
+        // console.log('updatedStation:', updatedStation)
         store.dispatch({ type: UPDATE_STATION, station: updatedStation })
     } catch (err) {
         console.log('Had issues to get current station', err)
@@ -47,7 +49,7 @@ export async function updateStation(station) {
 export async function removeStation(stationId) {
     try {
         await stationService.remove(stationId)
-        store.dispatch({ type: REMOVE_STATION, stationId})
+        store.dispatch({ type: REMOVE_STATION, stationId })
     } catch (err) {
         console.log('Had issues to get current station', err)
         throw err
@@ -57,7 +59,7 @@ export async function removeStation(stationId) {
 
 export async function setColor(color) {
     try {
-        store.dispatch({ type: SET_COLOR, color})
+        store.dispatch({ type: SET_COLOR, color })
     } catch (err) {
         console.log('Had issues to set color', err)
         throw err

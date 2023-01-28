@@ -36,6 +36,7 @@ export function LoginSignup() {
             login({
                 _id: utilService.makeId(),
                 username: 'guest',
+                password: 'guest',
                 imgUrl: "https://robohash.org/set=set3"
             })
             navigate('/')

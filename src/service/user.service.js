@@ -1,9 +1,8 @@
-import { storageService } from './async-storage.service'
-import { utilService } from './util.service'
+import { httpService } from './http.service'
 
+const AUTH_URL = 'auth/'
+const USER_URL = 'user/'
 const STORAGE_KEY_LOGGEDIN_USER = 'loggedinUser'
-const USERS_KEY = 'users'
-_createUsers()
 
 export const userService = {
     login,
@@ -11,9 +10,7 @@ export const userService = {
     signup,
     getLoggedinUser,
     saveLocalUser,
-    getUsers,
     getById,
-    remove,
     update,
     getEmptyCredentials,
     updateLikeSong,
@@ -22,47 +19,34 @@ export const userService = {
 
 window.userService = userService
 
-
-function getUsers() {
-    return storageService.query(USERS_KEY)
-}
-
 async function getById(userId) {
-    const user = await storageService.get(USERS_KEY, userId)
-    return user
-}
-
-function remove(userId) {
-    return storageService.remove(USERS_KEY, userId)
-}
-
-async function update(user) {
-    const newUser = await storageService.put(USERS_KEY, user)
-    if (getLoggedinUser()._id === user._id) saveLocalUser(newUser)
-    return newUser
+    return httpService.get(USER_URL + userId)
 }
 
 async function login(userCred) {
-    const users = await storageService.query(USERS_KEY)
-    const user = users.find(user => user.username === userCred.username)
-    if (user) {
-        return saveLocalUser(user)
-    }
+    const user = await httpService.post(AUTH_URL + 'login', userCred)
+    return saveLocalUser(user)
 }
+
 async function signup(userCred) {
     userCred.likedSongs = []
     userCred.likedStations = []
-    const user = await storageService.post(USERS_KEY, userCred)
+    const user = await httpService.post(AUTH_URL + 'signup', userCred)
     return saveLocalUser(user)
 }
 
 async function logout() {
+    await httpService.post(AUTH_URL + 'logout')
     sessionStorage.removeItem(STORAGE_KEY_LOGGEDIN_USER)
 }
 
+async function update(user) {
+    const newUser = await httpService.put(USER_URL + '/' + user._id, user)
+    if (getLoggedinUser()._id === user._id) saveLocalUser(newUser)
+    return newUser
+}
 
 function saveLocalUser(user) {
-    user = { _id: user._id, fullname: user.fullname, username: user.username, imgUrl: user.imgUrl, likedSongs: user.likedSongs, likedStations: user.likedStations }
     sessionStorage.setItem(STORAGE_KEY_LOGGEDIN_USER, JSON.stringify(user))
     return user
 }
@@ -88,6 +72,7 @@ async function updateLikeSong(song) {
     const updatedUser = await update(user)
     return updatedUser
 }
+
 async function updateLikeStation(currStation) {
     const user = getLoggedinUser()
     const { _id, name, imgUrl, songs, description } = currStation
@@ -104,50 +89,3 @@ async function updateLikeStation(currStation) {
     const updatedUser = await update(user)
     return updatedUser
 }
-
-function _createUsers() {
-    let users = utilService.loadFromStorage(USERS_KEY)
-    if (!users || !users.length) {
-        users = [
-            {
-                _id: '5cksxjas89xjsa8xjsa8jld3',
-                fullname: 'Inbal Avidov',
-                email: 'inbal.avidov@gmail.com',
-                username: 'inbal.avidov',
-                password: 'inbal',
-                likedSongs: [],
-                likedStations: []
-            }, {
-                _id: '5cksxjas89xjsa8xjsa8jjj7',
-                fullname: 'Omri Hazan',
-                email: 'omrihazan1313@gmail.com',
-                username: 'omri.hazan',
-                password: 'omri',
-                likedSongs: [],
-                likedStations: []
-            },
-            {
-                _id: '5cksxjas89xjsa8xjsa8hhh7',
-                fullname: 'Hila Shor',
-                email: 'hilashor@gmail.com',
-                username: 'hila.shor',
-                password: 'hila',
-                likedSongs: [],
-                likedStations: []
-            },
-            {
-                _id: '5cksxjas89xjsa8xjsa8GGG7',
-                fullname: 'Guest',
-                email: 'guest@gmail.com',
-                username: 'guest',
-                password: 'guest',
-                likedSongs: [],
-                likedStations: []
-            }
-        ]
-        utilService.saveToStorage(USERS_KEY, users)
-    }
-}
-
-
-
