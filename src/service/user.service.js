@@ -134,6 +134,14 @@ function _createUsers() {
                 password: 'hila',
                 likedSongs: [],
                 likedStations: []
+            },
+            {
+                _id: '5cksxjas89xjsa8xjsa8GGG7',
+                username: 'guest',
+                imgUrl: "https://robohash.org/set=set3",
+                fullname: 'Guest',
+                likedSongs: [],
+                likedStations: []
             }
         ]
         utilService.saveToStorage(USERS_KEY, users)
