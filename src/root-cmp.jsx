@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import { HashRouter as Router, Routes, Route } from 'react-router-dom'
 import { Provider } from 'react-redux'
 
@@ -11,19 +12,17 @@ import { UserLibrary } from './pages/user-library'
 import { PlayerBar } from './cmps/player-bar'
 import { AppHeader } from './cmps/app-header'
 import { LoginSignup } from './pages/login-signup';
-import { SongList } from './cmps/song-list'
 import { Queue } from './pages/queue'
 import { Genre } from './pages/genre'
 import { ShowAll } from './pages/show-all'
-import { useState } from 'react'
 
 
 export function App() {
     const [opacity, setOpacity] = useState(0)
 
     function onScroll({ target }) {
-        const opacity = (target.scrollTop-80) / 100
-        if (opacity > 1.1) return
+        const opacity = (target.scrollTop - 80) / 100
+        // if (opacity > 5) return
         setOpacity(opacity)
     }
 
@@ -37,7 +36,7 @@ export function App() {
                         <Routes>
                             <Route element={<Home />} path="/" />
                             <Route element={<Station />} path="/station/:stationId" />
-                            <Route element={<SearchSongs />} path="/search" />
+                            <Route element={<SearchSongs scroll={opacity * 100 + 80} />} path="/search" />
                             <Route element={<UserLibrary />} path="/library" />
                             <Route element={<Station />} path="/createStation" />
                             <Route element={<LikedSongs />} path="/liked" />
@@ -51,7 +50,6 @@ export function App() {
                     <PlayerBar />
                 </section>
             </Router>
-
         </Provider>
     )
 }

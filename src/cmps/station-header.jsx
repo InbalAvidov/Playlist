@@ -140,7 +140,7 @@ export function StationHeader({ station, onSelectImg, saveChanges, deleteStation
         saveChanges()
     }
 
-    console.log('users:', users)
+    console.log('station:', station)
 
     return (
         <section className="station-header" onClick={onOpenEditor}>
@@ -199,9 +199,9 @@ export function StationHeader({ station, onSelectImg, saveChanges, deleteStation
                     </button>
                 }
                 {
-                    station.createdBy._id !== user._id &&
+                    station.createdBy._id !== user?._id &&
                     <div>
-                        {user.likedStations.find(({ _id }) => _id === station._id) &&
+                        {user?.likedStations.find(({ _id }) => _id === station._id) &&
                             !isLikedSongsPage
                             ?
                             <svg onClick={(event) => toggleLike(event)} fill="#1ed760" role="img" height="32" width="32" aria-hidden="true" viewBox="0 0 24 24" data-encore-id="icon" className="Svg-sc-ytk21e-0 uPxdw"><path d="M8.667 1.912a6.257 6.257 0 00-7.462 7.677c.24.906.683 1.747 1.295 2.457l7.955 9.482a2.015 2.015 0 003.09 0l7.956-9.482a6.188 6.188 0 001.382-5.234l-.49.097.49-.099a6.303 6.303 0 00-5.162-4.98h-.002a6.24 6.24 0 00-5.295 1.65.623.623 0 01-.848 0 6.257 6.257 0 00-2.91-1.568z"></path></svg>
