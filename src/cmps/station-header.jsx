@@ -142,7 +142,7 @@ export function StationHeader({ station, onSelectImg, saveChanges, deleteStation
         saveChanges()
     }
 
-    console.log('users:', users)
+    console.log('station:', station)
 
     return (
         <section className="station-header" onClick={onOpenEditor}>

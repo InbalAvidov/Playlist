@@ -2,6 +2,7 @@ import { store } from './store.js'
 import { TOGGLE_PLAY, SET_PLAYER, SET_SONG, SET_SONGS, SET_QUEUE } from '../store/player.reducer.js'
 
 export async function loadPlayer(player) {
+    console.log('LOADING PLAYER')
     try {
         store.dispatch({ type: SET_PLAYER, player })
     } catch (err) {

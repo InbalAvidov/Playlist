@@ -70,6 +70,10 @@
         justify-content: center;
         gap: 25px;
 
+        @media (max-width:$mobile-size) {
+            gap:15px;
+        }        
+
     }
 
     button {
@@ -230,7 +234,7 @@
         }
 
         .information span{
-            margin: 2px 4px 0 0;
+            margin: 7px 4px 0 5px;
         }
 
         h4 {

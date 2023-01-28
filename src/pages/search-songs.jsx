@@ -13,12 +13,13 @@ import { SongPreview } from "../cmps/song-preview";
 import { loadStations } from "../store/station.actions";
 import { useSelector } from "react-redux";
 
-export function SearchSongs({ onAddSong, isForStation }) {
+export function SearchSongs({ onAddSong, isForStation, scroll }) {
     const stations = useSelector((storeState) => storeState.stationModule.stations)
     const [searchStations, setSearchStations] = useState(null)
     const [search, setSearch] = useState('')
     const [songsBySearch, setSongsBySearch] = useState(null)
     const searchSongs = useRef(utilService.debounce(getSearchReasults, 700))
+    console.log('SCROLL ON SEARCH', scroll)
 
     useEffect(() => {
         if (isForStation) return
@@ -27,15 +28,15 @@ export function SearchSongs({ onAddSong, isForStation }) {
     }, [])
 
     useEffect(() => {
-        if(!stations) return
+        if (!stations) return
         loadSearchStations()
     }, [stations])
 
 
     async function loadSearchStations() {
-        console.log('stations:',stations)
+        console.log('stations:', stations)
         const searchStations = stations.filter(station => station.tags.includes('Search'))
-        console.log('searchStations:',searchStations)
+        console.log('searchStations:', searchStations)
         setSearchStations(searchStations)
     }
 

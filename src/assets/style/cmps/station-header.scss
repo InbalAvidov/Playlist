@@ -33,9 +33,10 @@
     .info-container {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
+        justify-content: flex-end;
+
         flex: 1;
-        padding: 20px 25px;
+        padding: 0 25px;
 
         p {
             font-size: 14px;
@@ -71,11 +72,8 @@
 
     >* {
         margin-right: 20px;
+        align-items: center;
         display: flex;
-    }
-
-    svg {
-        align-self: center
     }
 
     .green-play-pause-btn {
@@ -85,6 +83,7 @@
         min-block-size: 54px;
         inline-size: 54px;
         block-size: 54px;
+        margin-bottom: 10px;
 
         &:hover {
             scale: (1.05);
@@ -116,9 +115,8 @@
         }
     }
     @media (max-width: $mobile-size) {
-        padding: 10px 0 10px 0;
+        padding: 10px 0 9px 0;
         margin-left: -10px;
-
     }
 }
 
@@ -302,13 +300,18 @@
     
     .station-header .info-container {
         padding: 10px;
+        align-items: center;
 
         h1 {
-            display: none;
+            font-size: 20px;
         }
 
         .station {
             display: none;
+        }
+
+        span{
+            margin: 0;
         }
     }
 

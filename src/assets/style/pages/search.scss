@@ -1,7 +1,9 @@
 .main-search {
-
     &.padding {
         padding: 0 $main-app-padding;
+        @media (max-width:$mobile-size) {
+            padding: 60px $main-mobile-padding;
+        }
     }
 }
 
@@ -10,7 +12,7 @@
     justify-content: center;
     position: relative;
     height: fit-content;
-    width: 365px;
+    max-width: 365px;
 
 
     &.station {
@@ -24,8 +26,11 @@
         margin-top: 64px;
         background-color: $clr2;
         color: $clr1;
-        margin-bottom: 24px;
+        // margin-bottom: 24px;
         border-radius: 24px;
+        position: relative;
+        top: -51px;
+        left: 98px;
 
     }
 
@@ -34,7 +39,7 @@
         color: inherit;
         outline: none;
         border: none;
-        width: 315px;
+        width: 83%;
         padding: 10px 15px;
         font-weight: 400;
         font-size: 1.3em;
@@ -204,5 +209,7 @@
 @media (max-width: $mobile-size) {
     .main-search .search-container:not(.station) {
         margin: 20px $main-mobile-padding;
+        top: 0;
+        left: 0;
     }
 }

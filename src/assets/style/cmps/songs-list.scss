@@ -16,6 +16,10 @@
     @media (max-width: $mobile-size) {
         padding-inline-start: $main-mobile-padding;
         padding-inline-end: $main-mobile-padding;
+
+        h2{
+            font-size: 18px;
+        }
     }
 }
 
