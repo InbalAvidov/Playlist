@@ -47,6 +47,8 @@
         .song-title {
             flex: 1;
             margin-left: 10px;
+            max-height: 50px;
+            overflow: hidden;
         }
 
         .song-name {
