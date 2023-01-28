@@ -3,6 +3,18 @@ import { utilService } from "../service/util.service";
 export const homeStations = [
   {
     "_id": utilService.makeId(25),
+    "name": "Liked Songs",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674838098/likedSongPic_lrwwnc.png",
+    "tags": ['home'],
+    "songs": [],
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
     "name": "Daily Mix 2",
     "imgUrl": "//res.cloudinary.com/damrhms1q/image/upload/v1674246586/cover1_veddql.jpg",
     "tags": [
@@ -14,7 +26,6 @@ export const homeStations = [
       "id": "rYEDA3JcQqw",
       "title": "Rolling in the Deep",
       "channelTitle": "Adele",
-      "url": "//www.youtube.com/embed?v=rYEDA3JcQqw",
       "imgUrl": "//i.ytimg.com/vi/rYEDA3JcQqw/hqdefault.jpg",
       "addedAt": utilService.getRandomTimeStamp()
     },
@@ -72,7 +83,7 @@ export const homeStations = [
       "id": "niG3YMU6jFk", "title": " Oh My God ", "channelTitle": "Adele", "imgUrl": "//i.ytimg.com/vi/niG3YMU6jFk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=niG3YMU6jFk",
       "addedAt": utilService.getRandomTimeStamp()
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -123,7 +134,7 @@ export const homeStations = [
       "id": "k4YRWT_Aldo", "title": " 7/11", "channelTitle": "Beyoncé", "imgUrl": "//i.ytimg.com/vi/k4YRWT_Aldo/hqdefault.jpg", "url": "//www.youtube.com/embed?v=k4YRWT_Aldo",
       "addedAt": utilService.getRandomTimeStamp()
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -164,7 +175,7 @@ export const homeStations = [
       "addedAt": utilService.getRandomTimeStamp()
     },
     ],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -215,7 +226,7 @@ export const homeStations = [
     {
       "addedAt": utilService.getRandomTimeStamp(), "id": "7Jj83FOlBF8", "title": "Make It Better ", "channelTitle": "AndersonPaak", "imgUrl": "//i.ytimg.com/vi/7Jj83FOlBF8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=7Jj83FOlBF8"
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -259,7 +270,7 @@ export const homeStations = [
     {
       "addedAt": utilService.getRandomTimeStamp(), "id": "PXyPiHt2weU", "title": " Why ", "channelTitle": "Dominic Fike", "imgUrl": "//i.ytimg.com/vi/PXyPiHt2weU/hqdefault.jpg", "url": "//www.youtube.com/embed?v=PXyPiHt2weU"
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -300,7 +311,7 @@ export const homeStations = [
     {
       "addedAt": utilService.getRandomTimeStamp(), "id": "6B3YwcjQ_bU", "title": " 2009", "channelTitle": "Mac Miller", "imgUrl": "//i.ytimg.com/vi/6B3YwcjQ_bU/hqdefault.jpg", "url": "//www.youtube.com/embed?v=6B3YwcjQ_bU"
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -339,7 +350,7 @@ export const homeStations = [
       "addedAt": utilService.getRandomTimeStamp(), "id": "yKNxeF4KMsY", "title": " Yellow ", "channelTitle": "Coldplay", "imgUrl": "//i.ytimg.com/vi/yKNxeF4KMsY/hqdefault.jpg", "url": "//www.youtube.com/embed?v=yKNxeF4KMsY"
 
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -389,7 +400,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -444,7 +455,7 @@ export const homeStations = [
 
       },
     ],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -517,7 +528,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -560,7 +571,7 @@ export const homeStations = [
 
     },
     ],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -597,7 +608,7 @@ export const homeStations = [
       ,
 
     }],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -619,7 +630,7 @@ export const homeStations = [
       "addedAt": utilService.getRandomTimeStamp(),
       "title": " Rolling in the Deep",
       "channelTitle": "Adele",
-      "url": "//www.youtube.com/embed?v=rYEDA3JcQqw",
+     
       "imgUrl": "//i.ytimg.com/vi/rYEDA3JcQqw/hqdefault.jpg"
     },
     {
@@ -667,7 +678,7 @@ export const homeStations = [
       "addedAt": utilService.getRandomTimeStamp(),
     },
     ],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -720,7 +731,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -765,7 +776,7 @@ export const homeStations = [
       "addedAt": utilService.getRandomTimeStamp()
     },
     ],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -820,7 +831,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -878,7 +889,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -927,7 +938,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -980,7 +991,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1037,7 +1048,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1093,7 +1104,7 @@ export const homeStations = [
 
       },
     ],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1165,7 +1176,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1213,7 +1224,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1249,7 +1260,7 @@ export const homeStations = [
       ,
 
     }],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1266,7 +1277,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1283,7 +1294,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1300,7 +1311,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1317,7 +1328,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1334,7 +1345,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1351,7 +1362,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1368,7 +1379,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1385,7 +1396,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1402,7 +1413,7 @@ export const homeStations = [
       "artist",
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1419,7 +1430,7 @@ export const homeStations = [
       "artist"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1436,7 +1447,7 @@ export const homeStations = [
       "artist",
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1456,7 +1467,7 @@ export const homeStations = [
       "Recently played"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1474,7 +1485,7 @@ export const homeStations = [
       "More of what you like"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1491,7 +1502,7 @@ export const homeStations = [
       "artist"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1511,7 +1522,7 @@ export const homeStations = [
       "More of what you like"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1528,7 +1539,7 @@ export const homeStations = [
       "new releases"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1546,7 +1557,7 @@ export const homeStations = [
       "More of what you like"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",
@@ -1563,7 +1574,7 @@ export const homeStations = [
       "new releases"
     ],
     "songs": [],
-    "msgs": [],
+    
     "createdBy":
     {
       "_id": "spt100",

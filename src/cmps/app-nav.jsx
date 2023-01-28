@@ -36,14 +36,14 @@ export function AppNav() {
     async function getUserStations(user) {
         let userStations = await stationService.query({ userId: user._id })
         userStations = [...userStations, ...user.likedStations]
-        setUserStations(userStations)
+        setUserStations([...userStations])
     }
 
     function setActive(page) {
         setPage(page)
     }
 
-    console.log('page:', page)
+    
     return (
         <main className="app-nav">
             <div className="logo">

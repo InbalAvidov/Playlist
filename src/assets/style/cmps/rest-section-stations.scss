@@ -12,17 +12,24 @@
         max-width: 224px;
     }
 
-    .rest-section-station-preview {
-        display: flex;
-        flex-direction: column;
-        background-color: $song-bgc-home;
-        grid-column: span 1;
-        border-radius: 6px;
-        padding: 16px;
-        transition: 3s;
-        max-width: fit-content;
-        height: 100%;
-        width: 100%;
+    
+    @media (max-width: $mobile-size) {
+        grid-auto-flow: column;
+        overflow: scroll;
+        
+    }
+}
+.rest-section-station-preview {
+    display: flex;
+    flex-direction: column;
+    background-color: $song-bgc-home;
+    grid-column: span 1;
+    border-radius: 6px;
+    padding: 16px;
+    transition: .5s;
+    max-width: fit-content;
+    height: 100%;
+    width: 100%;
 
         .green-play-pause-btn {
             opacity: 0;
@@ -34,57 +41,50 @@
             opacity: 1;
         }
 
-        .img-container {
-            position: relative;
-            max-height: 190px;
-            max-width: 190px;
-            margin-bottom: 8px;
-            min-width: 110px;
-        }
+    .img-container {
+        position: relative;
+        max-height: 190px;
+        max-width: 190px;
+        margin-bottom: 8px;
+        min-width: 110px;
+    }
 
 
-        img {
-            border-radius: 4px;
-        }
+    img {
+        border-radius: 4px;
+    }
 
-        .green-play-pause-btn {
-            @include green-play-pause-btn;
-            position: absolute;
-            bottom: 8px;
-            right: 8px;
+    .green-play-pause-btn {
+        @include green-play-pause-btn;
+        position: absolute;
+        bottom: 8px;
+        right: 8px;
 
             &.pause {
                 opacity: 1;
             }
         }
 
-        .description {
-            font-size: 14px;
-            min-height: 62px;
-        }
-
-        p {
-            opacity: 0.5;
-            min-height: em(45px);
-        }
-
-        h3 {
-            font-size: 16px;
-            padding-top: 10px;
-            padding-bottom: 4px;
-            max-height: 36px;
-            overflow: hidden;
-        }
-
-        &:hover {
-            background-color: lighten($song-bgc-home, 3%);
-        }
+    .description {
+        font-size: 14px;
+        min-height: 62px;
     }
 
-    @media (max-width: $mobile-size) {
-        grid-auto-flow: column;
-        overflow: scroll;
+    p {
+        opacity: 0.5;
+        min-height: em(45px);
+    }
 
+    h3 {
+        font-size: 16px;
+        padding-top: 10px;
+        padding-bottom: 4px;
+        max-height: 36px;
+        overflow: hidden;
+    }
+
+    &:hover {
+        background-color: lighten($song-bgc-home, 5%);
     }
 }
 

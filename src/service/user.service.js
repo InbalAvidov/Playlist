@@ -134,15 +134,6 @@ function _createUsers() {
                 password: 'hila',
                 likedSongs: [],
                 likedStations: []
-            },
-            {
-                _id: '5cksxjas89xjsa8xjsa8GGG7',
-                fullname: 'Guest',
-                email: 'guest@gmail.com',
-                username: 'guest',
-                password: 'guest',
-                likedSongs: [],
-                likedStations: []
             }
         ]
         utilService.saveToStorage(USERS_KEY, users)

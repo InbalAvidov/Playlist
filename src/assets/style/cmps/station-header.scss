@@ -44,13 +44,13 @@
 
             &.station {
                 font-size: 12px;
+                margin-top: 20px;
                 text-transform: uppercase;
                 font-family: montserrat-bold, Arial;
             }
 
             span {
                 font-family: montserrat-bold, Arial;
-                margin-left: 5px;
             }
         }
 
@@ -97,6 +97,22 @@
         opacity: 1;
     }
 
+    .share{
+        position: relative;
+
+        span{
+            font-size: 1.2em;
+            font-weight: 900;
+            opacity: .6;
+            position: absolute;
+            left: -5px;
+            bottom: .5px;
+        }
+
+        &:hover >*{
+            opacity: 1;
+        }
+    }
     @media (max-width: $mobile-size) {
         padding: 10px 0 9px 0;
         margin-left: -10px;
@@ -219,7 +235,7 @@
         }
     }
 
-    .title-desc {
+    .text-input {
         flex: 1;
         margin-left: 15px;
         display: flex;
@@ -246,12 +262,21 @@
             border: none;
         }
 
+
         .input-desc {
             padding-bottom: 60px;
         }
 
 
     }
+}
+
+.share-modal{
+    .text-input{
+        margin-left:0 ;
+    }
+
+    
 }
 
 .app-modal-editor {
