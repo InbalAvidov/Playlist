@@ -1,7 +1,6 @@
 .rest-section-stations {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15vw, 1fr));
-    grid-template-rows: repeat(auto-fit, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     width: 100%;
     gap: 24px;
 
@@ -16,7 +15,7 @@
     @media (max-width: $mobile-size) {
         grid-auto-flow: column;
         overflow: scroll;
-        
+        gap: 15px;
     }
 }
 .rest-section-station-preview {
@@ -31,9 +30,15 @@
     height: 100%;
     width: 100%;
 
-    &:hover .green-play-pause-btn {
-        opacity: 1;
-    }
+        .green-play-pause-btn {
+            opacity: 0;
+            transition: 3s opacity ease;
+        }
+
+        &:hover .green-play-pause-btn {
+            transform: translateY(0%);
+            opacity: 1;
+        }
 
     .img-container {
         position: relative;
@@ -54,10 +59,10 @@
         bottom: 8px;
         right: 8px;
 
-        &.pause{
-            opacity: 1;
+            &.pause {
+                opacity: 1;
+            }
         }
-    }
 
     .description {
         font-size: 14px;
@@ -84,4 +89,4 @@
 
 .rest-section-stations::-webkit-scrollbar {
     display: none;
-  }
+}
