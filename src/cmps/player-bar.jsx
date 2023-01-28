@@ -49,11 +49,6 @@ export function PlayerBar() {
         }
     }
 
-    function openFullscreen(ev) {
-        const elImg = document.querySelector('song-img')
-        elImg.msRequestFullscreen()
-    }
-
     function onToggleHover(ev) {
         if (!player) return
         if (ev.type === 'mousemove') setVolumeColor('#1ed760')
@@ -110,6 +105,7 @@ export function PlayerBar() {
     }
 
     function onQueue() {
+        if(!songs) return
         setQueue(!isQueue)
         if (!isQueue) navigate('/queue')
         else navigate(-1)
