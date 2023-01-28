@@ -1,6 +1,6 @@
-import { useSelector } from 'react-redux';
-import YouTube from 'react-youtube';
-import { loadPlayer } from '../store/player.action';
+import { useSelector } from 'react-redux'
+import YouTube from 'react-youtube'
+import { loadPlayer } from '../store/player.action'
 
 export function SoundPlayer({ onEnd }) {
   const song = useSelector(storeState => storeState.playerModule.song)
@@ -15,7 +15,6 @@ export function SoundPlayer({ onEnd }) {
 
   function onReady(event) {
     loadPlayer(event.target)
-    console.log(event.target)
     if (event.target.i.h.videoId === 'aFG7MR6ld1M') return event.target.pauseVideo()
     event.target.playVideo()
   }
