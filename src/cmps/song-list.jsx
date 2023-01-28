@@ -10,8 +10,10 @@ export function SongList({ station, addSong, onDeleteSong, isLikedSongsPage }) {
     const color = useSelector(storeState => storeState.stationModule.color)
     const [items, setItems] = useState(station.songs)
 
-    function onAddSong(song) {
-        addSong([...station.songs, song])
+    async function onAddSong(song) {
+        console.log('[...station.songs, song]:',[...station.songs, song])
+        const songs = await addSong([...station.songs, song])
+        setItems(songs)
     }
 
     async function onDragEnd(result) {
@@ -25,7 +27,7 @@ export function SongList({ station, addSong, onDeleteSong, isLikedSongsPage }) {
         const updetedStation = await updateStation(station)
         setItems(updetedStation.songs)
     }
-   
+   console.log('station:',station)
     return (
         <main className='main-song-list'>
             {station.songs.length > 0 &&
@@ -49,7 +51,7 @@ export function SongList({ station, addSong, onDeleteSong, isLikedSongsPage }) {
                                     {...provided.droppableProps}
                                 >
                                     {station.songs.map((song, idx) => (
-                                        <SongPreview song={song} idx={idx} onDeleteSong={onDeleteSong} station={station} isLikedSongsPage={isLikedSongsPage} />
+                                        <SongPreview song={song} idx={idx} onDeleteSong={onDeleteSong} isLikedSongsPage={isLikedSongsPage} />
                                     ))}
                                     {provided.placeholder}
                                 </div>

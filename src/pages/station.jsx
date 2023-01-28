@@ -43,6 +43,8 @@ export function Station() {
   async function onSelectImg(ev) {
     try {
       const imgUrl = await uploadService.uploadImg(ev)
+      const clr = await utilService.getMainColor(imgUrl)
+      setColor(clr)
       return imgUrl
     } catch (err) {
       console.log('Cant set image', err)
@@ -52,6 +54,7 @@ export function Station() {
   async function addSong(songs) {
     const stationToUpdate = await updateStation({ ...station, 'songs': songs })
     setStation(stationToUpdate)
+    return stationToUpdate.songs
   }
 
   async function onDeleteSong(songId) {

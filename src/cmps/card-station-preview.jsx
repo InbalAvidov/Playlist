@@ -38,7 +38,6 @@ export function CardStationPreview({station}) {
         togglePlay(!isPlaying)
 
     }
-    console.log('station:',station)
     return (
         <div className="rest-section-station-preview" >
             <div className="img-container" >
