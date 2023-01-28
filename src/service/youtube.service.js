@@ -39,7 +39,6 @@ async function getYoutubeReasults(val) {
 async function getSongDuration(songId) {
     const res = await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${songId}&part=contentDetails&key=${API_KEY}`)
     const videoDuration = res.data.items[0].contentDetails.duration
-    // console.log('videoDuration:', videoDuration)
     const min = videoDuration.slice(2, videoDuration.indexOf('M'))
     let sec = videoDuration.slice(videoDuration.indexOf('M') + 1, videoDuration.indexOf('S'))
     sec = sec.padStart(2, '0')

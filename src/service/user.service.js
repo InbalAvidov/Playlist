@@ -112,8 +112,8 @@ function _createUsers() {
             {
                 _id: '5cksxjas89xjsa8xjsa8jld3',
                 fullname: 'Inbal Avidov',
-                email: 'inbal.avidov@gmail.com',
                 username: 'inbal.avidov',
+                email: 'inbal.avidov@gmail.com',
                 password: 'inbal',
                 likedSongs: [],
                 likedStations: []
@@ -129,8 +129,8 @@ function _createUsers() {
             {
                 _id: '5cksxjas89xjsa8xjsa8hhh7',
                 fullname: 'Hila Shor',
-                email: 'hilashor@gmail.com',
                 username: 'hila.shor',
+                email: 'hilashor@gmail.com',
                 password: 'hila',
                 likedSongs: [],
                 likedStations: []

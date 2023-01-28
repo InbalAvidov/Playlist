@@ -1,8 +1,8 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
-import { useParams } from "react-router-dom";
-import { Loader } from "../cmps/loader";
-import { RestSectionStations } from "../cmps/rest-section-stations";
+import { useEffect, useState } from 'react'
+import { useSelector } from 'react-redux'
+import { useParams } from 'react-router-dom'
+import { Loader } from '../cmps/loader'
+import { RestSectionStations } from '../cmps/rest-section-stations'
 
 export function ShowAll() {
     const { category } = useParams()
@@ -21,7 +21,7 @@ export function ShowAll() {
 
     if (!categoryStations) return <Loader />
     return (
-        <main className="show-all clr-container">
+        <main className='show-all clr-container'>
             <h2>{category}</h2>
             <RestSectionStations stations={categoryStations} />
         </main>

@@ -15,6 +15,7 @@ import { LoginSignup } from './pages/login-signup';
 import { Queue } from './pages/queue'
 import { Genre } from './pages/genre'
 import { ShowAll } from './pages/show-all'
+import { UserMsg } from './cmps/user-msg'
 
 
 export function App() {
@@ -22,7 +23,6 @@ export function App() {
 
     function onScroll({ target }) {
         const opacity = (target.scrollTop - 80) / 100
-        // if (opacity > 5) return
         setOpacity(opacity)
     }
 
@@ -46,6 +46,7 @@ export function App() {
                             <Route element={<Genre />} path="/genre/:genreName" />
                             <Route element={<ShowAll />} path="/show/:category" />
                         </Routes>
+                    <UserMsg />
                     </main>
                     <PlayerBar />
                 </section>
