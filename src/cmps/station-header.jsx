@@ -134,7 +134,6 @@ export function StationHeader({ station, onSelectImg, saveChanges, deleteStation
             showErrorMsg('Had problem with share station')
         }
     }
-    console.log('isEdit:', isEdit)
     return (
         <section className='station-header' onClick={onOpenEditor}>
             <div className='clr-container' style={{ backgroundColor: `${isLikedSongsPage ? 'rgb(80, 56, 160)' : color}` }}>

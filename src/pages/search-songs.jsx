@@ -18,7 +18,6 @@ export function SearchSongs({ onAddSong, isForStation, scroll }) {
     const [search, setSearch] = useState('')
     const [songsBySearch, setSongsBySearch] = useState(null)
     const searchSongs = useRef(utilService.debounce(getSearchReasults, 700))
-    console.log('SCROLL ON SEARCH', scroll)
 
     useEffect(() => {
         if (isForStation) return
