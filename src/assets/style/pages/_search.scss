@@ -86,8 +86,9 @@
 
     .search-icon {
         position: absolute;
+        display: flex;
+        align-self: center;
         left: 10px;
-        top: 20%;
     }
 
     .x-icon {
