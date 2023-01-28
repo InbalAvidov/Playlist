@@ -8,17 +8,35 @@
     }
 
     .song-preview {
-        grid-template-columns: 20px 30px minmax(240px, 1fr) 60px 60px 50px 20px;
+        grid-template-columns: 20px minmax(200px, 1.5fr) 1fr 40px 70px 60px 20px;
+
+        @media (max-width: $mobile-size) {
+            grid-template-columns: 20px minmax(200px, 1.5fr) 1fr 40px 70px 20px 20px;
+        }
+
+        &:hover:not(.songs-list-header) .song-play{
+            left: 32px;
+            padding-bottom: 4px;
+        }
+        &:hover:not(.songs-list-header) .song-img{
+            opacity: 0.3;
+        }
+
+        .song-img-title {
+            grid-column: 2;
+        }
 
         .song-duration.last {
             grid-column: 6;
         }
-        .song-delete{
+
+        .song-delete {
             grid-column: 5;
             display: none;
         }
-        .song-like{
-            // grid-column: 7;
+
+        .song-number {
+            display: none;
         }
     }
 }
@@ -87,6 +105,12 @@
     >* {
         grid-column: span 1;
     }
+
+    @media (max-width: $mobile-size) {
+        display: flex;
+        flex-direction: column;
+    }
+
 }
 
 .top-result {
@@ -130,6 +154,8 @@
     }
 
     .results {
+        max-height: 230px;
+        overflow-y: scroll;
         border-radius: .5em;
         padding: 5px;
         background-color: $song-bgc-home;
@@ -210,7 +236,7 @@
     gap: 25px;
 
     @media (max-width: $mobile-size) {
-        grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
         gap: 10px;
     }
 

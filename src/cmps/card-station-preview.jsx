@@ -4,7 +4,9 @@ import defaultPhoto from '../assets/img/default-photo.png'
 import { setSong, togglePlay } from '../store/player.action'
 import { loadCurrStation } from '../store/station.actions'
 
-export function CardStationPreview({station}) {
+import logo from '../assets/img/logoLogin.png'
+
+export function CardStationPreview({ station }) {
     const isPlaying = useSelector(storeState => storeState.playerModule.isPlaying)
     const currStation = useSelector(storeState => storeState.stationModule.currStation)
 
@@ -40,6 +42,7 @@ export function CardStationPreview({station}) {
     return (
         <div className='rest-section-station-preview' >
             <div className='img-container' >
+                {station.createdBy.username === 'Playlist' && <img src={logo} className='logo-mark' />}
                 <img src={station.imgUrl ? station.imgUrl : station.songs?.length > 0 ? station.songs[0].imgUrl : defaultPhoto} alt='' />
                 {station?._id === currStation?._id && isPlaying
                     ?
