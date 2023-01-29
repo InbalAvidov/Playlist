@@ -7,7 +7,6 @@ async function getStations(req, res) {
 
   try {
     const { userId, page } = req.query
-    console.log('req.query:',req.query)
     const stations = await stationService.query({ userId, page })
     res.json(stations)
   } catch (err) {
@@ -42,11 +41,8 @@ async function addStation(req, res) {
 async function updateStation(req, res) {
   try {
     const station = req.body
-    console.log('back- station controller, station', station)
     const updatedStation = await stationService.update(station)
     res.json(updatedStation)
-    console.log('updatedStation:',updatedStation)
-    res.send(updateStation)
   } catch (err) {
     logger.error('Failed to update station', err)
     res.status(500).send({ err: 'Failed to update station' })

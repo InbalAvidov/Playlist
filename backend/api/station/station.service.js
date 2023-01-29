@@ -21,7 +21,7 @@ async function query(filterBy = {}) {
 
         const collection = await dbService.getCollection('station')
         var stations = await collection.find(criteria).toArray()
-        console.log('stations:',stations)
+        console.log('stations:', stations)
         return stations
     } catch (err) {
         logger.error('cannot find stations', err)
@@ -83,35 +83,10 @@ async function update(station) {
     }
 }
 
-async function addStationMsg(stationId, msg) {
-    try {
-        msg.id = utilService.makeId()
-        const collection = await dbService.getCollection('station')
-        await collection.updateOne({ _id: ObjectId(stationId) }, { $push: { msgs: msg } })
-        return msg
-    } catch (err) {
-        logger.error(`cannot add station msg ${stationId}`, err)
-        throw err
-    }
-}
-
-async function removeStationMsg(stationId, msgId) {
-    try {
-        const collection = await dbService.getCollection('station')
-        await collection.updateOne({ _id: ObjectId(stationId) }, { $pull: { msgs: { id: msgId } } })
-        return msgId
-    } catch (err) {
-        logger.error(`cannot add station msg ${stationId}`, err)
-        throw err
-    }
-}
-
 module.exports = {
     remove,
     query,
     getById,
     add,
-    update,
-    addStationMsg,
-    removeStationMsg
+    update
 }
