@@ -7,9 +7,13 @@ async function query(filterBy = {}) {
     try {
         logger.info('station.service query filterBy', filterBy)
         const criteria = {}
+        // if (filterBy.userId) {
+        //     criteria['createdBy._id'] = filterBy.userId
+        // }
         if (filterBy.userId) {
-            criteria['createdBy._id'] = filterBy.userId
+            criteria['$or'] = [{ 'createdBy._id': filterBy.userId }, { 'shareWith': filterBy.userId }]
         }
+
         if (filterBy.page) {
             criteria.tags = { $regex: filterBy.page, $options: 'i' }
         }
@@ -65,7 +69,9 @@ async function update(station) {
             songs: station.songs,
             followers: station.followers,
             imgUrl: station.imgUrl,
-            clr: station.clr
+            clr: station.clr,
+            shareWith: station.shareWith,
+            shareBy: station.shareBy
         }
         const collection = await dbService.getCollection('station')
         await collection.updateOne({ _id: ObjectId(station._id) }, { $set: stationToSave })

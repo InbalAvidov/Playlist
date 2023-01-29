@@ -32,6 +32,7 @@ async function remove(stationId) {
 
 async function save(station) {
   if (station._id) {
+    console.log(' front-station.service save. station.shareWith', station.shareWith)
     return httpService.put(STATION_URL + station._id, station)
   } else {
     return httpService.post(STATION_URL, station)
