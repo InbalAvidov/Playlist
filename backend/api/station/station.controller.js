@@ -1,5 +1,4 @@
 const stationService = require('./station.service.js')
-
 const logger = require('../../services/logger.service')
 const { log } = require('../../middlewares/logger.middleware.js')
 
@@ -7,8 +6,8 @@ const { log } = require('../../middlewares/logger.middleware.js')
 async function getStations(req, res) {
 
   try {
-    const { userId, page, likedBy } = req.query
-    const stations = await stationService.query({ userId, page, likedBy })
+    const { userId, page } = req.query
+    const stations = await stationService.query({ userId, page })
     res.json(stations)
   } catch (err) {
     logger.error('Failed to get stations', err)
@@ -53,7 +52,6 @@ async function addStation(req, res) {
 async function updateStation(req, res) {
   try {
     const station = req.body
-    console.log('back- station controller, station', station)
     const updatedStation = await stationService.update(station)
     res.json(updatedStation)
   } catch (err) {
@@ -73,44 +71,10 @@ async function removeStation(req, res) {
   }
 }
 
-async function addStationMsg(req, res) {
-  const { loggedinUser } = req
-  try {
-    const stationId = req.params.id
-    const msg = {
-      txt: req.body.txt,
-      by: loggedinUser
-    }
-    const savedMsg = await stationService.addStationMsg(stationId, msg)
-    res.json(savedMsg)
-  } catch (err) {
-    logger.error('Failed to update station', err)
-    res.status(500).send({ err: 'Failed to update station' })
-
-  }
-}
-
-async function removeStationMsg(req, res) {
-  const { loggedinUser } = req
-  try {
-    const stationId = req.params.id
-    const { msgId } = req.params
-
-    const removedId = await stationService.removeStationMsg(stationId, msgId)
-    res.send(removedId)
-  } catch (err) {
-    logger.error('Failed to remove station msg', err)
-    res.status(500).send({ err: 'Failed to remove station msg' })
-
-  }
-}
-
 module.exports = {
   getStations,
   getStationById,
   addStation,
   updateStation,
   removeStation,
-  addStationMsg,
-  removeStationMsg
 }
