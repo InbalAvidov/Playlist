@@ -5,11 +5,7 @@ const ObjectId = require('mongodb').ObjectId
 
 async function query(filterBy = {}) {
     try {
-        // logger.info('station.service query filterBy', filterBy)
         const criteria = {}
-        // if (filterBy.userId) {
-        //     criteria['createdBy._id'] = filterBy.userId
-        // }
         if (filterBy.userId) {
             criteria['$or'] = [{ 'createdBy._id': filterBy.userId }, { 'shareWith': filterBy.userId }]
         }
@@ -17,7 +13,7 @@ async function query(filterBy = {}) {
         if (filterBy.page) {
             criteria.tags = { $regex: filterBy.page, $options: 'i' }
         }
-        // logger.info('station.service query criteria', criteria)
+        logger.info('station.service query criteria', criteria)
 
         const collection = await dbService.getCollection('station')
         var stations = await collection.find(criteria).toArray()
@@ -68,9 +64,7 @@ async function update(station) {
             name: station.name,
             description: station.description,
             songs: station.songs,
-            followers: station.followers,
             imgUrl: station.imgUrl,
-            clr: station.clr,
             shareWith: station.shareWith,
             shareBy: station.shareBy
         }
@@ -83,35 +77,11 @@ async function update(station) {
     }
 }
 
-async function addStationMsg(stationId, msg) {
-    try {
-        msg.id = utilService.makeId()
-        const collection = await dbService.getCollection('station')
-        await collection.updateOne({ _id: ObjectId(stationId) }, { $push: { msgs: msg } })
-        return msg
-    } catch (err) {
-        logger.error(`cannot add station msg ${stationId}`, err)
-        throw err
-    }
-}
-
-async function removeStationMsg(stationId, msgId) {
-    try {
-        const collection = await dbService.getCollection('station')
-        await collection.updateOne({ _id: ObjectId(stationId) }, { $pull: { msgs: { id: msgId } } })
-        return msgId
-    } catch (err) {
-        logger.error(`cannot add station msg ${stationId}`, err)
-        throw err
-    }
-}
 
 module.exports = {
     remove,
     query,
     getById,
     add,
-    update,
-    addStationMsg,
-    removeStationMsg
+    update
 }
