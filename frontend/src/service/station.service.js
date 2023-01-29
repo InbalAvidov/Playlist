@@ -15,11 +15,12 @@ export const stationService = {
 }
 
 async function query(filterBy = getEmptyFilter()) {
+  console.log('filterBy:',filterBy)
   return httpService.get(STATION_URL, filterBy)
 }
 
 function getEmptyFilter() {
-  return { user: null, likedBy: userService.getLoggedinUser()?._id }
+  return { userId: null, page: null }
 }
 
 async function get(stationId) {

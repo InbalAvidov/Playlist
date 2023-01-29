@@ -1,13 +1,15 @@
 const stationService = require('./station.service.js')
 
 const logger = require('../../services/logger.service')
+const { log } = require('../../middlewares/logger.middleware.js')
 
 
 async function getStations(req, res) {
 
   try {
-    const { userId, page, likedBy } = req.query
-    const stations = await stationService.query({ userId, page, likedBy })
+    const { userId, page } = req.query
+    console.log('req.query:',req.query)
+    const stations = await stationService.query({ userId, page })
     res.json(stations)
   } catch (err) {
     logger.error('Failed to get stations', err)
@@ -41,8 +43,11 @@ async function addStation(req, res) {
 async function updateStation(req, res) {
   try {
     const station = req.body
+    console.log('station:',station)
     const updatedStation = await stationService.update(station)
     res.json(updatedStation)
+    console.log('updatedStation:',updatedStation)
+    res.send(updateStation)
   } catch (err) {
     logger.error('Failed to update station', err)
     res.status(500).send({ err: 'Failed to update station' })

@@ -4,6 +4,7 @@ import { useState } from "react"
 export function ShareModal({ setIsShareModal, users, user, onCloseShare }) {
     const [share, setShare] = useState('')
 
+
     useEffect(()=>{
         setShare('')
     },[])

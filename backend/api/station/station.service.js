@@ -9,6 +9,7 @@ async function query(filterBy = {}) {
         const criteria = {}
         if (filterBy.userId) {
             criteria['createdBy._id'] = filterBy.userId
+            // criteria['shareWith'] = filterBy.userId
         }
         if (filterBy.page) {
             criteria.tags = { $regex: filterBy.page, $options: 'i' }
@@ -17,6 +18,7 @@ async function query(filterBy = {}) {
 
         const collection = await dbService.getCollection('station')
         var stations = await collection.find(criteria).toArray()
+        console.log('stations:',stations)
         return stations
     } catch (err) {
         logger.error('cannot find stations', err)
@@ -61,11 +63,13 @@ async function update(station) {
     try {
         const stationToSave = {
             name: station.name,
-            desc: station.desc,
+            description: station.description,
             songs: station.songs,
             followers: station.followers,
             imgUrl: station.imgUrl,
-            clr: station.clr
+            clr: station.clr,
+            shareWith: station.shareWith,
+            shareBy: station.shareBy
         }
         const collection = await dbService.getCollection('station')
         await collection.updateOne({ _id: ObjectId(station._id) }, { $set: stationToSave })
