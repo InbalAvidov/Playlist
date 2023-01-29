@@ -5,7 +5,7 @@ const ObjectId = require('mongodb').ObjectId
 
 async function query(filterBy = {}) {
     try {
-        logger.info('station.service query filterBy', filterBy)
+        // logger.info('station.service query filterBy', filterBy)
         const criteria = {}
         if (filterBy.userId) {
             criteria['createdBy._id'] = filterBy.userId
@@ -13,7 +13,7 @@ async function query(filterBy = {}) {
         if (filterBy.page) {
             criteria.tags = { $regex: filterBy.page, $options: 'i' }
         }
-        logger.info('station.service query criteria', criteria)
+        // logger.info('station.service query criteria', criteria)
 
         const collection = await dbService.getCollection('station')
         var stations = await collection.find(criteria).toArray()

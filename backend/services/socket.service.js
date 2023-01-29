@@ -15,14 +15,22 @@ function setupSocketAPI(http) {
         socket.on('disconnect', socket => {
             logger.info(`Socket disconnected [id: ${socket.id}]`)
         })
-        socket.on('chat-set-topic', topic => {
-            if (socket.myTopic === topic) return
-            if (socket.myTopic) {
-                socket.leave(socket.myTopic)
-                logger.info(`Socket is leaving topic ${socket.myTopic} [id: ${socket.id}]`)
+        // socket.on('chat-set-topic', topic => {
+        socket.on('share-station', station => {
+            // if (socket.myTopic === topic) return
+            if (socket.station === station) return
+            // if (socket.myTopic) {
+            //     socket.leave(socket.myTopic)
+            //     logger.info(`Socket is leaving topic ${socket.myTopic} [id: ${socket.id}]`)
+            // }
+            if (socket.station) {
+                socket.leave(socket.station)
+                logger.info(`Socket is leaving station ${socket.station} [id: ${station._id}]`)
             }
-            socket.join(topic)
-            socket.myTopic = topic
+            // socket.join(topic)
+            socket.join(station)
+            // socket.myTopic = topic
+            socket.station = station
         })
         socket.on('chat-send-msg', msg => {
             logger.info(`New chat msg from socket [id: ${socket.id}], emitting to topic ${socket.myTopic}`)

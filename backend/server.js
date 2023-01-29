@@ -11,7 +11,6 @@ app.use(cookieParser())
 app.use(express.json())
 
 
-
 if (process.env.NODE_ENV === 'production') {
     app.use(express.static(path.resolve(__dirname, 'public')))
 } else {
@@ -25,7 +24,7 @@ if (process.env.NODE_ENV === 'production') {
 const authRoutes = require('./api/auth/auth.routes')
 const userRoutes = require('./api/user/user.routes')
 const stationRoutes = require('./api/station/station.routes')
-// const {setupSocketAPI} = require('./services/socket.service')
+const {setupSocketAPI} = require('./services/socket.service')
 
 // routes
 const setupAsyncLocalStorage = require('./middlewares/setupAls.middleware')
@@ -34,7 +33,7 @@ app.all('*', setupAsyncLocalStorage)
 app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
 app.use('/api/station', stationRoutes)
-// setupSocketAPI(http)
+setupSocketAPI(http)
 
 // Make every server-side-route to match the index.html
 // so when requesting http://localhost:3030/index.html/station/123 it will still respond with
