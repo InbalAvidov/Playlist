@@ -14,16 +14,6 @@ async function getStations(req, res) {
     res.status(500).send({ err: 'Failed to get stations' })
   }
 
-
-  // try {
-  //   const { userId, page } = req.query
-  //   console.log('req.query:',req.query)
-  //   const stations = await stationService.query({ userId, page })
-  //   res.json(stations)
-  // } catch (err) {
-  //   logger.error('Failed to get stations', err)
-  //   res.status(500).send({ err: 'Failed to get stations' })
-  // }
 }
 
 async function getStationById(req, res) {
