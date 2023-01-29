@@ -7,10 +7,13 @@ async function query(filterBy = {}) {
     try {
         logger.info('station.service query filterBy', filterBy)
         const criteria = {}
+        // if (filterBy.userId) {
+        //     criteria['createdBy._id'] = filterBy.userId
+        // }
         if (filterBy.userId) {
-            criteria['createdBy._id'] = filterBy.userId
-            // criteria['shareWith'] = filterBy.userId
+            criteria['$or'] = [{ 'createdBy._id': filterBy.userId }, { 'shareWith': filterBy.userId }]
         }
+
         if (filterBy.page) {
             criteria.tags = { $regex: filterBy.page, $options: 'i' }
         }

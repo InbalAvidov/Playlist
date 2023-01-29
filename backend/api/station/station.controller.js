@@ -43,7 +43,7 @@ async function addStation(req, res) {
 async function updateStation(req, res) {
   try {
     const station = req.body
-    console.log('station:',station)
+    console.log('back- station controller, station', station)
     const updatedStation = await stationService.update(station)
     res.json(updatedStation)
     console.log('updatedStation:',updatedStation)

@@ -122,6 +122,7 @@ export function StationHeader({ station, onSelectImg, saveChanges, deleteStation
     }
 
     async function onCloseShare(share) {
+console.log('onCloseShare, share',share)
         setIsShareModal(false)
         const selectedUser = users.find(user => user.fullname === share)
         console.log('selectedUser:',selectedUser)
