@@ -1,0 +1,26 @@
+.user-msg {
+    background-color: rgb(64, 109, 222);
+    display: flex;
+    justify-content: center;
+    padding: .7em 1em ;
+    font-size: 1.1em;
+    border-radius: 5px;
+    position: absolute;
+    bottom: 110px;
+    @media (max-width:$mobile-size) {
+        bottom: 90px;
+    }
+    color: $clr2;
+    right: 10px;
+    font-weight: bold;
+}
+
+.user-msg.error {
+    background-color: rgb(206, 46, 46);
+}
+
+
+.user-msg button {
+    float: right;
+    margin: 1em;
+}

@@ -14,7 +14,7 @@ export const store = createStore(rootReducer, middleware)
 
 
 store.subscribe(() => {
-    console.log('storeState:\n', store.getState())
+    // console.log('storeState:\n', store.getState())
 })
 
 

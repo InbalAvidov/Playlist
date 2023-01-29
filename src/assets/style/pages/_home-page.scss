@@ -17,7 +17,6 @@
             font-size: 28px;
             font-weight: 900;
             margin-bottom: 22px;
-            // margin-top: 36px;
         }
 
         h2 {
@@ -25,5 +24,26 @@
             margin: 30px 0;
         }
     }
+    @media (max-width: $mobile-size) {
+        .home-stations > *:not(.clr-container) {
+            padding: 0 $main-mobile-padding;
+        }
+    }
+}
 
+.title-section{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    p{
+        font-size: .9em;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+        opacity: .7;
+
+        &:hover{
+            text-decoration: underline;
+        }
+    }
 }

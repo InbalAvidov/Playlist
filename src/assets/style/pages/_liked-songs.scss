@@ -12,7 +12,8 @@
 .info-liked-container {
   display: flex;
   flex-direction: column;
-  justify-content: end;
+  // justify-content: end;
+  justify-content: flex-end;
   flex: 1;
   padding-bottom: 6px;
 
@@ -64,9 +65,3 @@
 .song-list {
   position: relative;
 }
-
-// .liked-song-clr-container {
-//   background-image: linear-gradient(rgba(0, 0, 0, .6) 0, $bgc-main 100%);
-//   width: 100%;
-//   z-index: -1;
-// }

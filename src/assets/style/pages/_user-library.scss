@@ -1,0 +1,63 @@
+.user-library {
+  background: $bgc-main;
+
+  h1 {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-family: montserrat-bold, Arial;
+    font-weight: 900;
+  }
+
+  .user-station {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, 180px);
+    width: 100%;
+    gap: 18px;
+
+    @media (max-width:$mobile-size) {
+    gap: 10px;
+    }
+    
+    >* {
+      height: 314px;
+    }
+
+  }
+}
+
+
+.liked-song-playlist {
+  grid-area: 1/1/2/3;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+  .library-liked-songs{
+    height: 100%;
+  }
+}
+
+
+.img-liked-container {
+  flex-direction: column;
+  justify-content: end;
+  background: linear-gradient(149.46deg, rgb(69 10 245), rgb(142 142 229) 99.16%);
+  ;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  border-radius: 5px;
+  padding: 17px;
+
+  h2 {
+    font-size: 2.2rem;
+    margin: 30px 0 15px;
+  }
+
+  p {
+    font-weight: bold;
+    font-size: 1.05em;
+  }
+}

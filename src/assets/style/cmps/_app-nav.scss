@@ -8,6 +8,8 @@
         grid-area: 3 / 1 / 4 / -1;
         flex-direction: row;
         justify-content: center;
+        display: grid;
+        grid-template-columns: $main-mobile-padding 1fr $main-mobile-padding;
     }
 
     .nav-pages {
@@ -19,17 +21,8 @@
 
         @media (max-width:$mobile-size) {
             flex-direction: row;
-        }
-    }
-
-    .hr-line {
-        width: 85%;
-        margin: auto;
-        margin-top: 10px;
-        border-bottom: 0.1px solid rgb(78, 74, 74);
-
-        @media (max-width:$mobile-size) {
-            display: none;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
         }
     }
 
@@ -58,6 +51,7 @@
         flex-direction: column;
         font-size: 16px;
         font-weight: 700;
+        grid-column: 2;
     }
 
     .user-station-nav {
@@ -71,8 +65,12 @@
             margin-top: 8px;
         }
 
+        svg{
+            min-height: 20px;
+        }
+
         span {
-            font-family: montserrat;
+            font-family: montserrat , Arial;
         }
 
         @media (max-width:$mobile-size) {
@@ -117,6 +115,12 @@
         &.active {
             opacity: 1;
         }
+
+        @media (max-width:$mobile-size) {
+            flex-direction: column;
+            gap: 0;
+            padding: 0;
+        }
     }
 
     .create-station {
@@ -149,6 +153,17 @@
 
 @media (max-width:$mobile-size) {
     .nav-user-actions {
+        display: none;
+    }
+}
+
+.hr-line {
+    width: 85%;
+    margin: auto;
+    margin-top: 10px;
+    border-bottom: 0.1px solid rgb(78, 74, 74);
+
+    @media (max-width:$mobile-size) {
         display: none;
     }
 }

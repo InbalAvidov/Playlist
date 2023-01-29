@@ -5,8 +5,9 @@ import { useEffect } from 'react'
 
 import { userService } from '../service/user.service.js'
 import { signup, login } from '../store/user.action.js'
-import logoLogin from "../assets/img/logoLogin.png"
+import logoLogin from '../assets/img/logoLogin.png'
 import { utilService } from '../service/util.service.js'
+import { showErrorMsg } from '../service/event-bus.service.js'
 
 export function LoginSignup() {
 
@@ -31,9 +32,9 @@ export function LoginSignup() {
         setCredentials((prevCreds) => ({ ...prevCreds, [field]: value }))
     }
 
-    function loginAsGuest() {
+    async function loginAsGuest() {
         try {
-            login({
+            await login({
                 _id: utilService.makeId(),
                 username: 'guest',
                 password: 'guest',
@@ -41,38 +42,37 @@ export function LoginSignup() {
             })
             navigate('/')
         } catch (err) {
-            console.log('err:', err)
+            showErrorMsg('Had problem to log in')
         }
     }
 
-    function onSubmit(ev) {
+    async function onSubmit(ev) {
         ev.preventDefault();
-        if (isSignupState) {
-            signup({ ...credentials, fullname: credentials.fullname })
-                .then(() => {
-                    navigate('/')
-                })
-                .catch(err => {
-                    console.log('err:', err)
-                });
-        } else {
-            login(credentials)
-                .then(() => {
-                    navigate('/')
-                })
-                .catch(err => {
-                    console.log('err:', err)
-                });
+        if (isSignupState)
+            try {
+                await signup({ ...credentials, fullname: credentials.fullname })
+                navigate('/')
+            }
+            catch (err) {
+                showErrorMsg('Had problem to sign up')
+            }
+        else try {
+            await login(credentials)
+            navigate('/')
+        } catch (err) {
+            showErrorMsg('Had problem to log in')
         }
+
     }
+
 
 
     return (
-        <section className="login-signup">
-            <div className="login-page">
-                <header className="login-header ">
-                    <div className="logo flex">
-                        <img className="logo-img" src={logoLogin} />
+        <section className='login-signup'>
+            <div className='login-page'>
+                <header className='login-header '>
+                    <div className='logo flex'>
+                        <img className='logo-img' src={logoLogin} />
                         <h1>Playlist</h1>
                     </div>
                     {isSignupState
@@ -82,17 +82,17 @@ export function LoginSignup() {
                         <hr></hr>
                     }
                 </header>
-                <button className="guest-btn" onClick={loginAsGuest}>Login as a guest</button>
+                <button className='guest-btn' onClick={loginAsGuest}>Login as a guest</button>
 
-                <form className="login-form grid " onSubmit={onSubmit}>
+                <form className='login-form grid ' onSubmit={onSubmit}>
                     <label>
                         User Name
                         <input
-                            className="custom-placeholder"
-                            type="text"
-                            name="username"
+                            className='custom-placeholder'
+                            type='text'
+                            name='username'
                             value={credentials.username}
-                            placeholder="Username"
+                            placeholder='Username'
                             onChange={handleCredentialsChange}
                             required
                         />
@@ -100,11 +100,11 @@ export function LoginSignup() {
                     <label>
                         Email
                         <input
-                            className="custom-placeholder"
-                            type="email"
-                            name="email"
+                            className='custom-placeholder'
+                            type='email'
+                            name='email'
                             value={credentials.email}
-                            placeholder="Enter your email"
+                            placeholder='Enter your email'
                             onChange={handleCredentialsChange}
                             required
                         />
@@ -112,11 +112,11 @@ export function LoginSignup() {
                     <label>
                         Password
                         <input
-                            className="custom-placeholder"
-                            type="password"
-                            name="password"
+                            className='custom-placeholder'
+                            type='password'
+                            name='password'
                             value={credentials.password}
-                            placeholder="Password"
+                            placeholder='Password'
                             onChange={handleCredentialsChange}
                             required
                         />
@@ -125,22 +125,22 @@ export function LoginSignup() {
                         <label>
                             Full Name
                             <input
-                                className="custom-placeholder"
-                                type="text"
-                                name="fullname"
+                                className='custom-placeholder'
+                                type='text'
+                                name='fullname'
                                 value={credentials.fullname}
-                                placeholder="Full name"
+                                placeholder='Full name'
                                 onChange={handleCredentialsChange}
                                 required
                             />
                         </label>
                     }
 
-                    <button className="registration-btn">{isSignupState ? 'Signup' : 'Login'}</button>
+                    <button className='registration-btn'>{isSignupState ? 'Signup' : 'Login'}</button>
 
 
-                    <a href="#" onClick={onToggleSignupState}>
-                        {isSignupState ? 'Have an account? Login' : "Don't have an account? Sign up here"}
+                    <a href='#' onClick={onToggleSignupState}>
+                        {isSignupState ? 'Have an account? Login' : 'Don\'t have an account? Sign up here'}
                     </a >
 
 

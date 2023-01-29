@@ -15,8 +15,8 @@
 
     .information {
         display: flex;
-        // width: 250px;
         align-items: center;
+        grid-column: 2;
 
         >* {
             font-family: montserrat, Arial;
@@ -69,6 +69,10 @@
         justify-content: center;
         gap: 25px;
 
+        @media (max-width:$mobile-size) {
+            gap:15px;
+        }        
+
     }
 
     button {
@@ -77,6 +81,14 @@
         display: flex;
         flex-direction: column;
         position: relative;
+
+        p {
+            font-size: 30px;
+            color: $brand-color;
+            position: absolute;
+            bottom: -12px;
+            left: 25%;
+        }
     }
 
     .conrtoller-btns>* {
@@ -88,6 +100,8 @@
         svg:hover:not(.play-pause) path {
             fill: $clr2;
         }
+
+
     }
 
     .player-play-pause-circle {
@@ -95,7 +109,7 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        width: em(32px);
+        width: 32px;
         height: 32px;
         border-radius: 500px;
 
@@ -162,7 +176,16 @@
 
         .queue {
             margin-right: 10px;
-            margin-top: 5px;
+            margin-top: 3px;
+            position: relative;
+
+            p {
+                font-size: 30px;
+                color: $brand-color;
+                position: absolute;
+                bottom: -13px;
+                left: 40%;
+            }
         }
 
         @media (max-width:$mobile-size) {
@@ -197,17 +220,31 @@
     }
 
     @media (max-width:$mobile-size) {
+        grid-template-columns: $main-mobile-padding 1fr 1fr $main-mobile-padding;
         position: fixed;
-        display: flex;
+        justify-content: space-between;
         height: 66px;
-        bottom: 66px;
+        bottom: 65px;
+        padding: 0;
+        justify-content: flex-end;
 
         .player-progress-container {
             display: none;
         }
 
-        .popo {
-            visibility: visible;
+        .information span{
+            margin: 7px 4px 0 5px;
+        }
+
+        h4 {
+            max-width: 65px;
+            max-height: 38px;
+            overflow: hidden;
+            font-size: 10px;
+        }
+
+        h5{
+            font-size: 9px;
         }
     }
 }

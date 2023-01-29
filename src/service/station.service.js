@@ -60,7 +60,6 @@ function getEmptyStation() {
     "createdBy": user ? user : {
       _id: '5cksxjas89xjsa8xjsa8GGG7',
       username: 'guest',
-      imgUrl: "https://robohash.org/set=set3",
       fullname: 'Guest'
     },
     "likedByUsers": [],

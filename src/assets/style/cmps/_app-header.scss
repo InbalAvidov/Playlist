@@ -1,6 +1,6 @@
 .app-header {
   display: grid;
-  padding-top: 10px;
+  align-items: center;
   grid-area: 1 / 2 / 2 / -1;
   position: relative;
   z-index: 10;
@@ -28,50 +28,56 @@
     nav {
       width: 100%;
       z-index: 99;
-      padding: 0 $main-app-padding ;
+      padding: 0 35px 0 $main-app-padding;
       justify-content: space-between;
-      margin-bottom: 7px;
+      align-items: center;
     }
-
 
     svg {
       fill: $clr2;
       width: 20px;
     }
   }
-}
 
-.nav-btn {
-  display: flex;
-  flex-direction: row;
-  gap: 16px;
-
-  >* {
-    align-items: center;
-    background-color: $nav-btn-clr;
-    border-radius: 50%;
-    cursor: pointer;
-    display: -ms-inline-flexbox;
-    display: inline-flex;
-    height: 32px;
-    justify-content: center;
-    position: relative;
-    width: 32px;
-
-    // >* {
-    //   position: absolute;
-    // }
+  @media (max-width: $mobile-size) {
+    .header-details nav {
+      padding: 0 $main-mobile-padding;
+    }
   }
-}
 
-.btns-login-singup {
-  display: flex;
-  align-items: flex-start;
-  z-index: 1;
+  .nav-btn {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
 
-  a {
-    color: $clr2;
-    text-decoration: none;
+    >* {
+      align-items: center;
+      background-color: $nav-btn-clr;
+      border-radius: 50%;
+      cursor: pointer;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      height: 32px;
+      justify-content: center;
+      position: relative;
+      width: 32px;
+
+      // >* {
+      //   position: absolute;
+      // }
+    }
+  }
+
+  .btns-login-singup {
+    display: flex;
+    align-items: flex-start;
+    z-index: 1;
+
+    a:not(.focus) {
+      color: $clr2;
+      text-decoration: none;
+    }
+
   }
 }
 
@@ -113,6 +119,7 @@
 
     span {
       font-size: 12px;
+      margin-left: 5px;
     }
 
     .user-icon {
@@ -125,6 +132,15 @@
       width: 28px;
       height: 28px;
       margin-left: -5px;
+      margin-right: -5px;
+    }
+  }
+
+  @media (max-width: 925px) {
+
+    .arrow,
+    span {
+      display: none;
     }
   }
 }
@@ -147,9 +163,13 @@
     padding: 5px 0 5px 5px;
     border: none;
     font-size: 14px;
-    position: absolute;
-    margin-top: em(24px);
-    left: em(-18px);
+    position: fixed;
+    margin-top: 24px;
+    right: 40px;
+
+    @media (max-width: $mobile-size) {
+      right: 12px;
+    }
 
     &:hover {
       color: $brand-color;

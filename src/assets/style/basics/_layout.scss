@@ -13,9 +13,22 @@
 .clr-container {
     padding: 0 $main-app-padding;
     padding-top: 84px;
-    background: linear-gradient(transparent 0, rgba(0, 0, 0, .5) 100%)
+    background: linear-gradient(transparent 0, rgba(0, 0, 0, .5) 100%);
+
+    @media (max-width:$mobile-size) {
+        padding: 0 $main-mobile-padding;
+        padding-top: 84px;
+    }
 }
 
 * {
     transition: background 1s ease;
+}
+
+.logo-mark {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    left: 5px;
 }

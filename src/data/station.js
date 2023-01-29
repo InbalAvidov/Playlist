@@ -3,18 +3,29 @@ import { utilService } from "../service/util.service";
 export const homeStations = [
   {
     "_id": utilService.makeId(25),
+    "name": "Liked Songs",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674838098/likedSongPic_lrwwnc.png",
+    "tags": ['home'],
+    "songs": [],
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
     "name": "Daily Mix 2",
     "imgUrl": "//res.cloudinary.com/damrhms1q/image/upload/v1674246586/cover1_veddql.jpg",
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
     ],
     "songs": [{
       "id": "rYEDA3JcQqw",
       "title": "Rolling in the Deep",
       "channelTitle": "Adele",
-      "url": "//www.youtube.com/embed?v=rYEDA3JcQqw",
       "imgUrl": "//i.ytimg.com/vi/rYEDA3JcQqw/hqdefault.jpg",
       "addedAt": utilService.getRandomTimeStamp()
     },
@@ -72,7 +83,7 @@ export const homeStations = [
       "id": "niG3YMU6jFk", "title": " Oh My God ", "channelTitle": "Adele", "imgUrl": "//i.ytimg.com/vi/niG3YMU6jFk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=niG3YMU6jFk",
       "addedAt": utilService.getRandomTimeStamp()
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -86,7 +97,10 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill",
+      "Recently played"
+      ,
     ],
     "songs": [{
       "id": "tcYodQoapMg", "title": "positions", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/tcYodQoapMg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=tcYodQoapMg",
@@ -120,7 +134,7 @@ export const homeStations = [
       "id": "k4YRWT_Aldo", "title": " 7/11", "channelTitle": "Beyoncé", "imgUrl": "//i.ytimg.com/vi/k4YRWT_Aldo/hqdefault.jpg", "url": "//www.youtube.com/embed?v=k4YRWT_Aldo",
       "addedAt": utilService.getRandomTimeStamp()
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -134,7 +148,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      ,
     ],
     "songs": [{
       "id": "VBmMU_iwe6U", "title": " Run the World  ", "channelTitle": "Beyoncé", "imgUrl": "//i.ytimg.com/vi/VBmMU_iwe6U/hqdefault.jpg", "url": "//www.youtube.com/embed?v=VBmMU_iwe6U", "addedAt": utilService.getRandomTimeStamp()
@@ -160,7 +175,7 @@ export const homeStations = [
       "addedAt": utilService.getRandomTimeStamp()
     },
     ],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -174,7 +189,7 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
     ],
     "songs": [{
       "id": "CvBfHwUxHIk", "title": " Umbrella ", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/CvBfHwUxHIk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=CvBfHwUxHIk",
@@ -211,7 +226,7 @@ export const homeStations = [
     {
       "addedAt": utilService.getRandomTimeStamp(), "id": "7Jj83FOlBF8", "title": "Make It Better ", "channelTitle": "AndersonPaak", "imgUrl": "//i.ytimg.com/vi/7Jj83FOlBF8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=7Jj83FOlBF8"
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -225,7 +240,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill",
+      "Recently played"
     ],
     "songs": [{
       "id": "6gXlC3rD8jI", "title": "JEWELZ ", "channelTitle": "Anderson Paak", "imgUrl": "//i.ytimg.com/vi/6gXlC3rD8jI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=6gXlC3rD8jI"
@@ -253,7 +270,7 @@ export const homeStations = [
     {
       "addedAt": utilService.getRandomTimeStamp(), "id": "PXyPiHt2weU", "title": " Why ", "channelTitle": "Dominic Fike", "imgUrl": "//i.ytimg.com/vi/PXyPiHt2weU/hqdefault.jpg", "url": "//www.youtube.com/embed?v=PXyPiHt2weU"
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -267,7 +284,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Recently played"
     ],
     "songs": [{
       "id": "QrR_gm6RqCo", "title": "NPR Music Tiny Desk Concert", "channelTitle": "NPR Music", "imgUrl": "//i.ytimg.com/vi/QrR_gm6RqCo/hqdefault.jpg", "url": "//www.youtube.com/embed?v=QrR_gm6RqCo",
@@ -293,7 +311,7 @@ export const homeStations = [
     {
       "addedAt": utilService.getRandomTimeStamp(), "id": "6B3YwcjQ_bU", "title": " 2009", "channelTitle": "Mac Miller", "imgUrl": "//i.ytimg.com/vi/6B3YwcjQ_bU/hqdefault.jpg", "url": "//www.youtube.com/embed?v=6B3YwcjQ_bU"
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -307,7 +325,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Made For you"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "VPRjCeoBqrI", "title": " A Sky Full Of Stars ", "channelTitle": "Coldplay", "imgUrl": "//i.ytimg.com/vi/VPRjCeoBqrI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=VPRjCeoBqrI"
@@ -331,7 +350,7 @@ export const homeStations = [
       "addedAt": utilService.getRandomTimeStamp(), "id": "yKNxeF4KMsY", "title": " Yellow ", "channelTitle": "Coldplay", "imgUrl": "//i.ytimg.com/vi/yKNxeF4KMsY/hqdefault.jpg", "url": "//www.youtube.com/embed?v=yKNxeF4KMsY"
 
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -345,7 +364,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Made For you",
+      "More of what you like"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "Cr8K88UcO0s", "title": "Tití Me Preguntó  | Un Verano Sin Ti", "channelTitle": "Bad Bunny", "imgUrl": "//i.ytimg.com/vi/Cr8K88UcO0s/hqdefault.jpg", "url": "//www.youtube.com/embed?v=Cr8K88UcO0s"
@@ -379,7 +400,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -393,7 +414,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Made For you"
+
     ],
     "songs": [
       {
@@ -432,7 +455,7 @@ export const homeStations = [
 
       },
     ],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -446,7 +469,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill",
+      "Made For you"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "ifpiFzu4c54", "title": " אני ", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/ifpiFzu4c54/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ifpiFzu4c54"
@@ -503,7 +528,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -517,7 +542,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "L6K90w9O7T0", "title": "עומר אדם  תגידו לה &amp; אהבה מטורפת", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/L6K90w9O7T0/hqdefault.jpg", "url": "//www.youtube.com/embed?v=L6K90w9O7T0"
@@ -545,7 +571,7 @@ export const homeStations = [
 
     },
     ],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -559,7 +585,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "jeU9Sbq0D0A", "title": "  אור גדול  Amir Dadon  Or Gadol", "channelTitle": "Helicon Music  הליקון", "imgUrl": "//i.ytimg.com/vi/jeU9Sbq0D0A/hqdefault.jpg", "url": "//www.youtube.com/embed?v=jeU9Sbq0D0A"
@@ -581,7 +608,7 @@ export const homeStations = [
       ,
 
     }],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -595,14 +622,15 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill"
     ],
     "songs": [{
       "id": "rYEDA3JcQqw",
       "addedAt": utilService.getRandomTimeStamp(),
       "title": " Rolling in the Deep",
       "channelTitle": "Adele",
-      "url": "//www.youtube.com/embed?v=rYEDA3JcQqw",
+
       "imgUrl": "//i.ytimg.com/vi/rYEDA3JcQqw/hqdefault.jpg"
     },
     {
@@ -650,7 +678,7 @@ export const homeStations = [
       "addedAt": utilService.getRandomTimeStamp(),
     },
     ],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -664,7 +692,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill"
     ],
     "songs": [{
       "id": "tcYodQoapMg", "title": "positions", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/tcYodQoapMg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=tcYodQoapMg",
@@ -702,7 +731,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -716,7 +745,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill",
+      "Recently played"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "VBmMU_iwe6U", "title": " Run the World  ", "channelTitle": "Beyoncé", "imgUrl": "//i.ytimg.com/vi/VBmMU_iwe6U/hqdefault.jpg", "url": "//www.youtube.com/embed?v=VBmMU_iwe6U"
@@ -745,7 +776,7 @@ export const homeStations = [
       "addedAt": utilService.getRandomTimeStamp()
     },
     ],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -759,7 +790,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "More of what you like",
+      "Recently played"
     ],
     "songs": [{
       "id": "CvBfHwUxHIk", "title": " Umbrella ", "channelTitle": "Rihanna", "imgUrl": "//i.ytimg.com/vi/CvBfHwUxHIk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=CvBfHwUxHIk",
@@ -798,7 +831,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -812,7 +845,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Made For you",
+      "Recently played"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "6gXlC3rD8jI", "title": "JEWELZ ", "channelTitle": "Anderson Paak", "imgUrl": "//i.ytimg.com/vi/6gXlC3rD8jI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=6gXlC3rD8jI"
@@ -854,7 +889,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -868,7 +903,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Recently played"
     ],
     "songs": [{
       "id": "QrR_gm6RqCo", "title": "Mac Miller: NPR Music Tiny Desk Concert", "channelTitle": "NPR Music", "imgUrl": "//i.ytimg.com/vi/QrR_gm6RqCo/hqdefault.jpg", "url": "//www.youtube.com/embed?v=QrR_gm6RqCo",
@@ -902,7 +938,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -916,7 +952,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Made For you",
+      "More of what you like"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "VPRjCeoBqrI", "title": " A Sky Full Of Stars ", "channelTitle": "Coldplay", "imgUrl": "//i.ytimg.com/vi/VPRjCeoBqrI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=VPRjCeoBqrI"
@@ -953,7 +991,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -967,7 +1005,10 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Chill",
+      "Recently played",
+      "More of what you like"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "Cr8K88UcO0s", "title": "Tití Me Preguntó  | Un Verano Sin Ti", "channelTitle": "Bad Bunny", "imgUrl": "//i.ytimg.com/vi/Cr8K88UcO0s/hqdefault.jpg", "url": "//www.youtube.com/embed?v=Cr8K88UcO0s"
@@ -1007,7 +1048,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -1021,7 +1062,10 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Made For you",
+      "Recently played",
+      "More of what you like"
     ],
     "songs": [
       {
@@ -1060,7 +1104,7 @@ export const homeStations = [
 
       },
     ],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -1074,7 +1118,8 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "More of what you like"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "ifpiFzu4c54", "title": "אני", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/ifpiFzu4c54/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ifpiFzu4c54"
@@ -1131,7 +1176,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -1145,7 +1190,9 @@ export const homeStations = [
     "tags": [
       "home",
       "Funk",
-      "Happy"
+      "Happy",
+      "Recently played",
+      "More of what you like"
     ],
     "songs": [{
       "addedAt": utilService.getRandomTimeStamp(), "id": "L6K90w9O7T0", "title": "עומר אדם  תגידו לה &amp; אהבה מטורפת", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/L6K90w9O7T0/hqdefault.jpg", "url": "//www.youtube.com/embed?v=L6K90w9O7T0"
@@ -1177,7 +1224,7 @@ export const homeStations = [
       ,
 
     },],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -1213,7 +1260,7 @@ export const homeStations = [
       ,
 
     }],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -1230,7 +1277,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -1247,7 +1294,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -1264,7 +1311,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -1281,7 +1328,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -1298,7 +1345,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -1315,7 +1362,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -1332,7 +1379,7 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
@@ -1349,11 +1396,353 @@ export const homeStations = [
       "Happy"
     ],
     "songs": [],
-    "msgs": [],
+
     "createdBy":
     {
       "_id": "spt100",
       "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Miley Cyrus",
+    "description": "Artist",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809164/miley_nelcj0.jpg",
+    "tags": [
+      "Pop",
+      "artist",
+    ],
+    "songs": [],
+
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Ariana Grande",
+    "description": "artist",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809164/ariana_ndk1cd.jpg",
+    "tags": [
+      "Pop",
+      "artist"
+    ],
+    "songs": [],
+
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Katy Perry",
+    "description": "artist",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809164/katy_b4kvfa.jpg",
+    "tags": [
+      "Pop",
+      "artist",
+    ],
+    "songs": [],
+
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Bruno Mars",
+    "description": "artist",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809164/bruno_odwpil.jpg",
+    "tags": [
+      "Pop",
+      "artist",
+      "Chill",
+      "More of what you like",
+      "Recently played"
+    ],
+    "songs": [],
+
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Sam Smith",
+    "description": "artist",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809164/sam_zpeyoi.jpg",
+    "tags": [
+      "Pop",
+      "artist",
+      "More of what you like"
+    ],
+    "songs": [],
+
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Justin Bieber",
+    "description": "artist",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809163/justin_gmmn9y.jpg",
+    "tags": [
+      "Pop",
+      "artist"
+    ],
+    "songs": [],
+
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Harry's House",
+    "description": "Harry Styles",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809163/Harrys-House_iqpbg6.webp",
+    "tags": [
+      "Pop",
+      "new releases",
+      "Made For you",
+      "Chill",
+      "More of what you like"
+    ],
+    "songs": [],
+
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": " האחיות כרקוקלי ",
+    "description": "מוזיקה ישראלית עכשווית",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674811971/caracuc_otrt4w.jpg",
+    "tags": [
+      "Pop",
+      "new releases"
+    ],
+    "songs": [],
+
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Flowers",
+    "description": "Single",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809163/flowers_sh8ylp.png",
+    "tags": [
+      "Pop",
+      "new releases",
+      "More of what you like"
+    ],
+    "songs": [],
+
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "פנתרה",
+    "description": "החדש של נועה קירל",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674809653/noa_kyd3rq.jpg",
+    "tags": [
+      "Pop",
+      "new releases"
+    ],
+    "songs": [],
+
+    "createdBy":
+    {
+      "_id": "spt100",
+      "username": 'Playlist',
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Hila's mix",
+    "description": "The best Songs",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674905704/demo_3_h9qnz9.jpg",
+    "tags": [
+      "Pop",
+      "new releases"
+    ],
+    "songs": [
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "jeU9Sbq0D0A", "title": "  אור גדול  Amir Dadon  Or Gadol", "channelTitle": "Helicon Music  הליקון", "imgUrl": "//i.ytimg.com/vi/jeU9Sbq0D0A/hqdefault.jpg", "url": "//www.youtube.com/embed?v=jeU9Sbq0D0A"
+        ,
+
+      },
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "vK_LTSeQYdI", "title": "פילהרמונית של טירוף", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/vK_LTSeQYdI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=vK_LTSeQYdI"
+        ,
+
+      },
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "f5omY8jVrSM", "title": "BAD BUNNY x ROSALÍA  LA NOCHE DE ANOCHE ", "channelTitle": "Bad Bunny", "imgUrl": "//i.ytimg.com/vi/f5omY8jVrSM/hqdefault.jpg", "url": "//www.youtube.com/embed?v=f5omY8jVrSM"
+        ,
+
+      },
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "YykjpeuMNEk", "title": " Hymn For The Weekend ", "channelTitle": "Coldplay", "imgUrl": "//i.ytimg.com/vi/YykjpeuMNEk/hqdefault.jpg", "url": "//www.youtube.com/embed?v=YykjpeuMNEk"
+        ,
+
+      },
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "kLpH1nSLJSs", "title": "BAD BUNNY  AMORFODA ", "channelTitle": "Bad Bunny", "imgUrl": "//i.ytimg.com/vi/kLpH1nSLJSs/hqdefault.jpg", "url": "//www.youtube.com/embed?v=kLpH1nSLJSs"
+        ,
+
+      },
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "ckObp0fTNmU", "title": "לבד על המיטה", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/ckObp0fTNmU/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ckObp0fTNmU"
+        ,
+
+      },
+      {
+        "id": "QYh6mYIJG2Y", "title": "7 rings ", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/QYh6mYIJG2Y/hqdefault.jpg", "url": "//www.youtube.com/embed?v=QYh6mYIJG2Y",
+        "addedAt": utilService.getRandomTimeStamp()
+      },
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "eDfcyn5jLII", "title": "היי בייב", "channelTitle": "Tuna Official", "imgUrl": "//i.ytimg.com/vi/eDfcyn5jLII/hqdefault.jpg", "url": "//www.youtube.com/embed?v=eDfcyn5jLII"
+      },
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "VPRjCeoBqrI", "title": " A Sky Full Of Stars ", "channelTitle": "Coldplay", "imgUrl": "//i.ytimg.com/vi/VPRjCeoBqrI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=VPRjCeoBqrI"
+
+      },
+
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "tlkKybWF11c", "title": "חורף באוטו ", "channelTitle": "עומר אדם", "imgUrl": "//i.ytimg.com/vi/tlkKybWF11c/hqdefault.jpg", "url": "//www.youtube.com/embed?v=tlkKybWF11c"
+
+      },
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "n66HAsqwibg", "title": "A Sky Full Of Stars  Coldplay | Lyrics/Vietsub", "channelTitle": "Radio Cảm Xúc", "imgUrl": "//i.ytimg.com/vi/n66HAsqwibg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=n66HAsqwibg"
+
+      },
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "dGy04XN9Spw", "title": "כנפיים ", "channelTitle": "CocaColaIsrael", "imgUrl": "//i.ytimg.com/vi/dGy04XN9Spw/hqdefault.jpg", "url": "//www.youtube.com/embed?v=dGy04XN9Spw"
+
+      },
+      {
+        "id": "tcYodQoapMg", "title": "positions", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/tcYodQoapMg/hqdefault.jpg", "url": "//www.youtube.com/embed?v=tcYodQoapMg",
+        "addedAt": utilService.getRandomTimeStamp()
+      },
+      {
+        "id": "h2jvHynuMjI", "title": "Stuck with U", "channelTitle": "JustinBieber", "imgUrl": "//i.ytimg.com/vi/h2jvHynuMjI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=h2jvHynuMjI",
+        "addedAt": utilService.getRandomTimeStamp()
+      },
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "ffxKSjUwKdU", "title": "no tears left to cry ", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/ffxKSjUwKdU/hqdefault.jpg", "url": "//www.youtube.com/embed?v=ffxKSjUwKdU"
+
+      },
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "EAecWGT_lQ0", "title": "  יש אין סוף", "channelTitle": "Amir Dadon  ", "imgUrl": "//i.ytimg.com/vi/EAecWGT_lQ0/hqdefault.jpg", "url": "//www.youtube.com/embed?v=EAecWGT_lQ0"
+
+      },
+      {
+        "id": "SXiSVQZLje8", "title": "Side To Side", "channelTitle": "ArianaGrandeVevo", "imgUrl": "//i.ytimg.com/vi/SXiSVQZLje8/hqdefault.jpg", "url": "//www.youtube.com/embed?v=SXiSVQZLje8",
+        "addedAt": utilService.getRandomTimeStamp()
+      },
+      {
+        "addedAt": utilService.getRandomTimeStamp(), "id": "QtXby3twMmI", "title": " Adventure Of A Lifetime ", "channelTitle": "Coldplay", "imgUrl": "//i.ytimg.com/vi/QtXby3twMmI/hqdefault.jpg", "url": "//www.youtube.com/embed?v=QtXby3twMmI"
+
+      }
+    ],
+    "createdBy":
+    {
+      _id: '5cksxjas89xjsa8xjsa8hhh7',
+      fullname: 'Hila Shor',
+      username: 'hila.shor'
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "שירים רגועים",
+    "description": "לבקרים ושבתות",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674905705/demo_3_i1onhd.png",
+    "tags": [
+      "Pop",
+      "new releases"
+    ],
+    "songs": [],
+    "createdBy":
+    {
+      _id: '5cksxjas89xjsa8xjsa8hhh7',
+      fullname: 'Hila Shor',
+      username: 'hila.shor'
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "For car rides",
+    "description": "לבקרים ושבתות",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674905706/cover_dq1nmv.png",
+    "tags": [
+      "Pop",
+      "new releases"
+    ],
+    "songs": [],
+    "createdBy":
+    {
+      _id: '5cksxjas89xjsa8xjsa8hhh7',
+      fullname: 'Hila Shor',
+      username: 'hila.shor'
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "My favorite",
+    "description": "The best songs",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674905708/demo_4_fxxytc.jpg",
+    "tags": [
+      "Pop",
+      "new releases"
+    ],
+    "songs": [],
+    "createdBy":
+    {
+      _id: '5cksxjas89xjsa8xjsa8jld3',
+      fullname: 'Inbal Avidov',
+      username: 'inbal.avidov'
+    }
+  },
+  {
+    "_id": utilService.makeId(25),
+    "name": "Techno",
+    "description": "",
+    "imgUrl": "https://res.cloudinary.com/damrhms1q/image/upload/v1674906764/cover_lul49y.jpg",
+    "tags": [
+      "Pop",
+      "new releases"
+    ],
+    "songs": [],
+    "createdBy":
+    {
+      _id: '5cksxjas89xjsa8xjsa8jld3',
+      fullname: 'Inbal Avidov',
+      username: 'inbal.avidov'
     }
   },
 ]
