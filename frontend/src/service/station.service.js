@@ -16,7 +16,10 @@ export const stationService = {
 
 async function query(filterBy = getEmptyFilter()) {
   console.log('filterBy:',filterBy)
+  httpService.get(STATION_URL, filterBy)
+  console.log('todo bien')
   return httpService.get(STATION_URL, filterBy)
+  
 }
 
 function getEmptyFilter() {
