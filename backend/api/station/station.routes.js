@@ -12,6 +12,6 @@ router.get('/:id', getStationById)
 router.post('/',requireAuth, addStation)
 router.put('/:id',requireAuth, updateStation)
 router.delete('/:id', requireAuth, removeStation)
-// router.delete('/:id', requireAuth, requireAdmin, removeStation)
+
 
 module.exports = router

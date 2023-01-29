@@ -1,5 +1,4 @@
 const stationService = require('./station.service.js')
-
 const logger = require('../../services/logger.service')
 const { log } = require('../../middlewares/logger.middleware.js')
 
@@ -14,6 +13,7 @@ async function getStations(req, res) {
     logger.error('Failed to get stations', err)
     res.status(500).send({ err: 'Failed to get stations' })
   }
+
 }
 
 async function getStationById(req, res) {
@@ -43,7 +43,6 @@ async function updateStation(req, res) {
   console.log('UPDATING STATION')
   try {
     const station = req.body
-    console.log('back- station controller, station', station)
     const updatedStation = await stationService.update(station)
     res.json(updatedStation)
   } catch (err) {
@@ -63,11 +62,10 @@ async function removeStation(req, res) {
   }
 }
 
-
 module.exports = {
   getStations,
   getStationById,
   addStation,
   updateStation,
-  removeStation
+  removeStation,
 }
