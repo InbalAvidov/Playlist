@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/static/css/main.e31541ce.css",
+    "main.js": "/static/js/main.6dbd20fa.js",
+    "static/media/Montserrat-Bold.ttf": "/static/media/Montserrat-Bold.2c155811b35513d5beaa.ttf",
+    "static/media/Montserrat-Regular.ttf": "/static/media/Montserrat-Regular.ceb11275ab638627a643.ttf",
+    "static/media/logo-pic-white.png": "/static/media/logo-pic-white.0b8c5ac6eec4a813c1c2.png",
+    "static/media/logoLogin.png": "/static/media/logoLogin.f9fa6a511526d355c531.png",
+    "index.html": "/index.html",
+    "main.e31541ce.css.map": "/static/css/main.e31541ce.css.map",
+    "main.6dbd20fa.js.map": "/static/js/main.6dbd20fa.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e31541ce.css",
+    "static/js/main.6dbd20fa.js"
+  ]
+}
