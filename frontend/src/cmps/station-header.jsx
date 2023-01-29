@@ -125,9 +125,8 @@ export function StationHeader({ station, onSelectImg, saveChanges, deleteStation
 console.log('onCloseShare, share',share)
         setIsShareModal(false)
         const selectedUser = users.find(user => user.fullname === share)
+        console.log('selectedUser:',selectedUser)
         const userId = selectedUser._id
-        // station.shareWith = [userId]
-        // station.shareBy = [userId]
         station.shareWith = []
         station.shareWith.push(userId)
         station.shareBy = []

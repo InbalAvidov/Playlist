@@ -28,7 +28,6 @@ export function Home() {
         setHomeStations(homeStations)
     }
 
-
     if (!homeStations) return <Loader />
     return (<main className='main-home'>
         {stations && <div className='home-stations'>

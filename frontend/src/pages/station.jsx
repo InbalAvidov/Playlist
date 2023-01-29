@@ -1,7 +1,6 @@
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import { useState } from 'react'
-import { useSelector } from 'react-redux'
 
 import { Loader } from '../cmps/loader'
 import { SongList } from '../cmps/song-list'

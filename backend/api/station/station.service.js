@@ -21,6 +21,7 @@ async function query(filterBy = {}) {
 
         const collection = await dbService.getCollection('station')
         var stations = await collection.find(criteria).toArray()
+        console.log('stations:',stations)
         return stations
     } catch (err) {
         logger.error('cannot find stations', err)
@@ -65,7 +66,7 @@ async function update(station) {
     try {
         const stationToSave = {
             name: station.name,
-            desc: station.desc,
+            description: station.description,
             songs: station.songs,
             followers: station.followers,
             imgUrl: station.imgUrl,

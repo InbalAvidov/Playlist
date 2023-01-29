@@ -39,6 +39,7 @@ export async function updateStation(station) {
         console.log('updateStation, station', station)
         const updatedStation = await stationService.save(station)
         store.dispatch({ type: UPDATE_STATION, station: updatedStation })
+        console.log('updatedStation:',updatedStation)
         return updatedStation
     } catch (err) {
         console.log('Had issues to get current station', err)
