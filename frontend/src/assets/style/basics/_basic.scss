@@ -1,0 +1,83 @@
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+html {
+    font-family: montserrat, Arial;
+    color: $clr2;
+    line-height: 1.8;
+
+    @media (max-width: 1300px) {
+        font-size: 13px;
+    }
+}
+
+body {
+    margin: 0;
+    overflow: hidden;
+}
+
+.main-app {
+    background: $bgc-main;
+    padding-bottom: em(150px);
+    grid-area: 1 / 2 / 3 / -1;
+    overflow-y: auto;
+    overflow-x: hidden;
+    
+    @media (max-width:$mobile-size) {
+        grid-area: 1/1/3/-1;
+    }
+}
+
+::-webkit-scrollbar {
+    width: 7px;
+    padding-right: 3px;
+    height: 10px;
+    @media (max-width:$mobile-size) {
+        display: none;
+    }
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #0d0d0d;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: rgb(255, 255, 255);
+}
+
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 0;
+    line-height: lh(40px, 29px);
+    color: $clr2;
+    font-family: montserrat-bold, Arial;
+    font-weight: 600;
+}
+
+p {
+    margin: 0;
+}
+
+button {
+    font-family: montserrat, Arial;
+    cursor: pointer;
+}

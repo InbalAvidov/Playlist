@@ -1,0 +1,67 @@
+// .station-header {
+//   display: flex;
+//   cursor: pointer;
+//   margin-bottom: 100px;
+//   width: 100%;
+// }
+.liked-header {
+  gap: 24px;
+  padding-block-end: 24px;
+}
+
+.info-liked-container {
+  display: flex;
+  flex-direction: column;
+  // justify-content: end;
+  justify-content: flex-end;
+  flex: 1;
+  padding-bottom: 6px;
+
+  p {
+    font-size: 12px;
+    font-weight: bolder;
+
+
+    &.station {
+      font-size: 12px;
+      text-transform: uppercase;
+      font-family: montserrat-bold, Arial;
+      padding-block-end: 7px;
+    }
+
+    span {
+      font-family: montserrat, Arial;
+      margin-left: 5px;
+    }
+  }
+
+  h1 {
+    // font-size: 3.75rem;
+    font-size: 4.5rem;
+    padding-block-end: 8px;
+
+  }
+}
+
+.liked-songs {
+  .liked-header {
+    padding: 1rem;
+
+    .img-wrapper {
+      width: 200px;
+      border: 1px solid;
+    }
+  }
+
+  .clr-container{
+    background: linear-gradient(transparent 0, rgba(0, 0, 0, .5) 100%);
+  }
+
+  .main-liked-songs {
+    grid-area: main;
+  }
+}
+
+.song-list {
+  position: relative;
+}
