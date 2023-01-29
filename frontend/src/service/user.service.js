@@ -11,6 +11,7 @@ export const userService = {
     getLoggedinUser,
     saveLocalUser,
     getById,
+    getUsers,
     update,
     getEmptyCredentials,
     updateLikeSong,
@@ -21,6 +22,10 @@ window.userService = userService
 
 async function getById(userId) {
     return httpService.get(USER_URL + userId)
+}
+
+async function getUsers() {
+    return httpService.get(USER_URL)
 }
 
 async function login(userCred) {
