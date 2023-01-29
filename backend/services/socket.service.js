@@ -1,7 +1,6 @@
+
 const logger = require('./logger.service')
-
 var gIo = null
-
 
 
 function setupSocketAPI(http) {
@@ -15,46 +14,19 @@ function setupSocketAPI(http) {
         socket.on('disconnect', socket => {
             logger.info(`Socket disconnected [id: ${socket.id}]`)
         })
-        // socket.on('chat-set-topic', topic => {
-        socket.on('share-station', station => {
-            // if (socket.myTopic === topic) return
-            if (socket.station === station) return
-            // if (socket.myTopic) {
-            //     socket.leave(socket.myTopic)
-            //     logger.info(`Socket is leaving topic ${socket.myTopic} [id: ${socket.id}]`)
-            // }
+        socket.on('share-station', stationId => {
+            if (socket.station === stationId) return
             if (socket.station) {
                 socket.leave(socket.station)
-                logger.info(`Socket is leaving station ${socket.station} [id: ${station._id}]`)
             }
-            // socket.join(topic)
-            socket.join(station)
-            // socket.myTopic = topic
-            socket.station = station
+            socket.join(stationId)
+            socket.station = stationId
+            console.log('stationId -socket check', stationId)
         })
-        socket.on('chat-send-msg', msg => {
-            logger.info(`New chat msg from socket [id: ${socket.id}], emitting to topic ${socket.myTopic}`)
-            // emits to all sockets:
-            // gIo.emit('chat-add-msg', msg)
-            // emits only to sockets in the same room
-            // gIo.to(socket.myTopic).emit('chat-add-msg', msg)
-            // emits only to sockets in the same room except the sender
-            socket.broadcast.to(socket.myTopic).emit('chat-add-msg', msg)
+        socket.on('station-update', station => {
+            console.log('station-update',station)
+            socket.broadcast.to(socket.station).emit('station-updated', station)
         })
-        socket.on('user-watch', userId => {
-            logger.info(`user-watch from socket [id: ${socket.id}], on user ${userId}`)
-            socket.join('watching:' + userId)
-
-        })
-        socket.on('set-user-socket', userId => {
-            logger.info(`Setting socket.userId = ${userId} for socket [id: ${socket.id}]`)
-            socket.userId = userId
-        })
-        socket.on('unset-user-socket', () => {
-            logger.info(`Removing socket.userId for socket [id: ${socket.id}]`)
-            delete socket.userId
-        })
-
     })
 }
 
