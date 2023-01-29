@@ -11,7 +11,9 @@ import { uploadService } from '../service/upload.service'
 import { removeStation, setColor, updateStation } from '../store/station.actions'
 import { saveStation } from '../store/station.actions'
 import { utilService } from '../service/util.service'
+
 import defaultPhoto from '../assets/img/default-photo.png'
+import { socketService } from '../service/socket.service'
 
 
 export function Station() {
@@ -23,6 +25,17 @@ export function Station() {
     if (!stationId) saveEmptyStation()
     else loadStation()
   }, [stationId])
+
+  useEffect(() => {
+    socketService.on('station-updated', updateBySocket)
+    return () => {
+      socketService.off('station-updated', updateBySocket)
+    }
+  }, [])
+
+  function updateBySocket(stationFromSocket) {
+    setStation(stationFromSocket)
+  }
 
   async function saveEmptyStation() {
     try {
@@ -38,6 +51,7 @@ export function Station() {
   async function loadStation() {
     try {
       const currStation = await stationService.get(stationId)
+      socketService.emit('share-station', currStation._id)
       setStation(currStation)
       const clr = await utilService.getMainColor(currStation.imgUrl)
       setColor(clr)
@@ -84,21 +98,24 @@ export function Station() {
   }
 
   async function saveChanges() {
-    try{
+    try {
+      // console.log('station-update',station)
       await updateStation(station)
+      console.log('station-update', station)
+      socketService.emit('station-update', station)
       const color = await utilService.getMainColor(station.imgUrl)
       setColor(color)
-    }catch(err){
-      console.log('err:',err)
+    } catch (err) {
+      console.log('err:', err)
     }
   }
 
   async function deleteStation(stationId) {
-    try{
+    try {
       await removeStation(stationId)
       navigate(-1)
-    }catch(err){
-      console.log('err:',err)
+    } catch (err) {
+      console.log('err:', err)
     }
   }
 

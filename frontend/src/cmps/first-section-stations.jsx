@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 
 import { utilService } from '../service/util.service'
 import { setSong, togglePlay } from '../store/player.action'
 import { loadCurrStation, setColor } from '../store/station.actions'
 import defaultPhoto from '../assets/img/default-photo.png'
-import { useSelector } from 'react-redux'
 
 export function FirstSectionStations({ stations }) {
     const color = useSelector(storeState => storeState.stationModule.color)
