@@ -24,7 +24,7 @@ if (process.env.NODE_ENV === 'production') {
 const authRoutes = require('./api/auth/auth.routes')
 const userRoutes = require('./api/user/user.routes')
 const stationRoutes = require('./api/station/station.routes')
-const {setupSocketAPI} = require('./services/socket.service')
+const { setupSocketAPI } = require('./services/socket.service')
 
 // routes
 const setupAsyncLocalStorage = require('./middlewares/setupAls.middleware')
@@ -43,6 +43,6 @@ app.get('/**', (req, res) => {
 })
 const logger = require('./services/logger.service')
 const port = process.env.PORT || 3030
-http.listen(port, () => {
+app.listen(port, () => {
     logger.info('Server is running on port: ' + port)
 })
