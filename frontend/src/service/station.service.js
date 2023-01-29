@@ -15,11 +15,12 @@ export const stationService = {
 }
 
 async function query(filterBy = getEmptyFilter()) {
+  console.log('filterBy:',filterBy)
   return httpService.get(STATION_URL, filterBy)
 }
 
 function getEmptyFilter() {
-  return { user: null, likedBy: userService.getLoggedinUser()?._id }
+  return { userId: null, page: null }
 }
 
 async function get(stationId) {
@@ -32,6 +33,7 @@ async function remove(stationId) {
 
 async function save(station) {
   if (station._id) {
+    console.log(' front-station.service save. station.shareWith', station.shareWith)
     return httpService.put(STATION_URL + station._id, station)
   } else {
     return httpService.post(STATION_URL, station)

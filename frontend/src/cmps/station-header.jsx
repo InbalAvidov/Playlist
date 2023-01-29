@@ -122,11 +122,15 @@ export function StationHeader({ station, onSelectImg, saveChanges, deleteStation
     }
 
     async function onCloseShare(share) {
+console.log('onCloseShare, share',share)
         setIsShareModal(false)
         const selectedUser = users.find(user => user.fullname === share)
+        console.log('selectedUser:',selectedUser)
         const userId = selectedUser._id
-        station.shareWith = [userId]
-        station.shareBy = [userId]
+        station.shareWith = []
+        station.shareWith.push(userId)
+        station.shareBy = []
+        station.shareBy.push(user._id)
         try {
             await saveChanges()
             showSuccessMsg(`The playlist is now shared with ${selectedUser.fullname} `)
