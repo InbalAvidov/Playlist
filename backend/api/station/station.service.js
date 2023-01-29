@@ -7,9 +7,6 @@ async function query(filterBy = {}) {
     try {
         logger.info('station.service query filterBy', filterBy)
         const criteria = {}
-        // if (filterBy.userId) {
-        //     criteria['createdBy._id'] = filterBy.userId
-        // }
         if (filterBy.userId) {
             criteria['$or'] = [{ 'createdBy._id': filterBy.userId }, { 'shareWith': filterBy.userId }]
         }
@@ -68,9 +65,7 @@ async function update(station) {
             name: station.name,
             description: station.description,
             songs: station.songs,
-            followers: station.followers,
             imgUrl: station.imgUrl,
-            clr: station.clr,
             shareWith: station.shareWith,
             shareBy: station.shareBy
         }

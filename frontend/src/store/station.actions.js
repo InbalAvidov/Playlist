@@ -5,6 +5,7 @@ import { store } from "./store"
 export async function loadStations(filterBy) {
     try {
         const stations = await stationService.query(filterBy)
+        console.log('stations:',stations)
         store.dispatch({ type: SET_STATIONS, stations })
     } catch (err) {
         console.log('Had issues loading stations', err)
@@ -36,10 +37,8 @@ export async function saveStation(station) {
 
 export async function updateStation(station) {
     try {
-        console.log('updateStation, station', station)
         const updatedStation = await stationService.save(station)
         store.dispatch({ type: UPDATE_STATION, station: updatedStation })
-        console.log('updatedStation:',updatedStation)
         return updatedStation
     } catch (err) {
         console.log('Had issues to get current station', err)
