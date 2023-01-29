@@ -1,5 +1,4 @@
 const stationService = require('./station.service.js')
-
 const logger = require('../../services/logger.service')
 
 
@@ -61,44 +60,10 @@ async function removeStation(req, res) {
   }
 }
 
-async function addStationMsg(req, res) {
-  const { loggedinUser } = req
-  try {
-    const stationId = req.params.id
-    const msg = {
-      txt: req.body.txt,
-      by: loggedinUser
-    }
-    const savedMsg = await stationService.addStationMsg(stationId, msg)
-    res.json(savedMsg)
-  } catch (err) {
-    logger.error('Failed to update station', err)
-    res.status(500).send({ err: 'Failed to update station' })
-
-  }
-}
-
-async function removeStationMsg(req, res) {
-  const { loggedinUser } = req
-  try {
-    const stationId = req.params.id
-    const { msgId } = req.params
-
-    const removedId = await stationService.removeStationMsg(stationId, msgId)
-    res.send(removedId)
-  } catch (err) {
-    logger.error('Failed to remove station msg', err)
-    res.status(500).send({ err: 'Failed to remove station msg' })
-
-  }
-}
-
 module.exports = {
   getStations,
   getStationById,
   addStation,
   updateStation,
   removeStation,
-  addStationMsg,
-  removeStationMsg
 }
