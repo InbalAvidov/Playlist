@@ -33,6 +33,7 @@ export function Station() {
     }
   }, [])
 
+  
   function updateBySocket(stationFromSocket) {
     setStation(stationFromSocket)
   }
@@ -74,9 +75,11 @@ export function Station() {
 
   async function addSong(songs) {
     try {
-      const stationToUpdate = await updateStation({ ...station, 'songs': songs })
-      setStation(stationToUpdate)
-      return stationToUpdate.songs
+      // const stationToUpdate = await updateStation({ ...station, 'songs': songs })
+      // setStation(stationToUpdate)
+      station.songs = songs
+      await saveChanges()
+      return station.songs
     } catch (err) {
       console.log('err:', err)
     }
@@ -99,12 +102,13 @@ export function Station() {
 
   async function saveChanges() {
     try {
-      // console.log('station-update',station)
-      await updateStation(station)
       console.log('station-update', station)
+      const updatedStation = await updateStation(station)
       socketService.emit('station-update', station)
+      console.log('station-update', station)
       const color = await utilService.getMainColor(station.imgUrl)
       setColor(color)
+      return updatedStation
     } catch (err) {
       console.log('err:', err)
     }

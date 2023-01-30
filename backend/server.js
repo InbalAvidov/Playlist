@@ -27,8 +27,8 @@ const stationRoutes = require('./api/station/station.routes')
 const { setupSocketAPI } = require('./services/socket.service')
 
 // routes
-const setupAsyncLocalStorage = require('./middlewares/setupAls.middleware')
-app.all('*', setupAsyncLocalStorage)
+// const setupAsyncLocalStorage = require('./middlewares/setupAls.middleware')
+// app.all('*', setupAsyncLocalStorage)
 
 app.use('/api/auth', authRoutes)
 app.use('/api/user', userRoutes)
@@ -43,6 +43,6 @@ app.get('/**', (req, res) => {
 })
 const logger = require('./services/logger.service')
 const port = process.env.PORT || 3030
-app.listen(port, () => {
+http.listen(port, () => {
     logger.info('Server is running on port: ' + port)
 })

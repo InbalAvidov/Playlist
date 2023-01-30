@@ -100,6 +100,14 @@ function loadFromStorage(key) {
     return (data) ? JSON.parse(data) : undefined
 }
 
+
+function getCurrentTimeGreet() {
+    const hour = new Date().getHours()
+    if (hour > 5 && hour < 12) return 'Good morning'
+    else if (hour >= 12 && hour < 19) return 'Good afternoon'
+    else if (hour >= 19 && hour <= 23) return 'Good evning'
+}
+
 async function getMainColor(url) {
     if (!url) return
     const fac = new FastAverageColor()
@@ -109,11 +117,4 @@ async function getMainColor(url) {
     } catch (err) {
         console.log(err)
     }
-}
-
-function getCurrentTimeGreet() {
-    const hour = new Date().getHours()
-    if (hour > 5 && hour < 12) return 'Good morning'
-    else if (hour >= 12 && hour < 19) return 'Good afternoon'
-    else if (hour >= 19 && hour <= 23) return 'Good evning'
 }

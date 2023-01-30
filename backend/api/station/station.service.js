@@ -13,7 +13,6 @@ async function query(filterBy = {}) {
         if (filterBy.page) {
             criteria.tags = { $regex: filterBy.page, $options: 'i' }
         }
-        logger.info('station.service query criteria', criteria)
 
         const collection = await dbService.getCollection('station')
         var stations = await collection.find(criteria).toArray()
@@ -70,7 +69,7 @@ async function update(station) {
         }
         const collection = await dbService.getCollection('station')
         await collection.updateOne({ _id: ObjectId(station._id) }, { $set: stationToSave })
-        return station
+        return stationToSave
     } catch (err) {
         logger.error(`cannot update station ${stationId}`, err)
         throw err

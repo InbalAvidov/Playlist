@@ -7,7 +7,7 @@ import { updateStation } from '../store/station.actions'
 import { useSelector } from 'react-redux'
 import { showErrorMsg } from '../service/event-bus.service'
 
-export function SongList({ station, addSong, onDeleteSong, isLikedSongsPage }) {
+export function SongList({ station, addSong, onDeleteSong, isLikedSongsPage, saveChanges }) {
     const color = useSelector(storeState => storeState.stationModule.color)
     const [items, setItems] = useState(station.songs)
 
@@ -29,8 +29,8 @@ export function SongList({ station, addSong, onDeleteSong, isLikedSongsPage }) {
         newItems.splice(result.destination.index, 0, removed)
         station.songs = newItems
         try{
-            const updetedStation = await updateStation(station)
-            setItems(updetedStation.songs)
+            const updatedStation = await saveChanges()
+            setItems(updatedStation.songs)
         }catch(err){
             showErrorMsg('Had problem changing songs order')  
         }
