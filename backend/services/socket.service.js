@@ -10,21 +10,22 @@ function setupSocketAPI(http) {
         }
     })
     gIo.on('connection', socket => {
-        logger.info(`New connected socket [id: ${socket.id}]`)
+        console.log(`New connected socket [id: ${socket.id}]`)
         socket.on('disconnect', socket => {
-            logger.info(`Socket disconnected [id: ${socket.id}]`)
+            console.log(`Socket disconnected [id: ${socket.id}]`)
         })
         socket.on('share-station', stationId => {
+            logger.info('stationId -socket check', stationId)
             if (socket.station === stationId) return
             if (socket.station) {
                 socket.leave(socket.station)
             }
             socket.join(stationId)
             socket.station = stationId
-            console.log('stationId -socket check', stationId)
+            logger.info('stationId -socket check', stationId)
         })
         socket.on('station-update', station => {
-            console.log('station-update',station)
+            logger.info('station-update',station)
             socket.broadcast.to(socket.station).emit('station-updated', station)
         })
     })

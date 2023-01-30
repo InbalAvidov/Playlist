@@ -92,7 +92,7 @@ export function AppNav() {
             {userStations && <div className='hr-line'></div>}
             {userStations && <nav className='nav-menu user-station-nav'>
                 {userStations.map(userStation =>
-                    <NavLink key={userStation._id} to={`/station/${userStation._id}`}>
+                    <NavLink key={userStation._id} to={`/station/${userStation._id}`} onClick={() => setActive(null)}>
                         <span className='user-station'>
                             {userStation.name}
                         </span>
