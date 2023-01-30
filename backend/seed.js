@@ -1764,11 +1764,6 @@ async function seedDB() {
         "songs": [],
         "createdBy":
         {
-<<<<<<< HEAD
-          // _id: '63d54c3c3678fbff42c32f37', //mongo-local
-          "_id": '63d58ff365061996211b25af', // mongo-atlas
-=======
-          // _id: '63d54c3c3678fbff42c32f37',
           "_id": '63d6245dfff54c03e553950a',
           "fullname": 'Inbal Avidov',
           "username": 'inbal.avidov'
