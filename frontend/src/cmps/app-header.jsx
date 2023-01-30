@@ -23,13 +23,7 @@ export function AppHeader({ opacity }) {
 
   return (
     <section className='app-header' >
-
-
-
       <div className='header-bg' style={{ backgroundColor: `${color}`, opacity: `${opacity}` }}></div>
-
-
-      
       <div className='header-details flex'>
         <nav className='flex'>
           <div className='nav-btn'>
