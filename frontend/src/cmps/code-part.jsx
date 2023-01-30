@@ -1,5 +1,5 @@
 //APP-HEADER-CMP:
-{/* <div className='header-bg' style={{ backgroundColor: `${color}`, opacity: `${opacity}` }}></div>
+<div className="header-bg" style={{ backgroundColor: color, opacity: opacity }}></div>
 
 //ON HOVE/ON CHOOSING COLOR
 async function onSetBGColor(url) {
@@ -11,7 +11,7 @@ async function onSetBGColor(url) {
     }
 }
 
-//SEVICE FUNCTION 
+//SERVICE FUNCTION 
 async function getMainColor(url) {
     if (!url) return
     const fac = new FastAverageColor()
@@ -21,4 +21,4 @@ async function getMainColor(url) {
     } catch (err) {
         console.log(err)
     }
-} */}
+}
