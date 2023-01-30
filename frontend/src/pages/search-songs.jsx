@@ -23,6 +23,7 @@ export function SearchSongs({ onAddSong, isForStation, songs }) {
         if (isForStation) return
         loadStations()
         loadSearchStations()
+        YoutubeService.getAPIKey()
     }, [])
 
     useEffect(() => {
@@ -49,9 +50,13 @@ export function SearchSongs({ onAddSong, isForStation, songs }) {
         }
         try {
             const results = await YoutubeService.getYoutubeReasults(val)
-            const songsId = songs.map(song => song.id)
-            const fitResults = results.filter(result => !songsId.includes(result.id))
-            setSongsBySearch(fitResults)
+            console.log('songs:',songs)
+            console.log('results:',results)
+            if (songs) {
+                const songsId = songs.map(song => song.id)
+                const fitResults = results.filter(result => !songsId.includes(result.id))
+                setSongsBySearch(fitResults)
+            } else setSongsBySearch(results)
         } catch (err) {
             console.log('err:', err)
         }
@@ -63,12 +68,12 @@ export function SearchSongs({ onAddSong, isForStation, songs }) {
     }
 
     async function addSong(song) {
-        try{
+        try {
             await onAddSong(song)
             const newResults = songsBySearch.filter(result => result.id !== song.id)
             setSongsBySearch([...newResults])
-        }catch(err){
-            console.log('err:',err)
+        } catch (err) {
+            console.log('err:', err)
         }
     }
 

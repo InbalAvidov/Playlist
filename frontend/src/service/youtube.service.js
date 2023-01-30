@@ -1,17 +1,19 @@
 import axios from "axios"
+import { utilService } from "./util.service"
 
-const API_KEY = 'AIzaSyA6WG8zW9hBoHIkuiS2mbS4GQ8zME2jg04'
+const API_KEYS = ['AIzaSyB78sQnIs2jGHmBAwiuGLKbt9d9kpLGkU4', 'AIzaSyCDJLop9yTs7P_y00v0gdCIHRAF02-sXA8' ,'AIzaSyAA8SqRrqEvtgxbgxX2qK2ENn1XO-ey8TQ']
 
 
 export const YoutubeService = {
     getYoutubeReasults,
-    getSongDuration
+    getSongDuration,
+    getAPIKey
 }
 
 async function getYoutubeReasults(val) {
     const results = []
     try {
-        const res = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&videoEmbeddable=true&maxResults=20&type=video&key=${API_KEY}&q=${val}`)
+        const res = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&videoEmbeddable=true&maxResults=20&type=video&key=${getAPIKey}&q=${val}`)
         const ytVideos = res.data.items
         ytVideos.map(ytVideo => {
             if (ytVideo.snippet.title.includes('Trailer')) return
@@ -36,8 +38,14 @@ async function getYoutubeReasults(val) {
     }
 }
 
+// getAPIKey()
+function getAPIKey() {
+    const apis = utilService.shuffle(API_KEYS)
+    return apis[0]
+}
+
 async function getSongDuration(songId) {
-    const res = await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${songId}&part=contentDetails&key=${API_KEY}`)
+    const res = await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${songId}&part=contentDetails&key=${getAPIKey}`)
     const videoDuration = res.data.items[0].contentDetails.duration
     const min = videoDuration.slice(2, videoDuration.indexOf('M'))
     let sec = videoDuration.slice(videoDuration.indexOf('M') + 1, videoDuration.indexOf('S'))
