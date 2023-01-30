@@ -72,7 +72,7 @@ export function SongList({ station, addSong, onDeleteSong, isLikedSongsPage, sav
             {station.name !== 'Liked Songs' && <div className='song-add'>
                 <div className='' style={{ backgroundColor: `${color}` }}></div>
                 <h2>Let's find something for your playlist</h2>
-                <SearchSongs onAddSong={onAddSong} isForStation={true} />
+                <SearchSongs onAddSong={onAddSong} isForStation={true} songs={station.songs} />
             </div>}
 
         </main>
