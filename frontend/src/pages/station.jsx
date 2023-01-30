@@ -33,7 +33,7 @@ export function Station() {
     }
   }, [])
 
-  
+
   function updateBySocket(stationFromSocket) {
     setStation(stationFromSocket)
   }
@@ -86,14 +86,17 @@ export function Station() {
   }
 
   async function onDeleteSong(songId) {
-    if (station.songs.length > 1) {
-      try {
-        const updatedStation = await stationService.removeSong(station._id, songId)
-        setStation(updatedStation)
-      } catch (err) {
-        console.log('err:', err)
-      }
+    try {
+      station.songs = station.songs.filter(currSong => currSong.id !== songId)
+      // const updatedStation = await stationService.removeSong(station._id, songId)
+      // socketService.emit('station-update', station)
+      // setStation(updatedStation)
+      const updatedStation = await saveChanges()
+      setStation(prevStation => ({...prevStation , 'songs' : updatedStation.songs}))
+    } catch (err) {
+      console.log('err:', err)
     }
+
   }
 
   function onSaveStation() {
