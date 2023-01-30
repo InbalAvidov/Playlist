@@ -1,6 +1,8 @@
 import { useSelector } from 'react-redux'
 import YouTube from 'react-youtube'
+
 import { loadPlayer } from '../store/player.action'
+
 
 export function SoundPlayer({ onEnd }) {
   const song = useSelector(storeState => storeState.playerModule.song)
@@ -8,7 +10,6 @@ export function SoundPlayer({ onEnd }) {
     height: '00',
     width: '00',
     playerVars: {
-      // https://developers.google.com/youtube/player_parameters
       autoplay: 1,
     },
   }
