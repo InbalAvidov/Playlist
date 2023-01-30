@@ -4,10 +4,14 @@
   height: 50px;
   text-align: center;
   font-size: 10px;
-  position: absolute;
-  top: 50%;
-  left: 60%;
+  position: relative;
+  top: 30vh;
+  left: 30px;
   -webkit-transform: translateY(-50%) translateX(-50%);
+
+  &.for-station{
+    top: 10%;
+  }
 
   >div {
     height: 100%;
