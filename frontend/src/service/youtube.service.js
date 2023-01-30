@@ -13,7 +13,7 @@ export const YoutubeService = {
 async function getYoutubeReasults(val) {
     const results = []
     try {
-        const res = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&videoEmbeddable=true&maxResults=20&type=video&key=${getAPIKey}&q=${val}`)
+        const res = await axios.get(`https://www.googleapis.com/youtube/v3/search?part=snippet&videoEmbeddable=true&maxResults=20&type=video&key=${getAPIKey()}&q=${val}`)
         const ytVideos = res.data.items
         ytVideos.map(ytVideo => {
             if (ytVideo.snippet.title.includes('Trailer')) return
@@ -38,14 +38,13 @@ async function getYoutubeReasults(val) {
     }
 }
 
-// getAPIKey()
 function getAPIKey() {
     const apis = utilService.shuffle(API_KEYS)
     return apis[0]
 }
 
 async function getSongDuration(songId) {
-    const res = await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${songId}&part=contentDetails&key=${getAPIKey}`)
+    const res = await axios.get(`https://www.googleapis.com/youtube/v3/videos?id=${songId}&part=contentDetails&key=${getAPIKey()}`)
     const videoDuration = res.data.items[0].contentDetails.duration
     const min = videoDuration.slice(2, videoDuration.indexOf('M'))
     let sec = videoDuration.slice(videoDuration.indexOf('M') + 1, videoDuration.indexOf('S'))
