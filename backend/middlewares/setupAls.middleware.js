@@ -15,5 +15,5 @@ async function setupAsyncLocalStorage(req, res, next) {
   })
 }
 
-module.exports = setupAsyncLocalStorage
+// module.exports = setupAsyncLocalStorage
 
