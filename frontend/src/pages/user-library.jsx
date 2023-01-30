@@ -24,18 +24,18 @@ export function UserLibrary() {
   }, [user, stations])
 
   async function getUserStations(user) {
-    try{
+    try {
       let userStations = await stationService.query({ userId: user._id })
       userStations = [...userStations, ...user.likedStations]
       setUserStations(userStations)
-    }catch(err){
-      console.log('err:',err)
+    } catch (err) {
+      console.log('err:', err)
     }
   }
 
   if (!user) {
     return (
-      <main className='main-library'>
+      <main className="main-library">
         <h1> User Library </h1>
         <h4>Please login first</h4>
       </main>
@@ -43,12 +43,12 @@ export function UserLibrary() {
   }
   if (!stations || !userStations) return <Loader />
   return (
-    <main className='user-library clr-container'>
+    <main className="user-library clr-container">
       <h1> Playlists </h1>
-      <div className='user-station'>
-        <Link className='liked-song-playlist' to='/liked'>
-          <div className='library-liked-songs' >
-            <div className='img-liked-container flex'>
+      <div className="user-station">
+        <Link className="liked-song-playlist" to="/liked">
+          <div className="library-liked-songs" >
+            <div className="img-liked-container flex">
               <p>Listen to all the songs you liked</p>
               <h2>Liked songs</h2>
               <p>{user.likedSongs.length} liked songs</p>

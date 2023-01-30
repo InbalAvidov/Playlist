@@ -23,7 +23,7 @@ export function LikedSongs() {
 
   if (!user) {
     return (
-      <main className='liked-songs'>
+      <main className="liked-songs">
         <h1>Liked Songs</h1>
         <h4>Please login first</h4>
       </main>
@@ -31,7 +31,7 @@ export function LikedSongs() {
   }
   if (!station) return <Loader />
   return (
-    <main className='liked-songs'>
+    <main className="liked-songs">
       <StationHeader station={station} isLikedSongsPage={true} />
       <SongList station={station} isLikedSongsPage={true} />
     </main>

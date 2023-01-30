@@ -38,7 +38,6 @@ export function LoginSignup() {
                 _id: utilService.makeId(),
                 username: 'guest',
                 password: 'guest',
-                imgUrl: "https://robohash.org/set=set3"
             })
             navigate('/')
         } catch (err) {
@@ -62,90 +61,74 @@ export function LoginSignup() {
         } catch (err) {
             showErrorMsg('Had problem to log in')
         }
-
     }
 
 
 
     return (
-        <section className='login-signup'>
-            <div className='login-page'>
-                <header className='login-header '>
-                    <div className='logo flex'>
-                        <img className='logo-img' src={logoLogin} />
+        <section className="login-signup">
+            <div className="login-page">
+                <header className="login-header ">
+                    <div className="logo flex">
+                        <img className="logo-img" src={logoLogin} />
                         <h1>Playlist</h1>
                     </div>
-                    {isSignupState
-                        ?
-                        <h2>Sign up for free to start listening</h2>
-                        :
-                        <hr></hr>
-                    }
+                    {isSignupState ? <h2>Sign up for free to start listening</h2> : <hr />}
                 </header>
-                <button className='guest-btn' onClick={loginAsGuest}>Login as a guest</button>
-
-                <form className='login-form grid ' onSubmit={onSubmit}>
-                    <label>
-                        User Name
+                <button className="guest-btn" onClick={loginAsGuest}>Login as a guest</button>
+                <form className="login-form grid " onSubmit={onSubmit}>
+                    <label>User Name
                         <input
-                            className='custom-placeholder'
-                            type='text'
-                            name='username'
+                            className="custom-placeholder"
+                            type="text"
+                            name="username"
                             value={credentials.username}
-                            placeholder='Username'
+                            placeholder="Username"
                             onChange={handleCredentialsChange}
                             required
                         />
                     </label>
-                    <label>
-                        Email
+                    <label>Email
                         <input
-                            className='custom-placeholder'
-                            type='email'
-                            name='email'
+                            className="custom-placeholder"
+                            type="email"
+                            name="email"
                             value={credentials.email}
-                            placeholder='Enter your email'
+                            placeholder="Enter your email"
                             onChange={handleCredentialsChange}
                             required
                         />
                     </label>
-                    <label>
-                        Password
+                    <label>Password
                         <input
-                            className='custom-placeholder'
-                            type='password'
-                            name='password'
+                            className="custom-placeholder"
+                            type="password"
+                            name="password"
                             value={credentials.password}
-                            placeholder='Password'
+                            placeholder="Password"
                             onChange={handleCredentialsChange}
                             required
                         />
                     </label>
                     {isSignupState &&
-                        <label>
-                            Full Name
+                        <label>Full Name
                             <input
-                                className='custom-placeholder'
-                                type='text'
-                                name='fullname'
+                                className="custom-placeholder"
+                                type="text"
+                                name="fullname"
                                 value={credentials.fullname}
-                                placeholder='Full name'
+                                placeholder="Full name"
                                 onChange={handleCredentialsChange}
                                 required
                             />
                         </label>
                     }
-
-                    <button className='registration-btn'>{isSignupState ? 'Signup' : 'Login'}</button>
-
-
-                    <a href='#' onClick={onToggleSignupState}>
-                        {isSignupState ? 'Have an account? Login' : 'Don\'t have an account? Sign up here'}
-                    </a >
-
-
+                    <button className="registration-btn">{isSignupState ? "Signup" : "Login"}</button>
+                    <a href="#" onClick={onToggleSignupState}>
+                        {isSignupState ? "Have an account? Login" : "Don\"t have an account? Sign up here"}
+                    </a>
                 </form>
-            </div >
+            </div>
         </section>
     )
 }

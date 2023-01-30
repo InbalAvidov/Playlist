@@ -29,33 +29,33 @@ export function Home() {
     }
 
     if (!homeStations) return <Loader />
-    return (<main className='main-home'>
-        {stations && <div className='home-stations'>
+    return (<main className="main-home">
+        {stations && <div className="home-stations">
             <FirstSectionStations stations={homeStations.slice(0, 6)} />
-            <div className='title-section'>
+            <div className="title-section">
                 <h2>Made For You</h2>
-                <NavLink to='show/Made For you'>
+                <NavLink to="show/Made For you">
                 <p>Show all</p>
                 </NavLink>
             </div>
             <RestSectionStations stations={homeStations.slice(7, 11)} />
-            <div className='title-section'>
+            <div className="title-section">
                 <h2>Chill</h2>
-                <NavLink to='show/Chill'>
+                <NavLink to="show/Chill">
                 <p>Show all</p>
                 </NavLink>
             </div>
             <RestSectionStations stations={homeStations.slice(11, 15)} />
-            <div className='title-section'>
+            <div className="title-section">
                 <h2>Recently played</h2>
-                <NavLink to='show/Recently played'>
+                <NavLink to="show/Recently played">
                 <p>Show all</p>
                 </NavLink>
             </div>
             <RestSectionStations stations={homeStations.slice(15, 19)} />
-            <div className='title-section'>
+            <div className="title-section">
                 <h2>More of what you like</h2>
-                <NavLink to='show/More of what you like'>
+                <NavLink to="show/More of what you like">
                 <p>Show all</p>
                 </NavLink>
             </div>
